@@ -1,0 +1,12 @@
+{
+  "name": "codex-mistral-subagent-skill",
+  "version": "1.0.0",
+  "description": "A Codex skill for safely delegating bounded tasks to Mistral AI as a subordinate model.",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-repo.mjs",
+    "check:helper": "node --check mistral-subagent/scripts/mistral-subagent.mjs",
+    "check:models": "node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"Audit a GitHub codebase and propose patches\""
+  }
+}

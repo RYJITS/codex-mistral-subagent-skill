@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mistral Subagent"
+  short_description: "Delegate suitable text, code, JSON, and project-audit tasks to Mistral API."
+  default_prompt: "Use Mistral as a proposed sub-agent for a suitable text, code, extraction, summarization, structured-output, or project folder audit task."
