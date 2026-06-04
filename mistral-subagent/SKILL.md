@@ -149,3 +149,4 @@ Read these only when needed:
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
+- `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
