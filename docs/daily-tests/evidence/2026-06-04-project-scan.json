@@ -1,0 +1,188 @@
+{
+  "project_path": "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill",
+  "generated_at": "2026-06-04T04:03:47.558Z",
+  "policy": {
+    "direct_write_allowed_for_mistral": false,
+    "codex_must_review_before_apply": true,
+    "skipped_secret_like_names": true,
+    "skipped_secret_like_content": true,
+    "max_files": 8,
+    "max_manifest": 40,
+    "max_file_bytes": 24000,
+    "max_context_bytes": 14000
+  },
+  "totals": {
+    "files_seen": 19,
+    "manifest_files": 19,
+    "files_included": 8,
+    "files_skipped": 9,
+    "context_bytes": 12736
+  },
+  "manifest": [
+    {
+      "path": "README.md",
+      "size": 5596
+    },
+    {
+      "path": "package.json",
+      "size": 508
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size": 1466
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "size": 1217
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "size": 1094
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "size": 278
+    },
+    {
+      "path": "docs/SAFE_DELEGATION_PROTOCOL.md",
+      "size": 4753
+    },
+    {
+      "path": "docs/TASK_CATALOG.md",
+      "size": 3116
+    },
+    {
+      "path": "docs/WHY_MISTRAL_SUBAGENT.md",
+      "size": 7512
+    },
+    {
+      "path": "mistral-subagent/SKILL.md",
+      "size": 9319
+    },
+    {
+      "path": "scripts/validate-repo.mjs",
+      "size": 2592
+    },
+    {
+      "path": "mistral-subagent/references/delegation-playbook.md",
+      "size": 5504
+    },
+    {
+      "path": "mistral-subagent/references/mistral-api.md",
+      "size": 6987
+    },
+    {
+      "path": "mistral-subagent/references/mistral-task-matrix.md",
+      "size": 4408
+    },
+    {
+      "path": "mistral-subagent/references/model-selection.md",
+      "size": 3751
+    },
+    {
+      "path": "mistral-subagent/references/public-repo-checklist.md",
+      "size": 5892
+    },
+    {
+      "path": "mistral-subagent/agents/openai.yaml",
+      "size": 304
+    },
+    {
+      "path": ".gitignore",
+      "size": 363
+    },
+    {
+      "path": "mistral-subagent/scripts/mistral-subagent.mjs",
+      "size": 24236
+    }
+  ],
+  "included_files": [
+    {
+      "path": "package.json",
+      "size": 508,
+      "content": "{\n  \"name\": \"codex-mistral-subagent-skill\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Codex skill for safely delegating bounded tasks to Mistral AI as a subordinate model.\",\n  \"private\": false,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"validate\": \"node scripts/validate-repo.mjs\",\n    \"check:helper\": \"node --check mistral-subagent/scripts/mistral-subagent.mjs\",\n    \"check:models\": \"node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \\\"Audit a GitHub codebase and propose patches\\\"\"\n  }\n}\n"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size": 1466,
+      "content": "name: Bug Report\nabout: Create a report to help us improve\nlabels: [\"bug\"]\n\nbody:\n  - type: markdown\n    attributes:\n      value: |\n        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.\n\n  - type: input\n    id: version\n    attributes:\n      label: Version\n      description: What version of our software are you running?\n      placeholder: e.g., 1.0.0\n    validations:\n      required: true\n\n  - type: textarea\n    id: description\n    attributes:\n      label: Description\n      description: A clear and concise description of what the bug is.\n    validations:\n      required: true\n\n  - type: textarea\n    id: steps-to-reproduce\n    attributes:\n      label: Steps to Reproduce\n      description: Steps to reproduce the behavior.\n      placeholder: |\n        1. Go to '...'\n        2. Click on '....'\n        3. Scroll down to '....'\n        4. See error\n    validations:\n      required: true\n\n  - type: textarea\n    id: expected-behavior\n    attributes:\n      label: Expected Behavior\n      description: A clear description of what you expected to happen.\n    validations:\n      required: true\n\n  - type: textarea\n    id: screenshots\n    attributes:\n      label: Screenshots\n      description: If applicable, add screenshots to help explain your problem.\n\n  - type: textarea\n    id: additional-context\n    attributes:\n      label: Additional Context\n      description: Add any other context about the problem here.\n"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "size": 1217,
+      "content": "name: Feature Request\nabout: Suggest an idea for this project\nlabels: [\"enhancement\"]\n\nbody:\n  - type: markdown\n    attributes:\n      value: |\n        Thanks for suggesting a new feature! Please provide as much detail as possible.\n\n  - type: input\n    id: summary\n    attributes:\n      label: Summary\n      description: A brief summary of the feature.\n    validations:\n      required: true\n\n  - type: textarea\n    id: problem\n    attributes:\n      label: Problem Statement\n      description: Is your feature request related to a problem? Please describe.\n      placeholder: A clear and concise description of what the problem is.\n\n  - type: textarea\n    id: proposed-solution\n    attributes:\n      label: Proposed Solution\n      description: Describe the solution you'd like.\n      placeholder: A clear and concise description of what you want to happen.\n\n  - type: textarea\n    id: alternatives\n    attributes:\n      label: Alternatives Considered\n      description: Describe any alternative solutions or features you've considered.\n\n  - type: textarea\n    id: additional-context\n    attributes:\n      label: Additional Context\n      description: Add any other context or screenshots about the feature request here.\n"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "size": 1094,
+      "content": "## Description\n\nPlease include a summary of the changes and the related issue. List any dependencies that are required for this change.\n\nFixes # (issue)\n\n## Type of change\n\n- [ ] Bug fix (non-breaking change which fixes an issue)\n- [ ] New feature (non-breaking change which adds functionality)\n- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)\n- [ ] Documentation update\n\n## How Has This Been Tested?\n\nPlease describe the tests that you ran to verify your changes. Provide instructions so we can reproduce them.\n\n## Checklist:\n\n- [ ] My code follows the style guidelines of this project\n- [ ] I have performed a self-review of my own code\n- [ ] I have commented my code, particularly in hard-to-understand areas\n- [ ] I have made corresponding changes to the documentation\n- [ ] My changes generate no new warnings\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] New and existing unit tests pass locally with my changes\n- [ ] Any dependent changes have been merged and published in downstream modules\n"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "size": 278,
+      "content": "name: Validate\n\non:\n  push:\n  pull_request:\n\njobs:\n  validate:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n      - run: npm run validate\n      - run: npm run check:helper\n"
+    },
+    {
+      "path": "docs/SAFE_DELEGATION_PROTOCOL.md",
+      "size": 4753,
+      "content": "# Safe Delegation Protocol\n\nThis document outlines the safe delegation protocol for using Mistral as a subordinate helper, including context filtering, verification, invalid output handling, and token-saving quota rules.\n\n## Context Filtering\n\n### Principles\n- **Minimal Context**: Send only the necessary context for the task.\n- **Redaction**: Remove secrets, personal data, and irrelevant information.\n- **Filtering**: Use `project-scan` to create filtered snapshots for project work.\n\n### Implementation\n- **Secret Handling**: Exclude files with secret-like names or content.\n- **File Types**: Skip binary files, build outputs, caches, and large files.\n- **Scope**: Limit context to the user-authorized folder and relevant files.\n\n## Verification\n\n### Output Validation\n- **Structured Outputs**: Request and validate specific JSON shapes.\n- **Code Review**: Inspect code snippets or patches before application.\n- **Fact Checking**: Verify facts, citations, and local fit.\n\n### Integration\n- **File Changes**: Generate complete file content or precise patches.\n- **Local Application**: Apply changes locally after verification.\n- **Testing**: Run relevant tests or checks before finalizing.\n\n## Invalid Output Handling\n\n### Detection\n- **Malformed Outputs**: Check for incomplete or truncated responses.\n- **Irrelevant Outputs**: Exclude outputs that do not address the task.\n- **Validation Errors**: Reject outputs that fail validation checks.\n\n### Recovery\n- **Retry**: For transient issues, retry with adjusted parameters.\n- **Fallback**: Use Codex for the task if Mistral fails repeatedly.\n- **User Notification**: Inform the user of failures and actions taken.\n\n## Token-Saving Quota Rules\n\n### Principles\n- **Efficiency**: Optimize token usage to respect rate limits.\n- **Transparency**: Report token usage and savings clearly.\n- **Accountability**: Count only applied, useful tokens.\n\n### Implementation\n- **Baseline Measurement**: Measure Codex token usage before delegation.\n- **Narrow Tasks**: Send focused, minimal tasks to Mistral.\n- **Output Discipline**: Write responses to files to avoid large stdout.\n- **Token Counting**: Count only valid, applied outputs.\n- **Batch Processing**: Use small, manageable batches.\n- **Rate Limit Handling**: Monitor and handle rate limits gracefully.\n\n### Reporting\n- **Token Ratio**: Report the ratio as `Codex delta / (Codex delta + useful Mistral tokens)`.\n- **Transparency**: Provide clear, concise reports to the user.\n\n## Workflow\n\n### 1. Suitability Assessment\n- Use delegation rules or the `recommend` command.\n- Propose delegation to the user if optional.\n\n### 2. Context Preparation\n- Gather minimal, relevant context.\n- Redact secrets and irrelevant data.\n\n### 3. Model and Parameters\n- Choose the smallest suitable model.\n- Set appropriate temperature and max tokens.\n\n### 4. Execution\n- Perform a dry run if needed.\n- Run the task with chosen parameters.\n\n### 5. Output Handling\n- Parse and validate the response.\n- Count only applied, useful tokens.\n\n### 6. Integration\n- Review and apply changes locally.\n- Run validation commands and tests.\n\n## Best Practices\n\n- **One-File Batches**: Process one file or task at a time.\n- **Small Context**: Limit context size to stay within token budgets.\n- **Structured JSON**: Request and validate structured outputs.\n- **Complete Files**: Ask for complete file content.\n- **Validation Commands**: Include safe, local validation commands.\n\n## Common Pitfalls\n\n- **Overloading Context**: Exceeding token limits and increasing costs.\n- **Ambiguous Instructions**: Leading to unusable outputs.\n- **Ignoring Rate Limits**: Disrupting workflows.\n- **Skipping Validation**: Risking errors and inconsistencies.\n\n## Examples\n\n### Summarization Task\n```powershell\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"Summarize the following text in 3 bullet points\" --context-file D:\\path\\text.txt --model mistral-small-latest --max-tokens 300\n```\n\n### Code Review\n```powershell\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"Review this code snippet for potential bugs\" --context-file D:\\path\\code.txt --model codestral-latest --temperature 0.3\n```\n\n### Project Action\n```powershell\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs project-action --path D:\\path\\project --goal \"Improve the README with clear setup instructions\" --model mistral-medium-latest --max-files 3 --max-tokens 800\n```\n\n## Validation and Safety\n\n- **Local Tools**: Use standard shell/Git commands or built-in PowerShell.\n- **No Direct Writes**: Mistral generates files/patches; Codex applies them.\n- **Risk Assessment**: Include risks and assumptions for Codex review.\n"
+    },
+    {
+      "path": "docs/TASK_CATALOG.md",
+      "size": 3116,
+      "content": "# Task Catalog for Mistral Delegation\n\nThis catalog outlines tasks suitable for delegation to Mistral models, categorized by model type and task complexity.\n\n## Model-Specific Task Guidelines\n\n### mistral-small-latest\n- **Best For**: Routine text tasks, summarization, extraction, classification, and first-pass drafting.\n- **Examples**:\n  - Summarize meeting notes or articles.\n  - Extract key entities or actions from text.\n  - Classify documents or records.\n  - Generate simple JSON structures from text.\n\n### mistral-medium-latest\n- **Best For**: Stronger reasoning, synthesis, and multimodal analysis.\n- **Examples**:\n  - Project audits and documentation generation.\n  - Richer synthesis of complex information.\n  - Multimodal analysis (text + structured data).\n\n### mistral-large-latest\n- **Best For**: High-quality, public-facing outputs or complex synthesis.\n- **Examples**:\n  - Complex synthesis tasks requiring nuanced understanding.\n  - High-value second opinions or reviews.\n  - Public-facing content generation.\n\n### devstral-latest\n- **Best For**: Agentic software engineering tasks.\n- **Examples**:\n  - Repository audits and patch planning.\n  - Task decomposition for software projects.\n  - Codebase analysis and improvement proposals.\n\n### codestral-latest\n- **Best For**: Code generation, review, and fill-in-middle tasks.\n- **Examples**:\n  - Code snippet generation.\n  - Code review and quality assessment.\n  - Fill-in-middle code completion.\n\n### mistral-ocr-latest\n- **Best For**: OCR and document extraction tasks.\n- **Examples**:\n  - Extract text from images or scanned documents.\n  - Document layout analysis.\n\n### mistral-embed\n- **Best For**: Embeddings for semantic search or retrieval.\n- **Examples**:\n  - Generate embeddings for text or code.\n  - Semantic search and retrieval tasks.\n\n### mistral-moderation-latest\n- **Best For**: Safety and moderation scoring.\n- **Examples**:\n  - Content moderation and safety scoring.\n  - Compliance and policy adherence checks.\n\n### voxtral-mini-latest\n- **Best For**: Audio transcription tasks.\n- **Examples**:\n  - Transcribe audio files to text.\n  - Audio content analysis.\n\n## General Task Categories\n\n### Text and Structured Data Tasks\n- Summarization\n- Extraction\n- Classification\n- Translation\n- Rewriting\n- Structured JSON drafting\n\n### Code and Development Tasks\n- Code explanation\n- Code review\n- Small code generation\n- Prompt drafting\n- API payload drafting\n\n### Project and Documentation Tasks\n- Project audits\n- Documentation generation\n- GitHub metadata drafting\n- Simple patches\n\n### Brainstorming and Ideation\n- Ideation\n- Comparison\n- Second opinions\n\n## Task Suitability Checklist\n\n- **Suitable for Mistral**:\n  - Bounded, text-centric tasks.\n  - Tasks with minimal context requirements.\n  - Non-sensitive, non-destructive tasks.\n  - Tasks where Mistral's strengths (text generation, code review) are applicable.\n\n- **Not Suitable for Mistral**:\n  - Direct file edits, shell commands, deployments.\n  - High-stakes decisions without verification.\n  - Tasks requiring broad local context.\n  - Tasks exposing secrets or sensitive data.\n"
+    },
+    {
+      "path": "mistral-subagent/agents/openai.yaml",
+      "size": 304,
+      "content": "interface:\n  display_name: \"Mistral Subagent\"\n  short_description: \"Delegate suitable text, code, JSON, and project-audit tasks to Mistral API.\"\n  default_prompt: \"Use Mistral as a proposed sub-agent for a suitable text, code, extraction, summarization, structured-output, or project folder audit task.\"\n"
+    }
+  ],
+  "skipped_files": [
+    {
+      "path": "README.md",
+      "size": 5596,
+      "reason": "secret_like_content"
+    },
+    {
+      "path": "docs/WHY_MISTRAL_SUBAGENT.md",
+      "size": 7512,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/SKILL.md",
+      "size": 9319,
+      "reason": "context_budget"
+    },
+    {
+      "path": "scripts/validate-repo.mjs",
+      "size": 2592,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/references/delegation-playbook.md",
+      "size": 5504,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/references/mistral-api.md",
+      "size": 6987,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/references/mistral-task-matrix.md",
+      "size": 4408,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/references/model-selection.md",
+      "size": 3751,
+      "reason": "context_budget"
+    },
+    {
+      "path": "mistral-subagent/references/public-repo-checklist.md",
+      "size": 5892,
+      "reason": "context_budget"
+    }
+  ]
+}

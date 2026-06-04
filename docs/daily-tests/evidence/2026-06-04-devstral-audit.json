@@ -1,0 +1,22 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4912,
+    "total_tokens": 5262,
+    "completion_tokens": 350,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-limit-tokens-month": "10000000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "984572",
+    "x-ratelimit-remaining-tokens-month": "9967244",
+    "x-ratelimit-tokens-query-cost": "5262"
+  },
+  "text": "{\n  \"task_category\": \"audit_borne_repo_public\",\n  \"why_it_matters_fr\": \"L'audit d'un d\ufffdp\ufffdt public permet d'identifier des am\ufffdliorations documentaires ou de validation, renfor\ufffdant ainsi la qualit\ufffd et la maintenabilit\ufffd du projet.\",\n  \"capability_assessment_fr\": \"Le d\ufffdp\ufffdt est bien structur\ufffd avec une documentation claire et des templates GitHub complets. Cependant, le fichier .github/PULL_REQUEST_TEMPLATE.md pourrait b\ufffdn\ufffdficier d'une section suppl\ufffdmentaire pour encourager les contributeurs \ufffd inclure des d\ufffdtails sur les tests effectu\ufffds, ce qui am\ufffdliorerait la qualit\ufffd des contributions.\",\n  \"recommended_change\": {\n    \"target_file\": \".github/PULL_REQUEST_TEMPLATE.md\",\n    \"change_type\": \"append\",\n    \"reason_fr\": \"Ajouter une section pour rappeler aux contributeurs d'inclure des d\ufffdtails sur les tests effectu\ufffds afin de faciliter la revue et d'assurer la qualit\ufffd des modifications.\",\n    \"proposed_content_fr\": \"\\n## Tests Effectu\ufffds\\n\\nVeuillez d\ufffdcrire les tests que vous avez effectu\ufffds pour v\ufffdrifier vos modifications. Incluez des instructions pour que nous puissions les reproduire.\\n\\n- [ ] Tests unitaires\\n- [ ] Tests d'int\ufffdgration\\n- [ ] Tests manuels\\n- [ ] Autres (pr\ufffdcisez):\\n\",\n    \"validation_commands\": [\n      \"npm run validate\"\n    ],\n    \"risks_fr\": [\n      \"Aucun risque technique, modification mineure de la documentation.\"\n    ]\n  },\n  \"contributes_to_70_percent\": true,\n  \"confidence\": 0.8\n}"
+}

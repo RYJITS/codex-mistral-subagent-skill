@@ -146,6 +146,7 @@ Read these only when needed:
 
 - `references/model-selection.md`: current model families and model-to-task mapping.
 - `references/delegation-playbook.md`: token-saving loops, safe batching, validation, and failure recovery.
+- `references/repo-audit-public-fr.md`: workflow en francais pour audit borne d'un repo public avec petite amelioration doc/validation.
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.

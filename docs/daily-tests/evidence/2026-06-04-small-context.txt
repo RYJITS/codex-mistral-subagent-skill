@@ -1,0 +1,54 @@
+Fichier cible: mistral-subagent/references/delegation-playbook.md
+
+Contexte existant:
+# Delegation Playbook
+
+This playbook outlines best practices for delegating tasks to Mistral as a subordinate model, incorporating lessons from quota experiments and real-world usage.
+
+## Core Principles
+
+1. **Codex Decides**: Always evaluate whether Mistral is suitable for the task before delegating.
+2. **Minimal Context**: Send only the necessary context, redacted of secrets and irrelevant data.
+3. **Structured Outputs**: Request specific JSON shapes or formats to ensure usable responses.
+4. **Token Efficiency**: Optimize for token usage to respect rate limits and reduce costs.
+5. **Validation**: Always verify Mistral's output before applying changes or presenting to the user.
+
+## Workflow
+
+### 1. Suitability Assessment
+- Use the delegation rules in `SKILL.md` or the `recommend` command to assess task suitability.
+- Propose delegation to the user if the task is optional but Mistral could add value.
+
+### 2. Context Preparation
+- Gather minimal, relevant context. Redact secrets, personal data, and unnecessary information.
+- For project work, use `project-scan` to create a filtered snapshot.
+
+### 3. Model and Parameters
+- Choose the smallest suitable model to conserve tokens (see `model-selection.md`).
+- Set `temperature` low for factual, code, or JSON tasks; higher for creative tasks.
+- Cap `max_tokens` to fit within the model's context window and avoid excessive output.
+
+### 4. Dry Run (Optional)
+- Perform a dry run to inspect the payload without consuming quota.
+
+### 5. Execution
+- Run the task with the chosen model and parameters.
+
+### 6. Output Handling
+- Parse and validate the response. For JSON outputs, ensure the structure matches expectations.
+- Count only applied, useful tokens. Exclude invalid or truncated outputs from token counts.
+- Suppress large stdout to save tokens during processing.
+
+### 7. Integration
+- For file changes, generate complete file content or precise patches. Apply changes locally after verification.
+- For project actions, review proposed changes, files, and validation commands before applying.
+
+Contraintes de validation visibles dans le repo:
+- Scripts disponibles: npm run validate ; npm run check:helper ; node mistral-subagent/scripts/mistral-subagent.mjs project-scan ; node ... run --json
+- Commandes git sures: git status, git diff --stat
+- Ne pas inventer npm test
+
+Le besoin issu du test du jour:
+- Ajouter une section concise et actionnable pour les futurs runs sur "audit borne d'un repo public + proposition d'une petite amelioration documentaire ou de validation".
+- Le texte doit etre en francais.
+- La section doit aider Codex a deleguer ce type de tache sans surestimer Mistral.

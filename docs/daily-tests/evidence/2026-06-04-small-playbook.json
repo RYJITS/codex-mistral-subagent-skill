@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 746,
+    "total_tokens": 1380,
+    "completion_tokens": 634,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "47136",
+    "x-ratelimit-tokens-query-cost": "1380"
+  },
+  "text": "{\"target_file\": \"mistral-subagent/references/delegation-playbook.md\", \"anchor_heading\": \"Workflow\", \"section_markdown_fr\": \"### 8. Audit et Am\ufffdlioration Documentaire\\n\\nPour les t\ufffdches d'audit d'un d\ufffdp\ufffdt public (ex : v\ufffdrification de la documentation, des validations ou des bonnes pratiques) :\\n\\n1. **Pr\ufffdparation** :\\n   - Cloner le d\ufffdp\ufffdt en mode `--depth 1` pour limiter les t\ufffdl\ufffdchargements.\\n   - Identifier les fichiers cibles (ex : `README.md`, fichiers de configuration, scripts de validation).\\n\\n2. **Ex\ufffdcution** :\\n   - Utiliser `project-scan` pour g\ufffdn\ufffdrer un snapshot filtr\ufffd des fichiers pertinents.\\n   - Demander \ufffd Mistral une analyse cibl\ufffde (ex : v\ufffdrification des liens bris\ufffds, coh\ufffdrence des exemples, pr\ufffdsence de validations manquantes).\\n\\n3. **Validation** :\\n   - V\ufffdrifier les propositions de Mistral avec `git diff --stat` et `npm run validate` (si disponible).\\n   - Pour les am\ufffdliorations documentaires, proposer des modifications concises et v\ufffdrifiables (ex : ajout d'une section `Validation`, correction de liens, ajout de commentaires dans les scripts).\\n\\n4. **Int\ufffdgration** :\\n   - Appliquer les changements uniquement apr\ufffds validation locale et test des commandes associ\ufffdes (ex : `npm run check:helper`).\\n   - Documenter les modifications dans un commit s\ufffdpar\ufffd avec un message clair (ex : `docs: corrige lien bris\ufffd dans README`).\\n\\n*Exemple de payload pour Mistral :*\\n```json\\n{\\n  \\\"task\\\": \\\"Audit du d\ufffdp\ufffdt public [nom_du_depot] : v\ufffdrifier la coh\ufffdrence de la documentation et proposer des am\ufffdliorations mineures (ex : liens, exemples, validations).\\\",\\n  \\\"context\\\": {\\n    \\\"files\\\": [\\\"README.md\\\", \\\".github/workflows/*.yml\\\", \\\"scripts/*.js\\\"],\\n    \\\"focus\\\": [\\\"liens bris\ufffds\\\", \\\"exemples de code\\\", \\\"validations manquantes\\\"]\\n  },\\n  \\\"output_format\\\": \\\"json\\\",\\n  \\\"expected_keys\\\": [\\\"issues_found\\\", \\\"suggestions\\\", \\\"estimated_tokens\\\"]\\n}\\n```\", \"validation_commands\": [\"git status\", \"git diff --stat\", \"npm run validate (si disponible)\", \"npm run check:helper\"], \"why_useful_fr\": \"Cette section permet \ufffd Codex de d\ufffdl\ufffdguer efficacement des t\ufffdches d'audit et d'am\ufffdlioration documentaire \ufffd Mistral, en limitant les risques de surcharge ou de propositions inadapt\ufffdes. Elle encadre la d\ufffdl\ufffdgation avec des \ufffdtapes claires, des commandes de validation et un format de sortie structur\ufffd, tout en rappelant l'importance de la v\ufffdrification locale avant int\ufffdgration.\"}"
+}
