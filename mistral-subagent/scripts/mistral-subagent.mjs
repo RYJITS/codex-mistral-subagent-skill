@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const DEFAULT_ENV = process.env.MISTRAL_ENV_FILE || path.join(process.cwd(), ".env.local");
+const DEFAULT_ENV = process.env.MISTRAL_ENV_FILE || "D:\\00_Cerveau_IA\\API\\env.Local";
 const DEFAULT_MODEL = "mistral-small-latest";
 const API_BASE = "https://api.mistral.ai/v1";
 

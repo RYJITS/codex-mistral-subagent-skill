@@ -63,6 +63,15 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - For file changes, generate complete file content or precise patches. Apply changes locally after verification.
 - For project actions, review proposed changes, files, and validation commands before applying.
 
+### 8. Audit borne d'un repo public
+
+- Use `project-scan` with tight limits before asking Mistral to inspect a public repository.
+- Ask for exactly one small change at a time, plus explicit validation commands and risks in JSON.
+- Prefer `devstral-latest` for repository audit and patch planning, then `mistral-small-latest` for a final French wording pass when the output is documentation-facing.
+- Reject invented scripts, tests, or commands that do not appear in the filtered snapshot.
+- Validate locally with commands already visible in the repo such as `git status`, `git diff --stat`, `npm run validate`, and `npm run check:helper`.
+- Count the run as validated only if Codex applies or directly uses a verified Mistral output after review.
+
 ## Lessons from Quota Experiments
 
 ### Reliable Batches
@@ -80,6 +89,13 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - **Structured JSON**: Always request and validate structured JSON outputs for programmatic use.
 - **Complete Files**: Ask for complete file content rather than partial snippets to simplify integration.
 - **Validation Commands**: Include safe, local validation commands in project action outputs.
+
+### Narrow Inconsistency Patches
+
+- If the goal is to align one real inconsistency between code and docs or config, do not ask for a broad repo rewrite.
+- Prefer `project-action` with one explicit inconsistency, one target end state, and a request for the smallest exact patch plus safe validation commands.
+- Start with `devstral-latest` for repository reasoning. Use `codestral-latest` as a second opinion when the change is code-shaped.
+- Expect Codex to normalize placeholder diffs and reject invented files, line numbers, or commands before applying anything.
 
 ### Rate Limit Handling
 

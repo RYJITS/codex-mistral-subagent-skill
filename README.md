@@ -35,7 +35,7 @@ Set your Mistral API key in one of the following ways:
   ```bash
   export MISTRAL_API_KEY="your_api_key_here"
   ```
-- **Local File**: Store the key in `.env.local` at the repository root or point `MISTRAL_ENV_FILE` to your own file:
+- **Local File**: By default the helper reads `D:\00_Cerveau_IA\API\env.Local`. To use another file, point `MISTRAL_ENV_FILE` to your own path:
   ```
   MISTRAL_API_KEY=your_api_key_here
   ```
