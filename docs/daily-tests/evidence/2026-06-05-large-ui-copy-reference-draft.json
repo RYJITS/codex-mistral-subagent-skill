@@ -1,0 +1,21 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 326,
+    "total_tokens": 882,
+    "completion_tokens": 556,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "246838",
+    "x-ratelimit-tokens-query-cost": "882"
+  },
+  "text": "```markdown\n# Reference : Delegation critique/reecriture UI/UX (scroll-driven WebGL/video)\n\n## Quand deleguer\n- Besoin de critique structurelle ou semantique sur des blocs de texte UI/UX.\n- Reecriture de titres, sous-titres ou footers pour des animations scroll-driven.\n- Harmonisation de la longueur des lignes ou du ton sans alterer les IDs.\n\n## Routage recommande\n1. **Premiere passe exploitable** ? `mistral-medium-3.5` (respect strict des contraintes).\n2. **Critique approfondie** ? `mistral-large-latest` (analyse semantique, mais verifier les reinterpretations).\n3. **Eviter** ? `mistral-small-latest` (risque de non-respect des longueurs).\n\n## Prompt conseille\n```text\n\"Analyse et reecris ce bloc UI/UX pour une page scroll-driven WebGL/video.\nContraintes :\n- Conserver les IDs et l'ordre des blocs.\n- Titres : exactement X lignes (ex: 5).\n- Footers : ? 8 mots.\n- Ne pas inventer de donnees (chiffres, promesses).\n- Format JSON valide en sortie.\n\nExemple de structure attendue :\n{\n  \"id\": \"intro\",\n  \"title\": [\"Ligne 1\", \"Ligne 2\", ...],\n  \"footer\": \"Texte court\"\n}\"\n```\n\n## Validation locale\n- **JSON** : `Get-Content fichier.json | ConvertFrom-Json` (PowerShell).\n- **Longueurs** : Verifier `title.Length` et `footer.Split(' ').Count`.\n- **IDs** : Comparer avec la source via `Compare-Object`.\n- **Promesses** : Rechercher des termes comme \"garanti\", \"jusqu'a X\".\n\n## Limites observees\n- `mistral-small` : Ignore souvent les contraintes de longueur.\n- `mistral-large` : Reinterprete parfois la semantique des titres (ex: reformulation agressive).\n- Aucun modele ne gere nativement les contraintes de *scroll-driven timing* (a ajuster manuellement).\n\n## Verdict de delegation\n**Possible** si :\n- Contraintes clairement specifiees dans le prompt.\n- Validation locale systematique.\n- Utilisation de `medium` pour la conformite, `large` pour la critique.\n\n**A eviter** pour :\n- Textes necessitant une synchronisation precise avec des animations (timing).\n- Blocs ou la semantique doit etre preservee a 100%.\n```"
+}
+
