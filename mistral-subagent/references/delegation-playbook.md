@@ -97,6 +97,14 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - Use `mistral-small-latest` only with a compact schema and short text fields; if it truncates, tighten the payload before retrying.
 - Prefer `mistral-medium-3.5` for richer French documentation payloads and `devstral-latest` when repo-shaped command fidelity matters.
 
+### Unit-test idea generation for a local helper
+
+- Send only the functions, behaviors, limits, and available repo scripts that matter to the test ideation.
+- Freeze a small JSON schema with `target`, `scenario`, `assertions`, and `needs_extra_harness`.
+- Prefer `devstral-latest` for the first pass on helper logic, then use `codestral-latest` as a second opinion if needed.
+- Reject any output that invents frameworks, commands, or functions not visible in the repo.
+- Do not count the run as valid if the model returns a malformed payload, mixes multiple scenarios into one vague test, or drifts into integration/E2E territory.
+
 ### UI/UX copy critique for scroll-driven pages
 
 - Use a small, real text sample from the target project rather than a full project scan.

@@ -151,3 +151,4 @@ Read these only when needed:
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
 - `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
+- `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.

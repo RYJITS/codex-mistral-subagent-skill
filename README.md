@@ -120,6 +120,7 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 
 - [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
 - [JSON Extraction for Repo Maintenance (FR)](mistral-subagent/references/json-extraction-maintenance-fr.md): Strict schema pattern for turning maintenance briefs into verified JSON plans.
+- [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.
 - [UI/UX Copy Scroll-Driven (FR)](mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md): Validated delegation workflow for French UI copy critique and rewrites.
 - [Mistral API Notes](mistral-subagent/references/mistral-api.md): Endpoints, rate limits, and model capabilities.
 - [Model Selection](mistral-subagent/references/model-selection.md): Task-to-model mapping.

@@ -1,0 +1,57 @@
+Projet source: D:\00_Cerveau_IA\Projet\codex-mistral-subagent-skill
+
+Objectif:
+- Evaluer si Mistral peut proposer des idees de tests unitaires utiles et verifiables pour le helper `mistral-subagent`.
+- Les idees doivent rester bornees au code fourni.
+- Aucune invention de commande, de framework deja installe, ni de fonction absente.
+
+Contexte repo:
+- Scripts disponibles: `npm run validate`, `npm run check:helper`
+- Il n'y a pas encore de suite de tests declaree dans `package.json`.
+- Le helper est un script Node.js de delegation Mistral.
+
+Fonctions cibles extraites de `mistral-subagent/scripts/mistral-subagent.mjs`:
+
+1. `loadEnvFile(envPath)`
+- Retourne `{}` si le fichier n'existe pas.
+- Ignore les lignes vides et commentaires.
+- Parse des lignes `KEY=value`.
+- Retire les guillemets simples ou doubles autour de la valeur.
+
+2. `getApiKey(args)`
+- Charge `args.env || DEFAULT_ENV`.
+- Priorite des cles:
+  - `process.env.MISTRAL_API_KEY`
+  - `fileEnv.MISTRAL_API_KEY`
+  - `process.env.MISTRAL_AI_API_KEY`
+  - `fileEnv.MISTRAL_AI_API_KEY`
+  - `process.env.MISTRALAI_API_KEY`
+  - `fileEnv.MISTRALAI_API_KEY`
+  - `process.env["MISTRAL.API_KEY"]`
+  - `fileEnv["MISTRAL.API_KEY"]`
+- Lance une erreur si aucune cle n'est trouvee.
+
+3. `shouldSkipPath(fullPath, rootPath)`
+- Ignore les chemins dans des dossiers exclus.
+- Ignore les noms qui ressemblent a des secrets via `SECRET_NAME_PATTERN`.
+- Sinon retourne une chaine vide.
+
+4. `readSafeTextFile(fullPath, maxFileBytes)`
+- Ignore un fichier trop volumineux.
+- Ignore un fichier non texte.
+- Ignore un buffer contenant `0`.
+- Ignore un contenu ressemblant a un secret.
+- Sinon retourne le texte.
+
+5. `buildProjectContext(args)`
+- Verifie que `--path` existe et est un dossier.
+- Trie les candidats par priorite.
+- Respecte `max-files`, `max-manifest`, `max-file-bytes`, `max-context-bytes`.
+- Marque les fichiers ignores avec des raisons comme `too_large`, `non_text_extension`, `secret_like_content`, `context_budget`.
+
+Contraintes pour les idees de tests:
+- Repondre en francais.
+- Proposer au maximum 7 idees.
+- Chaque idee doit cibler une fonction ou un comportement reel ci-dessus.
+- Mentionner si l'idee est faisable sans nouvelle infra ou si elle demanderait une petite aide de harnais local.
+- Rester concret: entree, comportement attendu, risque de regression.

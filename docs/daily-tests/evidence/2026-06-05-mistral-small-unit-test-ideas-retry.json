@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 837,
+    "total_tokens": 1373,
+    "completion_tokens": 536,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "46376",
+    "x-ratelimit-tokens-query-cost": "1373"
+  },
+  "text": "{\"idees_tests\": [{\"id\": \"T1\", \"target\": \"loadEnvFile\", \"priority\": \"high\", \"scenario_fr\": \"Fichier .env inexistant avec chemin valide\", \"assertions_fr\": [\"Retourne un objet vide {}\", \"Ne l\ufffdve pas d'erreur\"], \"regression_risk_fr\": \"Moyen si la fonction g\ufffdre mal les chemins invalides ou les permissions\", \"needs_extra_harness\": false}, {\"id\": \"T2\", \"target\": \"loadEnvFile\", \"priority\": \"high\", \"scenario_fr\": \"Fichier .env avec lignes vides, commentaires et valeurs avec guillemets simples/doubles\", \"assertions_fr\": [\"Cl\ufffds et valeurs correctement pars\ufffdes\", \"Guillemets retir\ufffds des valeurs\"], \"regression_risk_fr\": \"\ufffdlev\ufffd si la logique de parsing est modifi\ufffde\", \"needs_extra_harness\": false}, {\"id\": \"T3\", \"target\": \"getApiKey\", \"priority\": \"critical\", \"scenario_fr\": \"Aucune cl\ufffd API disponible dans process.env ni dans le fichier .env\", \"assertions_fr\": [\"L\ufffdve une erreur avec message clair\", \"Message d'erreur contient 'MISTRAL_API_KEY'\"], \"regression_risk_fr\": \"Critique si la priorit\ufffd des cl\ufffds est modifi\ufffde\", \"needs_extra_harness\": false}, {\"id\": \"T4\", \"target\": \"shouldSkipPath\", \"priority\": \"medium\", \"scenario_fr\": \"Chemin dans un dossier exclu (ex: node_modules) avec rootPath valide\", \"assertions_fr\": [\"Retourne une cha\ufffdne non vide (raison d'exclusion)\", \"Raison contient 'excluded_folder'\"], \"regression_risk_fr\": \"Moyen si la liste des dossiers exclus change\", \"needs_extra_harness\": false}, {\"id\": \"T5\", \"target\": \"readSafeTextFile\", \"priority\": \"high\", \"scenario_fr\": \"Fichier texte valide avec contenu non secret et taille < maxFileBytes\", \"assertions_fr\": [\"Retourne le contenu texte\", \"Contenu ne contient pas de pattern de secret\"], \"regression_risk_fr\": \"\ufffdlev\ufffd si la d\ufffdtection de contenu secret est modifi\ufffde\", \"needs_extra_harness\": true}]}"
+}
