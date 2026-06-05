@@ -1,0 +1,57 @@
+Capacite candidate a tester:
+Extraction JSON stricte d'un brief de maintenance repo vers un plan exploitable par Codex.
+
+Pourquoi cette capacite compte dans les projets reels:
+- Les automations et suivis multi-projets de D:\00_Cerveau_IA reposent souvent sur des briefs melanges.
+- Un sous-agent moins couteux devient utile s'il peut convertir un brief texte en schema stable, verifiable, et directement exploitable.
+- Le resultat n'est compte comme valide que si Codex peut utiliser la sortie sans reparer le format ni supprimer des commandes inventees.
+
+Contexte repo visible:
+- Depot: codex-mistral-subagent-skill
+- Commandes de validation visibles et reelles:
+  - npm run validate
+  - npm run check:helper
+  - git status --short
+- Le helper supporte:
+  - run --json
+  - project-scan
+  - project-action
+- Les references existantes incluent deja:
+  - repo-audit-public-fr.md
+  - video-storyboard-scroll-driven-fr.md
+  - delegation-playbook.md
+- Le nouveau fichier cible peut etre:
+  - mistral-subagent/references/json-extraction-maintenance-fr.md
+
+Brief a extraire:
+Produire une reference francaise concise qui explique comment demander a Mistral une extraction JSON stricte pour un brief de maintenance repo. La reference doit:
+- expliquer quand utiliser mistral-small-latest, mistral-medium-3.5, et devstral-latest
+- imposer un schema JSON ferme avec noms de champs explicites
+- rappeler qu'il faut rejeter les commandes non visibles dans le repo
+- inclure un mini prompt reutilisable
+- inclure uniquement des commandes de validation reelles du depot
+- rester utile pour de futurs runs Codex de ce skill
+
+Schema JSON exige:
+{
+  "capability_name_fr": string,
+  "task_category": string,
+  "target_file": "mistral-subagent/references/json-extraction-maintenance-fr.md",
+  "reference_markdown_fr": string,
+  "validation_commands": string[],
+  "limitations_fr": string[],
+  "counts_toward_70": boolean,
+  "model_routing": [
+    {
+      "model": string,
+      "when_to_use_fr": string
+    }
+  ]
+}
+
+Regles strictes:
+- Repondre uniquement en JSON valide, sans Markdown externe.
+- Ne jamais inventer de commande comme npm test.
+- Garder target_file exact.
+- reference_markdown_fr doit etre en francais.
+- validation_commands doit rester borne aux commandes visibles dans ce contexte.

@@ -1,0 +1,21 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 709,
+    "total_tokens": 1196,
+    "completion_tokens": 487,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "43415",
+    "x-ratelimit-tokens-query-cost": "1196"
+  },
+  "text": "{\"capability_name_fr\": \"Extraction JSON stricte d'un brief de maintenance repo\", \"task_category\": \"maintenance_repo\", \"target_file\": \"mistral-subagent/references/json-extraction-maintenance-fr.md\", \"reference_markdown_fr\": \"Cette reference explique comment demander a Mistral une extraction JSON stricte pour un brief de maintenance repo. Utilisez **mistral-small-latest** pour des briefs simples ou des tests rapides. Preferez **mistral-medium-3.5** pour des extractions complexes necessitant une meilleure comprehension contextuelle. Pour des projets multi-langages ou des analyses avancees, **devstral-latest** est recommande. Le schema JSON doit inclure : `capability_name_fr`, `task_category`, `target_file`, `reference_markdown_fr`, `validation_commands`, `limitations_fr`, `counts_toward_70`, et `model_routing`. Rejetez toute commande non presente dans le depot (ex: `npm test`). Exemple de prompt reutilisable : *\\\"Extrais un plan JSON strict a partir de ce brief de maintenance repo, en respectant le schema fourni et en utilisant uniquement les commandes visibles dans le depot : [liste des commandes].\\\"* Les commandes de validation autorisees sont : `npm run validate`, `npm run check:helper`, et `git status --short`.\", \"validation_commands\": [\"npm run validate\", \"npm run check:helper\", \"git status --short\"], \"limitations_fr\": [\"Ne pas inclure de commandes non visibles dans le depot (ex: npm test).\", \"Rester strict au schema JSON fourni sans ajout ni modification.\"], \"counts_toward_70\": true, \"model_routing\": [{\"model\": \"mistral-small-latest\", \"when_to_use_fr\": \"Pour des briefs simples ou des tests rapides necessitant une extraction JSON basique.\"}, {\"model\": \"mistral-medium-3.5\", \"when_to_use_fr\": \"Pour des extractions complexes ou des briefs necessitant une meilleure comprehension contextuelle.\"}, {\"model\": \"devstral-latest\", \"when_to_use_fr\": \"Pour des projets multi-langages ou des analyses avancees necessitant une expertise technique etendue.\"}]}"
+}
+

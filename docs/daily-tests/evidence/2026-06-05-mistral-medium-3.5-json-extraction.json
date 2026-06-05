@@ -1,0 +1,21 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 684,
+    "total_tokens": 1671,
+    "completion_tokens": 987,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "20569",
+    "x-ratelimit-tokens-query-cost": "1671"
+  },
+  "text": "{\n  \"capability_name_fr\": \"Extraction JSON stricte d'un brief de maintenance repo\",\n  \"task_category\": \"automation\",\n  \"target_file\": \"mistral-subagent/references/json-extraction-maintenance-fr.md\",\n  \"reference_markdown_fr\": \"# Extraction JSON stricte pour un brief de maintenance repo\\n\\n## Quand utiliser ce skill\\nCe skill permet de convertir un brief texte en un plan JSON exploitable par Codex, sans reparation manuelle du format. Il est concu pour les automations et suivis multi-projets ou les briefs sont melanges ou non structures.\\n\\n## Modeles recommandes\\n- **mistral-small-latest** : Pour les briefs simples et courts (moins de 500 mots).\\n- **mistral-medium-3.5** : Pour les briefs complexes ou longs (500 a 2000 mots), necessitant une comprehension fine des contraintes.\\n- **devstral-latest** : Pour les briefs tres techniques ou necessitant une validation stricte des commandes et schemas.\\n\\n## Schema JSON impose\\nLe resultat doit respecter le schema suivant, sans deviation :\\n```json\\n{\\n  \\\"capability_name_fr\\\": \\\"string\\\",\\n  \\\"task_category\\\": \\\"string\\\",\\n  \\\"target_file\\\": \\\"string\\\",\\n  \\\"reference_markdown_fr\\\": \\\"string\\\",\\n  \\\"validation_commands\\\": [\\\"string\\\"],\\n  \\\"limitations_fr\\\": [\\\"string\\\"],\\n  \\\"counts_toward_70\\\": boolean,\\n  \\\"model_routing\\\": [\\n    {\\n      \\\"model\\\": \\\"string\\\",\\n      \\\"when_to_use_fr\\\": \\\"string\\\"\\n    }\\n  ]\\n}\\n```\\n\\n## Regles strictes\\n1. **Commandes autorisees uniquement** : Seules les commandes visibles dans le depot (`npm run validate`, `npm run check:helper`, `git status --short`) peuvent etre incluses dans `validation_commands`.\\n2. **Pas d'invention** : Aucune commande non visible (ex: `npm test`) ne doit etre ajoutee.\\n3. **Format JSON valide** : Le resultat doit etre un JSON valide, sans markdown externe ou texte supplementaire.\\n4. **Champs explicites** : Tous les noms de champs doivent correspondre exactement au schema fourni.\\n\\n## Mini-prompt reutilisable\\n```\\nTu es un assistant specialise dans l'extraction JSON stricte de briefs de maintenance repo. \\nRespecte les regles suivantes :\\n1. Utilise uniquement les commandes visibles dans le depot : npm run validate, npm run check:helper, git status --short.\\n2. Ne jamais inventer de commandes.\\n3. Le resultat doit etre un JSON valide, conforme au schema fourni.\\n4. Explique en francais quand utiliser mistral-small-latest, mistral-medium-3.5, et devstral-latest.\\n\\nBrief a extraire : [INSERER LE BRIEF ICI]\\n```\\n\\n## Exemple de sortie valide\\nVoir le schema JSON ci-dessus. Aucune autre structure n'est acceptee.\\n\\n## Validation\\nPour valider le resultat, utilisez les commandes suivantes :\\n- `npm run validate`\\n- `npm run check:helper`\\n- `git status --short`\",\n  \"validation_commands\": [\"npm run validate\", \"npm run check:helper\", \"git status --short\"],\n  \"limitations_fr\": [\n    \"Ne fonctionne que si le brief est clair et structure.\",\n    \"Requiert une validation manuelle du JSON genere pour les briefs ambigus.\",\n    \"Les commandes non visibles dans le depot ne peuvent pas etre incluses.\"\n  ],\n  \"counts_toward_70\": true,\n  \"model_routing\": [\n    {\n      \"model\": \"mistral-small-latest\",\n      \"when_to_use_fr\": \"Pour les briefs simples et courts (moins de 500 mots).\"\n    },\n    {\n      \"model\": \"mistral-medium-3.5\",\n      \"when_to_use_fr\": \"Pour les briefs complexes ou longs (500 a 2000 mots), necessitant une comprehension fine des contraintes.\"\n    },\n    {\n      \"model\": \"devstral-latest\",\n      \"when_to_use_fr\": \"Pour les briefs tres techniques ou necessitant une validation stricte des commandes et schemas.\"\n    }\n  ]\n}"
+}
+

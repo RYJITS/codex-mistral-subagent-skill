@@ -90,6 +90,21 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - **Complete Files**: Ask for complete file content rather than partial snippets to simplify integration.
 - **Validation Commands**: Include safe, local validation commands in project action outputs.
 
+### Strict JSON extraction for maintenance briefs
+
+- Freeze the exact field names, literal target path, and allowed validation commands in the prompt.
+- Parse the helper output twice when needed: once for the outer response, then for the JSON string stored in `text`.
+- Use `mistral-small-latest` only with a compact schema and short text fields; if it truncates, tighten the payload before retrying.
+- Prefer `mistral-medium-3.5` for richer French documentation payloads and `devstral-latest` when repo-shaped command fidelity matters.
+
+### UI/UX copy critique for scroll-driven pages
+
+- Use a small, real text sample from the target project rather than a full project scan.
+- Lock layout-sensitive constraints in the prompt: same ids, same number of title lines, short foot text, and no invented claims.
+- Prefer `mistral-medium-3.5` for the first rewrite pass and `mistral-large-latest` for critique or polish.
+- Do not count a run as valid if the model preserves JSON but breaks text structure needed by the layout.
+- See `mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md` for the validated French workflow from `2026-06-05`.
+
 ### Narrow Inconsistency Patches
 
 - If the goal is to align one real inconsistency between code and docs or config, do not ask for a broad repo rewrite.

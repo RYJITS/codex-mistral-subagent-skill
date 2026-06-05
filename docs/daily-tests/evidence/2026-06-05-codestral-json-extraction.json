@@ -1,0 +1,21 @@
+{
+  "model": "codestral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 684,
+    "total_tokens": 1376,
+    "completion_tokens": 692,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "125",
+    "x-ratelimit-limit-tokens-minute": "625000",
+    "x-ratelimit-remaining-req-minute": "124",
+    "x-ratelimit-remaining-tokens-minute": "623624",
+    "x-ratelimit-tokens-query-cost": "1376"
+  },
+  "text": "{\n  \"capability_name_fr\": \"Extraction JSON stricte d'un brief de maintenance repo\",\n  \"task_category\": \"Maintenance\",\n  \"target_file\": \"mistral-subagent/references/json-extraction-maintenance-fr.md\",\n  \"reference_markdown_fr\": \"Pour demander a Mistral une extraction JSON stricte pour un brief de maintenance repo, utilisez le modele suivant:\\n\\n```\\nDemande:\\nExtrais un plan JSON strict pour une reference de maintenance repo a partir du brief fourni. Respecte exactement le schema fourni dans le contexte, garde target_file exact, n'invente aucune commande, et redige reference_markdown_fr en francais.\\n\\nContexte:\\n- Depot: codex-mistral-subagent-skill\\n- Commandes de validation visibles et reelles:\\n  - npm run validate\\n  - npm run check:helper\\n  - git status --short\\n- Le helper supporte:\\n  - run --json\\n  - project-scan\\n  - project-action\\n- Les references existantes incluent deja:\\n  - repo-audit-public-fr.md\\n  - video-storyboard-scroll-driven-fr.md\\n  - delegation-playbook.md\\n- Le nouveau fichier cible peut etre:\\n  - mistral-subagent/references/json-extraction-maintenance-fr.md\\n\\nSchema JSON exige:\\n{\\n  \\\"capability_name_fr\\\": string,\\n  \\\"task_category\\\": string,\\n  \\\"target_file\\\": \\\"mistral-subagent/references/json-extraction-maintenance-fr.md\\\",\\n  \\\"reference_markdown_fr\\\": string,\\n  \\\"validation_commands\\\": string[],\\n  \\\"limitations_fr\\\": string[],\\n  \\\"counts_toward_70\\\": boolean,\\n  \\\"model_routing\\\": [\\n    {\\n      \\\"model\\\": string,\\n      \\\"when_to_use_fr\\\": string\\n    }\\n  ]\\n}\\n\\nRegles strictes:\\n- Repondre uniquement en JSON valide, sans Markdown externe.\\n- Ne jamais inventer de commande comme npm test.\\n- Garder target_file exact.\\n- reference_markdown_fr doit etre en francais.\\n- validation_commands doit rester borne aux commandes visibles dans ce contexte.\\n```\",\n  \"validation_commands\": [\n    \"npm run validate\",\n    \"npm run check:helper\",\n    \"git status --short\"\n  ],\n  \"limitations_fr\": [\n    \"Ne pas inventer de commandes\",\n    \"Rester borne aux commandes visibles dans le contexte\",\n    \"Respecter le schema JSON fourni\"\n  ],\n  \"counts_toward_70\": true,\n  \"model_routing\": [\n    {\n      \"model\": \"mistral-small-latest\",\n      \"when_to_use_fr\": \"Pour des taches simples et rapides\"\n    },\n    {\n      \"model\": \"mistral-medium-3.5\",\n      \"when_to_use_fr\": \"Pour des taches moyennes necessitant une comprehension plus approfondie\"\n    },\n    {\n      \"model\": \"devstral-latest\",\n      \"when_to_use_fr\": \"Pour des taches complexes necessitant une expertise technique avancee\"\n    }\n  ]\n}"
+}
+

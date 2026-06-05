@@ -1,0 +1,21 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 684,
+    "total_tokens": 1431,
+    "completion_tokens": 747,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "998573",
+    "x-ratelimit-tokens-query-cost": "1427"
+  },
+  "text": "{\n  \"capability_name_fr\": \"Extraction JSON stricte d'un brief de maintenance repo\",\n  \"task_category\": \"maintenance\",\n  \"target_file\": \"mistral-subagent/references/json-extraction-maintenance-fr.md\",\n  \"reference_markdown_fr\": \"# Extraction JSON stricte pour un brief de maintenance repo\\n\\n## Quand utiliser ce skill\\nCe skill est utile pour convertir un brief texte en un plan JSON exploitable par Codex, notamment pour des automations et suivis multi-projets.\\n\\n## Modeles recommandes\\n- **mistral-small-latest**: Pour des briefs simples et des extractions rapides.\\n- **mistral-medium-3.5**: Pour des briefs plus complexes necessitant une meilleure comprehension contextuelle.\\n- **devstral-latest**: Pour des briefs tres techniques ou necessitant une analyse approfondie.\\n\\n## Schema JSON exige\\nLe schema JSON doit respecter strictement les champs suivants:\\n- `capability_name_fr`: Nom de la capacite en francais.\\n- `task_category`: Categorie de la tache (ex: maintenance).\\n- `target_file`: Fichier cible pour la reference.\\n- `reference_markdown_fr`: Contenu de la reference en francais.\\n- `validation_commands`: Commandes de validation reelles du depot.\\n- `limitations_fr`: Limitations ou contraintes specifiques.\\n- `counts_toward_70`: Booleen indiquant si la tache compte vers un objectif specifique.\\n- `model_routing`: Liste des modeles recommandes et leurs cas d'usage.\\n\\n## Regles strictes\\n- Ne jamais inventer de commandes non visibles dans le depot.\\n- Respecter strictement le schema JSON fourni.\\n- Les commandes de validation doivent etre bornees aux commandes visibles dans le contexte.\\n\\n## Mini prompt reutilisable\\n```\\nExtrais un plan JSON strict pour une reference de maintenance repo a partir du brief suivant: [inserer le brief ici].\\nRespecte exactement le schema fourni et utilise uniquement les commandes de validation visibles dans le depot.\\n```\\n\\n## Commandes de validation\\nLes commandes de validation reelles du depot sont:\\n- `npm run validate`\\n- `npm run check:helper`\\n- `git status --short`\\n\\n## Limitations\\n- Ne pas inclure de commandes inventees.\\n- Garder le fichier cible exact.\\n- La reference doit etre en francais.\",\n  \"validation_commands\": [\n    \"npm run validate\",\n    \"npm run check:helper\",\n    \"git status --short\"\n  ],\n  \"limitations_fr\": [\n    \"Ne pas inventer de commandes non visibles dans le depot.\",\n    \"Respecter strictement le schema JSON fourni.\",\n    \"Les commandes de validation doivent etre bornees aux commandes visibles dans le contexte.\"\n  ],\n  \"counts_toward_70\": true,\n  \"model_routing\": [\n    {\n      \"model\": \"mistral-small-latest\",\n      \"when_to_use_fr\": \"Pour des briefs simples et des extractions rapides.\"\n    },\n    {\n      \"model\": \"mistral-medium-3.5\",\n      \"when_to_use_fr\": \"Pour des briefs plus complexes necessitant une meilleure comprehension contextuelle.\"\n    },\n    {\n      \"model\": \"devstral-latest\",\n      \"when_to_use_fr\": \"Pour des briefs tres techniques ou necessitant une analyse approfondie.\"\n    }\n  ]\n}"
+}
+
