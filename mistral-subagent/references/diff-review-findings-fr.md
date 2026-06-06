@@ -46,17 +46,24 @@ Contraintes recommandees:
 
 ## Routage modele valide
 
-- `mistral-medium-3.5`: meilleur choix par defaut pour une revue bornee avec restitution francaise exploitable.
-- `devstral-latest`: bon second avis quand le diff touche la logique repo ou plusieurs conditions dans un helper.
-- `codestral-latest`: utile pour confirmer un probleme code-shape, mais moins fiable ici pour prioriser les incoherences doc/commande.
-- `mistral-small-latest`: a reserver aux diffs tres compacts et aux schemas tres serres; sinon il peut produire un faux positif ou mal prioriser.
+- `devstral-latest`: meilleure premiere passe observee sur un helper compact quand il faut remonter des regressions reelles avec peu de bruit.
+- `mistral-medium-3.5`: premiere passe egalement valide quand il faut une synthese francaise plus propre sans perdre les findings critiques.
+- `codestral-latest`: utile comme second avis code-shaped, mais il peut manquer une regression implicite comme une degradation de `checkConfig`.
+- `mistral-small-latest`: a reserver aux diffs tres compacts et aux schemas tres serres; sur ce test il a vu le fond mais a ajoute un finding redondant.
 
 ## Limites observees
 
 - Un modele peut confondre un changement de documentation avec un vrai bug si le prompt ne rappelle pas que la doc du diff peut elle-meme etre fautive.
-- `mistral-small-latest` peut rater une commande inventee ou transformer une incoherence en simple mise a jour documentaire.
-- `codestral-latest` peut etre trop etroit et confirmer le changement code sans assez contester le contrat repo ou la commande README.
+- `mistral-small-latest` peut rester exact sur le fond tout en ajoutant un finding redondant ou trop bruyant pour une premiere passe stricte.
+- `codestral-latest` peut etre trop etroit et confirmer le changement code sans assez contester un contrat implicite du helper.
 - Le workflow ne remplace pas la verification Codex sur le comportement reel du repo.
+
+## Lecons du test 2026-06-06
+
+- `devstral-latest` et `mistral-medium-3.5` ont detecte correctement 2 regressions reelles sur 2.
+- `codestral-latest` a confirme l'inversion de priorite API, mais a manque la degradation de `checkConfig`.
+- `mistral-small-latest` a vu les 2 regressions reelles, mais a ajoute un troisieme finding redondant.
+- La meilleure formulation reste: au maximum 3 findings, uniquement des regressions reelles, user-impacting, et prouvees par le diff.
 
 ## Validation Codex
 
@@ -68,4 +75,5 @@ Checklist simple:
 2. parser la sortie JSON externe puis le JSON de `text` si necessaire;
 3. rejeter tout finding non prouve, vague, ou contradictoire avec le contexte;
 4. retenir seulement les findings qui changent vraiment la compatibilite, le comportement, ou les commandes utilisateur;
-5. lancer ensuite les commandes repo visibles, au minimum `npm run validate` et `npm run check:helper`.
+5. verifier en plus, si pertinent, qu'une cle uniquement dans le fichier env reste detectee et que `process.env` garde sa priorite sur le fichier env;
+6. lancer ensuite les commandes repo visibles, au minimum `npm run validate` et `npm run check:helper`.

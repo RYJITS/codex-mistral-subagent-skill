@@ -1,0 +1,31 @@
+Capacite validee a documenter:
+- revue de diff simple sur un helper Node.js de delegation Mistral
+
+Observations validees par Codex:
+- `devstral-latest` a detecte correctement 2 regressions sur 2
+- `mistral-medium-3.5` a detecte correctement 2 regressions sur 2
+- `codestral-latest` a detecte 1 regression sur 2 et a manque la degradation de `checkConfig`
+- `mistral-small-latest` a detecte les 2 regressions reelles mais a ajoute un troisieme finding redondant, donc trop bruyant pour une premiere passe stricte
+
+Regressions reelles verifiees localement:
+- le diff inverse la priorite de `getApiKey`: `fileEnv` passerait avant `process.env`
+- le diff casse `checkConfig`: la commande `check` ne detecterait plus une cle presente uniquement dans le fichier env
+
+Validations locales executees:
+- `node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs check`
+- `npm run validate`
+- `npm run check:helper`
+- verification ciblee:
+  - avec une cle seulement dans un fichier env temporaire, `check` retourne bien `api_key_configured: true`
+  - avec une cle dans `process.env` et une autre dans le fichier env, `getApiKey` retourne actuellement la valeur de `process.env`
+
+Fichier cible:
+- `mistral-subagent/references/diff-review-simple-fr.md`
+
+Ce que doit contenir la reference:
+- quand deleguer une revue de diff simple
+- contexte minimal a envoyer
+- schema JSON conseille pour les findings
+- routage modele recommande
+- validation Codex obligatoire
+- lecons du test du 2026-06-06

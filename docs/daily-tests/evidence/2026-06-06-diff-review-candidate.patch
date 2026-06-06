@@ -1,0 +1,29 @@
+diff --git a/mistral-subagent/scripts/mistral-subagent.mjs b/mistral-subagent/scripts/mistral-subagent.mjs
+index 2a8b111..9c1d222 100644
+--- a/mistral-subagent/scripts/mistral-subagent.mjs
++++ b/mistral-subagent/scripts/mistral-subagent.mjs
+@@ -99,10 +99,10 @@ function getApiKey(args) {
+   const envPath = path.resolve(args.env || DEFAULT_ENV);
+   const fileEnv = loadEnvFile(envPath);
+-  const apiKey = process.env.MISTRAL_API_KEY || fileEnv.MISTRAL_API_KEY ||
+-    process.env.MISTRAL_AI_API_KEY || fileEnv.MISTRAL_AI_API_KEY ||
+-    process.env.MISTRALAI_API_KEY || fileEnv.MISTRALAI_API_KEY ||
+-    process.env["MISTRAL.API_KEY"] || fileEnv["MISTRAL.API_KEY"];
++  const apiKey = fileEnv.MISTRAL_API_KEY || process.env.MISTRAL_API_KEY ||
++    fileEnv.MISTRAL_AI_API_KEY || process.env.MISTRAL_AI_API_KEY ||
++    fileEnv.MISTRALAI_API_KEY || process.env.MISTRALAI_API_KEY ||
++    fileEnv["MISTRAL.API_KEY"] || process.env["MISTRAL.API_KEY"];
+   if (!apiKey) {
+     throw new Error(`MISTRAL_API_KEY not found in environment or ${envPath}`);
+   }
+@@ -110,9 +110,8 @@ function getApiKey(args) {
+ 
+ function checkConfig(args) {
+   const envPath = path.resolve(args.env || DEFAULT_ENV);
+-  const fileEnv = loadEnvFile(envPath);
+   const aliases = ["MISTRAL_API_KEY", "MISTRAL_AI_API_KEY", "MISTRALAI_API_KEY", "MISTRAL.API_KEY"];
+-  const found = aliases.filter((name) => Boolean(process.env[name] || fileEnv[name]));
++  const found = aliases.filter((name) => Boolean(process.env[name]));
+   return {
+     env_path: envPath,
+     env_file_exists: fs.existsSync(envPath),

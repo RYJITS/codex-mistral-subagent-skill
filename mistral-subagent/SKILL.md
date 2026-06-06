@@ -152,4 +152,5 @@ Read these only when needed:
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
 - `references/task-delegation-triage-fr.md`: French note for classifying real project tasks into `oui`, `partiel`, and `non` before choosing a Mistral model.
 - `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
+- `references/diff-review-findings-fr.md`: French workflow for bounded diff review with actionable findings on a compact helper patch.
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.

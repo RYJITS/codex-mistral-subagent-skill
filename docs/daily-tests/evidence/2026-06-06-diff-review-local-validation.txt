@@ -1,0 +1,34 @@
+CHECK_ONLY_FILE
+{
+  "env_path": "C:\\Users\\ysche\\AppData\\Local\\Temp\\mistral-lab-2026-06-06.env",
+  "env_file_exists": true,
+  "api_key_configured": true,
+  "accepted_key_names": [
+    "MISTRAL_API_KEY",
+    "MISTRAL_AI_API_KEY",
+    "MISTRALAI_API_KEY",
+    "MISTRAL.API_KEY"
+  ],
+  "configured_key_names": [
+    "MISTRAL_API_KEY"
+  ]
+}
+
+PROBE_RESULT
+{
+  "selected_api_key": "from_process",
+  "check_config": {
+    "env_path": "C:\\Users\\ysche\\AppData\\Local\\Temp\\mistral-lab-2026-06-06.env",
+    "env_file_exists": true,
+    "api_key_configured": true,
+    "accepted_key_names": [
+      "MISTRAL_API_KEY",
+      "MISTRAL_AI_API_KEY",
+      "MISTRALAI_API_KEY",
+      "MISTRAL.API_KEY"
+    ],
+    "configured_key_names": [
+      "MISTRAL_API_KEY"
+    ]
+  }
+}
