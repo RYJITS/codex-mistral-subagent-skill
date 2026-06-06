@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1001,
+    "total_tokens": 1399,
+    "completion_tokens": 398,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "46727",
+    "x-ratelimit-tokens-query-cost": "1399"
+  },
+  "text": "{\"T1\": {\"delegation_mode\": \"oui\", \"recommended_model\": \"mistral-large-latest\", \"redaction_level\": \"minimale\", \"must_stay_with_codex_fr\": null}, \"T2\": {\"delegation_mode\": \"oui\", \"recommended_model\": \"mistral-small-latest\", \"redaction_level\": \"minimale\", \"must_stay_with_codex_fr\": null}, \"T3\": {\"delegation_mode\": \"oui\", \"recommended_model\": \"mistral-medium-3.5\", \"redaction_level\": \"minimale\", \"must_stay_with_codex_fr\": null}, \"T4\": {\"delegation_mode\": \"non\", \"recommended_model\": \"none\", \"redaction_level\": \"none\", \"must_stay_with_codex_fr\": \"Acc?s ? un fichier env priv? interdit.\"}, \"T5\": {\"delegation_mode\": \"oui\", \"recommended_model\": \"mistral-small-latest\", \"redaction_level\": \"minimale\", \"must_stay_with_codex_fr\": null}, \"T6\": {\"delegation_mode\": \"non\", \"recommended_model\": \"none\", \"redaction_level\": \"none\", \"must_stay_with_codex_fr\": \"Actions shell, commit et push interdites.\"}, \"T7\": {\"delegation_mode\": \"oui\", \"recommended_model\": \"mistral-large-latest\", \"redaction_level\": \"minimale\", \"must_stay_with_codex_fr\": null}, \"T8\": {\"delegation_mode\": \"partiel\", \"recommended_model\": \"mistral-medium-3.5\", \"redaction_level\": \"forte\", \"must_stay_with_codex_fr\": \"Codex doit valider la licence et la politique de s?curit? finale avant publication.\"}}"
+}

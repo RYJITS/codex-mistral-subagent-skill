@@ -1,0 +1,395 @@
+[
+  {
+    "file": "2026-06-06-mistral-small-task-triage.json",
+    "model": "mistral-small-latest",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1001,
+      "total_tokens": 1399,
+      "completion_tokens": 398,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": false,
+    "array_fields_ok": false,
+    "triage_count": 0,
+    "exact_matches": 0,
+    "mismatches": [
+      {
+        "task_id": "T1",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T2",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T3",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T4",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T5",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T6",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T7",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T8",
+        "issue": "missing"
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-mistral-medium35-task-triage.json",
+    "model": "mistral-medium-3.5",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1001,
+      "total_tokens": 1607,
+      "completion_tokens": 606,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": false,
+    "array_fields_ok": false,
+    "triage_count": 0,
+    "exact_matches": 0,
+    "mismatches": [
+      {
+        "task_id": "T1",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T2",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T3",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T4",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T5",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T6",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T7",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T8",
+        "issue": "missing"
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-devstral-task-triage.json",
+    "model": "devstral-latest",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1001,
+      "total_tokens": 1542,
+      "completion_tokens": 541,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": false,
+    "array_fields_ok": false,
+    "triage_count": 0,
+    "exact_matches": 0,
+    "mismatches": [
+      {
+        "task_id": "T1",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T2",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T3",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T4",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T5",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T6",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T7",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T8",
+        "issue": "missing"
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-mistral-large-task-triage.json",
+    "model": "mistral-large-latest",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1001,
+      "total_tokens": 1548,
+      "completion_tokens": 547,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": false,
+    "array_fields_ok": false,
+    "triage_count": 0,
+    "exact_matches": 0,
+    "mismatches": [
+      {
+        "task_id": "T1",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T2",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T3",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T4",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T5",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T6",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T7",
+        "issue": "missing"
+      },
+      {
+        "task_id": "T8",
+        "issue": "missing"
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-mistral-small-task-triage-retry.json",
+    "model": "mistral-small-latest",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1095,
+      "total_tokens": 2068,
+      "completion_tokens": 973,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": true,
+    "array_fields_ok": false,
+    "triage_count": 8,
+    "exact_matches": 3,
+    "mismatches": [
+      {
+        "task_id": "T2",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "codestral-latest"
+        }
+      },
+      {
+        "task_id": "T3",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-small-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T5",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T7",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-large-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T8",
+        "expected": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-large-latest"
+        },
+        "got": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-small-latest"
+        }
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-mistral-medium35-task-triage-retry.json",
+    "model": "mistral-medium-3.5",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1095,
+      "total_tokens": 2223,
+      "completion_tokens": 1128,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": true,
+    "array_fields_ok": true,
+    "triage_count": 8,
+    "exact_matches": 4,
+    "mismatches": [
+      {
+        "task_id": "T2",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T3",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-small-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T5",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T8",
+        "expected": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-large-latest"
+        },
+        "got": {
+          "delegation_mode": "non",
+          "recommended_model": "none"
+        }
+      }
+    ]
+  },
+  {
+    "file": "2026-06-06-mistral-large-task-triage-retry.json",
+    "model": "mistral-large-latest",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 1095,
+      "total_tokens": 2368,
+      "completion_tokens": 1273,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "top_level_keys_ok": true,
+    "array_fields_ok": true,
+    "triage_count": 8,
+    "exact_matches": 5,
+    "mismatches": [
+      {
+        "task_id": "T2",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "oui",
+          "recommended_model": "codestral-latest"
+        }
+      },
+      {
+        "task_id": "T3",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "mistral-small-latest"
+        },
+        "got": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      },
+      {
+        "task_id": "T5",
+        "expected": {
+          "delegation_mode": "oui",
+          "recommended_model": "devstral-latest"
+        },
+        "got": {
+          "delegation_mode": "partiel",
+          "recommended_model": "mistral-medium-3.5"
+        }
+      }
+    ]
+  }
+]

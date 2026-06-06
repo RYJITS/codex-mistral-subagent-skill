@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1001,
+    "total_tokens": 1542,
+    "completion_tokens": 541,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "996579",
+    "x-ratelimit-tokens-query-cost": "1542"
+  },
+  "text": "{\n  \"verdict\": \"valide\",\n  \"task_category\": \"classification\",\n  \"tasks\": {\n    \"T1\": {\n      \"delegation_mode\": \"oui\",\n      \"recommended_model\": \"mistral-medium-3.5\",\n      \"redaction_level\": \"none\",\n      \"justification\": \"R??criture de contenu public sans acc?s ? des ?l?ments sensibles ou techniques.\"\n    },\n    \"T2\": {\n      \"delegation_mode\": \"oui\",\n      \"recommended_model\": \"mistral-small-latest\",\n      \"redaction_level\": \"none\",\n      \"justification\": \"Analyse de fichiers publics et proposition d'id?es de tests sans ex?cution ni acc?s ? des donn?es sensibles.\"\n    },\n    \"T3\": {\n      \"delegation_mode\": \"oui\",\n      \"recommended_model\": \"mistral-medium-3.5\",\n      \"redaction_level\": \"none\",\n      \"justification\": \"Conversion d'un brief public en JSON sans acc?s ? des secrets ou ex?cution de commandes.\"\n    },\n    \"T4\": {\n      \"delegation_mode\": \"non\",\n      \"recommended_model\": \"none\",\n      \"redaction_level\": \"totale\",\n      \"justification\": \"Acc?s ? un fichier env contenant des secrets.\"\n    },\n    \"T5\": {\n      \"delegation_mode\": \"partiel\",\n      \"recommended_model\": \"mistral-medium-3.5\",\n      \"redaction_level\": \"minimale\",\n      \"must_stay_with_codex_fr\": \"Ex?cution des commandes locales de v?rification.\",\n      \"justification\": \"Proposition de documentation publique possible, mais ex?cution de commandes r?serv?e ? Codex.\"\n    },\n    \"T6\": {\n      \"delegation_mode\": \"non\",\n      \"recommended_model\": \"none\",\n      \"redaction_level\": \"totale\",\n      \"justification\": \"Ex?cution de commandes shell, commit et push interdits pour Mistral.\"\n    },\n    \"T7\": {\n      \"delegation_mode\": \"oui\",\n      \"recommended_model\": \"mistral-large-latest\",\n      \"redaction_level\": \"none\",\n      \"justification\": \"R?daction cr?ative bas?e sur un brief public sans acc?s ? des donn?es sensibles.\"\n    },\n    \"T8\": {\n      \"delegation_mode\": \"non\",\n      \"recommended_model\": \"none\",\n      \"redaction_level\": \"totale\",\n      \"justification\": \"D?cision strat?gique et l?gale n?cessitant une validation humaine.\"\n    }\n  }\n}"
+}

@@ -1,0 +1,26 @@
+Retourne uniquement un objet JSON valide avec exactement ces cles top-level:
+- verdict
+- task_category
+- why_it_matters_fr
+- triage
+- global_rules_fr
+- limitations_fr
+
+Important:
+- `triage` doit etre un tableau JSON, pas un objet.
+- Interdiction d'utiliser des cles comme `T1`, `delegations` ou `tasks` au top-level.
+- Le tableau `triage` doit contenir exactement 8 objets, dans l'ordre T1 a T8.
+- Chaque objet doit contenir exactement ces cles:
+  `task_id`, `delegation_mode`, `recommended_model`, `redaction_level`, `delegable_scope_fr`, `must_stay_with_codex_fr`, `reason_fr`
+- Valeurs autorisees:
+  - `delegation_mode`: `oui`, `partiel`, `non`
+  - `recommended_model`: `mistral-small-latest`, `mistral-medium-3.5`, `mistral-large-latest`, `devstral-latest`, `codestral-latest`, `none`
+  - `redaction_level`: `none`, `minimale`, `forte`, `totale`
+- Si `delegation_mode` = `non`, alors `recommended_model` = `none`
+- Si `delegation_mode` = `oui`, mets `must_stay_with_codex_fr` a `Verification locale et integration`
+- Si `delegation_mode` = `partiel`, precise la partie finale qui reste chez Codex
+- Une phrase courte maximum par champ textuel
+- Ne jamais deleguer secret, env file, shell, commit, push, memoire
+
+But:
+Classifier T1 a T8 pour dire si une premiere passe peut etre deleguee a Mistral.

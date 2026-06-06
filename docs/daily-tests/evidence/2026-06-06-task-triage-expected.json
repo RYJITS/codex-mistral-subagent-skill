@@ -1,0 +1,34 @@
+{
+  "T1": {
+    "delegation_mode": "oui",
+    "recommended_model": "mistral-medium-3.5"
+  },
+  "T2": {
+    "delegation_mode": "oui",
+    "recommended_model": "devstral-latest"
+  },
+  "T3": {
+    "delegation_mode": "oui",
+    "recommended_model": "mistral-small-latest"
+  },
+  "T4": {
+    "delegation_mode": "non",
+    "recommended_model": "none"
+  },
+  "T5": {
+    "delegation_mode": "oui",
+    "recommended_model": "devstral-latest"
+  },
+  "T6": {
+    "delegation_mode": "non",
+    "recommended_model": "none"
+  },
+  "T7": {
+    "delegation_mode": "oui",
+    "recommended_model": "mistral-large-latest"
+  },
+  "T8": {
+    "delegation_mode": "partiel",
+    "recommended_model": "mistral-large-latest"
+  }
+}

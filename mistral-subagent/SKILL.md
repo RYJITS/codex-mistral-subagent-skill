@@ -150,5 +150,6 @@ Read these only when needed:
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
+- `references/task-delegation-triage-fr.md`: French note for classifying real project tasks into `oui`, `partiel`, and `non` before choosing a Mistral model.
 - `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.

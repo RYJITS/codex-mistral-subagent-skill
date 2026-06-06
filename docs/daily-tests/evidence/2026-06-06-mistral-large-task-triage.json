@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1001,
+    "total_tokens": 1548,
+    "completion_tokens": 547,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "248452",
+    "x-ratelimit-tokens-query-cost": "1548"
+  },
+  "text": "{\n  \"T1\": {\n    \"delegation_mode\": \"oui\",\n    \"recommended_model\": \"mistral-medium-3.5\",\n    \"redaction_level\": \"minimale\",\n    \"justification\": \"R??criture de contenu textuel public sans modification technique.\"\n  },\n  \"T2\": {\n    \"delegation_mode\": \"oui\",\n    \"recommended_model\": \"codestral-latest\",\n    \"redaction_level\": \"none\",\n    \"justification\": \"Analyse de fichiers publics pour proposition de tests unitaires en JSON.\"\n  },\n  \"T3\": {\n    \"delegation_mode\": \"oui\",\n    \"recommended_model\": \"mistral-medium-3.5\",\n    \"redaction_level\": \"minimale\",\n    \"justification\": \"Conversion de brief public en JSON sans cr?ation de scripts.\"\n  },\n  \"T4\": {\n    \"delegation_mode\": \"non\",\n    \"recommended_model\": \"none\",\n    \"redaction_level\": \"totale\",\n    \"justification\": \"Acc?s ? un fichier env.Local contenant potentiellement des secrets.\"\n  },\n  \"T5\": {\n    \"delegation_mode\": \"oui\",\n    \"recommended_model\": \"mistral-medium-3.5\",\n    \"redaction_level\": \"minimale\",\n    \"justification\": \"Am?lioration de documentation publique et commandes de v?rification locales.\"\n  },\n  \"T6\": {\n    \"delegation_mode\": \"non\",\n    \"recommended_model\": \"none\",\n    \"redaction_level\": \"totale\",\n    \"justification\": \"Ex?cution de commandes shell, commit et push non d?l?guables.\"\n  },\n  \"T7\": {\n    \"delegation_mode\": \"oui\",\n    \"recommended_model\": \"mistral-large-latest\",\n    \"redaction_level\": \"minimale\",\n    \"justification\": \"R?daction de prompt storyboard ? partir d'un brief public.\"\n  },\n  \"T8\": {\n    \"delegation_mode\": \"partiel\",\n    \"recommended_model\": \"mistral-large-latest\",\n    \"redaction_level\": \"forte\",\n    \"must_stay_with_codex_fr\": \"Validation finale et application des choix de licence et politique de s?curit?, car cela engage la responsabilit? l?gale et la conformit? du projet.\",\n    \"justification\": \"Proposition de licences et politiques de s?curit? bas?es sur des standards publics, mais d?cision finale r?serv?e ? Codex.\"\n  },\n  \"verdict\": \"valide\",\n  \"task_category\": \"classification\"\n}"
+}
