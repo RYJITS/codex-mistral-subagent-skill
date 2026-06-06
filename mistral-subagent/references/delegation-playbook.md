@@ -120,6 +120,15 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - Start with `devstral-latest` for repository reasoning. Use `codestral-latest` as a second opinion when the change is code-shaped.
 - Expect Codex to normalize placeholder diffs and reject invented files, line numbers, or commands before applying anything.
 
+### Bounded diff review with actionable findings
+
+- Send the unified diff plus only the source excerpts needed to prove the expected behavior before the change.
+- Freeze a strict JSON schema with `findings`, `best_findings_for_codex`, `validation_commands`, and `limitations_fr`.
+- Prefer `mistral-medium-3.5` for the default French review pass, then `devstral-latest` as a second opinion on repo logic.
+- Treat `codestral-latest` as a narrow code-focused reviewer and `mistral-small-latest` only for very compact diffs and tight schemas.
+- Reject findings that merely restate the diff, accept the changed documentation at face value, or cite commands not proven in the repo.
+- See `mistral-subagent/references/diff-review-findings-fr.md` for the validated French workflow from `2026-06-06`.
+
 ### Rate Limit Handling
 
 - Monitor rate limit headers and handle `429` responses gracefully.

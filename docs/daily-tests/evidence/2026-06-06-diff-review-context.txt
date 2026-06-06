@@ -1,0 +1,66 @@
+Projet source: D:\00_Cerveau_IA\Projet\codex-mistral-subagent-skill
+
+Capacite candidate a tester:
+- revue de diff simple et stricte sur un helper Node.js de delegation Mistral
+- objectif: verifier si Mistral peut signaler seulement des regressions reelles et bornees avant qu'un patch ne soit applique
+
+Pourquoi cette capacite compte dans les projets reels:
+- les projets du cerveau central ajoutent souvent de petits patches sur des helpers, scripts et skills
+- une premiere passe de code review moins couteuse est utile si elle reste ancree dans le diff reel
+- la capacite ne compte comme validee que si les findings retenus sont exacts et directement reutilises par Codex
+
+Contexte repo visible:
+- helper cible: `mistral-subagent/scripts/mistral-subagent.mjs`
+- commandes visibles et reelles:
+  - `node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs check`
+  - `npm run validate`
+  - `npm run check:helper`
+- comportement actuel attendu, deja verifie dans le repo:
+  - `getApiKey(args)` privilegie d'abord `process.env`, puis le fichier env local
+  - `checkConfig(args)` doit detecter une cle configuree soit dans `process.env`, soit dans `D:\00_Cerveau_IA\API\env.Local`
+
+Diff candidat a relire:
+
+```diff
+diff --git a/mistral-subagent/scripts/mistral-subagent.mjs b/mistral-subagent/scripts/mistral-subagent.mjs
+index 2a8b111..9c1d222 100644
+--- a/mistral-subagent/scripts/mistral-subagent.mjs
++++ b/mistral-subagent/scripts/mistral-subagent.mjs
+@@ -99,10 +99,10 @@ function getApiKey(args) {
+   const envPath = path.resolve(args.env || DEFAULT_ENV);
+   const fileEnv = loadEnvFile(envPath);
+-  const apiKey = process.env.MISTRAL_API_KEY || fileEnv.MISTRAL_API_KEY ||
+-    process.env.MISTRAL_AI_API_KEY || fileEnv.MISTRAL_AI_API_KEY ||
+-    process.env.MISTRALAI_API_KEY || fileEnv.MISTRALAI_API_KEY ||
+-    process.env["MISTRAL.API_KEY"] || fileEnv["MISTRAL.API_KEY"];
++  const apiKey = fileEnv.MISTRAL_API_KEY || process.env.MISTRAL_API_KEY ||
++    fileEnv.MISTRAL_AI_API_KEY || process.env.MISTRAL_AI_API_KEY ||
++    fileEnv.MISTRALAI_API_KEY || process.env.MISTRALAI_API_KEY ||
++    fileEnv["MISTRAL.API_KEY"] || process.env["MISTRAL.API_KEY"];
+   if (!apiKey) {
+     throw new Error(`MISTRAL_API_KEY not found in environment or ${envPath}`);
+   }
+@@ -110,9 +110,8 @@ function getApiKey(args) {
+ 
+ function checkConfig(args) {
+   const envPath = path.resolve(args.env || DEFAULT_ENV);
+-  const fileEnv = loadEnvFile(envPath);
+   const aliases = ["MISTRAL_API_KEY", "MISTRAL_AI_API_KEY", "MISTRALAI_API_KEY", "MISTRAL.API_KEY"];
+-  const found = aliases.filter((name) => Boolean(process.env[name] || fileEnv[name]));
++  const found = aliases.filter((name) => Boolean(process.env[name]));
+   return {
+     env_path: envPath,
+     env_file_exists: fs.existsSync(envPath),
+```
+
+Ce que Codex veut du reviewer:
+- au maximum 3 findings
+- seulement des regressions reelles, user-impacting, et directement visibles dans le diff
+- pas de commentaires de style, pas d'hypothese non ancree, pas de commande inventee
+- repondre en francais
+
+Verification locale deja disponible pour juger les findings:
+- `node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs check`
+- lecture du code actuel de `getApiKey` et `checkConfig`
+- `npm run validate`
+- `npm run check:helper`

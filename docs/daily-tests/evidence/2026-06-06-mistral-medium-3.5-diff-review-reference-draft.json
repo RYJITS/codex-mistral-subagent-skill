@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 697,
+    "total_tokens": 1292,
+    "completion_tokens": 595,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "21580",
+    "x-ratelimit-tokens-query-cost": "1292"
+  },
+  "text": "```markdown\n# mistral-subagent: revue born?e de diff\n\n## Quand l'utiliser\nPour une premi?re passe de code review sur des patches Node.js de petite taille (<50 lignes modifi?es), lorsque :\n- Le diff est isol? et auto-suffisant (pas de d?pendances externes non visibles)\n- L'objectif est de d?tecter des r?gressions fonctionnelles *uniquement* (pas de style, pas de perf)\n- Le contexte minimal (fichier modifi? + commandes de test) est disponible\n\n## Contexte minimal ? envoyer\n- Le diff complet (format `git diff` ou patch unifi?)\n- La liste des commandes de validation locales *r?elles* (ex: `node ... check`, `npm run validate`)\n- Le comportement attendu *d?j? v?rifi?* des fonctions modifi?es (ex: ordre de priorit? de `getApiKey`)\n\n## Prompt conseill?\n\"Analyse ce diff pour identifier au maximum 3 r?gressions *r?elles et user-impacting* :\n1. Ne consid?re que les changements visibles dans le diff.\n2. Ignore le style, les commentaires, ou les hypoth?ses non ancr?es dans le code modifi?.\n3. Pour chaque finding, cite la ligne exacte du diff et explique l'impact utilisateur.\n4. V?rifie que tes findings sont reproductibles avec les commandes : [liste fournie].\nR?ponds en fran?ais, format : `[Ligne] : [Probl?me] -> [Impact]`. Si aucun finding, r?ponds 'Aucune r?gression d?tect?e'.\"\n\n## Routage mod?le\n- `mistral-medium-3.5` : par d?faut pour les diffs <200 lignes (?quilibre pr?cision/co?t)\n- `devstral-latest` : si le diff implique de la logique complexe (ex: gestion d'erreurs asynchrone)\n- `codestral-latest` : si le diff modifie des algorithmes critiques (ex: parsing de config, s?curit?)\n- `mistral-small-latest` : uniquement pour des diffs triviaux (<10 lignes) ou des validations de syntaxe\n\n## Limites observ?es\n- Faux positifs sur les variables d'environnement si le contexte de priorit? (`process.env` vs fichier) n'est pas explicitement rappel?\n- Oublie parfois de v?rifier l'alignement avec les commandes de test locales (ex: `npm run validate`)\n- Peut manquer des r?gressions si le diff d?pend de fichiers non fournis (ex: `env.Local` non inclus)\n\n## Validation Codex\nUn finding est retenu si :\n1. Il est ancr? dans le diff (ligne cit?e)\n2. Il est reproductible avec les commandes locales fournies\n3. Il impacte directement l'utilisateur final (ex: erreur en production, comportement invers?)\n```"
+}

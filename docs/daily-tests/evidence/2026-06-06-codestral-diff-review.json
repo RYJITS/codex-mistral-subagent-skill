@@ -1,0 +1,20 @@
+{
+  "model": "codestral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1305,
+    "total_tokens": 1655,
+    "completion_tokens": 350,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "125",
+    "x-ratelimit-limit-tokens-minute": "625000",
+    "x-ratelimit-remaining-req-minute": "124",
+    "x-ratelimit-remaining-tokens-minute": "622587",
+    "x-ratelimit-tokens-query-cost": "1655"
+  },
+  "text": "{\n  \"verdict\": \"partiellement_valide\",\n  \"task_category\": \"revue_diff_simple\",\n  \"overall_summary_fr\": \"Le diff montre une regression dans la priorite de la recherche de la cle API, mais ne montre pas de regression dans la detection de la configuration.\",\n  \"findings\": [\n    {\n      \"id\": \"F1\",\n      \"severity\": \"high\",\n      \"location\": \"mistral-subagent/scripts/mistral-subagent.mjs\",\n      \"title_fr\": \"Regression dans la priorite de la recherche de la cle API\",\n      \"why_fr\": \"La priorite de la recherche de la cle API a ete modifiee pour donner la priorite au fichier env local au lieu de l'environnement.\",\n      \"user_impact_fr\": \"Les utilisateurs qui dependent de la cle API dans l'environnement pourront ne pas la trouver si elle est aussi presente dans le fichier env local.\",\n      \"suggested_fix_fr\": \"Revertir la priorite de la recherche de la cle API pour donner la priorite a l'environnement.\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"validation_commands\": [\n    \"node C:\\\\Users\\\\ysche\\\\.codex\\\\skills\\\\mistral-subagent\\\\scripts\\\\mistral-subagent.mjs check\",\n    \"npm run validate\",\n    \"npm run check:helper\"\n  ],\n  \"limitations_fr\": [\n    \"Le diff ne montre pas de regression dans la detection de la configuration.\",\n    \"La capacite de Mistral a detecter les regressions est limitee par le contexte fourni.\"\n  ]\n}"
+}
