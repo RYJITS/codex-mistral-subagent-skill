@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1356,
+    "total_tokens": 2047,
+    "completion_tokens": 691,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "41",
+    "x-ratelimit-remaining-tokens-minute": "43080",
+    "x-ratelimit-tokens-query-cost": "2047"
+  },
+  "text": "{\"verdict\": \"partiellement_valide\", \"task_category\": \"triage_commentaires_review\", \"overall_summary_fr\": \"3 commentaires n\u00e9cessitent une action imm\u00e9diate (2 dans README.md, 1 dans SKILL.md), 2 doivent \u00eatre rejet\u00e9s (d\u00e9cisions strat\u00e9giques ou commandes inexistantes), et 1 exige une d\u00e9cision humaine (licence).\", \"actions\": [{\"comment_id\": \"R1\", \"disposition\": \"apply_now\", \"target_path\": \"README.md\", \"reason_fr\": \"Le README doit documenter la commande `quota-report` d\u00e9j\u00e0 pr\u00e9sente dans le code, ce qui est une omission claire.\", \"validation_commands\": [\"Select-String -Path README.md -Pattern 'quota-report'\"]}, {\"comment_id\": \"R2\", \"disposition\": \"apply_now\", \"target_path\": \"mistral-subagent/SKILL.md\", \"reason_fr\": \"La section References doit lister les fichiers existants `json-extraction-maintenance-fr.md` et `ui-ux-copy-scroll-driven-fr.md`.\", \"validation_commands\": [\"Select-String -Path mistral-subagent/SKILL.md -Pattern 'json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr'\"]}, {\"comment_id\": \"R3\", \"disposition\": \"reject\", \"target_path\": \"none\", \"reason_fr\": \"Les commits et pushes automatiques sont interdits par SKILL.md et rel\u00e8vent d'une d\u00e9cision strat\u00e9gique non automatisable.\", \"validation_commands\": []}, {\"comment_id\": \"R4\", \"disposition\": \"needs_human\", \"target_path\": \"LICENSE\", \"reason_fr\": \"Le choix de la licence (MIT) est une d\u00e9cision l\u00e9gale finale qui d\u00e9passe le cadre technique.\", \"validation_commands\": []}, {\"comment_id\": \"R5\", \"disposition\": \"reject\", \"target_path\": \"none\", \"reason_fr\": \"La commande `npm test` n'existe pas dans package.json et son ajout rel\u00e8ve d'une d\u00e9cision de standardisation non document\u00e9e dans le contexte.\", \"validation_commands\": []}, {\"comment_id\": \"R6\", \"disposition\": \"reject\", \"target_path\": \"none\", \"reason_fr\": \"Le helper supporte d\u00e9j\u00e0 `MISTRAL_ENV_FILE` via `process.env.MISTRAL_ENV_FILE` et cette option est d\u00e9j\u00e0 document\u00e9e dans README.md.\", \"validation_commands\": [\"Select-String -Path README.md -Pattern 'MISTRAL_ENV_FILE'\"]}], \"global_rules_fr\": [\"Les d\u00e9cisions de licence finales sont r\u00e9serv\u00e9es aux humains.\", \"Les automatisations de commit/push sont interdites par SKILL.md.\", \"Les commandes doivent \u00eatre document\u00e9es dans README.md ou SKILL.md si elles existent dans le code.\", \"Les fichiers de r\u00e9f\u00e9rence existants doivent \u00eatre list\u00e9s dans SKILL.md s'ils sont pertinents.\"], \"limitations_fr\": [\"Aucune commande `npm test` n'est pr\u00e9sente dans package.json, donc son ajout ne peut \u00eatre valid\u00e9 sans contexte suppl\u00e9mentaire.\", \"Les d\u00e9cisions strat\u00e9giques (licence, automatisations) ne peuvent \u00eatre prises par Mistral seul.\", \"Les chemins de fichiers doivent \u00eatre v\u00e9rifi\u00e9s dans le repo avant toute action.\"]}"
+}

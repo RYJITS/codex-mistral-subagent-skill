@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2149,
+    "total_tokens": 2586,
+    "completion_tokens": 437,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "20902",
+    "x-ratelimit-tokens-query-cost": "2586"
+  },
+  "text": "```markdown\n# Triage de commentaires de review en francais\n\n## Quand l'utiliser\nPour trier automatiquement des commentaires de review bornes (6 max) avec un contexte repo verifie. La capacite n'est validee que sous verification Codex.\n\n## Contexte minimal a envoyer\n- 6 commentaires de review bornes\n- Contexte repo verifie (fichiers pertinents, historique recent)\n\n## Prompt conseille\nRetourne un JSON strict avec:\n- `verdict`\n- `task_category`\n- `overall_summary_fr`\n- `actions` (tableau d'objets avec `comment_id`, `disposition`, `target_path`, `reason_fr`, `validation_commands`)\n- `global_rules_fr`\n- `limitations_fr`\n\nDispositions autorisees: `apply_now`, `needs_human`, `reject`.\n\n## Routage modele valide\n- `mistral-medium-3.5` (retry): pleinement exploitable\n- `devstral-latest` (retry) et `mistral-large-latest` (retry): triage confirme mais resume moins strict\n\n## Limites observees\n- `mistral-small-latest`: classe correctement les 6 actions mais derive sur les commandes et le resume\n- Respect strict des commandes de validation et du format JSON obligatoire\n\n## Lecons du test 2026-06-07\n- Seuls les retries de `mistral-medium-3.5` ont produit un resultat strictement conforme\n- Les autres modeles valident le triage mais echouent sur la rigidite du resume ou des commandes\n\n## Validation Codex\nCommandes de validation autorisees:\n- `npm run validate`\n- `npm run check:helper`\n- `git status --short`\n- `Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'`\n```"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1356,
+    "total_tokens": 2035,
+    "completion_tokens": 679,
+    "prompt_tokens_details": {
+      "cached_tokens": 52
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "41",
+    "x-ratelimit-remaining-tokens-minute": "993764",
+    "x-ratelimit-tokens-query-cost": "1983"
+  },
+  "text": "{\n  \"verdict\": \"valide\",\n  \"task_category\": \"triage_commentaires_review\",\n  \"overall_summary_fr\": \"Triage de 6 commentaires de review en actions exploitables par Codex, avec classification en apply_now, needs_human ou reject.\",\n  \"actions\": [\n    {\n      \"comment_id\": \"R1\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"README.md\",\n      \"reason_fr\": \"La commande quota-report existe mais n'est pas document\u00e9e dans le README. Il faut ajouter un exemple d'usage.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md -Pattern 'quota-report'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R2\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"mistral-subagent/SKILL.md\",\n      \"reason_fr\": \"Les fichiers de r\u00e9f\u00e9rence existent mais ne sont pas list\u00e9s dans SKILL.md. Il faut les ajouter.\",\n      \"validation_commands\": [\n        \"Select-String -Path mistral-subagent/SKILL.md -Pattern 'json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R3\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"SKILL.md interdit les pushes automatiques. Cette demande est rejet\u00e9e.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R4\",\n      \"disposition\": \"needs_human\",\n      \"target_path\": \"LICENSE\",\n      \"reason_fr\": \"Le choix de licence (MIT) est une d\u00e9cision strat\u00e9gique qui n\u00e9cessite une validation humaine.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R5\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"npm test n'existe pas dans package.json et ne peut pas \u00eatre ajout\u00e9 sans d\u00e9cision humaine.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R6\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"README.md mentionne d\u00e9j\u00e0 MISTRAL_ENV_FILE. Aucune action n\u00e9cessaire.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md -Pattern 'MISTRAL_ENV_FILE'\"\n      ]\n    }\n  ],\n  \"global_rules_fr\": [\n    \"Ne jamais appliquer de changements non explicitement demand\u00e9s dans les commentaires.\",\n    \"Respecter les interdits d\u00e9finis dans SKILL.md (pas de pushes automatiques, pas de d\u00e9cisions de licence par Mistral seul).\",\n    \"Utiliser uniquement les commandes de validation autoris\u00e9es et visibles dans le contexte.\"\n  ],\n  \"limitations_fr\": [\n    \"Aucune commande ou script hors contexte ne peut \u00eatre invent\u00e9 ou utilis\u00e9.\",\n    \"Les d\u00e9cisions strat\u00e9giques (licence, ajout de commandes non existantes) n\u00e9cessitent une validation humaine.\",\n    \"Les validations sont limit\u00e9es aux commandes visibles dans package.json ou aux recherches de motifs dans les fichiers existants.\"\n  ]\n}"
+}

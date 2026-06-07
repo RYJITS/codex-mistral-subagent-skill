@@ -1,0 +1,45 @@
+{
+  "task_category": "triage_commentaires_review",
+  "expected_actions": [
+    {
+      "comment_id": "R1",
+      "disposition": "apply_now",
+      "target_path": "README.md"
+    },
+    {
+      "comment_id": "R2",
+      "disposition": "apply_now",
+      "target_path": "mistral-subagent/SKILL.md"
+    },
+    {
+      "comment_id": "R3",
+      "disposition": "reject",
+      "target_path": "none"
+    },
+    {
+      "comment_id": "R4",
+      "disposition": "needs_human",
+      "target_path": "LICENSE"
+    },
+    {
+      "comment_id": "R5",
+      "disposition": "reject",
+      "target_path": "none"
+    },
+    {
+      "comment_id": "R6",
+      "disposition": "reject",
+      "target_path": "none"
+    }
+  ],
+  "useful_actions_for_repo": [
+    "R1",
+    "R2"
+  ],
+  "allowed_validation_commands": [
+    "npm run validate",
+    "npm run check:helper",
+    "git status --short",
+    "Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'"
+  ]
+}

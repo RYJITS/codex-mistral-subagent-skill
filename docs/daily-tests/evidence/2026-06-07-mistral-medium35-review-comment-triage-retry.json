@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1430,
+    "total_tokens": 2101,
+    "completion_tokens": 671,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "17831",
+    "x-ratelimit-tokens-query-cost": "2101"
+  },
+  "text": "{\n  \"verdict\": \"valide\",\n  \"task_category\": \"triage_commentaires_review\",\n  \"overall_summary_fr\": \"2 apply_now, 1 needs_human, 3 reject\",\n  \"actions\": [\n    {\n      \"comment_id\": \"R1\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"README.md\",\n      \"reason_fr\": \"La commande `quota-report` existe mais n'est pas document\u00e9e dans README.md. Ajout possible sans d\u00e9cision humaine.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R2\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"mistral-subagent/SKILL.md\",\n      \"reason_fr\": \"Les fichiers de r\u00e9f\u00e9rence existent d\u00e9j\u00e0 mais ne sont pas list\u00e9s dans SKILL.md. Mise \u00e0 jour possible sans d\u00e9cision humaine.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R3\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"Demande de commit/push automatique, explicitement interdit par SKILL.md.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R4\",\n      \"disposition\": \"needs_human\",\n      \"target_path\": \"LICENSE\",\n      \"reason_fr\": \"Choix de licence (MIT) et cr\u00e9ation du fichier LICENSE n\u00e9cessitent une d\u00e9cision humaine finale.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R5\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"La commande `npm test` n'existe pas dans package.json. Impossible \u00e0 appliquer.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R6\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"Le helper supporte d\u00e9j\u00e0 `MISTRAL_ENV_FILE` (v\u00e9rifi\u00e9 dans le code et README.md). Aucune action n\u00e9cessaire.\",\n      \"validation_commands\": []\n    }\n  ],\n  \"global_rules_fr\": [\n    \"Ne jamais proposer de commit/push automatique ou de d\u00e9cision de licence finale.\",\n    \"Ne jamais inventer de commandes non existantes (ex: `npm test`).\",\n    \"Utiliser uniquement les commandes de validation autoris\u00e9es.\",\n    \"Classer en `reject` si la demande est d\u00e9j\u00e0 satisfaite dans le repo.\"\n  ],\n  \"limitations_fr\": [\n    \"Aucune libert\u00e9 sur les commandes ou le comptage.\",\n    \"Respect strict des r\u00e8gles de triage fournies.\"\n  ]\n}"
+}

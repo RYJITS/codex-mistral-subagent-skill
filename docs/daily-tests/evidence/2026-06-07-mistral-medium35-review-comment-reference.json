@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2059,
+    "total_tokens": 2730,
+    "completion_tokens": 671,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "21459",
+    "x-ratelimit-tokens-query-cost": "2730"
+  },
+  "text": "# Triage de commentaires de review en JSON actionnable\n\n## Quand l'utiliser\nD\u00e9l\u00e9guer \u00e0 Mistral uniquement pour :\n- Classer des commentaires de review en actions `apply_now`, `needs_human`, `reject`\n- G\u00e9n\u00e9rer un r\u00e9sum\u00e9 strict en fran\u00e7ais\n- **Jamais** en mode autonome : toujours valider via Codex\n\n## Contexte minimal \u00e0 envoyer\n- Liste des commentaires de review (format brut)\n- Liste ferm\u00e9e des commandes autoris\u00e9es (ex: `npm run validate`, `git status --short`)\n- R\u00e8gles globales de triage (ex: priorit\u00e9 `R1` \u00e0 `R6`)\n\n## Prompt conseill\u00e9\nStructure JSON attendue :\n```json\n{\n  \"verdict\": \"apply_now|needs_human|reject\",\n  \"task_category\": \"R1|R2|R3|R4|R5|R6\",\n  \"overall_summary_fr\": \"<r\u00e9sum\u00e9 strict en fran\u00e7ais>\",\n  \"actions\": [\n    {\n      \"command\": \"<commande de la liste ferm\u00e9e>\",\n      \"args\": \"<arguments si besoin>\",\n      \"reason_fr\": \"<justification en fran\u00e7ais>\"\n    }\n  ],\n  \"global_rules_fr\": [\"<r\u00e8gles appliqu\u00e9es>\"],\n  \"limitations_fr\": [\"<limites identifi\u00e9es>\"]\n}\n```\n\n## Routage mod\u00e8le valide\n- **`mistral-medium-3.5`** : Pleinement exploitable **apr\u00e8s retry strict** (100% de conformit\u00e9 : commandes autoris\u00e9es, r\u00e9sum\u00e9 exact, utile)\n- **`devstral-latest`** et **`mistral-large-latest`** : Tri correct apr\u00e8s retry, mais r\u00e9sum\u00e9 moins strict\n- **`mistral-small-latest`** : Classe bien les 6 actions mais d\u00e9rive sur les commandes et le r\u00e9sum\u00e9\n\n## Limites observ\u00e9es\n- Sans retry : tous les mod\u00e8les \u00e9chouent sur `all_commands_allowed` ou `summary_exact`\n- Risque de commandes hors liste ferm\u00e9e (ex: `mistral-small-latest`)\n- R\u00e9sum\u00e9 non strict pour `devstral-latest` et `mistral-large-latest` m\u00eame apr\u00e8s retry\n\n## Le\u00e7ons du test 2026-06-07\n- Le **retry strict** (prompt \u00e9tendu) a rendu `mistral-medium-3.5` conforme \u00e0 100%\n- Les mod\u00e8les plus grands (`large`, `devstral`) confirment le triage mais peinent sur la rigueur du r\u00e9sum\u00e9\n- `mistral-small-latest` : 6/6 actions class\u00e9es, mais **inutilisable** sans validation Codex (commandes non autoris\u00e9es)\n\n## Validation Codex\n1. Parser le JSON externe, puis le JSON interne si n\u00e9cessaire\n2. V\u00e9rifier l'ordre des r\u00e8gles `R1` \u00e0 `R6`\n3. Contr\u00f4ler que `verdict` \u2208 `{apply_now, needs_human, reject}`\n4. Rejeter toute commande **hors liste ferm\u00e9e** fournie en contexte\n5. Ne compter comme utile que les sorties **directement r\u00e9utilis\u00e9es** par Codex (ex: commandes valid\u00e9es, r\u00e9sum\u00e9 strict)"
+}

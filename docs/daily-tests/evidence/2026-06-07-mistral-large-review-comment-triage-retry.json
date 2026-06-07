@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1430,
+    "total_tokens": 2116,
+    "completion_tokens": 686,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "240730",
+    "x-ratelimit-tokens-query-cost": "2116"
+  },
+  "text": "{\n  \"verdict\": \"valide\",\n  \"task_category\": \"triage_commentaires_review\",\n  \"overall_summary_fr\": \"2 apply_now, 1 needs_human, et 3 reject\",\n  \"actions\": [\n    {\n      \"comment_id\": \"R1\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"README.md\",\n      \"reason_fr\": \"La commande `quota-report` existe mais n'est pas document\u00e9e dans le README. Ajout d'un exemple d'usage possible sans d\u00e9cision humaine.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R2\",\n      \"disposition\": \"apply_now\",\n      \"target_path\": \"mistral-subagent/SKILL.md\",\n      \"reason_fr\": \"Les fichiers `json-extraction-maintenance-fr.md` et `ui-ux-copy-scroll-driven-fr.md` existent d\u00e9j\u00e0 et doivent \u00eatre list\u00e9s dans la section References.\",\n      \"validation_commands\": [\n        \"Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'\"\n      ]\n    },\n    {\n      \"comment_id\": \"R3\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"Les commits/pushs automatiques sont interdits par `mistral-subagent/SKILL.md`.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R4\",\n      \"disposition\": \"needs_human\",\n      \"target_path\": \"LICENSE\",\n      \"reason_fr\": \"Le choix de la licence (MIT) et l'ajout du fichier `LICENSE` n\u00e9cessitent une d\u00e9cision humaine.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R5\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"`npm test` n'existe pas dans `package.json` et ne peut pas \u00eatre ajout\u00e9 sans d\u00e9cision humaine.\",\n      \"validation_commands\": []\n    },\n    {\n      \"comment_id\": \"R6\",\n      \"disposition\": \"reject\",\n      \"target_path\": \"none\",\n      \"reason_fr\": \"Le support de `MISTRAL_ENV_FILE` est d\u00e9j\u00e0 document\u00e9 dans `README.md`.\",\n      \"validation_commands\": []\n    }\n  ],\n  \"global_rules_fr\": [\n    \"Ne jamais proposer de commits/pushs automatiques ou de d\u00e9cisions de licence finales.\",\n    \"Seules les commandes list\u00e9es dans `validation_commands` sont autoris\u00e9es.\",\n    \"Les demandes d\u00e9j\u00e0 satisfaites dans le repo doivent \u00eatre class\u00e9es en `reject`.\"\n  ],\n  \"limitations_fr\": [\n    \"Aucune modification de `package.json` ou de scripts sans validation humaine.\",\n    \"Aucune d\u00e9cision de licence ou de workflow GitHub automatis\u00e9.\"\n  ]\n}"
+}

@@ -1,0 +1,36 @@
+Tu refais le meme triage, mais cette fois sans aucune liberte sur les commandes ou le comptage.
+
+Retourne uniquement un JSON valide, sans markdown, avec exactement:
+- `task_category: "triage_commentaires_review"`
+- `actions` contenant exactement 6 objets `R1` a `R6` dans cet ordre
+
+Regles du retry:
+- `overall_summary_fr` doit annoncer exactement `2 apply_now`, `1 needs_human`, et `3 reject`.
+- `validation_commands` doit etre soit `[]`, soit un sous-ensemble exact de cette liste fermee:
+  - `npm run validate`
+  - `npm run check:helper`
+  - `git status --short`
+  - `Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'`
+- Tu n'as pas le droit de re-ecrire, simplifier, specialiser, ni recomposer cette commande `Select-String`.
+- `R3`, `R5`, et `R6` doivent avoir `target_path: "none"` et `validation_commands: []`.
+- `R4` doit avoir `disposition: "needs_human"` et `target_path: "LICENSE"`.
+- Si une demande est deja satisfaite dans le repo, classe-la en `reject`.
+- Si une demande exige commit/push automatique ou decision de licence finale, ne la classe jamais en `apply_now`.
+
+Schema attendu:
+{
+  "verdict": "valide" | "partiellement_valide" | "non_valide",
+  "task_category": "triage_commentaires_review",
+  "overall_summary_fr": "string",
+  "actions": [
+    {
+      "comment_id": "R1",
+      "disposition": "apply_now|needs_human|reject",
+      "target_path": "README.md|mistral-subagent/SKILL.md|LICENSE|none",
+      "reason_fr": "string",
+      "validation_commands": ["string"]
+    }
+  ],
+  "global_rules_fr": ["string"],
+  "limitations_fr": ["string"]
+}

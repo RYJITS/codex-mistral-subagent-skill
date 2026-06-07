@@ -1,0 +1,131 @@
+{
+    "generated_at":  "2026-06-07T06:07:50.9820181+02:00",
+    "summary_phrase":  "2 apply_now, 1 needs_human, 3 reject",
+    "allowed_validation_commands":  [
+                                        "npm run validate",
+                                        "npm run check:helper",
+                                        "git status --short",
+                                        "Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern \u0027quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE\u0027"
+                                    ],
+    "results":  [
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-mistral-small-review-comment-triage.json",
+                        "model":  "mistral-small-latest",
+                        "total_tokens":  2047,
+                        "prompt_tokens":  1356,
+                        "completion_tokens":  691,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  false,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-mistral-medium35-review-comment-triage.json",
+                        "model":  "mistral-medium-3.5",
+                        "total_tokens":  2066,
+                        "prompt_tokens":  1356,
+                        "completion_tokens":  710,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  false,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-devstral-review-comment-triage.json",
+                        "model":  "devstral-latest",
+                        "total_tokens":  2035,
+                        "prompt_tokens":  1356,
+                        "completion_tokens":  679,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  false,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-mistral-large-review-comment-triage.json",
+                        "model":  "mistral-large-latest",
+                        "total_tokens":  2150,
+                        "prompt_tokens":  1356,
+                        "completion_tokens":  794,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  false,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-mistral-medium35-review-comment-triage-retry.json",
+                        "model":  "mistral-medium-3.5",
+                        "total_tokens":  2101,
+                        "prompt_tokens":  1430,
+                        "completion_tokens":  671,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  true,
+                        "summary_exact":  true,
+                        "strict_useful":  true,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-devstral-review-comment-triage-retry.json",
+                        "model":  "devstral-latest",
+                        "total_tokens":  2058,
+                        "prompt_tokens":  1430,
+                        "completion_tokens":  628,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  true,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    },
+                    {
+                        "file":  "docs/daily-tests/evidence/2026-06-07-mistral-large-review-comment-triage-retry.json",
+                        "model":  "mistral-large-latest",
+                        "total_tokens":  2116,
+                        "prompt_tokens":  1430,
+                        "completion_tokens":  686,
+                        "parse_ok":  true,
+                        "parse_error":  null,
+                        "action_match_count":  6,
+                        "action_total":  6,
+                        "all_commands_allowed":  true,
+                        "summary_exact":  false,
+                        "strict_useful":  false,
+                        "mismatches":  [
+
+                                       ]
+                    }
+                ]
+}

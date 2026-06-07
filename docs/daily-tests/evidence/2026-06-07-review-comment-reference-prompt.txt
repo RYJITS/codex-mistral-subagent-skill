@@ -1,0 +1,42 @@
+Redige uniquement le contenu Markdown du fichier `mistral-subagent/references/review-comment-triage-fr.md`.
+
+Objectif:
+- documenter en francais un workflow valide de triage de commentaires de review en JSON actionnable;
+- decrire quand deleguer cette tache a Mistral;
+- rappeler les garde-fous Codex;
+- resumer les resultats du test du 2026-06-07.
+
+Contraintes:
+- pas de YAML front matter
+- pas de markdown externe autour de la reponse
+- ton direct, compact, operationnel
+- utiliser uniquement des faits presents dans le contexte fourni
+- mentionner clairement que le retry strict a rendu `mistral-medium-3.5` pleinement exploitable
+- mentionner que `devstral-latest` et `mistral-large-latest` ont bien confirme le triage apres retry mais avec un resume moins strict
+- mentionner que `mistral-small-latest` a bien classe les 6 actions mais a derive sur les commandes et le resume
+- ne jamais presenter la capacite comme autonome
+
+Structure voulue:
+- titre
+- `## Quand l'utiliser`
+- `## Contexte minimal a envoyer`
+- `## Prompt conseille`
+- `## Routage modele valide`
+- `## Limites observees`
+- `## Lecons du test 2026-06-07`
+- `## Validation Codex`
+
+Dans `Prompt conseille`, inclure les champs:
+- `verdict`
+- `task_category`
+- `overall_summary_fr`
+- `actions`
+- `global_rules_fr`
+- `limitations_fr`
+
+Dans `Validation Codex`, rappeler:
+- parser le JSON externe puis le JSON interne si necessaire
+- verifier l'ordre `R1` a `R6`
+- verifier `apply_now`, `needs_human`, `reject`
+- rejeter toute commande hors liste fermee
+- ne compter comme utile que les sorties directement reutilisees par Codex

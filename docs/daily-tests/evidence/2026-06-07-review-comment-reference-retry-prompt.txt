@@ -1,0 +1,48 @@
+Redige uniquement le contenu Markdown du fichier `mistral-subagent/references/review-comment-triage-fr.md`.
+
+Tu dois corriger les erreurs du brouillon precedent:
+- ne pas decrire un faux schema JSON
+- ne pas remplacer `actions` par des commandes
+- ne pas changer les enums du triage
+
+Le workflow a documenter est celui-ci:
+- Codex envoie 6 commentaires de review bornes et un contexte repo verifie
+- Mistral doit retourner un JSON strict avec:
+  - `verdict`
+  - `task_category`
+  - `overall_summary_fr`
+  - `actions`
+  - `global_rules_fr`
+  - `limitations_fr`
+- chaque action garde:
+  - `comment_id`
+  - `disposition`
+  - `target_path`
+  - `reason_fr`
+  - `validation_commands`
+- les dispositions autorisees sont seulement `apply_now`, `needs_human`, `reject`
+- sur le test du 2026-06-07:
+  - `mistral-medium-3.5` retry a ete pleinement exploitable
+  - `devstral-latest` retry et `mistral-large-latest` retry ont confirme le triage, mais le resume restait moins strict
+  - `mistral-small-latest` a bien classe les 6 actions mais a derive sur les commandes et le resume
+
+Contraintes d'ecriture:
+- texte entierement en francais ASCII
+- markdown compact
+- pas de bloc JSON complet, seulement une liste des champs attendus
+- dire explicitement que la capacite n'est validee que sous verification Codex
+- rappeler la liste fermee de commandes de validation:
+  - `npm run validate`
+  - `npm run check:helper`
+  - `git status --short`
+  - `Select-String -Path README.md,mistral-subagent/SKILL.md -Pattern 'quota-report|json-extraction-maintenance-fr|ui-ux-copy-scroll-driven-fr|MISTRAL_ENV_FILE'`
+
+Structure obligatoire:
+- `# Triage de commentaires de review en francais`
+- `## Quand l'utiliser`
+- `## Contexte minimal a envoyer`
+- `## Prompt conseille`
+- `## Routage modele valide`
+- `## Limites observees`
+- `## Lecons du test 2026-06-07`
+- `## Validation Codex`
