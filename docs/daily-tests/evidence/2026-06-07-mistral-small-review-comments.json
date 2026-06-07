@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 955,
+    "total_tokens": 1530,
+    "completion_tokens": 575,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "48253",
+    "x-ratelimit-tokens-query-cost": "1530"
+  },
+  "text": "{\"verdict\": \"partiel\", \"task_category\": \"triage_commentaires_review\", \"comment_actions\": [{\"id\": \"C1\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"docs/daily-tests/2026-06-07-review-comments-triage.md\"], \"reason_fr\": \"Le rapport quotidien doit explicitement indiquer la validit\u00e9 pour r\u00e9pondre aux exigences de suivi de l'objectif 70%.\"}, {\"id\": \"C2\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"README.md\"], \"reason_fr\": \"Ajout de `npm test` dans les commandes de validation pour couvrir le helper, conform\u00e9ment au scope du repo.\"}, {\"id\": \"C3\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"README.md\"], \"reason_fr\": \"Mise \u00e0 jour de la section `API Key Configuration` pour inclure `MISTRAL.API_KEY`, d\u00e9tect\u00e9 localement.\"}, {\"id\": \"C4\", \"decision\": \"reject\", \"safety_flag\": \"secret\", \"target_paths\": [\"NONE\"], \"reason_fr\": \"Modification interdite de `D:\\\\00_Cerveau_IA\\\\API\\\\env.Local` selon le contexte fourni.\"}, {\"id\": \"C5\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"mistral-subagent/references/review-comments-triage-fr.md\"], \"reason_fr\": \"Ajout d'une r\u00e9f\u00e9rence FR d\u00e9di\u00e9e pour r\u00e9utiliser le workflow de triage de commentaires, si le test est valid\u00e9.\"}, {\"id\": \"C6\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"README.md\"], \"reason_fr\": \"Retrait de `mistral-medium-3.5` du README car ce mod\u00e8le n'existe plus.\"}, {\"id\": \"C7\", \"decision\": \"apply\", \"safety_flag\": \"safe\", \"target_paths\": [\"docs/daily-tests/2026-06-07-review-comments-triage.md\"], \"reason_fr\": \"Inclusion de `npm run check:helper` dans les commandes finales du rapport pour couvrir le helper.\"}, {\"id\": \"C8\", \"decision\": \"clarify\", \"safety_flag\": \"scope_question\", \"target_paths\": [\"NONE\"], \"reason_fr\": \"Pr\u00e9cision n\u00e9cessaire sur le scope de la nouvelle r\u00e9f\u00e9rence FR : triage de commentaires uniquement ou aussi revue de diff ?\"}]}"
+}

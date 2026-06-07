@@ -1,0 +1,15 @@
+Refais le triage avec les preuves supplementaires.
+
+Retourne uniquement un JSON strict avec la meme forme que precedemment.
+
+Contraintes durcies:
+
+- exactement 8 objets dans `comment_actions`
+- si le README contient deja explicitement l'element demande, utiliser `reply` et `already_present`
+- si le commentaire demande une commande absente des scripts verifies, utiliser `reject` et `invented_command`
+- si le commentaire repose sur un fait contredit par la sortie `models`, utiliser `reject` et `factual_error`
+- si le commentaire demande de toucher `env.Local`, utiliser `reject` et `secret`
+- si le commentaire demande une precision de scope avant action, utiliser `clarify` et `scope_question`
+- ne pas choisir `apply` pour un point deja present, faux, ou interdit
+- utiliser seulement les chemins autorises
+- pas de markdown, pas d'explication hors JSON

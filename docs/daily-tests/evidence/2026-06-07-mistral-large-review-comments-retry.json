@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1398,
+    "total_tokens": 1856,
+    "completion_tokens": 458,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "246792",
+    "x-ratelimit-tokens-query-cost": "1856"
+  },
+  "text": "{\n  \"comment_actions\": [\n    {\n      \"comment_id\": \"C1\",\n      \"action\": \"apply\",\n      \"reply\": \"Le rapport quotidien sera mis \u00e0 jour pour inclure explicitement `Valide`, `Non valide` ou `Partiellement valide`.\",\n      \"target_paths\": [\n        \"docs/daily-tests/2026-06-07-review-comments-triage.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C2\",\n      \"action\": \"reject\",\n      \"reply\": \"invented_command\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C3\",\n      \"action\": \"reply\",\n      \"reply\": \"already_present\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C4\",\n      \"action\": \"reject\",\n      \"reply\": \"secret\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C5\",\n      \"action\": \"apply\",\n      \"reply\": \"Une r\u00e9f\u00e9rence FR d\u00e9di\u00e9e sera ajout\u00e9e pour r\u00e9utiliser le workflow de triage de commentaires.\",\n      \"target_paths\": [\n        \"mistral-subagent/references/review-comments-triage-fr.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C6\",\n      \"action\": \"reject\",\n      \"reply\": \"factual_error\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C7\",\n      \"action\": \"apply\",\n      \"reply\": \"Les commandes finales du rapport incluront `npm run check:helper` en plus de `npm run validate`.\",\n      \"target_paths\": [\n        \"docs/daily-tests/2026-06-07-review-comments-triage.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C8\",\n      \"action\": \"clarify\",\n      \"reply\": \"scope_question\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    }\n  ]\n}"
+}

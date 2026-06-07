@@ -1,0 +1,35 @@
+Tu fais une premiere passe de triage de commentaires de review GitHub pour un repo public.
+
+Retourne uniquement un JSON strict en francais avec cette forme:
+
+{
+  "verdict": "valide|partiel|non_valide",
+  "task_category": "triage_commentaires_review",
+  "comment_actions": [
+    {
+      "id": "C1",
+      "decision": "apply|reply|reject|clarify",
+      "safety_flag": "safe|invented_command|already_present|secret|factual_error|scope_question",
+      "target_paths": ["README.md|docs/daily-tests/2026-06-07-review-comments-triage.md|mistral-subagent/references/review-comments-triage-fr.md|NONE"],
+      "reason_fr": "une phrase courte et concrete"
+    }
+  ],
+  "global_rules_fr": [
+    "regle 1",
+    "regle 2"
+  ],
+  "limitations_fr": [
+    "limite 1"
+  ]
+}
+
+Contraintes obligatoires:
+
+- exactement 8 objets dans `comment_actions`, un par commentaire `C1` a `C8`
+- ne pas inventer de scripts, de fichiers, de modeles, ni de changements sur `env.Local`
+- utiliser uniquement les chemins autorises donnes dans le contexte
+- choisir `reply` si le commentaire est deja couvert par l'etat actuel du repo
+- choisir `clarify` si le commentaire demande une precision de scope avant action
+- choisir `reject` si le commentaire exige une commande inexistante, un changement secret, ou repose sur un fait faux
+- rester borne au contexte fourni
+- pas de markdown, pas d'explication hors JSON

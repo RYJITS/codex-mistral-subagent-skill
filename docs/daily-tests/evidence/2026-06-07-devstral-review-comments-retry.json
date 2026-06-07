@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1398,
+    "total_tokens": 1803,
+    "completion_tokens": 405,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "996897",
+    "x-ratelimit-tokens-query-cost": "1799"
+  },
+  "text": "{\n  \"comment_actions\": [\n    {\n      \"comment_id\": \"C1\",\n      \"decision\": \"apply\",\n      \"reason\": \"missing_validation_status\",\n      \"target_paths\": [\n        \"docs/daily-tests/2026-06-07-review-comments-triage.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C2\",\n      \"decision\": \"reject\",\n      \"reason\": \"invented_command\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C3\",\n      \"decision\": \"reply\",\n      \"reason\": \"already_present\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C4\",\n      \"decision\": \"reject\",\n      \"reason\": \"secret\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C5\",\n      \"decision\": \"apply\",\n      \"reason\": \"new_reference_needed\",\n      \"target_paths\": [\n        \"mistral-subagent/references/review-comments-triage-fr.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C6\",\n      \"decision\": \"reject\",\n      \"reason\": \"factual_error\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    },\n    {\n      \"comment_id\": \"C7\",\n      \"decision\": \"apply\",\n      \"reason\": \"missing_validation_command\",\n      \"target_paths\": [\n        \"docs/daily-tests/2026-06-07-review-comments-triage.md\"\n      ]\n    },\n    {\n      \"comment_id\": \"C8\",\n      \"decision\": \"clarify\",\n      \"reason\": \"scope_question\",\n      \"target_paths\": [\n        \"NONE\"\n      ]\n    }\n  ]\n}"
+}

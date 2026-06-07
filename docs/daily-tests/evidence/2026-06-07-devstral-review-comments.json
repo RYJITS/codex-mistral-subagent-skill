@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 955,
+    "total_tokens": 1575,
+    "completion_tokens": 620,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "998279",
+    "x-ratelimit-tokens-query-cost": "1571"
+  },
+  "text": "{\n  \"verdict\": \"partiel\",\n  \"task_category\": \"triage_commentaires_review\",\n  \"comment_actions\": [\n    {\n      \"id\": \"C1\",\n      \"decision\": \"apply\",\n      \"safety_flag\": \"safe\",\n      \"target_paths\": [\"docs/daily-tests/2026-06-07-review-comments-triage.md\"],\n      \"reason_fr\": \"Le commentaire est valide et correspond aux exigences du repo pour les rapports quotidiens.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"decision\": \"reject\",\n      \"safety_flag\": \"factual_error\",\n      \"target_paths\": [\"NONE\"],\n      \"reason_fr\": \"Le repo ne contient pas de script `npm test`, donc cette suggestion n'est pas applicable.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"decision\": \"apply\",\n      \"safety_flag\": \"safe\",\n      \"target_paths\": [\"README.md\"],\n      \"reason_fr\": \"La cl\u00e9 `MISTRAL.API_KEY` est effectivement support\u00e9e et doit \u00eatre document\u00e9e.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"decision\": \"reject\",\n      \"safety_flag\": \"scope_question\",\n      \"target_paths\": [\"NONE\"],\n      \"reason_fr\": \"Le fichier `env.Local` ne doit jamais \u00eatre modifi\u00e9 ou commit\u00e9, comme sp\u00e9cifi\u00e9 dans le contexte.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"decision\": \"clarify\",\n      \"safety_flag\": \"scope_question\",\n      \"target_paths\": [\"mistral-subagent/references/review-comments-triage-fr.md\"],\n      \"reason_fr\": \"La cr\u00e9ation d'une r\u00e9f\u00e9rence FR est pertinente, mais d\u00e9pend de la validation du test. \u00c0 clarifier apr\u00e8s validation.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"decision\": \"apply\",\n      \"safety_flag\": \"safe\",\n      \"target_paths\": [\"README.md\"],\n      \"reason_fr\": \"Le mod\u00e8le `mistral-medium-3.5` n'est plus disponible et doit \u00eatre retir\u00e9 de la documentation.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"decision\": \"apply\",\n      \"safety_flag\": \"safe\",\n      \"target_paths\": [\"docs/daily-tests/2026-06-07-review-comments-triage.md\"],\n      \"reason_fr\": \"Ajouter `npm run check:helper` est coh\u00e9rent avec les commandes de validation existantes.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"decision\": \"reply\",\n      \"safety_flag\": \"scope_question\",\n      \"target_paths\": [\"NONE\"],\n      \"reason_fr\": \"La port\u00e9e de la r\u00e9f\u00e9rence FR doit \u00eatre pr\u00e9cis\u00e9e avant merge. Une r\u00e9ponse est n\u00e9cessaire pour clarifier.\"\n    }\n  ]\n}"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 473,
+    "total_tokens": 926,
+    "completion_tokens": 453,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "21217",
+    "x-ratelimit-tokens-query-cost": "926"
+  },
+  "text": "# Triage de commentaires de review GitHub en francais\n\n## Quand l'utiliser\nPremi\u00e8re passe sur les commentaires de PR/review pour un d\u00e9p\u00f4t public ou une comp\u00e9tence sp\u00e9cifique.\n\n## Contexte minimal a envoyer\nListe des commentaires \u00e0 trier, avec leur contexte (fichier, ligne, contenu exact).\n\n## Prompt conseille\nClasser chaque commentaire en `apply`, `reply`, `reject`, ou `clarify`.\n- **apply** : modification valide \u00e0 appliquer.\n- **reply** : point d\u00e9j\u00e0 couvert (ex: `README.md` mentionne `MISTRAL.API_KEY`).\n- **reject** : commande inexistante (ex: `npm test` absent de `package.json`), chemin interdit (ex: `D:\\00_Cerveau_IA\\API\\env.Local`), ou fait faux (ex: `mistral-medium-3.5` inexistant alors que l'alias est visible localement le 2026-06-07).\n- **clarify** : besoin de pr\u00e9cisions.\n\n## Routage modele valide\nPrivil\u00e9gier `mistral-medium-3.5` ou `devstral-latest` apr\u00e8s preuves suppl\u00e9mentaires. `mistral-large-latest` comme second avis. \u00c9viter `mistral-small-latest` (insuffisant).\n\n## Limites observees\n- Faux positifs sur des assertions factuelles (ex: existence de mod\u00e8les).\n- Difficult\u00e9 \u00e0 d\u00e9tecter des commandes implicites (ex: scripts personnalis\u00e9s).\n\n## Lecons du test 2026-06-07\n- V\u00e9rifier syst\u00e9matiquement les faits (ex: pr\u00e9sence de `mistral-medium-3.5` localement).\n- Rejeter les chemins absolus non standard (ex: `D:\\...`).\n\n## Validation Codex\n1. Chaque commentaire a une classification claire (`apply`, `reply`, `reject`, `clarify`).\n2. Sortie en JSON strict par commentaire.\n3. Mod\u00e8les recommand\u00e9s utilis\u00e9s (`mistral-medium-3.5` ou `devstral-latest`).\n4. Aucun faux rejet bas\u00e9 sur des faits v\u00e9rifiables."
+}
