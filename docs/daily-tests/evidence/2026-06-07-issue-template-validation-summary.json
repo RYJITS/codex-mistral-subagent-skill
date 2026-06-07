@@ -1,0 +1,68 @@
+{
+  "date": "2026-06-07",
+  "task_category": "github_issue_template_drafting",
+  "status": "partiellement_valide",
+  "models_tested": [
+    {
+      "model": "mistral-small-latest",
+      "prompt_tokens": 1437,
+      "completion_tokens": 1827,
+      "total_tokens": 3264,
+      "accepted": false,
+      "reason_fr": "Sortie utile pour les champs, mais config avec URLs inventees."
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 1437,
+      "completion_tokens": 1941,
+      "total_tokens": 3378,
+      "accepted": false,
+      "reason_fr": "Bonne structure, mais `content` rendu comme objet JSON au lieu d'une chaine."
+    },
+    {
+      "model": "devstral-latest",
+      "prompt_tokens": 1437,
+      "completion_tokens": 1273,
+      "total_tokens": 2710,
+      "accepted": false,
+      "reason_fr": "Bon cadrage repo, mais `config.yml` invente wiki/discussions non prouves."
+    },
+    {
+      "model": "mistral-large-latest",
+      "prompt_tokens": 1437,
+      "completion_tokens": 1845,
+      "total_tokens": 3282,
+      "accepted": false,
+      "reason_fr": "Bonne qualite publique, mais `content` rendu comme objet JSON et URL non prouvee."
+    },
+    {
+      "model": "mistral-small-latest",
+      "variant": "retry",
+      "prompt_tokens": 1319,
+      "completion_tokens": 1430,
+      "total_tokens": 2749,
+      "accepted": true,
+      "reason_fr": "Bons champs bug/feature, mais `config.yml` reste hors consigne."
+    },
+    {
+      "model": "mistral-large-latest",
+      "variant": "retry",
+      "prompt_tokens": 1319,
+      "completion_tokens": 1299,
+      "total_tokens": 2618,
+      "accepted": true,
+      "reason_fr": "Base la plus utile pour les templates, mais `config.yml` ajoute encore `contact_links`."
+    }
+  ],
+  "useful_mistral_tokens_retained": 5367,
+  "applied_files": [
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/config.yml"
+  ],
+  "notes_fr": [
+    "Codex a normalise les sorties retenues pour respecter la doc GitHub issue forms (`name`, `description`, `body`).",
+    "Codex a supprime toutes les URLs ou canaux inventes dans `config.yml`.",
+    "Le repo impose aussi ASCII strict et JSON sans BOM dans `docs/daily-tests/evidence`."
+  ]
+}

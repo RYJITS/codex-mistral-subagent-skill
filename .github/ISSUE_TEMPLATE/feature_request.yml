@@ -1,43 +1,64 @@
-name: Feature Request
-about: Suggest an idea for this project
+name: Demande de fonctionnalite
+description: Proposer une amelioration utile pour le skill
 labels: ["enhancement"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a new feature! Please provide as much detail as possible.
+        Merci de decrire clairement le besoin. Les questions ci-dessous nous aident a evaluer l'impact reel de la proposition sur le skill et les workflows Codex.
 
   - type: input
-    id: summary
+    id: resume
     attributes:
-      label: Summary
-      description: A brief summary of the feature.
+      label: Resume
+      description: Donnez un titre court pour l'amelioration proposee.
     validations:
       required: true
 
   - type: textarea
-    id: problem
+    id: probleme-ou-besoin
     attributes:
-      label: Problem Statement
-      description: Is your feature request related to a problem? Please describe.
-      placeholder: A clear and concise description of what the problem is.
+      label: Probleme ou besoin
+      description: Quel probleme actuel ou quel besoin concret cette amelioration couvrirait-elle ?
+      placeholder: ex. Le workflow actuel demande une verification manuelle trop frequente
+    validations:
+      required: true
 
   - type: textarea
-    id: proposed-solution
+    id: contexte-utilisation
     attributes:
-      label: Proposed Solution
-      description: Describe the solution you'd like.
-      placeholder: A clear and concise description of what you want to happen.
+      label: Contexte d'usage
+      description: Dans quel type de tache ou de projet cette amelioration serait-elle utile ?
+      placeholder: ex. Delegation de revue de diff, generation de docs, extraction structuree
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution-proposee
+    attributes:
+      label: Solution proposee
+      description: Decrivez le comportement ou le changement attendu.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact-attendu
+    attributes:
+      label: Impact attendu
+      description: Quel gain ou quelle reduction de friction attendez-vous ?
+      placeholder: ex. Moins de reprises manuelles, meilleure fiabilite, meilleur cadrage
+    validations:
+      required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives Considered
-      description: Describe any alternative solutions or features you've considered.
+      label: Alternatives envisagees
+      description: Avez-vous envisage d'autres approches ? Si oui, lesquelles ?
 
   - type: textarea
-    id: additional-context
+    id: contexte-supplementaire
     attributes:
-      label: Additional Context
-      description: Add any other context or screenshots about the feature request here.
+      label: Contexte supplementaire
+      description: Ajoutez ici tout exemple, contrainte technique, ou detail utile.

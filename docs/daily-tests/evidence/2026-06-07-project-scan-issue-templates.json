@@ -1,0 +1,232 @@
+{
+  "project_path": "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill",
+  "generated_at": "2026-06-07T04:03:36.890Z",
+  "policy": {
+    "direct_write_allowed_for_mistral": false,
+    "codex_must_review_before_apply": true,
+    "skipped_secret_like_names": true,
+    "skipped_secret_like_content": true,
+    "max_files": 8,
+    "max_manifest": 40,
+    "max_file_bytes": 24000,
+    "max_context_bytes": 22000
+  },
+  "totals": {
+    "files_seen": 80,
+    "manifest_files": 40,
+    "files_included": 8,
+    "files_skipped": 1,
+    "context_bytes": 17410
+  },
+  "manifest": [
+    {
+      "path": "README.md",
+      "size": 6520
+    },
+    {
+      "path": "package.json",
+      "size": 508
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size": 1466
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "size": 1217
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "size": 1094
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "size": 278
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-audit-repo-public-docs.md",
+      "size": 3719
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-simple-patch-planning.md",
+      "size": 4119
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-storyboard-video-scroll-driven.md",
+      "size": 5009
+    },
+    {
+      "path": "docs/daily-tests/2026-06-05-json-extraction-maintenance.md",
+      "size": 5975
+    },
+    {
+      "path": "docs/daily-tests/2026-06-05-ui-ux-copy-scroll-driven.md",
+      "size": 5998
+    },
+    {
+      "path": "docs/daily-tests/2026-06-05-unit-test-ideas-helper.md",
+      "size": 6405
+    },
+    {
+      "path": "docs/daily-tests/2026-06-06-diff-review-findings.md",
+      "size": 5507
+    },
+    {
+      "path": "docs/daily-tests/2026-06-06-diff-review-simple-helper.md",
+      "size": 7030
+    },
+    {
+      "path": "docs/daily-tests/2026-06-06-task-delegation-triage-routing.md",
+      "size": 7688
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-05-ui-ux-copy-context.md",
+      "size": 3652
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-06-task-triage-context.md",
+      "size": 2409
+    },
+    {
+      "path": "docs/SAFE_DELEGATION_PROTOCOL.md",
+      "size": 4753
+    },
+    {
+      "path": "docs/TASK_CATALOG.md",
+      "size": 3116
+    },
+    {
+      "path": "docs/WHY_MISTRAL_SUBAGENT.md",
+      "size": 7512
+    },
+    {
+      "path": "mistral-subagent/SKILL.md",
+      "size": 10005
+    },
+    {
+      "path": "scripts/validate-repo.mjs",
+      "size": 2592
+    },
+    {
+      "path": "mistral-subagent/references/delegation-playbook.md",
+      "size": 9384
+    },
+    {
+      "path": "mistral-subagent/references/diff-review-findings-fr.md",
+      "size": 4074
+    },
+    {
+      "path": "mistral-subagent/references/json-extraction-maintenance-fr.md",
+      "size": 2638
+    },
+    {
+      "path": "mistral-subagent/references/mistral-api.md",
+      "size": 6987
+    },
+    {
+      "path": "mistral-subagent/references/mistral-task-matrix.md",
+      "size": 4408
+    },
+    {
+      "path": "mistral-subagent/references/model-selection.md",
+      "size": 3751
+    },
+    {
+      "path": "mistral-subagent/references/public-repo-checklist.md",
+      "size": 5892
+    },
+    {
+      "path": "mistral-subagent/references/repo-audit-public-fr.md",
+      "size": 1846
+    },
+    {
+      "path": "mistral-subagent/references/task-delegation-triage-fr.md",
+      "size": 4288
+    },
+    {
+      "path": "mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md",
+      "size": 3279
+    },
+    {
+      "path": "mistral-subagent/references/unit-test-ideas-helper-fr.md",
+      "size": 2834
+    },
+    {
+      "path": "mistral-subagent/references/video-storyboard-scroll-driven-fr.md",
+      "size": 3303
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-04-devstral-audit.json",
+      "size": 2233
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-04-medium-audit.json",
+      "size": 3045
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-04-project-scan.json",
+      "size": 17302
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-04-small-playbook.json",
+      "size": 3285
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-05-codestral-json-extraction.json",
+      "size": 3253
+    },
+    {
+      "path": "docs/daily-tests/evidence/2026-06-05-codestral-unit-test-ideas.json",
+      "size": 5502
+    }
+  ],
+  "included_files": [
+    {
+      "path": "package.json",
+      "size": 508,
+      "content": "{\n  \"name\": \"codex-mistral-subagent-skill\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Codex skill for safely delegating bounded tasks to Mistral AI as a subordinate model.\",\n  \"private\": false,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"validate\": \"node scripts/validate-repo.mjs\",\n    \"check:helper\": \"node --check mistral-subagent/scripts/mistral-subagent.mjs\",\n    \"check:models\": \"node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \\\"Audit a GitHub codebase and propose patches\\\"\"\n  }\n}\n"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size": 1466,
+      "content": "name: Bug Report\nabout: Create a report to help us improve\nlabels: [\"bug\"]\n\nbody:\n  - type: markdown\n    attributes:\n      value: |\n        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.\n\n  - type: input\n    id: version\n    attributes:\n      label: Version\n      description: What version of our software are you running?\n      placeholder: e.g., 1.0.0\n    validations:\n      required: true\n\n  - type: textarea\n    id: description\n    attributes:\n      label: Description\n      description: A clear and concise description of what the bug is.\n    validations:\n      required: true\n\n  - type: textarea\n    id: steps-to-reproduce\n    attributes:\n      label: Steps to Reproduce\n      description: Steps to reproduce the behavior.\n      placeholder: |\n        1. Go to '...'\n        2. Click on '....'\n        3. Scroll down to '....'\n        4. See error\n    validations:\n      required: true\n\n  - type: textarea\n    id: expected-behavior\n    attributes:\n      label: Expected Behavior\n      description: A clear description of what you expected to happen.\n    validations:\n      required: true\n\n  - type: textarea\n    id: screenshots\n    attributes:\n      label: Screenshots\n      description: If applicable, add screenshots to help explain your problem.\n\n  - type: textarea\n    id: additional-context\n    attributes:\n      label: Additional Context\n      description: Add any other context about the problem here.\n"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "size": 1217,
+      "content": "name: Feature Request\nabout: Suggest an idea for this project\nlabels: [\"enhancement\"]\n\nbody:\n  - type: markdown\n    attributes:\n      value: |\n        Thanks for suggesting a new feature! Please provide as much detail as possible.\n\n  - type: input\n    id: summary\n    attributes:\n      label: Summary\n      description: A brief summary of the feature.\n    validations:\n      required: true\n\n  - type: textarea\n    id: problem\n    attributes:\n      label: Problem Statement\n      description: Is your feature request related to a problem? Please describe.\n      placeholder: A clear and concise description of what the problem is.\n\n  - type: textarea\n    id: proposed-solution\n    attributes:\n      label: Proposed Solution\n      description: Describe the solution you'd like.\n      placeholder: A clear and concise description of what you want to happen.\n\n  - type: textarea\n    id: alternatives\n    attributes:\n      label: Alternatives Considered\n      description: Describe any alternative solutions or features you've considered.\n\n  - type: textarea\n    id: additional-context\n    attributes:\n      label: Additional Context\n      description: Add any other context or screenshots about the feature request here.\n"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "size": 1094,
+      "content": "## Description\n\nPlease include a summary of the changes and the related issue. List any dependencies that are required for this change.\n\nFixes # (issue)\n\n## Type of change\n\n- [ ] Bug fix (non-breaking change which fixes an issue)\n- [ ] New feature (non-breaking change which adds functionality)\n- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)\n- [ ] Documentation update\n\n## How Has This Been Tested?\n\nPlease describe the tests that you ran to verify your changes. Provide instructions so we can reproduce them.\n\n## Checklist:\n\n- [ ] My code follows the style guidelines of this project\n- [ ] I have performed a self-review of my own code\n- [ ] I have commented my code, particularly in hard-to-understand areas\n- [ ] I have made corresponding changes to the documentation\n- [ ] My changes generate no new warnings\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] New and existing unit tests pass locally with my changes\n- [ ] Any dependent changes have been merged and published in downstream modules\n"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "size": 278,
+      "content": "name: Validate\n\non:\n  push:\n  pull_request:\n\njobs:\n  validate:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: \"22\"\n      - run: npm run validate\n      - run: npm run check:helper\n"
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-audit-repo-public-docs.md",
+      "size": 3719,
+      "content": "# Test quotidien 2026-06-04 - audit borne de repo public\n\n## Statut\n\n**Partiellement valide**\n\n## Categorie de tache\n\nAudit borne d'un repo public avec proposition d'une petite amelioration documentaire ou de validation.\n\n## Pourquoi c'est important pour les projets reels\n\nCette capacite revient souvent sur les skills, repos publics, README et notes de publication du cerveau central IA. Si Mistral sait faire une premiere passe d'audit fiable, Codex peut deleguer une partie recurrente du cadrage documentaire et reduire son temps sur les taches de faible risque.\n\n## Modeles testes\n\n- `devstral-latest`\n- `mistral-medium-latest`\n- `mistral-small-latest`\n\n## Resume des prompts et du contexte\n\n- Contexte transmis: snapshot JSON filtre du repo via `project-scan`, limite a 8 fichiers inclus, 40 fichiers au manifest, et 14000 octets de contexte.\n- Prompt 1 et 2: demander un audit borne avec un seul changement recommande, un format JSON strict, des commandes de validation limitees au snapshot, et une sortie en francais quand le contenu vise l'utilisateur.\n- Prompt 3: demander une section Markdown francaise directement integrable dans `mistral-subagent/references/delegation-playbook.md` pour formaliser ce workflow pour les futurs runs.\n\n## Usage et tokens\n\n- `devstral-latest`: 5262 tokens totaux, 4912 prompt, 350 completion. Sortie non comptee comme validee car la recommandation etait redondante avec le template de PR existant.\n- `mistral-medium-latest`: 5438 tokens totaux, 4912 prompt, 526 completion. Sortie non comptee comme validee car elle inventait `npm test`, absent du repo.\n- `mistral-small-latest`: 1380 tokens totaux, 746 prompt, 634 completion. Sortie directement utile comme base de la nouvelle section du playbook, puis normalisee par Codex.\n- Tokens Mistral utiles comptes pour la validation du jour: `634`.\n\n## Resultat\n\n- `devstral-latest` a correctement qualifie la tache comme delegable, mais a propose un ajout de section de tests redondant dans `.github/PULL_REQUEST_TEMPLATE.md`.\n- `mistral-medium-latest` a bien detecte le besoin de renforcer la reference de validation, mais sa liste de commandes n'etait pas suffisamment fiable pour etre appliquee telle quelle.\n- `mistral-small-latest` a fourni un brouillon exploitable pour documenter une procedure d'audit borne. Codex a conserve l'idee, retire les elements hors scope et integre une version verifiee dans le playbook.\n\n## Commandes de validation\n\n- `npm run validate`\n- `npm run check:helper`\n- `git status --short`\n\n## Limitations\n\n- Le helper a marque `README.md` comme `secret_like_content` dans le snapshot du jour, donc l'audit n'a pas porte sur toute la documentation publique.\n- Les modeles ont encore tendance a inventer des commandes ou a proposer des changements redondants si le prompt n'impose pas un perimetre tres strict.\n- La capacite reste utile seulement sous verification Codex; elle n'est pas autonome.\n\n## Prochaine action\n\nTester une capacite voisine mais plus mecanique, par exemple extraction JSON stricte ou revue de diff simple, pour mesurer si Mistral tient mieux un format verifiable de bout en bout.\n\n## Contribution vers l'objectif 70 pourcent\n\nOui, partiellement. Cette capacite compte comme une brique utile mais non autonome. En tenant compte des autres rapports deja presents dans `docs/daily-tests/` pour le 2026-06-04, estimation cumulative apres ce run: **15 pourcent** de couverture des taches recurrentes delegables visees.\n\n## Fichiers de preuve\n\n- `docs/daily-tests/evidence/2026-06-04-project-scan.json`\n- `docs/daily-tests/evidence/2026-06-04-devstral-audit.json`\n- `docs/daily-tests/evidence/2026-06-04-medium-audit.json`\n- `docs/daily-tests/evidence/2026-06-04-small-playbook.json`\n"
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-simple-patch-planning.md",
+      "size": 4119,
+      "content": "# Test quotidien 2026-06-04 - planification de patch simple\n\nStatut: Partiellement valide\n\nCategorie: Planification et redaction de patch simple sur une incoherence bornee entre code et documentation.\n\nPourquoi c'est important pour les projets reels:\n\n- Les depots publics et skills internes accumulent souvent des ecarts entre comportement reel, README et references.\n- C'est une tache recurrente ou un sous-agent moins couteux peut preparer une premiere passe utile.\n- Si Mistral gere ce type de correctif borne avec verification Codex, cela augmente directement la couverture des taches de maintenance repetitives.\n\nModeles testes:\n\n- `devstral-latest`\n  - audit large: prompt 8617, completion 1553, total 10170\n  - patch cible: prompt 6147, completion 764, total 6911\n- `codestral-latest`\n  - audit large: prompt 8617, completion 1800, total 10417, sortie tronquee\n  - patch cible: prompt 6147, completion 739, total 6886\n- `mistral-small-latest`\n  - audit large: prompt 8617, completion 564, total 9181\n\nResume des prompts et du contexte:\n\n- Audit large: demander une seule incoherence reelle a fort impact entre code, documentation et configuration, puis proposer le plus petit patch utile.\n- Patch cible: demander explicitement d'aligner le comportement par defaut du helper avec `D:\\00_Cerveau_IA\\API\\env.Local` et de garder la documentation coherente.\n- Contexte transmis: snapshot filtre du depot via `project-action`, sans secrets, avec fenetre de fichiers et budget de contexte limites.\n\nUsage retenu pour validation:\n\n- Retenu comme directement utile:\n  - `devstral-latest` patch cible: direction correcte sur le helper et la coherence code/doc.\n  - `codestral-latest` patch cible: confirmation de la meme direction de patch.\n- Exclu du comptage utile:\n  - `codestral-latest` audit large: JSON tronque, non exploitable tel quel.\n  - `mistral-small-latest` audit large: incoherence detectee non prioritaire pour ce run.\n  - `devstral-latest` audit large: suggestion utile mais moins critique que l'ecart reel de chemin par defaut.\n- Tokens Mistral utiles comptes pour ce test: 1503 tokens de completion.\n- Ratio Codex/Mistral non calcule: l'environnement de run n'expose pas ici une mesure stable du delta tokens Codex.\n\nResultat:\n\n- L'incoherence verifiee localement et corrigee est la suivante:\n  - le helper utilisait `process.cwd()/.env.local` comme chemin par defaut;\n  - la documentation du skill et les references annoncaient `D:\\00_Cerveau_IA\\API\\env.Local`.\n- Sorties Mistral utiles:\n  - les modeles cibles ont converge vers un patch sur le helper et un ajustement documentaire;\n  - les deux sorties restaient imparfaites, avec diffs approximatifs ou fichiers de doc partiellement mal cibles;\n  - Codex a du normaliser le patch exact et choisir les fichiers finaux a modifier.\n- Correctifs appliques:\n  - `mistral-subagent/scripts/mistral-subagent.mjs`\n  - `README.md`\n  - `mistral-subagent/references/delegation-playbook.md`\n\nCommandes de validation:\n\n```powershell\nnode mistral-subagent/scripts/mistral-subagent.mjs check\nnpm run validate\nnpm run check:helper\n```\n\nCritere de validation observe:\n\n- `check` doit maintenant retourner `D:\\00_Cerveau_IA\\API\\env.Local` comme `env_path` par defaut.\n- `npm run validate` doit passer.\n- `npm run check:helper` doit passer.\n\nLimitations:\n\n- Les audits trop ouverts restent bruyants: un modele peut choisir une incoherence secondaire au lieu de la plus importante.\n- Les diffs proposes peuvent contenir des placeholders, des lignes inventees, ou viser un fichier de doc non minimal.\n- Cette capacite n'est pas encore autonome: elle depend d'un cadrage fort et d'une verification Codex stricte.\n\nProchaine action:\n\n- Rejouer cette capacite sur un autre depot avec une incoherence bornee differente.\n- Mesurer ensuite si un prompt encore plus contraint reduit les hallucinations de diff et le besoin de normalisation locale.\n\nContribution vers l'objectif des 70 pourcent:\n\n- Oui, mais seulement pour des incoherences bornees avec verification Codex.\n- Cette journee compte comme une preuve partielle, pas comme une delegation autonome de maintenance repo.\n"
+    },
+    {
+      "path": "docs/daily-tests/2026-06-04-storyboard-video-scroll-driven.md",
+      "size": 5009,
+      "content": "# Test quotidien 2026-06-04\n\n## Statut\n\nValide\n\n## Capacite testee\n\nPlanification de prompts et storyboard video pour experiences WebGL scroll-driven.\n\n## Categorie de tache\n\nPrompt drafting, storyboard planning, synthese creative structuree, critique de risques visuels.\n\n## Pourquoi c'est important pour les projets utilisateur\n\nLes projets actifs dans `D:\\00_Cerveau_IA\\Projet` contiennent plusieurs experiences video/WebGL et storyboardees. Cette capacite est recurrente pour preparer des sequences video generatives, clarifier les transitions, cadrer les overlays texte et reduire les aller-retours de direction artistique avant integration web.\n\n## Modeles testes\n\n- `mistral-small-latest`\n- `mistral-medium-latest`\n- `mistral-large-latest`\n- `mistral-small-latest` avec second prompt plus contraint\n\n## Resume des prompts et du contexte\n\nContexte envoye: projet reel `AI_VIDEO_WEBGL_COMPETENCES_CLEAN`, storyboard source en 9 etapes, contraintes de narration francaise, video 16:9 scroll-driven, texte lateral, ambiance orange/bleue cinematic, exigence JSON stricte, aucune information sensible.\n\nPremier prompt:\n\n- demander un objet JSON complet avec direction globale, `scene_plan`, checklist et verdict\n- demander 9 scenes exactes, une par etape\n- demander des champs courts et actionnables\n\nPrompt de retry pour `mistral-small-latest`:\n\n- schema JSON reduit\n- forte contrainte de concision par champ\n- aucune explication hors JSON\n\n## Usage et tokens\n\n| Modele | Prompt tokens | Completion tokens | Total tokens | Observation |\n|---|---:|---:|---:|---|\n| `mistral-small-latest` | 699 | 1800 | 2499 | Tronque, `finish_reason=length`, rejete |\n| `mistral-medium-latest` | 699 | 1116 | 1815 | JSON valide, 9 scenes, ids conformes |\n| `mistral-large-latest` | 699 | 1707 | 2406 | JSON valide, 9 scenes, ids a normaliser |\n| `mistral-small-latest` retry | 581 | 665 | 1246 | JSON valide, 9 scenes, concis et directement exploitable |\n\nTokens Mistral utiles retenus pour ce run:\n\n- `mistral-medium-latest`: 1815 total\n- `mistral-large-latest`: 2406 total\n- `mistral-small-latest` retry: 1246 total\n\nTotal utile retenu: `5467` tokens.\n\n## Resultat\n\nValidation positive sous condition de cadrage:\n\n- `mistral-medium-latest` a fourni le meilleur equilibre qualite/coherence/cout pour une premiere passe exploitable.\n- `mistral-large-latest` a enrichi la narration et les risques, mais a derive sur le format des ids (`0..8` au lieu de `01..09`).\n- `mistral-small-latest` a echoue sur un prompt trop large, puis a reussi nettement apres reduction du schema et contrainte de longueur.\n\nSorties Mistral directement utilisees:\n\n- structure du `scene_plan`\n- formulations de prompts video courtes et actionnables\n- liste des risques de lisibilite et surcharge visuelle\n- heuristique de routage: `small` pour shot list compacte, `medium` pour plan complet, `large` pour passe de qualite narrative\n\n## Commandes de validation executees\n\n```powershell\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs models\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"<prompt long>\" --context-file \"<temp-context>\" --model mistral-small-latest --max-tokens 1800 --temperature 0.2 --json\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"<prompt long>\" --context-file \"<temp-context>\" --model mistral-medium-latest --max-tokens 1800 --temperature 0.2 --json\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"<prompt long>\" --context-file \"<temp-context>\" --model mistral-large-latest --max-tokens 1800 --temperature 0.2 --json\nnode C:\\Users\\ysche\\.codex\\skills\\mistral-subagent\\scripts\\mistral-subagent.mjs run --task \"<prompt compact>\" --context-file \"<temp-context>\" --model mistral-small-latest --max-tokens 900 --temperature 0.1 --json\n```\n\nVerification locale executee:\n\n```powershell\nGet-Content <result.json> -Raw | ConvertFrom-Json\n($raw.text | ConvertFrom-Json).scene_plan.Count\n```\n\nVerification repo executee apres integration:\n\n```powershell\nnpm run validate\nnpm run check:helper\n```\n\n## Limitations\n\n- `mistral-small-latest` n'est pas fiable sur un schema trop riche; il faut compacter la sortie attendue.\n- `mistral-large-latest` peut produire une meilleure prose mais derive plus facilement sur les contraintes strictes de format.\n- aucune validation video/render n'a ete lancee dans le projet source; ce test porte sur la planification textuelle delegable, pas sur le rendu visuel final.\n\n## Prochaine action\n\nTester la capacite voisine: critique et reecriture de textes UI/UX pour pages video/WebGL en francais, avec comparaison `small` vs `medium`.\n\n## Contribution a l'objectif 70 pour cent\n\nOui. Cette capacite compte comme validee pour les taches recurrentes de preparation video/storyboard. Estimation apres ce jour: environ `8 %` de couverture validee des taches recurrentes ciblees, soit `62 points` restant pour atteindre l'objectif de `70 %`.\n"
+    }
+  ],
+  "skipped_files": [
+    {
+      "path": "README.md",
+      "size": 6520,
+      "reason": "secret_like_content"
+    }
+  ]
+}

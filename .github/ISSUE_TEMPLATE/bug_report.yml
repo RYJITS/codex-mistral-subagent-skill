@@ -1,59 +1,87 @@
-name: Bug Report
-about: Create a report to help us improve
+name: Rapport de bug
+description: Signaler un probleme pour nous aider a ameliorer le skill
 labels: ["bug"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.
+        Merci de decrire le probleme avec un maximum de contexte utile. Les champs ci-dessous nous aident a reproduire et corriger le bug plus vite.
 
   - type: input
     id: version
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      placeholder: e.g., 1.0.0
+      label: Version du skill
+      description: Quelle version du skill utilisez-vous ?
+      placeholder: ex. 1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: contexte-utilisation
+    attributes:
+      label: Contexte d'usage
+      description: Dans quel flux de travail ou quelle tache utilisez-vous ce skill ?
+      placeholder: ex. Delegation d'une tache repo, extraction JSON, critique UI/UX
+    validations:
+      required: true
+
+  - type: textarea
+    id: commandes-executees
+    attributes:
+      label: Commandes executees
+      description: Quelles commandes ou instructions ont ete lancees juste avant le bug ?
+      placeholder: |
+        1. npm run validate
+        2. npm run check:helper
+        3. node mistral-subagent/scripts/mistral-subagent.mjs run ...
     validations:
       required: true
 
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: A clear and concise description of what the bug is.
+      label: Description du bug
+      description: Decrivez clairement le probleme observe.
     validations:
       required: true
 
   - type: textarea
-    id: steps-to-reproduce
+    id: etapes-reproduction
     attributes:
-      label: Steps to Reproduce
-      description: Steps to reproduce the behavior.
+      label: Etapes pour reproduire
+      description: Donnez les etapes minimales pour reproduire le bug.
       placeholder: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+        1. Executer ...
+        2. Fournir ...
+        3. Observer ...
     validations:
       required: true
 
   - type: textarea
-    id: expected-behavior
+    id: comportement-attendu
     attributes:
-      label: Expected Behavior
-      description: A clear description of what you expected to happen.
+      label: Comportement attendu
+      description: Quel resultat attendiez-vous ?
     validations:
       required: true
 
   - type: textarea
-    id: screenshots
+    id: comportement-obtenu
     attributes:
-      label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      label: Comportement obtenu
+      description: Que s'est-il passe a la place ?
+    validations:
+      required: true
 
   - type: textarea
-    id: additional-context
+    id: logs-ou-captures
     attributes:
-      label: Additional Context
-      description: Add any other context about the problem here.
+      label: Logs ou captures
+      description: Ajoutez ici les logs, messages d'erreur, ou captures utiles.
+
+  - type: textarea
+    id: contexte-supplementaire
+    attributes:
+      label: Contexte supplementaire
+      description: Precisez l'environnement, la configuration, ou tout autre detail utile.

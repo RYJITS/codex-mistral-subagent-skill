@@ -1,0 +1,42 @@
+Retry strict.
+
+Corrige les erreurs observees:
+
+- `content` doit toujours etre une chaine de caracteres complete, jamais un objet JSON
+- `config.yml` doit etre minimal et ne contenir aucun `contact_links`, aucune URL, aucun `issue_templates`
+- n'invente aucun exemple de commande hors repo
+- retourne exactement 3 fichiers
+
+Retourne uniquement un JSON valide:
+
+{
+  "task_category": "string",
+  "verdict": "valide|partiellement_valide|non_valide",
+  "summary_fr": "string",
+  "files": [
+    {
+      "path": "string",
+      "status": "create|update",
+      "reason_fr": "string",
+      "content": "complete file content as a plain string"
+    }
+  ],
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper",
+    "Get-Content .github/ISSUE_TEMPLATE/config.yml -Raw"
+  ],
+  "risks_fr": ["string"],
+  "contributes_to_70_percent": true
+}
+
+Contraintes finales:
+
+- `files[0].path` = `.github/ISSUE_TEMPLATE/bug_report.yml`
+- `files[1].path` = `.github/ISSUE_TEMPLATE/feature_request.yml`
+- `files[2].path` = `.github/ISSUE_TEMPLATE/config.yml`
+- le contenu de `config.yml` doit etre exactement:
+  `blank_issues_enabled: false`
+- garde les labels `bug` et `enhancement`
+- texte public en francais
+- aucun bloc Markdown

@@ -1,0 +1,46 @@
+Tu es Mistral sous-agent de Codex.
+
+Tache:
+
+- proposer une amelioration bornee des templates GitHub d'issue pour ce repo
+- produire du francais public clair et actionnable
+- rester strictement sur ces chemins:
+  - `.github/ISSUE_TEMPLATE/bug_report.yml`
+  - `.github/ISSUE_TEMPLATE/feature_request.yml`
+  - `.github/ISSUE_TEMPLATE/config.yml`
+
+Regles:
+
+- retourne uniquement un JSON valide, sans Markdown
+- n'invente aucun script, package, workflow, contact externe, discussion GitHub, URL non prouvee, ou commande absente
+- garde un YAML GitHub Issue Forms plausible
+- si un fichier existant n'a pas besoin d'etre change, tu peux le garder avec une petite amelioration minimale, mais `config.yml` doit etre propose
+- les validations doivent citer seulement des commandes visibles localement ou une verification PowerShell simple du YAML
+
+JSON attendu:
+
+{
+  "task_category": "string",
+  "verdict": "valide|partiellement_valide|non_valide",
+  "summary_fr": "string",
+  "files": [
+    {
+      "path": "string",
+      "status": "create|update",
+      "reason_fr": "string",
+      "content": "complete file content"
+    }
+  ],
+  "validation_commands": ["string"],
+  "risks_fr": ["string"],
+  "contributes_to_70_percent": true
+}
+
+Contraintes de qualite:
+
+- `files` doit contenir exactement 3 objets
+- conserve le label `bug` pour le bug report
+- conserve le label `enhancement` pour la feature request
+- adapte les champs a un repo de skill/outillage Codex/Mistral
+- prefere des titres et descriptions en francais
+- ne modifie pas `.github/PULL_REQUEST_TEMPLATE.md`
