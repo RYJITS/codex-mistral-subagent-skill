@@ -106,6 +106,7 @@ Choose the appropriate Mistral model based on the task:
 - **`codestral-latest`**: Code generation, review, and fill-in-middle tasks.
 - **`magistral-medium-latest`**: Careful reasoning or step-by-step evaluations.
 - **Specialized Models**: Use `mistral-ocr-latest`, `mistral-embed`, `codestral-embed`, `mistral-moderation-latest`, or `voxtral-mini-latest` for OCR, embeddings, moderation, and audio tasks.
+- **Preflight Secret Screening**: For custom `allow`/`redact`/`block` decisions, prefer `mistral-small-latest` or `mistral-medium-3.5`, then use `mistral-moderation-2603` on `/v1/moderations` only as an extra moderation/PII signal.
 
 ## Proven Quota Experiment
 
@@ -128,8 +129,10 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 ## References
 
 - [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
+- [Quota Reporting (FR)](mistral-subagent/references/quota-reporting-fr.md): Validated workflow for turning `quota-report` output into a French delegation summary.
 - [JSON Extraction for Repo Maintenance (FR)](mistral-subagent/references/json-extraction-maintenance-fr.md): Strict schema pattern for turning maintenance briefs into verified JSON plans.
 - [Review Comments Triage (FR)](mistral-subagent/references/review-comments-triage-fr.md): Validated workflow for classifying bounded review comments into `apply`, `reply`, `reject`, or `clarify`.
+- [Preflight Secret Screening (FR)](mistral-subagent/references/preflight-secret-screening-fr.md): Validated workflow for screening bounded context into `allow`, `redact`, or `block` before delegation.
 - [Task Delegation Triage (FR)](mistral-subagent/references/task-delegation-triage-fr.md): Partially validated workflow for classifying which real project tasks can be delegated and how much Codex must still retain.
 - [Diff Review Findings (FR)](mistral-subagent/references/diff-review-findings-fr.md): Validated workflow for bounded diff review with actionable French findings.
 - [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.

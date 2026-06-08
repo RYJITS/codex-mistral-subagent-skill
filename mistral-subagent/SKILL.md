@@ -101,6 +101,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - `codestral-latest`: code generation, code review, and fill-in-middle/code-completion work.
    - `magistral-medium-latest`: careful reasoning or step-by-step evaluations when available.
    - `mistral-ocr-latest`, `mistral-embed`, `codestral-embed`, `mistral-moderation-latest`, and `voxtral-mini-latest`: OCR, retrieval, code retrieval, safety scoring, and audio/transcription tasks.
+   - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
 7. Mention rate-limit issues clearly if the API returns `429`.
@@ -146,6 +147,7 @@ Read these only when needed:
 
 - `references/model-selection.md`: current model families and model-to-task mapping.
 - `references/delegation-playbook.md`: token-saving loops, safe batching, validation, and failure recovery.
+- `references/quota-reporting-fr.md`: French workflow for interpreting `quota-report` output and deciding whether a delegation counts toward the 70 percent objective.
 - `references/repo-audit-public-fr.md`: workflow en francais pour audit borne d'un repo public avec petite amelioration doc/validation.
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
@@ -157,3 +159,4 @@ Read these only when needed:
 - `references/diff-review-findings-fr.md`: French workflow for bounded diff review with actionable findings on a compact helper patch.
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.
 - `references/ui-ux-copy-scroll-driven-fr.md`: French workflow for UI/UX copy critique and rewrites on scroll-driven pages.
+- `references/preflight-secret-screening-fr.md`: French workflow for preflight secret screening before sending bounded context to Mistral.
