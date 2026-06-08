@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1127,
+    "total_tokens": 1524,
+    "completion_tokens": 397,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "43",
+    "x-ratelimit-remaining-tokens-minute": "995768",
+    "x-ratelimit-tokens-query-cost": "1520"
+  },
+  "text": "{\n  \"task_category_fr\": \"quota_reporting\",\n  \"global_summary_fr\": \"Analyse de la sante de la delegation pour le quota reporting.\",\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_A\",\n      \"signal\": \"good_signal\",\n      \"counts_toward_70_objective\": true,\n      \"summary_fr\": \"La delegation est saine avec une part Codex de 34,78%.\",\n      \"next_action_fr\": \"Reutiliser le workflow actuel.\"\n    },\n    {\n      \"case_id\": \"CASE_B\",\n      \"signal\": \"borderline\",\n      \"counts_toward_70_objective\": false,\n      \"summary_fr\": \"La delegation est limite avec une part Codex de 50,52%.\",\n      \"next_action_fr\": \"Resserrer le prompt pour ameliorer l'efficacite.\"\n    },\n    {\n      \"case_id\": \"CASE_C\",\n      \"signal\": \"poor_signal\",\n      \"counts_toward_70_objective\": false,\n      \"summary_fr\": \"La delegation est mauvaise avec une part Codex de 76,74%.\",\n      \"next_action_fr\": \"Reduire la part Codex dans le workflow.\"\n    }\n  ],\n  \"global_rules_fr\": [\n    \"Une delegation est saine si la part Codex est inferieure a 49%.\",\n    \"Une delegation est limite si la part Codex est entre 49% et 55%.\",\n    \"Une delegation est mauvaise si la part Codex depasse 55%.\"\n  ],\n  \"limitations_fr\": [\n    \"Les chiffres proviennent du helper local et ne sont pas recalcules.\",\n    \"Les actions proposees dependent des seuils definis dans le contexte.\"\n  ]\n}"
+}

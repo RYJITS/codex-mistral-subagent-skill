@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1029,
+    "total_tokens": 1348,
+    "completion_tokens": 319,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "246415",
+    "x-ratelimit-tokens-query-cost": "1348"
+  },
+  "text": "```markdown\n# Deleguer a Mistral une tache de quota reporting\n\n## Quand l'utiliser\nUtiliser cette delegation pour obtenir une synthese francaise exploitable des donnees de quota, basee sur les sorties du helper `quota-report`. Mistral classe chaque cas selon la sante de la delegation et propose une action suivante concise.\n\n## Entrees minimales\nFournir les valeurs suivantes au helper `quota-report`:\n- `codex-baseline`: nombre initial de tokens Codex\n- `codex-current`: nombre actuel de tokens Codex\n- `mistral-useful`: nombre de tokens utiles produits par Mistral\n\n## Lecture des signaux\n- **Bon signal**: si la part de Codex (`codex_share_percent`) est inferieure a 49%. Compte vers l'objectif des 70%.\n- **Cas limite**: si la part de Codex est inferieure ou egale a 55% sans passer sous 49%.\n- **Mauvais signal**: si la part de Codex depasse 55%.\n\n## Limites\n- Seule une delegation avec un `good_signal` compte vers l'objectif des 70%.\n- Codex conserve la verification finale des resultats.\n\n## Commande type\n```bash\nnode mistral-subagent/scripts/mistral-subagent.mjs quota-report --codex-baseline 1200 --codex-current 10800 --mistral-useful 18000\n```\n```"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1127,
+    "total_tokens": 1544,
+    "completion_tokens": 417,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "38",
+    "x-ratelimit-remaining-tokens-minute": "43909",
+    "x-ratelimit-tokens-query-cost": "1544"
+  },
+  "text": "{\"task_category_fr\": \"quotas_delegation\", \"global_summary_fr\": \"Analyse des delegations selon leur sante et leur contribution a l'objectif des 70%.\", \"cases\": [{\"case_id\": \"CASE_A\", \"signal\": \"good_signal\", \"counts_toward_70_objective\": true, \"summary_fr\": \"La delegation affiche un signal sain avec 34,78 % de part Codex, bien en dessous du seuil de 49 %.\", \"next_action_fr\": \"Reutiliser le workflow actuel pour maintenir cette efficacite.\"}, {\"case_id\": \"CASE_B\", \"signal\": \"borderline\", \"counts_toward_70_objective\": false, \"summary_fr\": \"La delegation est limite avec 50,52 % de part Codex, legerement au-dessus du seuil de 49 % mais sous 55 %.\", \"next_action_fr\": \"Resserer le prompt pour reduire la part Codex avant de reevaluer.\"}, {\"case_id\": \"CASE_C\", \"signal\": \"poor_signal\", \"counts_toward_70_objective\": false, \"summary_fr\": \"La delegation presente un mauvais signal avec 76,74 % de part Codex, bien au-dessus du seuil de 55 %.\", \"next_action_fr\": \"Reduire significativement la part Codex ou ajuster la strategie de delegation.\"}], \"global_rules_fr\": [\"Une delegation compte vers l'objectif des 70 % uniquement si son signal est 'good_signal'.\", \"Un signal 'borderline' necessite un ajustement avant de pouvoir compter.\", \"Un signal 'poor_signal' ne compte pas et necessite une intervention immediate.\"], \"limitations_fr\": [\"Les pourcentages cites proviennent directement du helper local sans calcul manuel.\", \"Aucune extrapolation ou estimation supplementaire n'est incluse.\"]}"
+}

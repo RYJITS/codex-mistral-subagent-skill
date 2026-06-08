@@ -1,0 +1,227 @@
+{
+  "capability": "quota-reporting",
+  "verdict": "Valide",
+  "task_category_fr": "reporting quota/token et synthese FR de delegation",
+  "why_it_matters_fr": "Cette tache revient dans le lab lui-meme et dans les futurs bilans de delegation a faible risque.",
+  "models_tested": [
+    {
+      "model": "mistral-small-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 417,
+      "total_tokens": 1544
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 1127,
+      "completion_tokens": 433,
+      "total_tokens": 1560
+    },
+    {
+      "model": "devstral-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 397,
+      "total_tokens": 1524
+    },
+    {
+      "model": "mistral-large-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 416,
+      "total_tokens": 1543
+    },
+    {
+      "model": "mistral-medium-3.5 retry",
+      "prompt_tokens": 1020,
+      "completion_tokens": 335,
+      "total_tokens": 1355
+    },
+    {
+      "model": "devstral-latest retry",
+      "prompt_tokens": 1020,
+      "completion_tokens": 359,
+      "total_tokens": 1379
+    },
+    {
+      "model": "mistral-large-latest retry",
+      "prompt_tokens": 1020,
+      "completion_tokens": 397,
+      "total_tokens": 1417
+    },
+    {
+      "model": "mistral-medium-3.5 reference",
+      "prompt_tokens": 1041,
+      "completion_tokens": 207,
+      "total_tokens": 1248
+    },
+    {
+      "model": "mistral-large-latest reference",
+      "prompt_tokens": 1029,
+      "completion_tokens": 319,
+      "total_tokens": 1348
+    }
+  ],
+  "initial_results": [
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-small-quota-reporting.json",
+      "model": "mistral-small-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 417,
+      "total_tokens": 1544,
+      "order_ok": true,
+      "signals_ok": true,
+      "counts_ok": true,
+      "percentages_ok": true,
+      "schema_ok": true,
+      "semantic_pass": true
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-medium35-quota-reporting.json",
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 1127,
+      "completion_tokens": 433,
+      "total_tokens": 1560,
+      "order_ok": true,
+      "signals_ok": true,
+      "counts_ok": true,
+      "percentages_ok": true,
+      "schema_ok": true,
+      "semantic_pass": true
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-devstral-quota-reporting.json",
+      "model": "devstral-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 397,
+      "total_tokens": 1524,
+      "order_ok": true,
+      "signals_ok": true,
+      "counts_ok": true,
+      "percentages_ok": true,
+      "schema_ok": true,
+      "semantic_pass": true
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-large-quota-reporting.json",
+      "model": "mistral-large-latest",
+      "prompt_tokens": 1127,
+      "completion_tokens": 416,
+      "total_tokens": 1543,
+      "order_ok": true,
+      "signals_ok": true,
+      "counts_ok": true,
+      "percentages_ok": true,
+      "schema_ok": true,
+      "semantic_pass": true
+    }
+  ],
+  "retry_results": [
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-medium35-quota-reporting-retry.json",
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 1020,
+      "completion_tokens": 335,
+      "total_tokens": 1355,
+      "cases_is_array": false,
+      "global_rules_is_array": false,
+      "limitations_is_array": false,
+      "strict_schema_pass": false
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-devstral-quota-reporting-retry.json",
+      "model": "devstral-latest",
+      "prompt_tokens": 1020,
+      "completion_tokens": 359,
+      "total_tokens": 1379,
+      "cases_is_array": false,
+      "global_rules_is_array": false,
+      "limitations_is_array": false,
+      "strict_schema_pass": false
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-large-quota-reporting-retry.json",
+      "model": "mistral-large-latest",
+      "prompt_tokens": 1020,
+      "completion_tokens": 397,
+      "total_tokens": 1417,
+      "cases_is_array": false,
+      "global_rules_is_array": false,
+      "limitations_is_array": false,
+      "strict_schema_pass": false
+    }
+  ],
+  "reference_results": [
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-medium35-quota-reference.json",
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 1041,
+      "completion_tokens": 207,
+      "total_tokens": 1248,
+      "has_sections": true,
+      "has_command": true,
+      "mentions_objective": true,
+      "usable_reference_draft": true
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-large-quota-reference.json",
+      "model": "mistral-large-latest",
+      "prompt_tokens": 1029,
+      "completion_tokens": 319,
+      "total_tokens": 1348,
+      "has_sections": true,
+      "has_command": true,
+      "mentions_objective": false,
+      "usable_reference_draft": false
+    }
+  ],
+  "useful_outputs_counted": [
+    {
+      "model": "mistral-medium-3.5",
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-medium35-quota-reporting.json",
+      "total_tokens": 1560,
+      "reason_fr": "Base semantique retenue pour la classification des trois cas."
+    },
+    {
+      "model": "devstral-latest",
+      "file": "docs/daily-tests/evidence/2026-06-08-devstral-quota-reporting.json",
+      "total_tokens": 1524,
+      "reason_fr": "Confirmation secondaire de la meme lecture quota."
+    },
+    {
+      "model": "mistral-large-latest",
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-large-quota-reporting.json",
+      "total_tokens": 1543,
+      "reason_fr": "Seconde opinion sur la formulation publique des signaux."
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "file": "docs/daily-tests/evidence/2026-06-08-mistral-medium35-quota-reference.json",
+      "total_tokens": 1248,
+      "reason_fr": "Brouillon retenu pour la nouvelle reference quota reporting."
+    }
+  ],
+  "useful_mistral_tokens_total": 5875,
+  "excluded_outputs": [
+    {
+      "model": "mistral-small-latest",
+      "reason_fr": "Lecture correcte mais moins utile apres comparaison, avec plus de normalisation de formulation."
+    },
+    {
+      "model": "mistral-medium-3.5 retry",
+      "reason_fr": "Schema degrade: cases objet et tableaux remplaces par chaines."
+    },
+    {
+      "model": "devstral-latest retry",
+      "reason_fr": "Schema degrade: cases objet et tableaux remplaces par chaines."
+    },
+    {
+      "model": "mistral-large-latest retry",
+      "reason_fr": "Schema degrade: cases objet et tableaux remplaces par chaines."
+    },
+    {
+      "model": "mistral-large-latest reference",
+      "reason_fr": "Brouillon redondant par rapport au draft medium retenu."
+    }
+  ],
+  "limitation_fr": "Le raisonnement quota est solide, mais les prompts surcontraints peuvent casser le schema strict. Codex doit encore normaliser les artefacts finaux.",
+  "contributes_toward_70_objective": true,
+  "coverage_estimate_after_run_percent": 50
+}

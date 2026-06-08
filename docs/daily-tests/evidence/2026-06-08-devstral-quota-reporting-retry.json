@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1020,
+    "total_tokens": 1379,
+    "completion_tokens": 359,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "998368",
+    "x-ratelimit-tokens-query-cost": "1379"
+  },
+  "text": "{\n  \"task_category_fr\": \"quota reporting\",\n  \"global_summary_fr\": \"Analyse de la sante des delegations selon les regles de lecture fournies.\",\n  \"cases\": {\n    \"CASE_A\": {\n      \"signal\": \"good_signal\",\n      \"summary_fr\": \"La delegation est un bon signal avec une part Codex de 34.78%.\",\n      \"counts_toward_70_objective\": true,\n      \"next_action_fr\": \"reuse workflow\"\n    },\n    \"CASE_B\": {\n      \"signal\": \"borderline\",\n      \"summary_fr\": \"La delegation est borderline avec une part Codex de 50.52%.\",\n      \"counts_toward_70_objective\": false,\n      \"next_action_fr\": \"tighten prompt\"\n    },\n    \"CASE_C\": {\n      \"signal\": \"poor_signal\",\n      \"summary_fr\": \"La delegation est un mauvais signal avec une part Codex de 76.74%.\",\n      \"counts_toward_70_objective\": false,\n      \"next_action_fr\": \"reduce Codex share\"\n    }\n  },\n  \"global_rules_fr\": \"Si target_under_49_percent est vrai, la delegation est un good_signal. Si target_under_49_percent est faux et codex_share_percent <= 55, la delegation est borderline. Si target_under_49_percent est faux et codex_share_percent > 55, la delegation est poor_signal.\",\n  \"limitations_fr\": \"Les chiffres proviennent du helper local et ne doivent pas etre recalcules manuellement.\"\n}"
+}

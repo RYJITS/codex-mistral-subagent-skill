@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1127,
+    "total_tokens": 1560,
+    "completion_tokens": 433,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "38",
+    "x-ratelimit-remaining-tokens-minute": "18802",
+    "x-ratelimit-tokens-query-cost": "1560"
+  },
+  "text": "{\n  \"task_category_fr\": \"quota reporting\",\n  \"global_summary_fr\": \"Synthese des cas de delegation pour l'objectif des 70 %\",\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_A\",\n      \"signal\": \"good_signal\",\n      \"counts_toward_70_objective\": true,\n      \"summary_fr\": \"La delegation affiche une part Codex de 34,78 %, sous le seuil de 49 %.\",\n      \"next_action_fr\": \"Reutiliser le workflow pour maintenir l'efficacite.\"\n    },\n    {\n      \"case_id\": \"CASE_B\",\n      \"signal\": \"borderline\",\n      \"counts_toward_70_objective\": false,\n      \"summary_fr\": \"La delegation affiche une part Codex de 50,52 %, au-dessus de 49 % mais sous 55 %.\",\n      \"next_action_fr\": \"Resserrer le prompt pour reduire la part Codex.\"\n    },\n    {\n      \"case_id\": \"CASE_C\",\n      \"signal\": \"poor_signal\",\n      \"counts_toward_70_objective\": false,\n      \"summary_fr\": \"La delegation affiche une part Codex de 76,74 %, bien au-dessus de 55 %.\",\n      \"next_action_fr\": \"Reduire la part Codex pour ameliorer l'efficacite.\"\n    }\n  ],\n  \"global_rules_fr\": [\n    \"Une delegation est un bon signal si la part Codex est sous 49 %\",\n    \"Une delegation est limite si la part Codex est entre 49 % et 55 % inclus\",\n    \"Une delegation est un mauvais signal si la part Codex depasse 55 %\"\n  ],\n  \"limitations_fr\": [\n    \"Seuls les bons signaux comptent vers l'objectif des 70 %\",\n    \"Les cas limites et mauvais signaux necessitent une action corrective\"\n  ]\n}"
+}

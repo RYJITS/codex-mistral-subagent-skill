@@ -1,0 +1,22 @@
+{
+  "case_order": [
+    "CASE_A",
+    "CASE_B",
+    "CASE_C"
+  ],
+  "expected_signals": {
+    "CASE_A": "good_signal",
+    "CASE_B": "borderline",
+    "CASE_C": "poor_signal"
+  },
+  "expected_counts": {
+    "CASE_A": true,
+    "CASE_B": false,
+    "CASE_C": false
+  },
+  "required_percentages": {
+    "CASE_A": "34.78",
+    "CASE_B": "50.52",
+    "CASE_C": "76.74"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1020,
+    "total_tokens": 1355,
+    "completion_tokens": 335,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "23543",
+    "x-ratelimit-tokens-query-cost": "1355"
+  },
+  "text": "{\"task_category_fr\": \"quota reporting\", \"global_summary_fr\": \"Synthese des cas de delegation pour le lab avec classification selon la sante et actions proposees\", \"cases\": {\"CASE_A\": {\"signal\": \"good_signal\", \"counts_toward_70_objective\": true, \"summary_fr\": \"Delegation avec part Codex a 34.78 et cible sous 49 pourcent. Signal sain.\", \"next_action_fr\": \"reuse workflow\"}, \"CASE_B\": {\"signal\": \"borderline\", \"counts_toward_70_objective\": false, \"summary_fr\": \"Delegation avec part Codex a 50.52 et cible au-dessus de 49 pourcent. Signal limite.\", \"next_action_fr\": \"tighten prompt\"}, \"CASE_C\": {\"signal\": \"poor_signal\", \"counts_toward_70_objective\": false, \"summary_fr\": \"Delegation avec part Codex a 76.74 et cible au-dessus de 49 pourcent. Signal faible.\", \"next_action_fr\": \"reduce Codex share\"}}, \"global_rules_fr\": \"Si target_under_49_percent est true, signal est good_signal. Si false et codex_share_percent <= 55, signal est borderline. Si false et codex_share_percent > 55, signal est poor_signal.\", \"limitations_fr\": \"Les chiffres proviennent du helper quota-report. Aucune autre source ou calcul manuel n'est utilisee.\"}"
+}

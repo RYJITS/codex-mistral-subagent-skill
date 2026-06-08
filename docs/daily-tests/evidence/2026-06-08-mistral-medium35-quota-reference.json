@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1041,
+    "total_tokens": 1248,
+    "completion_tokens": 207,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "19017",
+    "x-ratelimit-tokens-query-cost": "1248"
+  },
+  "text": "```markdown\n# Deleguer le quota reporting a Mistral\n\n## Quand l'utiliser\nPour evaluer si une delegation a Mistral reduit suffisamment la part Codex dans le travail total.\n\n## Entrees minimales\nFournir au helper `quota-report` les valeurs `codex-baseline`, `codex-current` et `mistral-useful`.\n\n## Lecture des signaux\n- good_signal: part Codex < 49%\n- borderline: part Codex <= 55% sans passer sous 49%\n- poor_signal: part Codex > 55%\n\nSeule une delegation `good_signal` compte vers l'objectif des 70 %.\n\n## Limites\nCodex garde la verification finale des resultats.\n\n## Commande type\nnode mistral-subagent/scripts/mistral-subagent.mjs quota-report --codex-baseline 1200 --codex-current 10800 --mistral-useful 18000\n```"
+}

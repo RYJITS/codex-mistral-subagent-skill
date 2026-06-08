@@ -1,0 +1,20 @@
+Retourne un objet JSON strict avec exactement les memes cles que precedemment:
+
+- `task_category_fr`
+- `global_summary_fr`
+- `cases`
+- `global_rules_fr`
+- `limitations_fr`
+
+Contraintes renforcees:
+
+- ASCII uniquement dans toutes les chaines;
+- garder l'ordre exact `CASE_A`, `CASE_B`, `CASE_C`;
+- `signal` doit etre exactement `good_signal`, `borderline`, `poor_signal`;
+- `counts_toward_70_objective` doit etre exactement `true`, `false`, `false`;
+- chaque `summary_fr` doit contenir litteralement `34.78`, `50.52`, ou `76.74` selon le cas, avec un point decimal et pas une virgule;
+- `next_action_fr` doit contenir exactement l'une des intentions suivantes:
+  - `reuse workflow`
+  - `tighten prompt`
+  - `reduce Codex share`
+- pas d'accents, pas de symbole `<=`, pas de texte hors JSON, pas de cle supplementaire.

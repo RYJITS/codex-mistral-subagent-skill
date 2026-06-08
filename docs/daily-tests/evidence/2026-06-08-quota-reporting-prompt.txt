@@ -1,0 +1,26 @@
+Retourne un objet JSON strict avec exactement les cles suivantes:
+
+- `task_category_fr`: chaine courte
+- `global_summary_fr`: chaine courte
+- `cases`: tableau de 3 objets dans l'ordre exact `CASE_A`, `CASE_B`, `CASE_C`
+- `global_rules_fr`: tableau de 3 chaines courtes
+- `limitations_fr`: tableau de 2 chaines courtes
+
+Chaque objet de `cases` doit contenir exactement:
+
+- `case_id`: `CASE_A` ou `CASE_B` ou `CASE_C`
+- `signal`: `good_signal` ou `borderline` ou `poor_signal`
+- `counts_toward_70_objective`: booleen
+- `summary_fr`: une phrase concise en francais
+- `next_action_fr`: une phrase concise en francais
+
+Regles supplementaires:
+
+- `counts_toward_70_objective` vaut `true` uniquement pour un `good_signal`;
+- `CASE_A` doit etre interprete comme une delegation saine qui compte vers l'objectif;
+- `CASE_B` doit etre interprete comme un cas limite qui ne compte pas encore vers l'objectif;
+- `CASE_C` doit etre interprete comme un mauvais signal qui ne compte pas vers l'objectif;
+- `summary_fr` doit citer explicitement le pourcentage exact du cas;
+- `next_action_fr` doit proposer soit de reutiliser le workflow, soit de resserrer le prompt, soit de reduire la part Codex, selon le cas;
+- aucune cle supplementaire;
+- aucun texte hors JSON.

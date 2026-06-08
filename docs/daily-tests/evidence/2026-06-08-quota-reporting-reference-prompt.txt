@@ -1,0 +1,20 @@
+Redige une note Markdown courte en francais, ASCII uniquement, pour expliquer comment deleguer a Mistral une tache de quota reporting basee sur le helper `quota-report`.
+
+Contraintes:
+
+- titre niveau 1 obligatoire;
+- sections exactes:
+  - `Quand l'utiliser`
+  - `Entrees minimales`
+  - `Lecture des signaux`
+  - `Limites`
+  - `Commande type`
+- rester focalise sur les seuils deja donnes:
+  - bon signal si part Codex < 49%
+  - cas limite si part Codex <= 55% sans passer sous 49%
+  - mauvais signal au-dela de 55%
+- dire que seule une delegation `good_signal` compte vers l'objectif des 70 %;
+- rappeler que Codex garde la verification finale;
+- proposer une commande type avec `node mistral-subagent/scripts/mistral-subagent.mjs quota-report --codex-baseline 1200 --codex-current 10800 --mistral-useful 18000`
+- aucune introduction hors Markdown
+- pas d'accents, pas de puces imbriquees, pas de texte sur d'autres modeles.
