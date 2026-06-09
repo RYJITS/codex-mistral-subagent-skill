@@ -149,7 +149,6 @@ Read these only when needed:
 - `references/model-selection.md`: current model families and model-to-task mapping.
 - `references/delegation-playbook.md`: token-saving loops, safe batching, validation, and failure recovery.
 - `references/quota-reporting-fr.md`: French workflow for interpreting `quota-report` output and deciding whether a delegation counts toward the 70 percent objective.
-- `references/rag-embeddings-prep-fr.md`: French workflow for bounded retrieval prep with `mistral-embed` and local top-k verification before any chat step.
 - `references/repo-audit-public-fr.md`: workflow en francais pour audit borne d'un repo public avec petite amelioration doc/validation.
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.

@@ -97,6 +97,15 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - Use `mistral-small-latest` only with a compact schema and short text fields; if it truncates, tighten the payload before retrying.
 - Prefer `mistral-medium-3.5` for richer French documentation payloads and `devstral-latest` when repo-shaped command fidelity matters.
 
+### Embeddings/RAG planning for multi-project memory
+
+- Keep the task on planning only: model choice, safe scope, update hook, and a reversible pilot backlog.
+- Prefer `mistral-medium-3.5` for the first constrained French plan, then `devstral-latest` as a second opinion on repo fit and command realism.
+- Ask for `mistral-embed` as the default primary embedding model when memory/doc retrieval dominates, and only add `codestral-embed` if code retrieval becomes a real requirement.
+- Freeze the allowed validation commands in the prompt. Reject outputs that invent `pytest`, `embeddings:*`, `retrieve:*`, or other commands not proven locally.
+- Do not count the run as fully valid if the model still needs heavy schema normalization or mixes planning with a full implementation design.
+- See `mistral-subagent/references/rag-embeddings-planning-fr.md` for the validated French workflow from `2026-06-09`.
+
 ### Unit-test idea generation for a local helper
 
 - Send only the functions, behaviors, limits, and available repo scripts that matter to the test ideation.
