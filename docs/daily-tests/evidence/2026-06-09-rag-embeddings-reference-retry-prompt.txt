@@ -1,0 +1,19 @@
+Retourne uniquement un JSON valide en francais:
+{
+  "title": "string",
+  "markdown": "string"
+}
+
+Le champ `markdown` doit rester tres court:
+- un titre
+- une phrase objectif
+- 5 puces maximum
+
+Les puces doivent couvrir:
+- collections minimales `Conpetances`, `Instructions`, `Memoire`, repo `codex-mistral-subagent-skill`
+- exclusion absolue de `D:\00_Cerveau_IA\API\env.Local`
+- metadata minimales pour multi-projets
+- trigger `npm run memoire:update`
+- validation locale simple
+
+N'invente rien et n'utilise pas de bloc de code.

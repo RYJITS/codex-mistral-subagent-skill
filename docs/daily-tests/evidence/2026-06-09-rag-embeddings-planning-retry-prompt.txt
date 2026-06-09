@@ -1,0 +1,62 @@
+Version compacte du meme plan.
+
+Retourne uniquement un JSON valide en francais, sans Markdown, avec le meme schema que precedemment.
+
+Contraintes supplementaires pour tenir dans la limite:
+- maximum `5` collections
+- maximum `6` exclusions
+- maximum `5` champs metadata
+- maximum `3` refresh_triggers
+- maximum `3` validation_checks
+- chaque `notes_fr`, `reason_fr`, `action_fr` et `how_to_validate_fr` doit rester tres court
+- n'invente rien
+- mentionne explicitement `npm run memoire:update`
+- exclue explicitement `D:\00_Cerveau_IA\API\env.Local`
+- garde le plan compatible multi-projets
+
+Schema identique:
+{
+  "task_category": "string",
+  "why_it_matters_fr": "string",
+  "collections": [
+    {
+      "id": "string",
+      "paths": ["string"],
+      "content_types": ["string"],
+      "priority": "high|medium|low",
+      "notes_fr": "string"
+    }
+  ],
+  "exclusions": [
+    {
+      "path_or_pattern": "string",
+      "reason_fr": "string"
+    }
+  ],
+  "chunking_policy": {
+    "documents_fr": "string",
+    "scripts_code": "string",
+    "memory_entries": "string"
+  },
+  "metadata_schema": [
+    {
+      "field": "string",
+      "required": true,
+      "reason_fr": "string"
+    }
+  ],
+  "refresh_triggers": [
+    {
+      "trigger": "string",
+      "action_fr": "string"
+    }
+  ],
+  "validation_checks": [
+    {
+      "check": "string",
+      "how_to_validate_fr": "string"
+    }
+  ],
+  "risks": ["string"],
+  "contributes_to_70_objective": true
+}

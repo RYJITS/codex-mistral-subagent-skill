@@ -1,0 +1,18 @@
+Redige un court document Markdown en francais pour une reference de skill.
+
+Sujet:
+Workflow valide de planification RAG/embeddings multi-projets pour `D:\00_Cerveau_IA` et `D:\00_Cerveau_IA\Projet\codex-mistral-subagent-skill`.
+
+Contraintes:
+- N'invente aucun script, aucune infra, aucune commande non visible.
+- Mentionne explicitement:
+  - les collections minimales `Conpetances`, `Instructions`, `Memoire`, repo `codex-mistral-subagent-skill`
+  - l'exclusion absolue de `D:\00_Cerveau_IA\API\env.Local`
+  - la compatibilite multi-projets
+  - `npm run memoire:update` comme trigger de refresh
+- Reste bref et pratique.
+- Retourne un JSON valide de la forme:
+  {
+    "title": "string",
+    "markdown": "string"
+  }

@@ -1,0 +1,66 @@
+Tu es un sous-agent Mistral aide par Codex.
+
+Tache:
+Produis un plan de preparation RAG/embeddings multi-projets pour `D:\00_Cerveau_IA` et le repo public `D:\00_Cerveau_IA\Projet\codex-mistral-subagent-skill`.
+
+Contraintes:
+- Retourne uniquement un JSON valide, sans Markdown.
+- Ecris en francais.
+- N'invente aucun script, dossier, commande, modele, endpoint ou fichier non visible dans le contexte.
+- Respecte strictement la structure reelle et les regles AGENTS.
+- Exclue explicitement `D:\00_Cerveau_IA\API\env.Local`, les secrets, les credentials, les caches et binaires.
+- Le plan doit rester compatible multi-projets.
+- Les commandes de validation doivent rester bornees et realistes.
+
+Critere de qualite:
+- Le JSON doit etre directement exploitable par Codex pour construire un plan d'indexation.
+- Les chemins doivent etre exacts.
+- Les `refresh_triggers` doivent mentionner `npm run memoire:update`.
+- Le plan doit distinguer documents, memoire, scripts/competences et references du skill.
+
+Schema:
+{
+  "task_category": "string",
+  "why_it_matters_fr": "string",
+  "collections": [
+    {
+      "id": "string",
+      "paths": ["string"],
+      "content_types": ["string"],
+      "priority": "high|medium|low",
+      "notes_fr": "string"
+    }
+  ],
+  "exclusions": [
+    {
+      "path_or_pattern": "string",
+      "reason_fr": "string"
+    }
+  ],
+  "chunking_policy": {
+    "documents_fr": "string",
+    "scripts_code": "string",
+    "memory_entries": "string"
+  },
+  "metadata_schema": [
+    {
+      "field": "string",
+      "required": true,
+      "reason_fr": "string"
+    }
+  ],
+  "refresh_triggers": [
+    {
+      "trigger": "string",
+      "action_fr": "string"
+    }
+  ],
+  "validation_checks": [
+    {
+      "check": "string",
+      "how_to_validate_fr": "string"
+    }
+  ],
+  "risks": ["string"],
+  "contributes_to_70_objective": true
+}

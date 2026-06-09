@@ -1,0 +1,29 @@
+{
+  "required_collection_paths": [
+    "D:\\00_Cerveau_IA\\Conpetances",
+    "D:\\00_Cerveau_IA\\Instructions",
+    "D:\\00_Cerveau_IA\\Memoire",
+    "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill"
+  ],
+  "required_exclusions": [
+    "D:\\00_Cerveau_IA\\API\\env.Local",
+    "secret",
+    "token",
+    "credential",
+    "cache",
+    "binary"
+  ],
+  "required_refresh_signal": "npm run memoire:update",
+  "required_metadata_fields": [
+    "projet",
+    "type_source",
+    "path",
+    "updated_at"
+  ],
+  "required_validation_signals": [
+    "verifier les chemins existants",
+    "ne pas inventer",
+    "compatible multi-projets"
+  ],
+  "max_invented_commands": 0
+}

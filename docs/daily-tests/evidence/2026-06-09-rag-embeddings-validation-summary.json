@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-06-09T06:07:09.781Z",
+  "results": [
+    {
+      "file": "2026-06-09-mistral-small-rag-embeddings-planning.json",
+      "model": "mistral-small-latest",
+      "finish_reason": "length",
+      "total_tokens": 3382,
+      "completion_tokens": 1800,
+      "parsed_json": false,
+      "parse_error": "Expected ',' or '}' after property value in JSON at position 6559 (line 1 column 6560)",
+      "required_paths_hit": [],
+      "required_paths_count": 0,
+      "exclusion_hits": [],
+      "exclusion_count": 0,
+      "refresh_hit": false,
+      "metadata_hits": [],
+      "metadata_count": 0,
+      "validation_signal_hits": [],
+      "validation_signal_count": 0,
+      "explicit_multi_project": false,
+      "collection_count": 0,
+      "validation_check_count": 0,
+      "contributes": false
+    },
+    {
+      "file": "2026-06-09-mistral-medium35-rag-embeddings-planning.json",
+      "model": "mistral-medium-3.5",
+      "finish_reason": "length",
+      "total_tokens": 3382,
+      "completion_tokens": 1800,
+      "parsed_json": false,
+      "parse_error": "Unterminated string in JSON at position 5993 (line 145 column 16)",
+      "required_paths_hit": [],
+      "required_paths_count": 0,
+      "exclusion_hits": [],
+      "exclusion_count": 0,
+      "refresh_hit": false,
+      "metadata_hits": [],
+      "metadata_count": 0,
+      "validation_signal_hits": [],
+      "validation_signal_count": 0,
+      "explicit_multi_project": false,
+      "collection_count": 0,
+      "validation_check_count": 0,
+      "contributes": false
+    },
+    {
+      "file": "2026-06-09-devstral-rag-embeddings-planning.json",
+      "model": "devstral-latest",
+      "finish_reason": "stop",
+      "total_tokens": 2982,
+      "completion_tokens": 1400,
+      "parsed_json": true,
+      "parse_error": null,
+      "required_paths_hit": [
+        "D:\\00_Cerveau_IA\\Conpetances",
+        "D:\\00_Cerveau_IA\\Instructions",
+        "D:\\00_Cerveau_IA\\Memoire",
+        "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill"
+      ],
+      "required_paths_count": 4,
+      "exclusion_hits": [
+        "D:\\00_Cerveau_IA\\API\\env.Local",
+        "secret",
+        "credential",
+        "cache"
+      ],
+      "exclusion_count": 4,
+      "refresh_hit": true,
+      "metadata_hits": [
+        "projet",
+        "type_source"
+      ],
+      "metadata_count": 2,
+      "validation_signal_hits": [],
+      "validation_signal_count": 0,
+      "explicit_multi_project": true,
+      "collection_count": 5,
+      "validation_check_count": 3,
+      "contributes": true
+    },
+    {
+      "file": "2026-06-09-mistral-large-rag-embeddings-planning.json",
+      "model": "mistral-large-latest",
+      "finish_reason": "length",
+      "total_tokens": 3382,
+      "completion_tokens": 1800,
+      "parsed_json": false,
+      "parse_error": "Unterminated string in JSON at position 6410 (line 155 column 16)",
+      "required_paths_hit": [],
+      "required_paths_count": 0,
+      "exclusion_hits": [],
+      "exclusion_count": 0,
+      "refresh_hit": false,
+      "metadata_hits": [],
+      "metadata_count": 0,
+      "validation_signal_hits": [],
+      "validation_signal_count": 0,
+      "explicit_multi_project": false,
+      "collection_count": 0,
+      "validation_check_count": 0,
+      "contributes": false
+    },
+    {
+      "file": "2026-06-09-mistral-medium35-rag-embeddings-planning-retry.json",
+      "model": "mistral-medium-3.5",
+      "finish_reason": "stop",
+      "total_tokens": 2348,
+      "completion_tokens": 861,
+      "parsed_json": true,
+      "parse_error": null,
+      "required_paths_hit": [
+        "D:\\00_Cerveau_IA\\Conpetances",
+        "D:\\00_Cerveau_IA\\Instructions",
+        "D:\\00_Cerveau_IA\\Memoire",
+        "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill"
+      ],
+      "required_paths_count": 4,
+      "exclusion_hits": [
+        "D:\\00_Cerveau_IA\\API\\env.Local",
+        "secret",
+        "cache"
+      ],
+      "exclusion_count": 3,
+      "refresh_hit": true,
+      "metadata_hits": [
+        "projet",
+        "type_source"
+      ],
+      "metadata_count": 2,
+      "validation_signal_hits": [],
+      "validation_signal_count": 0,
+      "explicit_multi_project": true,
+      "collection_count": 5,
+      "validation_check_count": 3,
+      "contributes": true
+    },
+    {
+      "file": "2026-06-09-mistral-large-rag-embeddings-planning-retry.json",
+      "model": "mistral-large-latest",
+      "finish_reason": "stop",
+      "total_tokens": 2637,
+      "completion_tokens": 1150,
+      "parsed_json": true,
+      "parse_error": null,
+      "required_paths_hit": [
+        "D:\\00_Cerveau_IA\\Conpetances",
+        "D:\\00_Cerveau_IA\\Instructions",
+        "D:\\00_Cerveau_IA\\Memoire",
+        "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill"
+      ],
+      "required_paths_count": 4,
+      "exclusion_hits": [
+        "D:\\00_Cerveau_IA\\API\\env.Local",
+        "secret",
+        "token",
+        "cache"
+      ],
+      "exclusion_count": 4,
+      "refresh_hit": true,
+      "metadata_hits": [
+        "projet",
+        "type_source"
+      ],
+      "metadata_count": 2,
+      "validation_signal_hits": [
+        "compatible multi-projets"
+      ],
+      "validation_signal_count": 1,
+      "explicit_multi_project": true,
+      "collection_count": 5,
+      "validation_check_count": 3,
+      "contributes": true
+    }
+  ]
+}

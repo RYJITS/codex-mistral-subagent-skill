@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1487,
+    "total_tokens": 2348,
+    "completion_tokens": 861,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "18158",
+    "x-ratelimit-tokens-query-cost": "2348"
+  },
+  "text": "{\"task_category\": \"Pr\ufffdparation RAG/embeddings multi-projets\", \"why_it_matters_fr\": \"Indexer et retrouver rapidement les connaissances utiles sans exposer de secrets\", \"collections\": [{\"id\": \"competances\", \"paths\": [\"D:\\\\00_Cerveau_IA\\\\Conpetances\"], \"content_types\": [\"scripts\", \"documentation\"], \"priority\": \"high\", \"notes_fr\": \"Scripts Node/PowerShell/Python\"}, {\"id\": \"instructions\", \"paths\": [\"D:\\\\00_Cerveau_IA\\\\Instructions\"], \"content_types\": [\"markdown\", \"texte\"], \"priority\": \"high\", \"notes_fr\": \"Instructions g\ufffdn\ufffdrales\"}, {\"id\": \"memoire\", \"paths\": [\"D:\\\\00_Cerveau_IA\\\\Memoire\"], \"content_types\": [\"markdown\", \"index\"], \"priority\": \"high\", \"notes_fr\": \"M\ufffdmoire user et projet\"}, {\"id\": \"memoire_user\", \"paths\": [\"D:\\\\00_Cerveau_IA\\\\Memoire\\\\Memoire User\"], \"content_types\": [\"markdown\"], \"priority\": \"medium\", \"notes_fr\": \"M\ufffdmoire sp\ufffdcifique utilisateur\"}, {\"id\": \"codex_repo\", \"paths\": [\"D:\\\\00_Cerveau_IA\\\\Projet\\\\codex-mistral-subagent-skill\"], \"content_types\": [\"markdown\", \"code\", \"scripts\"], \"priority\": \"medium\", \"notes_fr\": \"Repo public du projet\"}], \"exclusions\": [{\"path_or_pattern\": \"D:\\\\00_Cerveau_IA\\\\API\\\\env.Local\", \"reason_fr\": \"Fichier sensible\"}, {\"path_or_pattern\": \"**/node_modules/**\", \"reason_fr\": \"Dossiers de d\ufffdpendances\"}, {\"path_or_pattern\": \"**/.env\", \"reason_fr\": \"Fichiers de configuration\"}, {\"path_or_pattern\": \"**/*.bin\", \"reason_fr\": \"Binaires\"}, {\"path_or_pattern\": \"**/.git/**\", \"reason_fr\": \"Dossiers Git\"}, {\"path_or_pattern\": \"**/cache/**\", \"reason_fr\": \"Caches\"}], \"chunking_policy\": {\"documents_fr\": \"Par section ou paragraphe\", \"scripts_code\": \"Par fonction ou bloc logique\", \"memory_entries\": \"Par entr\ufffde ou groupe th\ufffdmatique\"}, \"metadata_schema\": [{\"field\": \"projet\", \"required\": false, \"reason_fr\": \"Identification du projet\"}, {\"field\": \"type_source\", \"required\": true, \"reason_fr\": \"Type de contenu (script, doc, etc.)\"}, {\"field\": \"chemin\", \"required\": true, \"reason_fr\": \"Chemin relatif ou absolu\"}, {\"field\": \"date_mise_a_jour\", \"required\": true, \"reason_fr\": \"Derni\ufffdre modification\"}, {\"field\": \"portee\", \"required\": false, \"reason_fr\": \"user/projet/global\"}], \"refresh_triggers\": [{\"trigger\": \"npm run memoire:update\", \"action_fr\": \"Reindexer les m\ufffdmoires\"}, {\"trigger\": \"Ajout de comp\ufffdtence\", \"action_fr\": \"Reindexer Conpetances\"}, {\"trigger\": \"Ajout d'instruction\", \"action_fr\": \"Reindexer Instructions\"}], \"validation_checks\": [{\"check\": \"Chemin D:\\\\00_Cerveau_IA existe\", \"how_to_validate_fr\": \"V\ufffdrifier manuellement\"}, {\"check\": \"Commande npm run memoire:update existe\", \"how_to_validate_fr\": \"V\ufffdrifier dans package.json\"}, {\"check\": \"Exclusion de env.Local\", \"how_to_validate_fr\": \"V\ufffdrifier dans exclusions\"}], \"risks\": [\"Exposition accidentelle de secrets\", \"Indexation de fichiers non pertinents\", \"Incompatibilit\ufffd multi-projets\"], \"contributes_to_70_objective\": true}"
+}

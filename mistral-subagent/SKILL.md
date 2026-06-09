@@ -101,6 +101,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - `codestral-latest`: code generation, code review, and fill-in-middle/code-completion work.
    - `magistral-medium-latest`: careful reasoning or step-by-step evaluations when available.
    - `mistral-ocr-latest`, `mistral-embed`, `codestral-embed`, `mistral-moderation-latest`, and `voxtral-mini-latest`: OCR, retrieval, code retrieval, safety scoring, and audio/transcription tasks.
+   - for bounded retrieval prep, prefer `mistral-embed` first, verify top-k locally, and treat `codestral-embed` as code-specific only after local validation on the target corpus.
    - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
@@ -148,6 +149,7 @@ Read these only when needed:
 - `references/model-selection.md`: current model families and model-to-task mapping.
 - `references/delegation-playbook.md`: token-saving loops, safe batching, validation, and failure recovery.
 - `references/quota-reporting-fr.md`: French workflow for interpreting `quota-report` output and deciding whether a delegation counts toward the 70 percent objective.
+- `references/rag-embeddings-prep-fr.md`: French workflow for bounded retrieval prep with `mistral-embed` and local top-k verification before any chat step.
 - `references/repo-audit-public-fr.md`: workflow en francais pour audit borne d'un repo public avec petite amelioration doc/validation.
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
@@ -155,6 +157,7 @@ Read these only when needed:
 - `references/json-extraction-maintenance-fr.md`: French workflow for turning a maintenance brief into strict JSON Codex can validate directly.
 - `references/review-comment-triage-fr.md`: French workflow for classifying bounded review comments into `apply_now`, `needs_human`, and `reject`.
 - `references/task-delegation-triage-fr.md`: French note for classifying real project tasks into `oui`, `partiel`, and `non` before choosing a Mistral model.
+- `references/rag-embeddings-planning-fr.md`: French workflow for bounded RAG/embeddings planning on a multi-project knowledge base before local implementation.
 - `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
 - `references/diff-review-findings-fr.md`: French workflow for bounded diff review with actionable findings on a compact helper patch.
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.
