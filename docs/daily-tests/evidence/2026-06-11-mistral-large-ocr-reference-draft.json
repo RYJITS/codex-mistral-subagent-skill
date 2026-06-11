@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 687,
+    "total_tokens": 1097,
+    "completion_tokens": 410,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "247810",
+    "x-ratelimit-tokens-query-cost": "1097"
+  },
+  "text": "```markdown\n# Workflow OCR d\u00e9l\u00e9gu\u00e9 pour notes projet\n\n## Quand l'utiliser\nExtraction structur\u00e9e depuis une capture PNG de note projet non sensible, avec validation locale stricte. Id\u00e9al pour automatiser l'int\u00e9gration de notes manuscrites ou imprim\u00e9es dans un pipeline projet.\n\n## Mod\u00e8le recommand\u00e9\n1. **Premi\u00e8re extraction** : `mistral-large-latest` (chat vision) pour une pr\u00e9cision maximale en un seul prompt.\n2. **Fallback** : `mistral-ocr-latest` via `POST /v1/ocr` avec `document_annotation_format=json_schema` + retry strict si n\u00e9cessaire.\n3. **Optimisation co\u00fbt/performance** : `mistral-medium-3.5` (chat vision) avec retry strict.\n\n## Prompt conseill\u00e9\n**Structure obligatoire** :\n- S\u00e9parer explicitement *actions* (texte libre) et *commandes shell* (lignes contenant `npm run` uniquement).\n- Exemple de consigne :\n  ```\n  Extrais les champs suivants en JSON strict :\n  - project, category, priority, status, owner, deadline (format ISO 8601)\n  - commands : UNIQUEMENT les lignes contenant \"npm run\" (sans pr\u00e9fixe \"lancer\")\n  - risks, decision, next_action : texte brut\n  ```\n\n## Validation locale\n1. Comparaison avec `2026-06-11-ocr-expected.json` via diff JSON.\n2. **Normalisations autoris\u00e9es** :\n   - Suppression du pr\u00e9fixe `\"lancer \"` dans `commands`.\n   - Ignorer les diff\u00e9rences de diacritiques (ex: `\u00e9` vs `e`).\n\n## Limites\n- `mistral-ocr-latest` n\u00e9cessite un retry strict pour `commands`.\n- Les mod\u00e8les chat vision peuvent omettre des champs sans prompt explicite.\n- Co\u00fbt : `mistral-large-latest` consomme ~2500 tokens par extraction.\n```"
+}

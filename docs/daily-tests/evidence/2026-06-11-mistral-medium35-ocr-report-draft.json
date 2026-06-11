@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 664,
+    "total_tokens": 1255,
+    "completion_tokens": 591,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "20231",
+    "x-ratelimit-tokens-query-cost": "1255"
+  },
+  "text": "```markdown\n# Rapport quotidien de lab Mistral - 2026-06-11\n\n## Statut\nValide\n\n## Categorie de tache\nValidation OCR - extraction structuree de notes projet\n\n## Pourquoi c'est important pour les projets reels\nL'extraction fiable de donnees structurees depuis des captures de notes projet permet d'automatiser le suivi et la gestion des taches, reduisant les erreurs manuelles et accelerant les processus operationnels.\n\n## Modeles testes\n- mistral-ocr-latest (POST /v1/ocr, document_annotation_format=json_schema)\n- mistral-small-latest (chat vision)\n- mistral-medium-3.5 (chat vision)\n- mistral-large-latest (chat vision)\n\n## Resume des prompts et du contexte\n- Artefact: image PNG locale (note projet)\n- Champs attendus: project, category, priority, status, owner, deadline, commands, risks, decision, next_action\n- Oracle: 2026-06-11-ocr-expected.json\n- Normalisations: suppression prefixe \"lancer \" devant commandes shell, ignorance des diacritiques\n\n## Usage et tokens\n- mistral-ocr-latest: pages_processed=1, doc_size_bytes=50812\n- mistral-medium-3.5 (retry): prompt_tokens=2353, completion_tokens=136, total_tokens=2489\n- mistral-large-latest: prompt_tokens=2359, completion_tokens=142, total_tokens=2501\n\n## Resultat\n- mistral-ocr-latest: 9/10 (erreur sur commands) -> 10/10 avec retry strict\n- mistral-small-latest: 9/10 (erreur sur commands)\n- mistral-medium-3.5: 9/10 (erreur sur commands) -> 10/10 avec retry strict\n- mistral-large-latest: 10/10\n\n## Commandes de validation\n- Distinguer explicitement actions et commandes shell\n- Pour commands: demander uniquement les lignes contenant \"npm run\"\n\n## Limitations\n- Sensibilite a la formulation du prompt pour les champs \"commands\"\n- Necessite un retry strict pour mistral-ocr-latest et mistral-medium-3.5\n\n## Prochaine action\n- Affiner le prompt pour eviter les erreurs sur le champ \"commands\"\n- Tester avec d'autres captures de notes projet\n\n## Contribution vers l'objectif 70 pourcent\nCe test valide demontre une extraction OCR fiable a 90-100% selon les modeles, contribuant significativement a l'objectif de precision globale.\n```"
+}

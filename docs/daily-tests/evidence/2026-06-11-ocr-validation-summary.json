@@ -1,0 +1,295 @@
+{
+  "expected": {
+    "project": "webgl-right-video",
+    "category": "qa-ui-copy",
+    "priority": "haute",
+    "status": "a verifier",
+    "owner": "YS",
+    "deadline": "2026-06-14",
+    "commands": [
+      "npm run validate",
+      "npm run check:helper"
+    ],
+    "risks": [
+      "texte mobile coupe",
+      "contraste bouton faible"
+    ],
+    "decision": "Publier seulement apres validation desktop et mobile.",
+    "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+  },
+  "results": [
+    {
+      "id": "mistral-ocr-first",
+      "path": "2026-06-11-mistral-ocr-structured.json",
+      "matched_fields": 9,
+      "total_fields": 10,
+      "exact_after_normalization": false,
+      "usage": {
+        "pages_processed": 1,
+        "doc_size_bytes": 50812
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": false,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "verifier hero video 16:9",
+          "corriger CTA \"Demander une demo\"",
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    },
+    {
+      "id": "mistral-ocr-retry",
+      "path": "2026-06-11-mistral-ocr-structured-retry.json",
+      "matched_fields": 10,
+      "total_fields": 10,
+      "exact_after_normalization": true,
+      "usage": {
+        "pages_processed": 1,
+        "doc_size_bytes": 50812
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": true,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    },
+    {
+      "id": "mistral-small-first",
+      "path": "2026-06-11-mistral-small-latest-ocr-chat.json",
+      "matched_fields": 9,
+      "total_fields": 10,
+      "exact_after_normalization": false,
+      "usage": {
+        "prompt_tokens": 2359,
+        "total_tokens": 2507,
+        "completion_tokens": 148,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": false,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "verifier hero video 16:9",
+          "corriger CTA \"Demander une demo\"",
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    },
+    {
+      "id": "mistral-medium-first",
+      "path": "2026-06-11-mistral-medium-3.5-ocr-chat.json",
+      "matched_fields": 9,
+      "total_fields": 10,
+      "exact_after_normalization": false,
+      "usage": {
+        "prompt_tokens": 2359,
+        "total_tokens": 2530,
+        "completion_tokens": 171,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": false,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "verifier hero video 16:9",
+          "corriger CTA \"Demander une demo\"",
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    },
+    {
+      "id": "mistral-medium-retry",
+      "path": "2026-06-11-mistral-medium-3.5-ocr-chat-retry.json",
+      "matched_fields": 10,
+      "total_fields": 10,
+      "exact_after_normalization": true,
+      "usage": {
+        "prompt_tokens": 2353,
+        "total_tokens": 2489,
+        "completion_tokens": 136,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": true,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    },
+    {
+      "id": "mistral-large-first",
+      "path": "2026-06-11-mistral-large-latest-ocr-chat.json",
+      "matched_fields": 10,
+      "total_fields": 10,
+      "exact_after_normalization": true,
+      "usage": {
+        "prompt_tokens": 2359,
+        "total_tokens": 2501,
+        "completion_tokens": 142,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "field_matches": {
+        "project": true,
+        "category": true,
+        "priority": true,
+        "status": true,
+        "owner": true,
+        "deadline": true,
+        "commands": true,
+        "risks": true,
+        "decision": true,
+        "next_action": true
+      },
+      "actual": {
+        "project": "webgl-right-video",
+        "category": "qa-ui-copy",
+        "priority": "haute",
+        "status": "a verifier",
+        "owner": "YS",
+        "deadline": "2026-06-14",
+        "commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "risks": [
+          "texte mobile coupe",
+          "contraste bouton faible"
+        ],
+        "decision": "Publier seulement apres validation desktop et mobile.",
+        "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+      }
+    }
+  ],
+  "useful_outputs": [
+    "mistral-ocr-retry",
+    "mistral-medium-retry",
+    "mistral-large-first"
+  ]
+}

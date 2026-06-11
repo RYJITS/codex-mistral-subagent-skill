@@ -1,0 +1,22 @@
+Lis cette capture de note projet en francais et retourne uniquement un objet JSON valide.
+
+Cles exactes:
+- project
+- category
+- priority
+- status
+- owner
+- deadline
+- commands
+- risks
+- decision
+- next_action
+
+Regles strictes:
+- commands doit contenir seulement les lignes qui sont des commandes shell explicites.
+- Dans ce document, une commande shell explicite contient la sequence "npm run".
+- N'ajoute jamais les autres actions numerotees dans commands.
+- risks doit contenir seulement le texte apres le tiret.
+- decision et next_action doivent recopier la phrase exacte du document.
+- Si aucune commande shell explicite n'existe, retourne [] pour commands.
+- Reponds en JSON uniquement.

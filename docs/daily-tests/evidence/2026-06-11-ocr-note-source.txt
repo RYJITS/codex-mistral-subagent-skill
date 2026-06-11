@@ -1,0 +1,23 @@
+CAPTURE PROJET - VIDEO SCROLL
+Projet: webgl-right-video
+Categorie: qa-ui-copy
+Priorite: haute
+Statut: a verifier
+Owner: YS
+Deadline: 2026-06-14
+
+Actions
+1. verifier hero video 16:9
+2. corriger CTA "Demander une demo"
+3. lancer npm run validate
+4. lancer npm run check:helper
+
+Risques
+- texte mobile coupe
+- contraste bouton faible
+
+Decision
+Publier seulement apres validation desktop et mobile.
+
+Next action
+Ouvrir une issue GitHub, puis patch UI copy.

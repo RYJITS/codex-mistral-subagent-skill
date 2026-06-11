@@ -1,0 +1,18 @@
+{
+  "project": "webgl-right-video",
+  "category": "qa-ui-copy",
+  "priority": "haute",
+  "status": "a verifier",
+  "owner": "YS",
+  "deadline": "2026-06-14",
+  "commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "risks": [
+    "texte mobile coupe",
+    "contraste bouton faible"
+  ],
+  "decision": "Publier seulement apres validation desktop et mobile.",
+  "next_action": "Ouvrir une issue GitHub, puis patch UI copy."
+}

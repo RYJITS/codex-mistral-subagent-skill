@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "markdown": "# CAPTURE PROJET - VIDEO SCROLL\n\nNote de travail pour validation UI et publication\n\nProjet: webgl-right-video\nCategorie: qa-ui-copy\nPriorite: haute\nStatut: a verifier\nOwner: YS\nDeadline: 2026-06-14\n\n## Actions\n\n1. verifier hero video 16:9\n2. corriger CTA \"Demander une demo\"\n3. lancer npm run validate\n4. lancer npm run check:helper\n\n## Risques\n\n- texte mobile coupe\n- contraste bouton faible\n\n## Decision\n\nPublier seulement apr\u00e8s validation desktop et mobile.\n\n## Next action\n\nOuvrir une issue GitHub, puis patch UI copy.",
+      "images": [],
+      "tables": [],
+      "hyperlinks": [],
+      "header": null,
+      "footer": null,
+      "dimensions": {
+        "dpi": 200,
+        "height": 1180,
+        "width": 1400
+      },
+      "confidence_scores": null,
+      "blocks": null
+    }
+  ],
+  "model": "mistral-ocr-latest",
+  "document_annotation": "{\n  \"project\": \"webgl-right-video\",\n  \"category\": \"qa-ui-copy\",\n  \"priority\": \"haute\",\n  \"status\": \"a verifier\",\n  \"owner\": \"YS\",\n  \"deadline\": \"2026-06-14\",\n  \"commands\": [\n    \"verifier hero video 16:9\",\n    \"corriger CTA \\\"Demander une demo\\\"\",\n    \"lancer npm run validate\",\n    \"lancer npm run check:helper\"\n  ],\n  \"risks\": [\n    \"texte mobile coupe\",\n    \"contraste bouton faible\"\n  ],\n  \"decision\": \"Publier seulement apr\u00e8s validation desktop et mobile.\",\n  \"next_action\": \"Ouvrir une issue GitHub, puis patch UI copy.\"\n}",
+  "usage_info": {
+    "pages_processed": 1,
+    "doc_size_bytes": 50812
+  }
+}

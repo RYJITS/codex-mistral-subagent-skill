@@ -1,0 +1,21 @@
+Lis cette capture de note projet en francais et retourne uniquement un objet JSON valide.
+
+Utilise exactement ces cles:
+- project
+- category
+- priority
+- status
+- owner
+- deadline
+- commands
+- risks
+- decision
+- next_action
+
+Regles:
+- project, category, priority, status, owner et deadline doivent etre des chaines exactes du document.
+- commands doit contenir uniquement les commandes litterales presentes dans le document, dans l'ordre.
+- risks doit contenir uniquement le texte des risques, sans tiret, dans l'ordre.
+- decision et next_action doivent reprendre la phrase du document.
+- N'invente rien. Si une information manque, utilise une chaine vide ou un tableau vide.
+- Reponds en JSON uniquement, sans markdown.

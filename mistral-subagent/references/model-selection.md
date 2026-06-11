@@ -25,6 +25,7 @@ Use this guide to choose the appropriate Mistral model for different tasks based
 - **Code Review/Generation**: `codestral-latest`, `devstral-latest`, or `mistral-medium-latest`.
 - **Structured JSON Outputs**: `mistral-medium-latest` or `mistral-large-latest` with explicit JSON instructions.
 - **OCR/Document Processing**: `mistral-ocr-latest`.
+  For single clean screenshots of project notes that need strict JSON, `mistral-large-latest` can be the strongest one-pass option; for the dedicated OCR route, use `POST /v1/ocr` with `document_annotation_format.type=json_schema` and keep a stricter retry prompt ready for shell-command fields.
 - **Embeddings**: `mistral-embed` (general), `codestral-embed` (code-specific).
 - **Moderation/Safety**: `mistral-moderation-latest`.
 - **Audio Transcription**: `voxtral-mini-latest`.

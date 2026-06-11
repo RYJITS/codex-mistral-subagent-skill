@@ -1,0 +1,7 @@
+Redige un brouillon Markdown en francais ASCII pour un rapport quotidien de lab Mistral.
+
+Contraintes:
+- statut du test: Valide
+- sections: Statut, Categorie de tache, Pourquoi c'est important pour les projets reels, Modeles testes, Resume des prompts et du contexte, Usage et tokens, Resultat, Commandes de validation, Limitations, Prochaine action, Contribution vers l'objectif 70 pourcent
+- rester factuel et concis
+- ne rien inventer au-dela du contexte fourni

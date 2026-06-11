@@ -1,0 +1,25 @@
+{
+  "id": "c3fa64337a6d4b80af03da2622629e24",
+  "created": 1781158163,
+  "model": "mistral-medium-3.5",
+  "usage": {
+    "prompt_tokens": 2353,
+    "total_tokens": 2489,
+    "completion_tokens": 136,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "tool_calls": null,
+        "content": "{\n  \"project\": \"webgl-right-video\",\n  \"category\": \"qa-ui-copy\",\n  \"priority\": \"haute\",\n  \"status\": \"a verifier\",\n  \"owner\": \"YS\",\n  \"deadline\": \"2026-06-14\",\n  \"commands\": [\"lancer npm run validate\", \"lancer npm run check:helper\"],\n  \"risks\": [\"texte mobile coupe\", \"contraste bouton faible\"],\n  \"decision\": \"Publier seulement apres validation desktop et mobile.\",\n  \"next_action\": \"Ouvrir une issue GitHub, puis patch UI copy.\"\n}"
+      }
+    }
+  ]
+}

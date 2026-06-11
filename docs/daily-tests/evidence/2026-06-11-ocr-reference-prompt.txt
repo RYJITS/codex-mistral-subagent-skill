@@ -1,0 +1,12 @@
+Redige une note Markdown courte en francais ASCII pour une reference de skill.
+
+Sujet: workflow valide de delegation OCR/document extraction structuree sur capture de note projet.
+
+Contraintes:
+- titre court
+- sections fixes: Quand l'utiliser, Modele recommande, Prompt conseille, Validation locale, Limites
+- mentionner POST /v1/ocr, mistral-ocr-latest, mistral-large-latest, et mistral-medium-3.5
+- expliquer que le prompt doit separer actions et commandes shell
+- expliquer la normalisation locale minimale autorisee
+- rester concret et reutilisable par un futur run Codex
+- ne pas inventer de scripts ni de commandes absentes du contexte
