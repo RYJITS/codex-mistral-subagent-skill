@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "markdown": "# Problemes de fractions - 9H\n\nFractions, nombres decimaux et fractions irreductibles\n\nPrenom :\nDate :\n\n## 1. Fractions simples\n\nNoah mange 3/8 d'une pizza a midi, puis 1/4 le soir.\n\n1. Quelle fraction de la pizza a-t-il mangee au total ?\n2. Ecris la reponse en fraction irreductible.\n3. Convertis cette fraction en nombre decimal.\n\n## 2. Comparaison\n\nOn propose trois boissons contenant ces proportions de jus de fruit :\n\nBoisson A : 7/10  Boisson B : 2/3  Boisson C : 13/20\n\n1. Convertis chaque fraction en nombre decimal.\n2. Classe les boissons de la moins fruitee a la plus fruitee.\n3. Quelle est la difference entre la plus grande et la plus petite proportion ?\n\n## 3. Fraction a simplifier\n\nDans une classe, 18 eleves sur 24 ont rendu leur devoir a temps.\n\n1. Ecris cette proportion sous forme de fraction.\n2. Simplifie-la pour obtenir une fraction irreductible.\n3. Convertis cette fraction en nombre decimal.\n4. Ecris aussi le r\u00c3\u00a9sultat en pourcentage.\n\n",
+      "images": [],
+      "tables": [],
+      "hyperlinks": [],
+      "header": "01/06/2026 18:17\nProblemes de fractions - 9H",
+      "footer": "file:///D:/00_Cerveau_IA/Competances/Exports/Pedagogie/problemes_fractions_9h.html",
+      "dimensions": {
+        "dpi": 87,
+        "height": 1018,
+        "width": 719
+      },
+      "confidence_scores": null,
+      "blocks": null
+    }
+  ],
+  "model": "mistral-ocr-latest",
+  "document_annotation": null,
+  "usage_info": {
+    "pages_processed": 1,
+    "doc_size_bytes": 71167
+  }
+}

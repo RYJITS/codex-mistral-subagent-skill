@@ -101,6 +101,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - `codestral-latest`: code generation, code review, and fill-in-middle/code-completion work.
    - `magistral-medium-latest`: careful reasoning or step-by-step evaluations when available.
    - `mistral-ocr-latest`, `mistral-embed`, `codestral-embed`, `mistral-moderation-latest`, and `voxtral-mini-latest`: OCR, retrieval, code retrieval, safety scoring, and audio/transcription tasks.
+   - for OCR on local worksheets, screenshots, or scanned notes, prefer `mistral-ocr-latest` on the cleanest PNG preview first; if strict JSON is required, pass the OCR JSON to `mistral-medium-3.5` with an explicit schema.
    - for bounded retrieval prep, prefer `mistral-embed` first, verify top-k locally, and treat `codestral-embed` as code-specific only after local validation on the target corpus.
    - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
@@ -163,3 +164,4 @@ Read these only when needed:
 - `references/ui-ux-copy-scroll-driven-fr.md`: French workflow for UI/UX copy critique and rewrites on scroll-driven pages.
 - `references/preflight-secret-screening-fr.md`: French workflow for preflight secret screening before sending bounded context to Mistral.
 - `references/ocr-contact-sheet-extraction-fr.md`: French workflow for extracting structured scene/frame metadata from a real project contact sheet, with `json_schema` on `POST /v1/ocr`.
+- `references/ocr-worksheet-extraction-fr.md`: French workflow for extracting a bounded worksheet or pedagogical sheet into verified JSON from OCR output.

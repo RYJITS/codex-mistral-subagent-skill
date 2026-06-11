@@ -1,0 +1,31 @@
+Tu recois un JSON OCR avec `header`, `markdown` et `footer`. Retourne uniquement un objet JSON strict selon ce schema:
+
+{
+  "title": "string",
+  "subtitle": "string",
+  "level": "string",
+  "student_fields": ["string"],
+  "sections": [
+    {
+      "id": 1,
+      "title": "string",
+      "statement": "string",
+      "question_count": 3,
+      "questions": ["string"],
+      "key_values": ["string"]
+    }
+  ],
+  "hint": "string|null",
+  "footer": "string"
+}
+
+Regles strictes:
+- JSON uniquement
+- utilise exactement le texte visible du document OCR
+- conserve l'ASCII si le contexte OCR est en ASCII
+- `key_values` doit contenir seulement des valeurs visibles dans le texte de la section
+- pour les sections 1, 2, 4 et 5: extrais les fractions ou nombres visibles
+- pour la section 3: extrais `18` et `24` separement
+- n'ajoute jamais des categories pedagogiques du type `Addition de fractions`
+- `question_count` doit egaler le nombre de questions extraites
+- aucune invention, aucune interpretation pedagogique

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1018,
+    "total_tokens": 1716,
+    "completion_tokens": 698,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "48284",
+    "x-ratelimit-tokens-query-cost": "1716"
+  },
+  "text": "{\"title\": \"Probl\u00e8mes de fractions - 9H\", \"subtitle\": \"Fractions, nombres d\u00e9cimaux et fractions irr\u00e9ductibles\", \"level\": \"9H\", \"student_fields\": [\"Pr\u00e9nom\", \"Date\"], \"sections\": [{\"id\": 1, \"title\": \"Fractions simples\", \"statement\": \"Noah mange 3/8 d'une pizza \u00e0 midi, puis 1/4 le soir.\", \"question_count\": 3, \"questions\": [\"Quelle fraction de la pizza a-t-il mang\u00e9e au total ?\", \"Ecris la r\u00e9ponse en fraction irr\u00e9ductible.\", \"Convertis cette fraction en nombre d\u00e9cimal.\"], \"key_values\": [\"Addition de fractions\", \"Simplification\", \"Conversion d\u00e9cimale\"]}, {\"id\": 2, \"title\": \"Comparaison\", \"statement\": \"On propose trois boissons contenant ces proportions de jus de fruit : Boisson A : 7/10  Boisson B : 2/3  Boisson C : 13/20\", \"question_count\": 3, \"questions\": [\"Convertis chaque fraction en nombre d\u00e9cimal.\", \"Classe les boissons de la moins fruit\u00e9e \u00e0 la plus fruit\u00e9e.\", \"Quelle est la diff\u00e9rence entre la plus grande et la plus petite proportion ?\"], \"key_values\": [\"Conversion d\u00e9cimale\", \"Comparaison de fractions\", \"Calcul de diff\u00e9rence\"]}, {\"id\": 3, \"title\": \"Fraction \u00e0 simplifier\", \"statement\": \"Dans une classe, 18 \u00e9l\u00e8ves sur 24 ont rendu leur devoir \u00e0 temps.\", \"question_count\": 4, \"questions\": [\"Ecris cette proportion sous forme de fraction.\", \"Simplifie-la pour obtenir une fraction irr\u00e9ductible.\", \"Convertis cette fraction en nombre d\u00e9cimal.\", \"Ecris aussi le r\u00e9sultat en pourcentage.\"], \"key_values\": [\"Fraction\", \"Simplification\", \"Conversion d\u00e9cimale et pourcentage\"]}, {\"id\": 4, \"title\": \"Probl\u00e8me avec reste\", \"statement\": \"Une bouteille contient 1,5 litre de jus. L\u00e9a boit 2/5 de la bouteille.\", \"question_count\": 3, \"questions\": [\"Combien de litres L\u00e9a boit-elle ?\", \"Quelle fraction de la bouteille reste-t-il ?\", \"Convertis la fraction restante en nombre d\u00e9cimal.\"], \"key_values\": [\"Calcul de quantit\u00e9\", \"Fraction restante\", \"Conversion d\u00e9cimale\"]}, {\"id\": 5, \"title\": \"Plus difficile\", \"statement\": \"Un cycliste parcourt 3/4 de son trajet le matin, puis encore 1/6 du trajet l'apr\u00e8s-midi.\", \"question_count\": 4, \"questions\": [\"Quelle fraction du trajet a-t-il parcourue au total ?\", \"Cette fraction est-elle irr\u00e9ductible ? Sinon, simplifie-la.\", \"Convertis le r\u00e9sultat en nombre d\u00e9cimal.\", \"Quelle fraction du trajet lui reste-t-il \u00e0 faire ?\"], \"key_values\": [\"Addition de fractions\", \"Simplification\", \"Conversion d\u00e9cimale\", \"Fraction restante\"]}], \"hint\": \"Astuce : pense au d\u00e9nominateur commun avant d'additionner.\", \"footer\": \"Fiche d'exercices - niveau 9H\"}"
+}

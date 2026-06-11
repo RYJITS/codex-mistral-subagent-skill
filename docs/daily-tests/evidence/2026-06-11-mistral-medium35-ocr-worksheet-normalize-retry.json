@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 997,
+    "total_tokens": 1752,
+    "completion_tokens": 755,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "18487",
+    "x-ratelimit-tokens-query-cost": "1752"
+  },
+  "text": "{\n  \"title\": \"Problemes de fractions - 9H\",\n  \"subtitle\": \"Fractions, nombres decimaux et fractions irreductibles\",\n  \"level\": \"9H\",\n  \"student_fields\": [\"Prenom :\", \"Date :\"],\n  \"sections\": [\n    {\n      \"id\": 1,\n      \"title\": \"1. Fractions simples\",\n      \"statement\": \"Noah mange 3/8 d'une pizza a midi, puis 1/4 le soir.\",\n      \"question_count\": 3,\n      \"questions\": [\n        \"Quelle fraction de la pizza a-t-il mangee au total ?\",\n        \"Ecris la reponse en fraction irreductible.\",\n        \"Convertis cette fraction en nombre decimal.\"\n      ],\n      \"key_values\": [\"3/8\", \"1/4\"]\n    },\n    {\n      \"id\": 2,\n      \"title\": \"2. Comparaison\",\n      \"statement\": \"On propose trois boissons contenant ces proportions de jus de fruit : Boisson A : 7/10  Boisson B : 2/3  Boisson C : 13/20\",\n      \"question_count\": 3,\n      \"questions\": [\n        \"Convertis chaque fraction en nombre decimal.\",\n        \"Classe les boissons de la moins fruitee a la plus fruitee.\",\n        \"Quelle est la difference entre la plus grande et la plus petite proportion ?\"\n      ],\n      \"key_values\": [\"7/10\", \"2/3\", \"13/20\"]\n    },\n    {\n      \"id\": 3,\n      \"title\": \"3. Fraction a simplifier\",\n      \"statement\": \"Dans une classe, 18 eleves sur 24 ont rendu leur devoir a temps.\",\n      \"question_count\": 4,\n      \"questions\": [\n        \"Ecris cette proportion sous forme de fraction.\",\n        \"Simplifie-la pour obtenir une fraction irreductible.\",\n        \"Convertis cette fraction en nombre decimal.\",\n        \"Ecris aussi le r\u00e9sultat en pourcentage.\"\n      ],\n      \"key_values\": [\"18\", \"24\"]\n    },\n    {\n      \"id\": 4,\n      \"title\": \"4. Probleme avec reste\",\n      \"statement\": \"Une bouteille contient 1,5 litre de jus. Lea boit 2/5 de la bouteille.\",\n      \"question_count\": 3,\n      \"questions\": [\n        \"Combien de litres Lea boit-elle ?\",\n        \"Quelle fraction de la bouteille reste-t-il ?\",\n        \"Convertis la fraction restante en nombre decimal.\"\n      ],\n      \"key_values\": [\"1,5\", \"2/5\"]\n    },\n    {\n      \"id\": 5,\n      \"title\": \"5. Plus difficile\",\n      \"statement\": \"Un cycliste parcourt 3/4 de son trajet le matin, puis encore 1/6 du trajet l'apres-midi.\",\n      \"question_count\": 4,\n      \"questions\": [\n        \"Quelle fraction du trajet a-t-il parcourue au total ?\",\n        \"Cette fraction est-elle irreductible ? Sinon, simplifie-la.\",\n        \"Convertis le r\u00e9sultat en nombre decimal.\",\n        \"Quelle fraction du trajet lui reste-t-il a faire ?\"\n      ],\n      \"key_values\": [\"3/4\", \"1/6\"]\n    }\n  ],\n  \"hint\": \"Astuce : pense au denominateur commun avant d'additionner.\",\n  \"footer\": \"Fiche d'exercices - niveau 9H\"\n}"
+}

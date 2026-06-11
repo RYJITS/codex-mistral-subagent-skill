@@ -1,0 +1,10 @@
+Redige en francais une reference markdown courte et pratique pour le skill `mistral-subagent`.
+
+Contraintes:
+- titre H1 clair
+- sections courtes: Principe, Modeles, Workflow recommande, Limites, Commandes utiles
+- rester factuel et borne
+- mentionner explicitement que la preview PNG a ete plus fiable que le PDF dans ce test
+- recommander `mistral-ocr-latest` puis `mistral-medium-3.5` pour la normalisation stricte
+- ne pas inventer de commandes qui n'existent pas deja
+- ne pas mentionner d'API key ni d'information sensible

@@ -1,0 +1,98 @@
+{
+  "capability": "ocr-worksheet-structured-extraction",
+  "oracle": "D:\\00_Cerveau_IA\\Projet\\codex-mistral-subagent-skill\\docs\\daily-tests\\evidence\\2026-06-11-ocr-worksheet-expected.json",
+  "ocr_png_checks": {
+    "title_header": true,
+    "subtitle_header": true,
+    "footer": true,
+    "all_sections": true,
+    "hint": true
+  },
+  "ocr_pdf_checks": {
+    "title_header": true,
+    "subtitle_header": false,
+    "footer": false,
+    "all_sections": false,
+    "hint": false
+  },
+  "structured_candidates": {
+    "mistral-small-latest": {
+      "issues": [
+        "section_1.key_values",
+        "section_2.key_values",
+        "section_3.key_values",
+        "section_4.key_values",
+        "section_5.key_values"
+      ],
+      "usage": {
+        "prompt_tokens": 1018,
+        "total_tokens": 1716,
+        "completion_tokens": 698,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "mistral-medium-3.5": {
+      "issues": [
+        "section_1.key_values",
+        "section_3.key_values",
+        "section_4.key_values"
+      ],
+      "usage": {
+        "prompt_tokens": 1018,
+        "total_tokens": 1755,
+        "completion_tokens": 737,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "mistral-small-latest-retry": {
+      "issues": [
+        "section_1.key_values",
+        "section_3.key_values",
+        "section_5.key_values",
+        "hint"
+      ],
+      "usage": {
+        "prompt_tokens": 997,
+        "total_tokens": 1688,
+        "completion_tokens": 691,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "mistral-medium-3.5-retry": {
+      "issues": [
+        "student_fields"
+      ],
+      "usage": {
+        "prompt_tokens": 997,
+        "total_tokens": 1752,
+        "completion_tokens": 755,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "mistral-medium-3.5-final": {
+      "issues": [],
+      "usage": {
+        "prompt_tokens": 976,
+        "total_tokens": 1721,
+        "completion_tokens": 745,
+        "prompt_tokens_details": {
+          "cached_tokens": 56
+        }
+      }
+    }
+  },
+  "applied_outputs": {
+    "ocr_markdown_source": "2026-06-11-mistral-ocr-worksheet-png.json",
+    "structured_json_source": "2026-06-11-mistral-medium35-ocr-worksheet-normalize-final.json"
+  },
+  "verdict": "Valide",
+  "counts_toward_70": true
+}

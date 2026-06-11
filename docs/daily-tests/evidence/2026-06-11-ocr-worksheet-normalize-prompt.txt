@@ -1,0 +1,29 @@
+Tu recois un markdown OCR brut d'une fiche pedagogique. Retourne uniquement un objet JSON strict selon ce schema:
+
+{
+  "title": "string",
+  "subtitle": "string",
+  "level": "string",
+  "student_fields": ["string"],
+  "sections": [
+    {
+      "id": 1,
+      "title": "string",
+      "statement": "string",
+      "question_count": 3,
+      "questions": ["string"],
+      "key_values": ["string"]
+    }
+  ],
+  "hint": "string|null",
+  "footer": "string"
+}
+
+Regles:
+- JSON uniquement
+- pas de markdown
+- pas de texte hors schema
+- `sections` doit garder l'ordre
+- `question_count` doit egaler le nombre de questions extraites
+- ne normalise pas le contenu en dehors des petites corrections OCR evidentes
+- n'invente aucune question ou valeur absente du markdown

@@ -1,0 +1,12 @@
+Analyse ce document OCR et retourne uniquement un objet JSON.
+
+Contraintes:
+- respecte exactement les cles suivantes: title, subtitle, level, student_fields, sections, hint, footer
+- `student_fields` doit contenir seulement les etiquettes visibles du formulaire eleve
+- `sections` doit garder l'ordre du document
+- chaque section doit contenir exactement: id, title, statement, question_count, questions, key_values
+- `questions` contient les questions visibles, sans reponse inventee
+- `key_values` contient seulement les valeurs ou fractions saillantes du texte de la section
+- `level` doit etre la valeur courte visible dans le document, pas une inference longue
+- `hint` vaut `null` si aucune astuce n'est visible
+- n'invente aucun champ et n'ajoute aucun commentaire

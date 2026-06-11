@@ -1,0 +1,32 @@
+Tu recois un JSON OCR avec `header`, `markdown` et `footer`. Retourne uniquement un objet JSON strict.
+
+Schema:
+{
+  "title": "string",
+  "subtitle": "string",
+  "level": "string",
+  "student_fields": ["string"],
+  "sections": [
+    {
+      "id": 1,
+      "title": "string",
+      "statement": "string",
+      "question_count": 3,
+      "questions": ["string"],
+      "key_values": ["string"]
+    }
+  ],
+  "hint": "string|null",
+  "footer": "string"
+}
+
+Regles absolues:
+- JSON uniquement
+- copie le texte visible du document OCR
+- garde l'ASCII
+- `student_fields` doit valoir exactement `["Prenom","Date"]`
+- ne mets jamais `:` dans `student_fields`
+- pour `title` de section, retire le prefixe `1.`, `2.`, etc.
+- `key_values` doit contenir seulement les nombres/fractions visibles du texte
+- section 3: `["18","24"]`
+- n'ajoute aucune expression calculee ni categorie pedagogique

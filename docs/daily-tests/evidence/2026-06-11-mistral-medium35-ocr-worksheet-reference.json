@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 603,
+    "total_tokens": 1057,
+    "completion_tokens": 454,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "23943",
+    "x-ratelimit-tokens-query-cost": "1057"
+  },
+  "text": "{\"reference\": {\"title\": \"Reference pratique : mistral-subagent pour OCR et extraction structuree\", \"sections\": [{\"titre\": \"Principe\", \"contenu\": \"Le skill `mistral-subagent` permet une extraction structuree de donnees depuis des documents non sensibles (ex: fiches pedagogiques) vers un format JSON borne. Valide pour des artefacts visuels (PNG) et PDF, avec une preference marquee pour les previsualisations PNG.\"}, {\"titre\": \"Modeles\", \"contenu\": \"Recommandations par etape :\\n- **OCR** : `mistral-ocr-latest` (meilleure completude sur PNG).\\n- **Normalisation stricte** : `mistral-medium-3.5` (apres retry avec contraintes explicites).\\n- A eviter : `mistral-small-latest` (risque d'invention de donnees, ex: `key_values` pedagogiques).\"}, {\"titre\": \"Workflow recommande\", \"contenu\": \"1. Appliquer `mistral-ocr-latest` sur la previsualisation PNG pour extraire `header`, `markdown`, `footer`.\\n2. Utiliser `mistral-medium-3.5` sur le JSON OCR avec un prompt strict pour reconstruire le schema final (ex: `key_values` strictement visibles, `student_fields` sans `:`).\\n3. Verifier localement contre l'oracle HTML pour validation.\"}, {\"titre\": \"Limites\", \"contenu\": \"- Le PDF OCR (page 0) a remonte uniquement la premiere partie utile de la fiche.\\n- La previsualisation PNG a passe tous les checks de completude.\\n- Necessite d'un retry final avec contraintes explicites pour `mistral-medium-3.5`.\"}, {\"titre\": \"Commandes utiles\", \"contenu\": \"Aucune commande specifique a `mistral-subagent` n'est requise. Utiliser les modeles recommandes avec des prompts structures et des contraintes claires (ex: schema JSON cible).\"}]}}"
+}

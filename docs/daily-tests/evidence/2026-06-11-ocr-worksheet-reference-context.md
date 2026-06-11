@@ -1,0 +1,26 @@
+Contexte de reference a synthetiser:
+
+- capacite validee: OCR/extraction structuree d'une fiche pedagogique non sensible vers JSON borne
+- artefacts testes:
+  - `D:\00_Cerveau_IA\Conpetances\Exports\Pedagogie\problemes_fractions_9h_preview_full.png`
+  - `D:\00_Cerveau_IA\Conpetances\Exports\Pedagogie\problemes_fractions_9h.pdf`
+- meilleur chemin valide:
+  - `mistral-ocr-latest` sur la preview PNG pour recuperer `header`, `markdown`, `footer`
+  - `mistral-medium-3.5` sur le JSON OCR avec un prompt strict pour reconstruire le schema final
+- schema final:
+  - `title`
+  - `subtitle`
+  - `level`
+  - `student_fields`
+  - `sections[].{id,title,statement,question_count,questions,key_values}`
+  - `hint`
+  - `footer`
+- constats:
+  - la preview PNG a passe tous les checks de completude
+  - le PDF OCR en page 0 n'a remonte que la premiere partie utile de la fiche
+  - `mistral-small-latest` a invente des `key_values` pedagogiques
+  - `mistral-medium-3.5` a ete valide apres un retry final imposant des `key_values` strictement visibles et `student_fields` sans `:`
+- verifier localement contre l'oracle HTML:
+  - `D:\00_Cerveau_IA\Conpetances\Exports\Pedagogie\problemes_fractions_9h.html`
+- style attendu:
+  - markdown FR court, actionnable, destine a de futurs runs Codex
