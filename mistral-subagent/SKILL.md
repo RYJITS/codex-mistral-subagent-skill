@@ -162,3 +162,4 @@ Read these only when needed:
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.
 - `references/ui-ux-copy-scroll-driven-fr.md`: French workflow for UI/UX copy critique and rewrites on scroll-driven pages.
 - `references/preflight-secret-screening-fr.md`: French workflow for preflight secret screening before sending bounded context to Mistral.
+- `references/ocr-contact-sheet-extraction-fr.md`: French workflow for extracting structured scene/frame metadata from a real project contact sheet, with `json_schema` on `POST /v1/ocr`.

@@ -1,0 +1,373 @@
+[
+  {
+    "file": "2026-06-11-mistral-ocr-contact-sheet.json",
+    "status": 400,
+    "ok": false,
+    "model": null,
+    "usage": null,
+    "candidate": null,
+    "validation": {
+      "parse_ok": false,
+      "scene_count_match": false,
+      "matched_scenes": 0,
+      "total_scenes": 9,
+      "missing_scene_ids": [],
+      "wrong_frame_counts": [],
+      "wrong_resolutions": [],
+      "usable": false
+    }
+  },
+  {
+    "file": "2026-06-11-mistral-ocr-contact-sheet-retry.json",
+    "status": 200,
+    "ok": true,
+    "model": "mistral-ocr-latest",
+    "usage": {
+      "pages_processed": 1,
+      "doc_size_bytes": 432960
+    },
+    "candidate": {
+      "task_category": "ocr_contact_sheet_extraction",
+      "scene_count": 9,
+      "scenes": [
+        {
+          "scene_id": "01",
+          "frame_count": 99,
+          "resolution": "1024x576",
+          "label_text": "scene 01 - 99 frames - 1024x576"
+        },
+        {
+          "scene_id": "02",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 02 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "03",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 03 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "04",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 04 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "05",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 05 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "06",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 06 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "07",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 07 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "08",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 08 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "09",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 09 - 66 frames - 1024x576"
+        }
+      ],
+      "limitations_fr": [
+        "L'OCR peut avoir des difficult\u00e9s \u00e0 lire les textes tr\u00e8s petits ou mal align\u00e9s.",
+        "La r\u00e9solution et le nombre de frames sont bas\u00e9s sur l'interpr\u00e9tation visuelle et peuvent varier.",
+        "Les sc\u00e8nes sont list\u00e9es dans l'ordre visuel tel qu'elles apparaissent dans l'image."
+      ],
+      "confidence": "high"
+    },
+    "validation": {
+      "parse_ok": true,
+      "scene_count_match": true,
+      "matched_scenes": 9,
+      "total_scenes": 9,
+      "missing_scene_ids": [],
+      "wrong_frame_counts": [],
+      "wrong_resolutions": [],
+      "usable": true
+    }
+  },
+  {
+    "file": "2026-06-11-mistral-small-latest-contact-sheet.json",
+    "status": 200,
+    "ok": true,
+    "model": "mistral-small-latest",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3586,
+      "completion_tokens": 574,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "candidate": {
+      "task_category": "ocr_contact_sheet_extraction",
+      "scene_count": 9,
+      "scenes": [
+        {
+          "scene_id": "01",
+          "frame_count": 99,
+          "resolution": "1024x576",
+          "label_text": "scene 01 - 99 frames - 1024x576"
+        },
+        {
+          "scene_id": "02",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 02 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "03",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 03 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "04",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 04 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "05",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 05 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "06",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 06 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "07",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 07 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "08",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 08 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "09",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 09 - 66 frames - 1024x576"
+        }
+      ],
+      "limitations_fr": [
+        "Certains d\u00e9tails de texte en bas des sc\u00e8nes peuvent \u00eatre partiellement illisibles mais la structure globale est claire.",
+        "La r\u00e9solution est coh\u00e9rente pour toutes les sc\u00e8nes et clairement lisible."
+      ],
+      "confidence": "high"
+    },
+    "validation": {
+      "parse_ok": true,
+      "scene_count_match": true,
+      "matched_scenes": 9,
+      "total_scenes": 9,
+      "missing_scene_ids": [],
+      "wrong_frame_counts": [],
+      "wrong_resolutions": [],
+      "usable": true
+    }
+  },
+  {
+    "file": "2026-06-11-mistral-medium-latest-contact-sheet.json",
+    "status": 200,
+    "ok": true,
+    "model": "mistral-medium-latest",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3643,
+      "completion_tokens": 631,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "candidate": {
+      "task_category": "ocr_contact_sheet_extraction",
+      "scene_count": 9,
+      "scenes": [
+        {
+          "scene_id": "01",
+          "frame_count": 99,
+          "resolution": "1024x576",
+          "label_text": "scene 01 - 99 frames - 1024x576"
+        },
+        {
+          "scene_id": "02",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 02 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "03",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 03 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "04",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 04 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "05",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 05 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "06",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 06 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "07",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 07 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "08",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 08 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "09",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 09 - 66 frames - 1024x576"
+        }
+      ],
+      "limitations_fr": [
+        "Aucune limitation d\u00e9tect\u00e9e pour les champs extraits."
+      ],
+      "confidence": "high"
+    },
+    "validation": {
+      "parse_ok": true,
+      "scene_count_match": true,
+      "matched_scenes": 9,
+      "total_scenes": 9,
+      "missing_scene_ids": [],
+      "wrong_frame_counts": [],
+      "wrong_resolutions": [],
+      "usable": true
+    }
+  },
+  {
+    "file": "2026-06-11-mistral-large-latest-contact-sheet.json",
+    "status": 200,
+    "ok": true,
+    "model": "mistral-large-latest",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3680,
+      "completion_tokens": 668,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "candidate": {
+      "task_category": "ocr_contact_sheet_extraction",
+      "scene_count": 9,
+      "scenes": [
+        {
+          "scene_id": "01",
+          "frame_count": 99,
+          "resolution": "1024x576",
+          "label_text": "scene 01 - 99 frames - 1024x576"
+        },
+        {
+          "scene_id": "02",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 02 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "03",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 03 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "04",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 04 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "05",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 05 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "06",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 06 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "07",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 07 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "08",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 08 - 66 frames - 1024x576"
+        },
+        {
+          "scene_id": "09",
+          "frame_count": 66,
+          "resolution": "1024x576",
+          "label_text": "scene 09 - 66 frames - 1024x576"
+        }
+      ],
+      "limitations_fr": [
+        "Les valeurs sont bas\u00e9es uniquement sur ce qui est lisible dans l'image fournie.",
+        "Aucune v\u00e9rification externe n'a \u00e9t\u00e9 effectu\u00e9e.",
+        "Si un champ \u00e9tait illisible, il aurait \u00e9t\u00e9 marqu\u00e9 comme null."
+      ],
+      "confidence": "high"
+    },
+    "validation": {
+      "parse_ok": true,
+      "scene_count_match": true,
+      "matched_scenes": 9,
+      "total_scenes": 9,
+      "missing_scene_ids": [],
+      "wrong_frame_counts": [],
+      "wrong_resolutions": [],
+      "usable": true
+    }
+  }
+]

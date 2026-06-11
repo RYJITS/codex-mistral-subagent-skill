@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 720,
+    "total_tokens": 1221,
+    "completion_tokens": 501,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "20602",
+    "x-ratelimit-tokens-query-cost": "1221"
+  },
+  "text": "```markdown\n# mistral-subagent: OCR structur\u00e9 pour contact sheet\n\n## Cas d'usage\nD\u00e9l\u00e9guer l'extraction OCR **structur\u00e9e** d'une *contact sheet* vid\u00e9o/WebGL \u00e0 `mistral-ocr-latest` quand :\n- Le document contient des **m\u00e9tadonn\u00e9es tabulaires** (sc\u00e8nes, frames, r\u00e9solution).\n- Un **sch\u00e9ma JSON strict** est requis pour validation automatique.\n\n## Mod\u00e8le recommand\u00e9\n- **`mistral-ocr-latest`** : Optimis\u00e9 pour l'extraction structur\u00e9e (meilleur rapport pr\u00e9cision/vitesse).\n- Alternatives : `mistral-small/medium/large-latest` (via vision chat) si besoin de contexte \u00e9tendu.\n\n## Contrainte cl\u00e9\nL'endpoint OCR **exige** `document_annotation_format.type=json_schema`.\n\u26a0\ufe0f `json_object` \u2192 **Erreur 400** (observ\u00e9 en 2026-06-11).\n\n## Sch\u00e9ma minimal\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"scene_count\": {\"type\": \"integer\"},\n    \"scenes\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"scene_id\": {\"type\": \"string\", \"pattern\": \"^[0-9]{2}$\"},\n          \"frame_count\": {\"type\": \"integer\"},\n          \"resolution\": {\"type\": \"string\", \"pattern\": \"^[0-9]+x[0-9]+$\"},\n          \"label_text\": {\"type\": [\"string\", \"null\"]}\n        },\n        \"required\": [\"scene_id\", \"frame_count\", \"resolution\"]\n      }\n    }\n  },\n  \"required\": [\"scene_count\", \"scenes\"]\n}\n```\n\n## Validation locale\n```bash\n# Exemple : Comparaison avec manifest existant (Windows)\nfc /b \"D:\\...contact-sheet.jpg\" \"D:\\...MANIFEST.json\" && echo \"Fichiers identiques (\u00e0 adapter)\"\n```\n- **R\u00e8gles** :\n  - Rejeter toute sc\u00e8ne non pr\u00e9sente dans le manifest/report.\n  - Normaliser `scene_id` en 2 chiffres (ex: `01`).\n  - `label_text` \u2192 `null` si illisible.\n```"
+}

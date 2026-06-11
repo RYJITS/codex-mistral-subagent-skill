@@ -1,0 +1,15 @@
+Redige une courte reference Markdown publique en francais ASCII pour le skill `mistral-subagent`.
+
+But:
+
+- expliquer comment deleguer une extraction OCR structuree sur un contact sheet de projet video/WebGL
+- recommander le bon modele
+- signaler la contrainte importante observee: l endpoint OCR a accepte `json_schema` et a rejete `json_object` dans ce workflow
+
+Contraintes:
+
+- 5 sections maximum
+- ton operationnel et compact
+- inclure au moins un exemple de commande locale
+- ne pas inventer de script absent du repo
+- ne pas mentionner de secret

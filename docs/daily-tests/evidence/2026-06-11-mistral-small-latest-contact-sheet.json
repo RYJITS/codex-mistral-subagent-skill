@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "ok": true,
+  "body": {
+    "id": "6074320c918a42b4aae08dc2e0bdf949",
+    "created": 1781158002,
+    "model": "mistral-small-latest",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3586,
+      "completion_tokens": 574,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "tool_calls": null,
+          "content": "{\"task_category\": \"ocr_contact_sheet_extraction\", \"scene_count\": 9, \"scenes\": [{\"scene_id\": \"01\", \"frame_count\": 99, \"resolution\": \"1024x576\", \"label_text\": \"scene 01 - 99 frames - 1024x576\"}, {\"scene_id\": \"02\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 02 - 66 frames - 1024x576\"}, {\"scene_id\": \"03\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 03 - 66 frames - 1024x576\"}, {\"scene_id\": \"04\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 04 - 66 frames - 1024x576\"}, {\"scene_id\": \"05\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 05 - 66 frames - 1024x576\"}, {\"scene_id\": \"06\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 06 - 66 frames - 1024x576\"}, {\"scene_id\": \"07\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 07 - 66 frames - 1024x576\"}, {\"scene_id\": \"08\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 08 - 66 frames - 1024x576\"}, {\"scene_id\": \"09\", \"frame_count\": 66, \"resolution\": \"1024x576\", \"label_text\": \"scene 09 - 66 frames - 1024x576\"}], \"limitations_fr\": [\"Certains d\u00e9tails de texte en bas des sc\u00e8nes peuvent \u00eatre partiellement illisibles mais la structure globale est claire.\", \"La r\u00e9solution est coh\u00e9rente pour toutes les sc\u00e8nes et clairement lisible.\"], \"confidence\": \"high\"}"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_category": "ocr_contact_sheet_extraction",
+  "scene_count": 9,
+  "scenes": [
+    {
+      "scene_id": "01",
+      "frame_count": 99,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "02",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "03",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "04",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "05",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "06",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "07",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "08",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    },
+    {
+      "scene_id": "09",
+      "frame_count": 66,
+      "resolution": "1024x576"
+    }
+  ]
+}

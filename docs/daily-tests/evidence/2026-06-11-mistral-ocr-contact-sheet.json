@@ -1,0 +1,12 @@
+{
+  "status": 400,
+  "ok": false,
+  "body": {
+    "object": "error",
+    "message": "Please provide a json_schema for document_annotation_format.",
+    "type": "invalid_request_no_input",
+    "param": null,
+    "code": "3050",
+    "raw_status_code": 400
+  }
+}

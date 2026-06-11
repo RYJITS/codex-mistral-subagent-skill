@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "ok": true,
+  "body": {
+    "pages": [
+      {
+        "index": 0,
+        "markdown": "|  ![img-0.jpeg](img-0.jpeg)  |\n| --- |",
+        "images": [
+          {
+            "id": "img-0.jpeg",
+            "top_left_x": 0,
+            "top_left_y": 32,
+            "bottom_right_x": 1980,
+            "bottom_right_y": 1420,
+            "image_base64": null,
+            "image_annotation": null
+          }
+        ],
+        "tables": [],
+        "hyperlinks": [],
+        "header": null,
+        "footer": null,
+        "dimensions": {
+          "dpi": 200,
+          "height": 1422,
+          "width": 1980
+        },
+        "confidence_scores": {
+          "word_confidence_scores": [],
+          "average_page_confidence_score": 0.8970723810619925,
+          "minimum_page_confidence_score": 0.2802861022753411
+        },
+        "blocks": null
+      }
+    ],
+    "model": "mistral-ocr-latest",
+    "document_annotation": "{\n  \"task_category\": \"ocr_contact_sheet_extraction\",\n  \"scene_count\": 9,\n  \"scenes\": [\n    {\n      \"scene_id\": \"01\",\n      \"frame_count\": 99,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 01 - 99 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"02\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 02 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"03\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 03 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"04\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 04 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"05\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 05 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"06\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 06 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"07\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 07 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"08\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 08 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"09\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 09 - 66 frames - 1024x576\"\n    }\n  ],\n  \"limitations_fr\": [\n    \"L'OCR peut avoir des difficult\u00e9s \u00e0 lire les textes tr\u00e8s petits ou mal align\u00e9s.\",\n    \"La r\u00e9solution et le nombre de frames sont bas\u00e9s sur l'interpr\u00e9tation visuelle et peuvent varier.\",\n    \"Les sc\u00e8nes sont list\u00e9es dans l'ordre visuel tel qu'elles apparaissent dans l'image.\"\n  ],\n  \"confidence\": \"high\"\n}",
+    "usage_info": {
+      "pages_processed": 1,
+      "doc_size_bytes": 432960
+    }
+  }
+}

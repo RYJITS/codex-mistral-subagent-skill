@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 708,
+    "total_tokens": 1287,
+    "completion_tokens": 579,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "247653",
+    "x-ratelimit-tokens-query-cost": "1287"
+  },
+  "text": "```markdown\n# Reference: Deleguer une extraction OCR structuree avec `mistral-subagent`\n\n## 1. Cas d'usage\nUtiliser `mistral-ocr-latest` pour extraire des metadonnees structurees depuis un **contact sheet video/WebGL** (ex: timeline, scenes, frames).\nPrivil\u00e9gier ce modele pour:\n- Precision OCR > vision chat generaliste\n- Schema JSON strict requis\n- Volume eleve d'images similaires\n\n## 2. Modele recommande\n- **Primaire**: `mistral-ocr-latest` (endpoint dedie)\n- **Fallback**: `mistral-large-latest` (vision chat) si besoin de flexibilite\n\n## 3. Contrainte critique\nL'endpoint OCR **rejette** `json_object` et **n'accepte que** `json_schema`.\nExemple de parametrage valide:\n```json\n{\n  \"document_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": { /* schema ici */ }\n  }\n}\n```\n\n## 4. Schema minimal conseille\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"scene_count\": { \"type\": \"integer\" },\n    \"scenes\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"scene_id\": { \"type\": \"string\", \"pattern\": \"^[0-9]{2}$\" },\n          \"frame_count\": { \"type\": \"integer\" },\n          \"resolution\": { \"type\": \"string\", \"pattern\": \"^[0-9]+x[0-9]+$\" },\n          \"label_text\": { \"type\": [\"string\", \"null\"] }\n        },\n        \"required\": [\"scene_id\", \"frame_count\"]\n      }\n    }\n  },\n  \"required\": [\"scene_count\", \"scenes\"]\n}\n```\n\n## 5. Commande locale et validation\n```bash\n# Exemple d'appel (simule)\nmistral-subagent ocr \\\n  --image \"D:/projet/contact-sheet.jpg\" \\\n  --schema \"contact_sheet_schema.json\" \\\n  --output \"extraction.json\"\n\n# Validation minimale\njq '.scenes | length == .scene_count' extraction.json  # Verifie coherence\njq '.scenes[].scene_id | test(\"^[0-9]{2}$\")' extraction.json  # Normalisation\n```\n**Regles de validation**:\n- Rejeter toute scene non presente dans le manifest/report\n- `scene_id` doit etre sur 2 chiffres (ex: \"01\")\n- `label_text` = `null` si illisible\n```"
+}

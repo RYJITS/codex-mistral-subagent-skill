@@ -139,6 +139,7 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 - [Diff Review Findings (FR)](mistral-subagent/references/diff-review-findings-fr.md): Validated workflow for bounded diff review with actionable French findings.
 - [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.
 - [UI/UX Copy Scroll-Driven (FR)](mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md): Validated delegation workflow for French UI copy critique and rewrites.
+- [OCR Contact Sheet Extraction (FR)](mistral-subagent/references/ocr-contact-sheet-extraction-fr.md): Validated workflow for extracting scene/frame metadata from a real video contact sheet with Mistral OCR or vision fallback.
 - [Mistral API Notes](mistral-subagent/references/mistral-api.md): Endpoints, rate limits, and model capabilities.
 - [Model Selection](mistral-subagent/references/model-selection.md): Task-to-model mapping.
 - [Task Matrix](mistral-subagent/references/mistral-task-matrix.md): Compact task suitability guide.

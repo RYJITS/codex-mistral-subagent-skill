@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "ok": true,
+  "body": {
+    "id": "bea9a2459bd544bb9d89334a1bd7e465",
+    "created": 1781158007,
+    "model": "mistral-medium-latest",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3643,
+      "completion_tokens": 631,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "tool_calls": null,
+          "content": "{\n  \"task_category\": \"ocr_contact_sheet_extraction\",\n  \"scene_count\": 9,\n  \"scenes\": [\n    {\n      \"scene_id\": \"01\",\n      \"frame_count\": 99,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 01 - 99 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"02\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 02 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"03\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 03 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"04\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 04 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"05\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 05 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"06\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 06 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"07\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 07 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"08\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 08 - 66 frames - 1024x576\"\n    },\n    {\n      \"scene_id\": \"09\",\n      \"frame_count\": 66,\n      \"resolution\": \"1024x576\",\n      \"label_text\": \"scene 09 - 66 frames - 1024x576\"\n    }\n  ],\n  \"limitations_fr\": [\n    \"Aucune limitation d\u00e9tect\u00e9e pour les champs extraits.\"\n  ],\n  \"confidence\": \"high\"\n}"
+        }
+      }
+    ]
+  }
+}

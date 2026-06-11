@@ -1,0 +1,30 @@
+Tu recois un contact sheet image d'un micro-pilote video.
+
+Retourne uniquement un JSON valide, sans Markdown, avec exactement cette structure:
+
+{
+  "task_category": "ocr_contact_sheet_extraction",
+  "scene_count": 0,
+  "scenes": [
+    {
+      "scene_id": "01",
+      "frame_count": 99,
+      "resolution": "1024x576",
+      "label_text": "scene 01 - 99 frames - 1024x576"
+    }
+  ],
+  "limitations_fr": [
+    "..."
+  ],
+  "confidence": "high"
+}
+
+Contraintes:
+
+- Garde les scenes dans l'ordre visuel.
+- `scene_id` doit etre sur deux chiffres si lisible.
+- `frame_count` doit etre un entier ou `null`.
+- `resolution` doit etre une chaine comme `1024x576` ou `null`.
+- `label_text` doit reprendre le texte utile visible sur la ligne si lisible, sinon `null`.
+- Si tu n'es pas sur d'un champ, mets `null`.
+- N'ajoute aucune cle supplementaire.
