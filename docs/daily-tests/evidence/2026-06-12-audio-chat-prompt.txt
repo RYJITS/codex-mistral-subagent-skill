@@ -1,0 +1,25 @@
+Tu recois un fichier audio de voix off francaise pour une video Remotion de 30 secondes.
+
+Retourne uniquement un objet JSON strict avec ce schema:
+{
+  "task_category": "audio_transcription_remotion_voiceover",
+  "language": "fr",
+  "transcript": "transcription complete en une seule chaine",
+  "segments": [
+    {
+      "index": 1,
+      "text": "une phrase ou segment de narration"
+    }
+  ],
+  "quality_notes_fr": [
+    "une note courte"
+  ]
+}
+
+Regles:
+- transcris uniquement les mots prononces
+- pas de paraphrase
+- pas de commentaire hors JSON
+- garde l ASCII si le texte entendu peut etre rendu sans accents
+- segmente par phrases ou respirations naturelles pour pouvoir recreer des captions courtes
+- si un terme n est pas certain, choisis la version la plus probable plutot que d inventer

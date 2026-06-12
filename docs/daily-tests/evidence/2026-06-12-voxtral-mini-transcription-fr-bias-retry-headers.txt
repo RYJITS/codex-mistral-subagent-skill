@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Date: Fri, 12 Jun 2026 06:08:58 GMT
+Content-Type: application/json
+Content-Length: 650
+Connection: keep-alive
+mistral-correlation-id: 019eba72-ab25-7fba-9e4e-9f241d2eacd8
+x-kong-request-id: 019eba72-ab25-7fba-9e4e-9f241d2eacd8
+x-ratelimit-limit-audio-seconds-minute: 3600
+x-ratelimit-remaining-audio-seconds-minute: 3571
+x-ratelimit-audio-seconds-query-cost: 29
+x-ratelimit-limit-req-minute: 60
+x-ratelimit-remaining-req-minute: 59
+x-envoy-upstream-service-time: 564
+Server: cloudflare
+access-control-allow-origin: *
+x-kong-upstream-latency: 805
+x-kong-proxy-latency: 17
+set-cookie: __cf_bm=YgDHKYNnjvvyWXK0wSRI3Vqs9MDa2urlXdY2ZufdZdg-1781244537.3739567-1.0.1.1-u05DutF4FOp6qvHLnIxtSDM0zeNFvg2dexxnGOE.PW6tfPvDpIJD0l5kqhl_GTAR_GYs0DbYHpc3QkSGJRh.SYwEQtBi9pZLxHQ5qwG5TaV2aYsx1_nkJAvUPqLjtoJ4; HttpOnly; SameSite=None; Secure; Path=/; Domain=mistral.ai; Expires=Fri, 12 Jun 2026 06:38:58 GMT
+set-cookie: _cfuvid=1yodwjgwhT3I50WO9RIvbbaOKHMu7E.pV1tkL2SOYVA-1781244537.3739567-1.0.1.1-I5Iy7hOJ6_Jwcmddsim2RxRgKAl1yy02LVN6.oMkaHU; HttpOnly; SameSite=None; Secure; Path=/; Domain=mistral.ai
+X-Content-Type-Options: nosniff
+cf-cache-status: DYNAMIC
+Strict-Transport-Security: max-age=15552000; includeSubDomains; preload
+CF-RAY: a0a6af169a0f1a65-ZRH
+alt-svc: h3=":443"; ma=86400
+

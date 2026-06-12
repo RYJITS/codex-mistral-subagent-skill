@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1135,
+    "total_tokens": 2010,
+    "completion_tokens": 875,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "22990",
+    "x-ratelimit-tokens-query-cost": "2010"
+  },
+  "text": "```markdown\n## Statut\n`Valide`\n\n## Categorie de tache\nTranscription audio FR (voix off Remotion) pour generation de captions.\n\n## Pourquoi c'est important pour les projets reels\n- Permet de generer des sous-titres automatiques pour des videos professionnelles (ex: presentations TikTok).\n- Reduit le temps manuel de synchronisation audio/texte.\n- Valide l'integration de Mistral dans des workflows multimedias reels (Remotion).\n\n## Projet et capacite testes\n- **Projet source**: Remotion (generation video avec voix off).\n- **Capacite**: Transcription audio FR bornee -> transcript exploitable pour reconstituer des captions.\n- **Fichiers sources**:\n  - Audio: `voiceover-30s-v1.mp3` (30s, voix off FR).\n  - Oracle: `job-site-presentation-30s-v4-tiktok-captions.json` (captions de reference).\n\n## Modeles testes\n- `voxtral-mini-latest` (3 runs via `POST /v1/audio/transcriptions`).\n- `voxtral-small-latest` (test echoue via `POST /v1/chat/completions`).\n\n## Resume des prompts et du contexte\n- **Contexte**: Audio FR clair, vocabulaire technique (supply chain, automatisation, donnees).\n- **Prompts implicites**:\n  1. Transcription basique (`timestamp_granularities=segment`).\n  2. Transcription avec `language=fr`.\n  3. Transcription avec `language=fr` + `context_bias=supply,chain,automatiser,donnees,decisions` (correction ciblee).\n\n## Usage et tokens\n| Run | prompt_audio_seconds | prompt_tokens | completion_tokens | total_tokens |\n|-----|----------------------|---------------|-------------------|--------------|\n| timestamped | 29 | 4 | 121 | 500 |\n| language=fr | 29 | 5 | 81 | 461 |\n| language=fr + context_bias | 29 | 18 | 82 | 475 |\n\n## Resultat\n- **Succes**:\n  - `word_accuracy=98.21` (1 divergence: `decision` vs `decisions`) avec segments temporels.\n  - `word_accuracy=100` avec `language=fr` + `context_bias` (transcript = oracle).\n- **Echecs utiles**:\n  - `context_bias` avec espaces -> `HTTP 422` (pattern `^[^,\\\\s]+$` requis).\n  - `POST /v1/chat/completions` avec `input_audio` -> `HTTP 422` (route incompatible).\n\n## Commandes de validation\nAucune commande a exposer (validation locale via API Mistral).\n\n## Limitations\n- **Endpoint valide**: Seule la voie `audio/transcriptions` est validee aujourd'hui.\n- **Segments**: Absents dans les runs `language=fr` (necessite decoupage manuel des phrases pour les captions).\n- **Context_bias**: Doit etre une liste de mots sans espaces (contrainte API).\n\n## Prochaine action\nTester le decoupage automatique des transcripts en phrases (pour generer des captions alignees) via un script Python utilisant `nltk` ou `sentence-transformers`, en entree du transcript valide.\n\n## Contribution vers l'objectif 70 pourcent\n**Oui**. Ce workflow valide une brique critique (transcription FR precise) pour les pipelines multimedias, reduisant les erreurs manuelles de 98.21% a 100% avec `context_bias`. Cela contribue directement a l'automatisation de 70% des taches repetitives (objectif du lab).\n\n## Fichiers de preuve\nAucun fichier a lister (references internes au projet Remotion uniquement).\n```"
+}

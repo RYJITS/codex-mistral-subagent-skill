@@ -1,0 +1,28 @@
+Sujet: rapport quotidien du 2026-06-12 pour le Mistral 30-Day Delegation Lab.
+
+Ecris un rapport quotidien complet en francais ASCII pour `docs/daily-tests/2026-06-12-audio-transcription-remotion.md`.
+
+Sections obligatoires:
+- `## Statut`
+- `## Categorie de tache`
+- `## Pourquoi c'est important pour les projets reels`
+- `## Projet et capacite testes`
+- `## Modeles testes`
+- `## Resume des prompts et du contexte`
+- `## Usage et tokens`
+- `## Resultat`
+- `## Commandes de validation`
+- `## Limitations`
+- `## Prochaine action`
+- `## Contribution vers l'objectif 70 pourcent`
+- `## Fichiers de preuve`
+
+Contraintes:
+- statut explicite: `Valide`
+- insister sur le fait que seule la voie `audio/transcriptions` est validee aujourd'hui
+- mentionner les echecs utiles: `context_bias` avec espaces en `HTTP 422`, et `chat/completions` audio en `HTTP 422`
+- inclure les tokens/usage exposes des trois runs de transcription reussis
+- expliquer pourquoi le retry `language=fr` + `context_bias=supply,chain,automatiser,donnees,decisions` est la meilleure sortie
+- dire si cela contribue vers l'objectif `70 %`
+- proposer une prochaine action concrete et adjacente
+- ne pas inventer de fichiers ni de commandes

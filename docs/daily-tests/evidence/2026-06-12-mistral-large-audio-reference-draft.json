@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1022,
+    "total_tokens": 1582,
+    "completion_tokens": 560,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "248418",
+    "x-ratelimit-tokens-query-cost": "1582"
+  },
+  "text": "```markdown\n# Workflow de delegation audio/transcription pour voix off FR Remotion\n\n## Quand utiliser ce workflow\nCe workflow est valide pour la transcription d'audio en francais issu de projets Remotion (voix off, duree <= 30s). Il cible la recuperation d'un transcript exploitable pour generer des captions ou sous-titres.\n\n## Routage modele/endpoint recommande\n- **Endpoint valide** : `POST /v1/audio/transcriptions`\n- **Modele** : `voxtral-mini-latest`\n- **Parametres obligatoires** :\n  - `language=fr` (ameliore la precision)\n  - `context_bias` avec mots-cles atomiques **sans espaces** (ex: `supply,chain,automatiser,donnees,decisions`)\n\n## Observations techniques\n- **Amelioration `language=fr`** : Corrige les divergences linguistiques sans impact sur les segments.\n- **`context_bias` atomique** : Resout les erreurs residuelles (ex: `decision` -> `decisions`). Les valeurs avec espaces declenchent une erreur `HTTP 422` (pattern `^[^,\\s]+$`).\n- **Echecs documentes** :\n  - `POST /v1/chat/completions` avec `input_audio` base64 -> `HTTP 422` (payload refuse).\n  - `context_bias` avec espaces -> `HTTP 422`.\n\n## Validation locale\n- **Precision** : 100% avec `language=fr` + `context_bias` atomique (transcript identique a l'oracle).\n- **Segments** : Aucun segment retourne par defaut (necessite un decoupage manuel des phrases si besoin).\n- **Cout** : Reduction des `total_tokens` de ~8% avec `language=fr` vs. transcription timestampee.\n\n## Limites\n- **Format audio** : Teste uniquement sur MP3 FR (voix off, 30s max).\n- **Segments** : L'absence de segments necessite un post-traitement pour les captions longues.\n- **`context_bias`** : Limite aux mots-cles atomiques (pas de phrases).\n\n## Verdict de delegation\n**Valide** pour la transcription de voix off FR Remotion via `POST /v1/audio/transcriptions` avec `voxtral-mini-latest`, `language=fr`, et `context_bias` atomique. A utiliser en priorite pour les projets necessitant une precision maximale sur des termes specifiques.\n```"
+}

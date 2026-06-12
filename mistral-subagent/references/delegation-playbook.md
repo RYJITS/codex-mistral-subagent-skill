@@ -106,6 +106,15 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
 - Do not count the run as fully valid if the model still needs heavy schema normalization or mixes planning with a full implementation design.
 - See `mistral-subagent/references/rag-embeddings-planning-fr.md` for the validated French workflow from `2026-06-09`.
 
+### Bounded FR voiceover transcription for Remotion
+
+- Prefer `POST /v1/audio/transcriptions` with `voxtral-mini-latest` over chat audio when the job is pure transcription of a local MP3 voiceover.
+- Set `language=fr` when the audio is known to be French; if one term remains wrong, retry with `context_bias` as comma-separated atomic tokens without spaces.
+- Keep a local oracle when possible: captions JSON, known script, or expected transcript. Count the run as validated only if Codex compares the transcript locally and keeps the useful output.
+- Treat `timestamp_granularities=segment` as a helpful extra, not a requirement; a transcript can still be valid even if Codex must split sentences locally for captions.
+- Reject the route for this workflow if `POST /v1/chat/completions` with `input_audio` still returns `422` on the current account/path.
+- See `mistral-subagent/references/audio-transcription-remotion-fr.md` for the validated French workflow from `2026-06-12`.
+
 ### Unit-test idea generation for a local helper
 
 - Send only the functions, behaviors, limits, and available repo scripts that matter to the test ideation.

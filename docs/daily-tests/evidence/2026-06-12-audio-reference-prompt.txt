@@ -1,0 +1,15 @@
+Sujet: workflow valide de delegation audio/transcription sur une voix off FR de projet Remotion.
+
+Ecris une note de reference courte en francais ASCII pour `mistral-subagent/references/audio-transcription-remotion-fr.md`.
+
+Contraintes:
+- expliquer quand utiliser ce workflow
+- recommander le routage modele/endpoint
+- mentionner explicitement que la voie validee est `POST /v1/audio/transcriptions` avec `voxtral-mini-latest`
+- mentionner l'amelioration observee avec `language=fr` et `context_bias` atomique sans espaces
+- signaler que le premier essai `context_bias` avec espaces a renvoye `HTTP 422`
+- signaler que les essais `POST /v1/chat/completions` avec `input_audio` base64 ont renvoye `HTTP 422` dans ce test et ne sont pas valides ici
+- inclure une section validation locale
+- inclure une section limites
+- finir par un verdict de delegation clair
+- ne pas inventer de commandes, de tokens, ou de pourcentages non fournis

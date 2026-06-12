@@ -1,0 +1,22 @@
+{
+  "task_category": "audio_transcription_remotion_voiceover",
+  "project": "Remotion voiceover captions recovery",
+  "audio_file": "D:\\00_Cerveau_IA\\Conpetances\\Mantage video\\Remotion\\public\\audio\\voiceover-30s-v1.mp3",
+  "oracle_job_file": "D:\\00_Cerveau_IA\\Conpetances\\Mantage video\\Remotion\\jobs\\job-site-presentation-30s-v4-tiktok-captions.json",
+  "expected_segment_count": 7,
+  "expected_transcript": "Je transforme les problemes en systemes. Ce site montre une methode simple, voir avant d agir. Executer sans friction, transformer les donnees en decisions. Cote digital, l intelligence artificielle. Devient un moteur concret pour automatiser, connecter et accelerer. Cote supply chain, les flux deviennent lisibles, stables et pilotables. Ici, chaque idee avance vers un resultat utile.",
+  "expected_segments": [
+    "Je transforme les problemes en systemes.",
+    "Ce site montre une methode simple, voir avant d agir.",
+    "Executer sans friction, transformer les donnees en decisions.",
+    "Cote digital, l intelligence artificielle.",
+    "Devient un moteur concret pour automatiser, connecter et accelerer.",
+    "Cote supply chain, les flux deviennent lisibles, stables et pilotables.",
+    "Ici, chaque idee avance vers un resultat utile."
+  ],
+  "rare_terms": [
+    "supply chain",
+    "intelligence artificielle",
+    "automatiser"
+  ]
+}
