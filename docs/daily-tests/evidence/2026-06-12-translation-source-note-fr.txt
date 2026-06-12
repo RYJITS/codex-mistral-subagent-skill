@@ -1,0 +1,9 @@
+Titre: Note publique de release quotidienne
+Resume: Mise a jour quotidienne du lab Mistral pour le repo public.
+Consignes:
+- Ajouter un rapport quotidien sous docs/daily-tests/.
+- Garder la documentation publique en francais d'abord.
+- Preserver exactement les termes Codex, Mistral, README.md, npm run validate, npm run check:helper, docs/daily-tests/, et main.
+- Indiquer que le commit reste sur main.
+- Ne pas inventer de dependances, scripts, ou etapes CI.
+- Ton bref, factuel, public.

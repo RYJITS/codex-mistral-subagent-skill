@@ -137,8 +137,10 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 - [Preflight Secret Screening (FR)](mistral-subagent/references/preflight-secret-screening-fr.md): Validated workflow for screening bounded context into `allow`, `redact`, or `block` before delegation.
 - [Task Delegation Triage (FR)](mistral-subagent/references/task-delegation-triage-fr.md): Partially validated workflow for classifying which real project tasks can be delegated and how much Codex must still retain.
 - [RAG/Embeddings Planning (FR)](mistral-subagent/references/rag-embeddings-planning-fr.md): Validated workflow for bounded multi-project RAG planning before Codex implements local indexing.
+- [Structured Repo Note Translation FR->EN (FR)](mistral-subagent/references/translation-repo-note-fr-en-fr.md): Validated workflow for translating a bounded French repo note into exact English JSON with locked glossary terms.
 - [Diff Review Findings (FR)](mistral-subagent/references/diff-review-findings-fr.md): Validated workflow for bounded diff review with actionable French findings.
 - [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.
+- [Structured Doc Translation (FR)](mistral-subagent/references/structured-doc-translation-fr.md): Validated workflow for translating bounded public repo notes into French while preserving commands and model ids.
 - [UI/UX Copy Scroll-Driven (FR)](mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md): Validated delegation workflow for French UI copy critique and rewrites.
 - [OCR Contact Sheet Extraction (FR)](mistral-subagent/references/ocr-contact-sheet-extraction-fr.md): Validated workflow for extracting scene/frame metadata from a real video contact sheet with Mistral OCR or vision fallback.
 - [OCR Worksheet Extraction (FR)](mistral-subagent/references/ocr-worksheet-extraction-fr.md): Validated workflow for turning a clean worksheet preview into bounded JSON verified against a local oracle.

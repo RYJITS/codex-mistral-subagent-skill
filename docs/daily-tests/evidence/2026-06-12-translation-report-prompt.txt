@@ -1,0 +1,11 @@
+Redige un brouillon court de rapport quotidien en francais ASCII pour un test de traduction structuree FR vers EN.
+
+Le brouillon doit mentionner:
+- statut de validation;
+- pourquoi la capacite compte pour un repo public;
+- modeles testes;
+- resultat compare a un oracle JSON ferme;
+- limites;
+- prochaine action.
+
+N'invente aucun token, aucun fichier, aucune commande.

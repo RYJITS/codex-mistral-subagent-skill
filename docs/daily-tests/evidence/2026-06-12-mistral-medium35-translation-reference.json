@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 312,
+    "total_tokens": 537,
+    "completion_tokens": 225,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "43",
+    "x-ratelimit-remaining-tokens-minute": "22903",
+    "x-ratelimit-tokens-query-cost": "537"
+  },
+  "text": "```markdown\n# Workflow traduction FR?EN (glossaire verrouill)\n\n## Quand l'utiliser\nPour traduire des notes publiques du repo `codex-mistral-subagent-skill` (ex: `README.md`, `docs/daily-tests/`) vers l'anglais, avec un glossaire technique impos.\n\n## Entres minimales\n- Texte source en FR (ASCII)\n- Glossaire verrouill (termes exacts  conserver : `Codex`, `Mistral`, `main`, etc.)\n\n## Modles conseills\nPrivilgier des modles aligns sur les contraintes du repo (ex: ceux valids par `Codex`).\n\n## Vrification locale\n- Excuter `npm run validate` pour vrifier la conformit au glossaire.\n- Utiliser `npm run check:helper` pour dtecter les carts avant soumission.\n\n## Limites\n- `Codex` conserve la vrification finale avant merge.\n- Aucune modification du glossaire ou des termes verrouills n'est autorise.\n```"
+}

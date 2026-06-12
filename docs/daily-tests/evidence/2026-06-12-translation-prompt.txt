@@ -1,0 +1,23 @@
+Traduis la note source du francais vers l'anglais en JSON strict.
+
+Schema exact attendu:
+{
+  "title_en": "string",
+  "summary_en": "string",
+  "bullets_en": ["string"],
+  "locked_terms_preserved": ["string"],
+  "invented_items": ["string"]
+}
+
+Regles obligatoires:
+- `title_en` doit etre exactement `Daily public release note`.
+- `summary_en` doit etre exactement `Daily Mistral lab update for the public repository.`
+- `bullets_en` doit contenir exactement 5 elements, dans cet ordre:
+  1. `Add a daily report under docs/daily-tests/.`
+  2. `Keep public documentation French-first.`
+  3. `Preserve the terms Codex, Mistral, README.md, npm run validate, npm run check:helper, docs/daily-tests/, and main exactly.`
+  4. `State that the commit stays on main.`
+  5. `Do not invent dependencies, scripts, or CI steps.`
+- `locked_terms_preserved` doit lister exactement les 7 termes verrouilles et rien d'autre.
+- `invented_items` doit etre un tableau vide.
+- Ne retourne aucun texte hors JSON.

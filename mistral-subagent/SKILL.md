@@ -104,6 +104,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - for OCR on local worksheets, screenshots, or scanned notes, prefer `mistral-ocr-latest` on the cleanest PNG preview first; if strict JSON is required, pass the OCR JSON to `mistral-medium-3.5` with an explicit schema.
    - for bounded retrieval prep, prefer `mistral-embed` first, verify top-k locally, and treat `codestral-embed` as code-specific only after local validation on the target corpus.
    - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
+   - for bounded repo-note translation with locked literals and an oracle JSON, `mistral-small-latest` is enough for the first pass; use `mistral-medium-3.5` or `mistral-large-latest` for public-facing verification, and do not rely on `recommend` alone when `repo` wording makes the heuristic overly conservative.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
 7. Mention rate-limit issues clearly if the API returns `429`.
@@ -156,8 +157,10 @@ Read these only when needed:
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
 - `references/json-extraction-maintenance-fr.md`: French workflow for turning a maintenance brief into strict JSON Codex can validate directly.
 - `references/review-comment-triage-fr.md`: French workflow for classifying bounded review comments into `apply_now`, `needs_human`, and `reject`.
+- `references/structured-doc-translation-fr.md`: French workflow for translating a bounded public repo note while preserving exact operational strings.
 - `references/task-delegation-triage-fr.md`: French note for classifying real project tasks into `oui`, `partiel`, and `non` before choosing a Mistral model.
 - `references/rag-embeddings-planning-fr.md`: French workflow for bounded RAG/embeddings planning on a multi-project knowledge base before local implementation.
+- `references/translation-repo-note-fr-en-fr.md`: French workflow for translating a bounded public repo note from FR to EN with locked glossary terms and exact local validation.
 - `references/video-storyboard-scroll-driven-fr.md`: French workflow for storyboard/video prompt planning on scroll-driven WebGL projects.
 - `references/diff-review-findings-fr.md`: French workflow for bounded diff review with actionable findings on a compact helper patch.
 - `references/unit-test-ideas-helper-fr.md`: French workflow for bounded unit-test idea generation on a local helper.

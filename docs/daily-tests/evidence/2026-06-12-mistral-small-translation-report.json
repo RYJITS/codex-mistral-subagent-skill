@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 474,
+    "total_tokens": 681,
+    "completion_tokens": 207,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "43",
+    "x-ratelimit-remaining-tokens-minute": "47543",
+    "x-ratelimit-tokens-query-cost": "681"
+  },
+  "text": "```json\n{\n  \"daily_test_report\": {\n    \"validation_status\": \"en attente de validation par l'quipe Mistral\",\n    \"capacity_relevance\": \"la capacit teste est critique pour un repo public car elle valide la stabilit des contributions externes et la conformit aux standards Codex.\",\n    \"tested_models\": [\"Codex-7B\", \"Mistral-8x7B\"],\n    \"comparison_result\": {\n      \"oracle\": \"JSON de rfrence ferm fourni par l'quipe Mistral\",\n      \"status\": \"align sur l'oracle pour les termes verrouills et la structure\"\n    },\n    \"limitations\": [\n      \"le rapport ne couvre que les tests de traduction structurelle\",\n      \"les rsultats dpendent de la version actuelle de main\"\n    ],\n    \"next_action\": \"soumettre le rapport pour validation via `npm run validate` et archiver dans `docs/daily-tests/`\"\n  }\n}\n```"
+}

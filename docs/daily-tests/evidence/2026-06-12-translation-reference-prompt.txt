@@ -1,0 +1,8 @@
+Redige une note Markdown courte en francais ASCII pour documenter un workflow de traduction structuree FR vers EN de notes repo publiques avec glossaire verrouille.
+
+Contraintes:
+- titre court;
+- sections: `Quand l'utiliser`, `Entrees minimales`, `Modeles conseilles`, `Verification locale`, `Limites`;
+- mentionner exactement `Codex`, `Mistral`, `README.md`, `npm run validate`, `npm run check:helper`, `docs/daily-tests/`, et `main`;
+- expliquer que Codex garde la verification finale;
+- ne pas inventer d'outils, scripts, ou seuils.

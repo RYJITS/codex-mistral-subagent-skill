@@ -1,0 +1,75 @@
+{
+    "capability":  "translation-repo-note-fr-en",
+    "verdict":  "Valide",
+    "oracle":  "docs/daily-tests/evidence/2026-06-12-translation-expected.json",
+    "useful_models":  [
+                          "mistral-small-latest",
+                          "mistral-medium-3.5",
+                          "mistral-large-latest",
+                          "devstral-latest"
+                      ],
+    "select_model":  {
+                         "model":  "devstral-latest",
+                         "reason":  "Agentic repository work: codebase audit, task decomposition, file plans, and patch planning."
+                     },
+    "recommend":  {
+                      "suitable":  false,
+                      "confidence":  0.43,
+                      "suggested_model":  "devstral-latest",
+                      "suggested_model_reason":  "Agentic repository work: codebase audit, task decomposition, file plans, and patch planning.",
+                      "matched_signals":  [
+                                              "tradu",
+                                              "structure"
+                                          ],
+                      "risk_signals":  [
+
+                                       ],
+                      "proposal_fr":  "Mistral n\u0027est pas ideal pour cette tache sans cadrage ou redaction supplementaire. Codex devrait garder la main."
+                  },
+    "results":  [
+                    {
+                        "file":  "2026-06-12-mistral-small-translation.json",
+                        "model":  "mistral-small-latest",
+                        "prompt_tokens":  655,
+                        "completion_tokens":  154,
+                        "total_tokens":  809,
+                        "exact_match":  true,
+                        "bullet_count":  5,
+                        "locked_terms_count":  7,
+                        "invented_items_count":  0
+                    },
+                    {
+                        "file":  "2026-06-12-mistral-medium35-translation.json",
+                        "model":  "mistral-medium-3.5",
+                        "prompt_tokens":  655,
+                        "completion_tokens":  177,
+                        "total_tokens":  832,
+                        "exact_match":  true,
+                        "bullet_count":  5,
+                        "locked_terms_count":  7,
+                        "invented_items_count":  0
+                    },
+                    {
+                        "file":  "2026-06-12-mistral-large-translation.json",
+                        "model":  "mistral-large-latest",
+                        "prompt_tokens":  655,
+                        "completion_tokens":  177,
+                        "total_tokens":  832,
+                        "exact_match":  true,
+                        "bullet_count":  5,
+                        "locked_terms_count":  7,
+                        "invented_items_count":  0
+                    },
+                    {
+                        "file":  "2026-06-12-devstral-translation.json",
+                        "model":  "devstral-latest",
+                        "prompt_tokens":  655,
+                        "completion_tokens":  177,
+                        "total_tokens":  832,
+                        "exact_match":  true,
+                        "bullet_count":  5,
+                        "locked_terms_count":  7,
+                        "invented_items_count":  0
+                    }
+                ]
+}

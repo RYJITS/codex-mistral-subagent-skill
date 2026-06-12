@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 655,
+    "total_tokens": 809,
+    "completion_tokens": 154,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "47625",
+    "x-ratelimit-tokens-query-cost": "809"
+  },
+  "text": "{\"title_en\": \"Daily public release note\", \"summary_en\": \"Daily Mistral lab update for the public repository.\", \"bullets_en\": [\"Add a daily report under docs/daily-tests/.\", \"Keep public documentation French-first.\", \"Preserve the terms Codex, Mistral, README.md, npm run validate, npm run check:helper, docs/daily-tests/, and main exactly.\", \"State that the commit stays on main.\", \"Do not invent dependencies, scripts, or CI steps.\"], \"locked_terms_preserved\": [\"Codex\", \"Mistral\", \"README.md\", \"npm run validate\", \"npm run check:helper\", \"docs/daily-tests/\", \"main\"], \"invented_items\": []}"
+}

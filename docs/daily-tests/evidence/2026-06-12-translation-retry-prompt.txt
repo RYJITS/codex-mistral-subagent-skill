@@ -1,0 +1,34 @@
+Translate the source note section by section into French.
+
+Return only valid JSON with this exact shape:
+
+{
+  "title_fr": "string",
+  "summary_fr": "string",
+  "sections": [
+    { "heading_fr": "Usage subordonne", "body_fr": "string" },
+    { "heading_fr": "Regles de securite", "body_fr": "string" },
+    { "heading_fr": "Routage recommande", "body_fr": "string" },
+    { "heading_fr": "Commandes", "body_fr": "string" }
+  ],
+  "preserved_literals": ["string"],
+  "quality_checks": ["string"]
+}
+
+Hard rules:
+- Translate only the information present in the source note.
+- Do not mention releases, commits, CI, branches, README, or reports unless they appear explicitly in the source note.
+- Keep every command, model id, env var name, path, and code identifier exactly as in the source note.
+- Use concise French prose and keep everything ASCII.
+- `title_fr` must describe a public French quickstart note for repo localization.
+- `summary_fr` must say that the note helps localize public repo docs while preserving exact operational strings.
+- `preserved_literals` must contain exactly these seven literals in this order:
+  1. `mistral-subagent`
+  2. `MISTRAL_API_KEY`
+  3. `mistral-small-latest`
+  4. `mistral-medium-3.5`
+  5. `mistral-large-latest`
+  6. `node mistral-subagent/scripts/mistral-subagent.mjs check`
+  7. `node mistral-subagent/scripts/mistral-subagent.mjs run`
+- Each preserved literal must also appear verbatim in one of the section bodies.
+- `quality_checks` must contain exactly four short French checks, one per section.

@@ -1,0 +1,21 @@
+{
+  "title_en": "Daily public release note",
+  "summary_en": "Daily Mistral lab update for the public repository.",
+  "bullets_en": [
+    "Add a daily report under docs/daily-tests/.",
+    "Keep public documentation French-first.",
+    "Preserve the terms Codex, Mistral, README.md, npm run validate, npm run check:helper, docs/daily-tests/, and main exactly.",
+    "State that the commit stays on main.",
+    "Do not invent dependencies, scripts, or CI steps."
+  ],
+  "locked_terms_preserved": [
+    "Codex",
+    "Mistral",
+    "README.md",
+    "npm run validate",
+    "npm run check:helper",
+    "docs/daily-tests/",
+    "main"
+  ],
+  "invented_items": []
+}
