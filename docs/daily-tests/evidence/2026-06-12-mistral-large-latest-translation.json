@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 717,
+    "total_tokens": 1324,
+    "completion_tokens": 607,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "248676",
+    "x-ratelimit-tokens-query-cost": "1324"
+  },
+  "text": "{\n  \"title_fr\": \"Note publique de mise  jour quotidienne\",\n  \"summary_fr\": \"Mise  jour quotidienne du laboratoire Mistral pour le dpt public, axe sur la documentation en franais et les tests quotidiens.\",\n  \"sections\": [\n    {\n      \"heading_fr\": \"Objectif\",\n      \"body_fr\": \"Ce dpt intgre le sous-agent `mistral-subagent` pour tendre les capacits de Codex. Les mises  jour quotidiennes visent  maintenir la transparence et la reproductibilit des tests effectus sur les modles Mistral.\"\n    },\n    {\n      \"heading_fr\": \"Scurit et configuration\",\n      \"body_fr\": \"Pour fonctionner, le sous-agent ncessite une cl API valide stocke dans la variable d'environnement `MISTRAL_API_KEY`. Aucune donne sensible n'est expose dans le dpt. Les commits restent sur la branche `main`.\"\n    },\n    {\n      \"heading_fr\": \"Routage des modles\",\n      \"body_fr\": \"Le sous-agent utilise les modles suivants par dfaut : `mistral-small-latest`, `mistral-medium-3.5`, et `mistral-large-latest`. Le routage est gr dynamiquement selon les besoins des tests.\"\n    },\n    {\n      \"heading_fr\": \"Commandes utiles\",\n      \"body_fr\": \"Excuter les vrifications locales avec : `node mistral-subagent/scripts/mistral-subagent.mjs check`. Lancer le sous-agent avec : `node mistral-subagent/scripts/mistral-subagent.mjs run`. Consulter le `README.md` pour les dtails sur `npm run validate` et `npm run check:helper`. Les rapports quotidiens sont stocks dans `docs/daily-tests/`.\"\n    }\n  ],\n  \"preserved_literals\": [\n    \"mistral-subagent\",\n    \"MISTRAL_API_KEY\",\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"mistral-large-latest\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs check\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs run\",\n    \"Codex\",\n    \"Mistral\",\n    \"README.md\",\n    \"npm run validate\",\n    \"npm run check:helper\",\n    \"docs/daily-tests/\",\n    \"main\"\n  ],\n  \"quality_checks\": [\n    \"Vrifier que tous les termes verrouills apparaissent exactement comme spcifis.\",\n    \"Confirmer que les chemins et commandes sont inchangs.\",\n    \"S'assurer que le ton reste factuel et public.\",\n    \"Valider que le JSON est strict et sans erreurs de syntaxe.\",\n    \"Vrifier que les sections correspondent aux en-ttes requis (objectif, scurit, routage, commandes).\"\n  ]\n}"
+}

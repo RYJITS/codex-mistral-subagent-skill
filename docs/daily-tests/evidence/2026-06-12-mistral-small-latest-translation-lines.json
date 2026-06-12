@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 519,
+    "total_tokens": 871,
+    "completion_tokens": 352,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "47708",
+    "x-ratelimit-tokens-query-cost": "871"
+  },
+  "text": "{\"title_fr\": \"Note de dmarrage rapide pour la localisation des dpts publics\", \"summary_fr\": \"Cette note aide  localiser la documentation des dpts publics tout en prservant les chanes oprationnelles exactes.\", \"lines\": [{\"line_no\": 1, \"fr\": \"Utilisez `mistral-small-latest` pour une premire passe de traduction conomique.\"}, {\"line_no\": 2, \"fr\": \"Passez  `mistral-medium-3.5` pour une traduction prcise et adapte au public.\"}, {\"line_no\": 3, \"fr\": \"Optez pour `mistral-large-latest` lorsque la qualit de la formulation est prioritaire.\"}, {\"line_no\": 4, \"fr\": \"Excutez `node mistral-subagent/scripts/mistral-subagent.mjs check` avant toute opration.\"}, {\"line_no\": 5, \"fr\": \"Lancez ensuite `node mistral-subagent/scripts/mistral-subagent.mjs run` pour finaliser.\"}, {\"line_no\": 6, \"fr\": \"Gardez `MISTRAL_API_KEY` priv et chargez-le localement.\"}, {\"line_no\": 7, \"fr\": \"`mistral-subagent` agit uniquement comme un assistant subordonn.\"}], \"preserved_literals\": [\"mistral-subagent\", \"MISTRAL_API_KEY\", \"mistral-small-latest\", \"mistral-medium-3.5\", \"mistral-large-latest\", \"node mistral-subagent/scripts/mistral-subagent.mjs check\", \"node mistral-subagent/scripts/mistral-subagent.mjs run\"]}"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 519,
+    "total_tokens": 913,
+    "completion_tokens": 394,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "23044",
+    "x-ratelimit-tokens-query-cost": "913"
+  },
+  "text": "{\n  \"title_fr\": \"Note de dmarrage rapide pour la localisation des documents publics\",\n  \"summary_fr\": \"Cette note aide  localiser les documents du dpt public tout en prservant les chanes oprationnelles exactes.\",\n  \"lines\": [\n    { \"line_no\": 1, \"fr\": \"`mistral-subagent` est utilis uniquement comme assistant subordonn.\" },\n    { \"line_no\": 2, \"fr\": \"Codex conserve le contrle des fichiers locaux, des secrets, de Git, des tests et de la vrification finale.\" },\n    { \"line_no\": 3, \"fr\": \"Gardez `MISTRAL_API_KEY` priv et chargez-le localement.\" },\n    { \"line_no\": 4, \"fr\": \"Utilisez `mistral-small-latest` pour une premire traduction conomique.\" },\n    { \"line_no\": 5, \"fr\": \"Utilisez `mistral-medium-3.5` lorsque la note en franais doit rester prcise et publique.\" },\n    { \"line_no\": 6, \"fr\": \"Utilisez `mistral-large-latest` lorsque la qualit de la formulation prime sur le cot.\" },\n    { \"line_no\": 7, \"fr\": \"Excutez `node mistral-subagent/scripts/mistral-subagent.mjs check` avant `node mistral-subagent/scripts/mistral-subagent.mjs run`.\" }\n  ],\n  \"preserved_literals\": [\n    \"mistral-subagent\",\n    \"MISTRAL_API_KEY\",\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"mistral-large-latest\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs check\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs run\"\n  ]\n}"
+}

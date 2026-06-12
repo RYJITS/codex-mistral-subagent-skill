@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 717,
+    "total_tokens": 1229,
+    "completion_tokens": 512,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "48771",
+    "x-ratelimit-tokens-query-cost": "1229"
+  },
+  "text": "{\"title_fr\": \"Note de version quotidienne publique\", \"summary_fr\": \"Mise  jour quotidienne du laboratoire Mistral pour le dpt public.\", \"sections\": [{\"heading_fr\": \"Objectif\", \"body_fr\": \"Cette note documente les mises  jour quotidiennes du dpt public li au projet Mistral. Le commit doit rester sur la branche `main`.\"}, {\"heading_fr\": \"Scurit\", \"body_fr\": \"Aucune dpendance ou tape CI supplmentaire n'est ajoute. Les commandes existantes (`npm run validate`, `npm run check:helper`) sont conserves telles quelles.\"}, {\"heading_fr\": \"Routage des modles\", \"body_fr\": \"Les modles Mistral utiliss dans ce dpt sont identifis par leurs noms exacts : `mistral-small-latest`, `mistral-medium-3.5`, et `mistral-large-latest`. La cl d'API `MISTRAL_API_KEY` doit tre configure pour les interactions avec l'API Mistral.\"}, {\"heading_fr\": \"Commandes\", \"body_fr\": \"Les commandes suivantes sont disponibles pour interagir avec le sous-agent Mistral :\\n- `node mistral-subagent/scripts/mistral-subagent.mjs check` : Vrifie l'tat du sous-agent.\\n- `node mistral-subagent/scripts/mistral-subagent.mjs run` : Excute le sous-agent.\\n\\nLes rapports quotidiens doivent tre ajouts dans le dossier `docs/daily-tests/`.\"}], \"preserved_literals\": [\"mistral-subagent\", \"MISTRAL_API_KEY\", \"mistral-small-latest\", \"mistral-medium-3.5\", \"mistral-large-latest\", \"node mistral-subagent/scripts/mistral-subagent.mjs check\", \"node mistral-subagent/scripts/mistral-subagent.mjs run\"], \"quality_checks\": [\"Vrifier que `README.md` est en franais et  jour.\", \"Confirmer que les termes verrouills (`Codex`, `Mistral`, `main`, etc.) sont prservs sans traduction.\", \"Valider que les commandes shell et chemins (`docs/daily-tests/`, etc.) sont inchangs.\", \"S'assurer que les modles (`mistral-small-latest`, etc.) et la cl `MISTRAL_API_KEY` sont mentionns correctement.\"]}"
+}

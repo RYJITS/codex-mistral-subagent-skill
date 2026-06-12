@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 441,
+    "total_tokens": 587,
+    "completion_tokens": 146,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "22178",
+    "x-ratelimit-tokens-query-cost": "587"
+  },
+  "text": "{\"title_fr\": \"Note publique de release quotidienne\", \"summary_fr\": \"Mise  jour quotidienne du lab Mistral pour le dpt public.\", \"sections\": [{\"heading_fr\": \"Consignes\", \"content_fr\": [\"Ajouter un rapport quotidien sous docs/daily-tests/.\", \"Garder la documentation publique en franais d'abord.\", \"Prserver exactement les termes Codex, Mistral, README.md, npm run validate, npm run check:helper, docs/daily-tests/, et main.\", \"Indiquer que le commit reste sur main.\", \"Ne pas inventer de dpendances, scripts, ou tapes CI.\", \"Ton bref, factuel, public.\"]}]}"
+}

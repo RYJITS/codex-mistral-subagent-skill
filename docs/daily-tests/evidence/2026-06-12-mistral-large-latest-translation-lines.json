@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 519,
+    "total_tokens": 931,
+    "completion_tokens": 412,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "247861",
+    "x-ratelimit-tokens-query-cost": "931"
+  },
+  "text": "{\n  \"title_fr\": \"Guide rapide pour localiser la documentation publique en franais\",\n  \"summary_fr\": \"Cette note explique comment adapter la documentation publique d'un dpt tout en conservant les chanes oprationnelles exactes.\",\n  \"lines\": [\n    {\n      \"line_no\": 1,\n      \"fr\": \"`mistral-subagent` est utilis uniquement comme assistant subordonn.\"\n    },\n    {\n      \"line_no\": 2,\n      \"fr\": \"Codex conserve le contrle des fichiers locaux, des secrets, de Git, des tests et de la vrification finale.\"\n    },\n    {\n      \"line_no\": 3,\n      \"fr\": \"Gardez `MISTRAL_API_KEY` priv et chargez-le localement.\"\n    },\n    {\n      \"line_no\": 4,\n      \"fr\": \"Utilisez `mistral-small-latest` pour une premire traduction conomique.\"\n    },\n    {\n      \"line_no\": 5,\n      \"fr\": \"Utilisez `mistral-medium-3.5` lorsque la note en franais doit rester prcise et publique.\"\n    },\n    {\n      \"line_no\": 6,\n      \"fr\": \"Utilisez `mistral-large-latest` lorsque la qualit de formulation prime sur le cot.\"\n    },\n    {\n      \"line_no\": 7,\n      \"fr\": \"Excutez `node mistral-subagent/scripts/mistral-subagent.mjs check` avant `node mistral-subagent/scripts/mistral-subagent.mjs run`.\"\n    }\n  ],\n  \"preserved_literals\": [\n    \"mistral-subagent\",\n    \"MISTRAL_API_KEY\",\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"mistral-large-latest\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs check\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs run\"\n  ]\n}"
+}

@@ -1,0 +1,47 @@
+[
+    {
+        "file":  "2026-06-12-mistral-small-latest-translation-lines.json",
+        "model":  "mistral-small-latest",
+        "finish_reason":  "stop",
+        "prompt_tokens":  519,
+        "completion_tokens":  352,
+        "total_tokens":  871,
+        "line_count_ok":  true,
+        "line_sequence_ok":  true,
+        "missing_literals":  [
+
+                             ],
+        "status":  "non_valide",
+        "note":  "Conserve les litteraux mais ne respecte pas la correspondance ligne par ligne."
+    },
+    {
+        "file":  "2026-06-12-mistral-medium-3.5-translation-lines.json",
+        "model":  "mistral-medium-3.5",
+        "finish_reason":  "stop",
+        "prompt_tokens":  519,
+        "completion_tokens":  394,
+        "total_tokens":  913,
+        "line_count_ok":  true,
+        "line_sequence_ok":  true,
+        "missing_literals":  [
+
+                             ],
+        "status":  "valide",
+        "note":  "Traduction fidele ligne par ligne avec litteraux preserves."
+    },
+    {
+        "file":  "2026-06-12-mistral-large-latest-translation-lines.json",
+        "model":  "mistral-large-latest",
+        "finish_reason":  "stop",
+        "prompt_tokens":  519,
+        "completion_tokens":  412,
+        "total_tokens":  931,
+        "line_count_ok":  true,
+        "line_sequence_ok":  true,
+        "missing_literals":  [
+
+                             ],
+        "status":  "valide",
+        "note":  "Traduction fidele ligne par ligne avec litteraux preserves."
+    }
+]

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 717,
+    "total_tokens": 1118,
+    "completion_tokens": 401,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "23882",
+    "x-ratelimit-tokens-query-cost": "1118"
+  },
+  "text": "{\"title_fr\": \"Note publique de release quotidienne\", \"summary_fr\": \"Mise  jour quotidienne du lab Mistral pour le dpt public.\", \"sections\": [{\"heading_fr\": \"Objectif\", \"body_fr\": \"Ajouter un rapport quotidien sous docs/daily-tests/. La documentation publique reste en franais en priorit.\"}, {\"heading_fr\": \"Scurit\", \"body_fr\": \"Aucune dpendance, script ou tape CI supplmentaire n'est requis. Les termes verrouills doivent tre conservs tels quels.\"}, {\"heading_fr\": \"Routage des modles\", \"body_fr\": \"Utiliser les modles `mistral-small-latest`, `mistral-medium-3.5` ou `mistral-large-latest` selon les besoins. Le sous-agent `mistral-subagent` gre la slection.\"}, {\"heading_fr\": \"Commandes\", \"body_fr\": \"Vrifier avec `node mistral-subagent/scripts/mistral-subagent.mjs check` et excuter avec `node mistral-subagent/scripts/mistral-subagent.mjs run`. La variable d'environnement `MISTRAL_API_KEY` est requise.\"}], \"preserved_literals\": [\"mistral-subagent\", \"MISTRAL_API_KEY\", \"mistral-small-latest\", \"mistral-medium-3.5\", \"mistral-large-latest\", \"node mistral-subagent/scripts/mistral-subagent.mjs check\", \"node mistral-subagent/scripts/mistral-subagent.mjs run\"], \"quality_checks\": [\"Vrifier que tous les littraux sont prsents dans le contenu traduit\", \"Confirmer que les commandes et chemins sont inchangs\", \"S'assurer que le ton reste factuel et public\", \"Valider que les sections correspondent  l'objectif, la scurit, le routage des modles et les commandes\"]}"
+}

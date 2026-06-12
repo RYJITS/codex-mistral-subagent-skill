@@ -1,0 +1,7 @@
+1. `mistral-subagent` is used only as a subordinate helper.
+2. Codex keeps control of local files, secrets, Git, tests, and final verification.
+3. Keep `MISTRAL_API_KEY` private and load it locally.
+4. Use `mistral-small-latest` for a cheap first-pass translation.
+5. Use `mistral-medium-3.5` when the French note must stay precise and public facing.
+6. Use `mistral-large-latest` when phrasing quality matters more than cost.
+7. Run `node mistral-subagent/scripts/mistral-subagent.mjs check` before `node mistral-subagent/scripts/mistral-subagent.mjs run`.
