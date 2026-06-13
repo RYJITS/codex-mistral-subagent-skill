@@ -1,0 +1,42 @@
+Tu rediges le contenu complet de `docs/TASK_CATALOG_FR.md`.
+
+Retourne uniquement un JSON valide avec exactement cette forme:
+
+{
+  "task_category": "public_documentation_generation_fr",
+  "doc_path": "docs/TASK_CATALOG_FR.md",
+  "summary_fr": "une phrase ASCII",
+  "doc_markdown": "contenu Markdown complet",
+  "limitations": ["limite", "limite"]
+}
+
+Contraintes:
+- francais ASCII uniquement
+- `doc_markdown` doit contenir seulement ces sections, dans cet ordre:
+  1. `# Catalogue FR des taches delegables a Mistral`
+  2. `## Quand deleguer a Mistral`
+  3. `## Routage par modele`
+  4. `## Capacites deja validees dans ce repo`
+  5. `## Ce que Codex doit garder`
+  6. `## Workflow recommande`
+  7. `## Commandes utiles`
+- max 900 mots
+- aucun tableau
+- pas de backticks autour du bloc Markdown lui-meme
+- garder exacts les model ids, les commandes, les chemins, et les statuts `Valide` / `Partiellement valide`
+- la section des capacites doit lister au moins:
+  - storyboard/prompt planning video scroll-driven
+  - extraction JSON maintenance repo
+  - UI/UX copy scroll-driven
+  - revue de diff
+  - triage de commentaires de review
+  - quota reporting
+  - filtrage pre-vol
+  - RAG/embeddings
+  - OCR/extraction de document
+  - traduction structuree
+  - transcription audio FR
+  - audit borne de repo public
+  - templates GitHub d'issue
+- ne pas inventer de pourcentage global, de commande, de rapport, ni de modele specialise absent du contexte
+- rappeler explicitement que Codex garde les secrets, l'edition locale, le shell, les tests, Git, et la verification finale

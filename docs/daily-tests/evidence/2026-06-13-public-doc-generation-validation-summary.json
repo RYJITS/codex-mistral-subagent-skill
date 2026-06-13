@@ -1,0 +1,139 @@
+{
+    "date":  "2026-06-13",
+    "capability":  "public_documentation_generation_fr",
+    "verdict":  "Valide",
+    "retained_route":  "markdown_direct",
+    "retained_models":  [
+                            "devstral-latest",
+                            "mistral-medium-3.5"
+                        ],
+    "useful_mistral_tokens":  1864,
+    "models_tested":  [
+                          "mistral-small-latest",
+                          "mistral-medium-3.5",
+                          "mistral-large-latest",
+                          "devstral-latest"
+                      ],
+    "results":  [
+                    {
+                        "file":  "2026-06-13-mistral-small-latest-public-doc-generation.json",
+                        "route":  "json_v1",
+                        "model":  "mistral-small-latest",
+                        "finish_reason":  "length",
+                        "prompt_tokens":  1393,
+                        "completion_tokens":  2200,
+                        "total_tokens":  3593,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Tronque et schema derive"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-medium-3.5-public-doc-generation.json",
+                        "route":  "json_v1",
+                        "model":  "mistral-medium-3.5",
+                        "finish_reason":  "stop",
+                        "prompt_tokens":  1393,
+                        "completion_tokens":  53,
+                        "total_tokens":  1446,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Sous-reponse, titre seul"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-large-latest-public-doc-generation.json",
+                        "route":  "json_v1",
+                        "model":  "mistral-large-latest",
+                        "finish_reason":  "length",
+                        "prompt_tokens":  1393,
+                        "completion_tokens":  2200,
+                        "total_tokens":  3593,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Tronque et schema derive"
+                    },
+                    {
+                        "file":  "2026-06-13-devstral-latest-public-doc-generation.json",
+                        "route":  "json_v1",
+                        "model":  "devstral-latest",
+                        "finish_reason":  "stop",
+                        "prompt_tokens":  1393,
+                        "completion_tokens":  50,
+                        "total_tokens":  1443,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Titre seul"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-small-latest-public-doc-generation-retry.json",
+                        "route":  "json_retry",
+                        "model":  "mistral-small-latest",
+                        "finish_reason":  "length",
+                        "prompt_tokens":  1387,
+                        "completion_tokens":  1800,
+                        "total_tokens":  3187,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Tronque"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-medium-3.5-public-doc-generation-retry.json",
+                        "route":  "json_retry",
+                        "model":  "mistral-medium-3.5",
+                        "finish_reason":  "length",
+                        "prompt_tokens":  1387,
+                        "completion_tokens":  1800,
+                        "total_tokens":  3187,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Tronque"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-large-latest-public-doc-generation-retry.json",
+                        "route":  "json_retry",
+                        "model":  "mistral-large-latest",
+                        "finish_reason":  "length",
+                        "prompt_tokens":  1387,
+                        "completion_tokens":  1800,
+                        "total_tokens":  3187,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Tronque"
+                    },
+                    {
+                        "file":  "2026-06-13-devstral-latest-public-doc-generation-retry.json",
+                        "route":  "json_retry",
+                        "model":  "devstral-latest",
+                        "finish_reason":  "stop",
+                        "prompt_tokens":  1387,
+                        "completion_tokens":  1431,
+                        "total_tokens":  2818,
+                        "accepted":  false,
+                        "useful_tokens":  0,
+                        "note":  "Brouillon utile mais non retenu comme sortie finale"
+                    },
+                    {
+                        "file":  "2026-06-13-mistral-medium-3.5-public-doc-generation-markdown.json",
+                        "route":  "markdown_direct",
+                        "model":  "mistral-medium-3.5",
+                        "finish_reason":  "stop",
+                        "prompt_tokens":  1555,
+                        "completion_tokens":  822,
+                        "total_tokens":  2377,
+                        "accepted":  true,
+                        "useful_tokens":  822,
+                        "note":  "Brouillon compact retenu pour verification croisee"
+                    },
+                    {
+                        "file":  "2026-06-13-devstral-latest-public-doc-generation-markdown.json",
+                        "route":  "markdown_direct",
+                        "model":  "devstral-latest",
+                        "finish_reason":  "stop",
+                        "prompt_tokens":  1543,
+                        "completion_tokens":  1042,
+                        "total_tokens":  2585,
+                        "accepted":  true,
+                        "useful_tokens":  1042,
+                        "note":  "Base principale du document final"
+                    }
+                ]
+}

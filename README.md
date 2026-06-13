@@ -130,7 +130,9 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 
 ## References
 
+- [French Task Catalog](docs/TASK_CATALOG_FR.md): Public French routing guide based on the validated lab workflows.
 - [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
+- [Public Doc Generation (FR)](mistral-subagent/references/public-doc-generation-fr.md): Validated workflow for generating a compact French public doc from bounded repo context.
 - [Quota Reporting (FR)](mistral-subagent/references/quota-reporting-fr.md): Validated workflow for turning `quota-report` output into a French delegation summary.
 - [JSON Extraction for Repo Maintenance (FR)](mistral-subagent/references/json-extraction-maintenance-fr.md): Strict schema pattern for turning maintenance briefs into verified JSON plans.
 - [Review Comments Triage (FR)](mistral-subagent/references/review-comments-triage-fr.md): Validated workflow for classifying bounded review comments into `apply`, `reply`, `reject`, or `clarify`.
@@ -141,6 +143,7 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 - [Diff Review Findings (FR)](mistral-subagent/references/diff-review-findings-fr.md): Validated workflow for bounded diff review with actionable French findings.
 - [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.
 - [Structured Doc Translation (FR)](mistral-subagent/references/structured-doc-translation-fr.md): Validated workflow for translating bounded public repo notes into French while preserving commands and model ids.
+- [Project Doc Synthesis (FR)](mistral-subagent/references/project-doc-synthesis-fr.md): Partially validated workflow for drafting a bounded maintainer note from real project docs when strict JSON is too brittle.
 - [UI/UX Copy Scroll-Driven (FR)](mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md): Validated delegation workflow for French UI copy critique and rewrites.
 - [OCR Contact Sheet Extraction (FR)](mistral-subagent/references/ocr-contact-sheet-extraction-fr.md): Validated workflow for extracting scene/frame metadata from a real video contact sheet with Mistral OCR or vision fallback.
 - [OCR Worksheet Extraction (FR)](mistral-subagent/references/ocr-worksheet-extraction-fr.md): Validated workflow for turning a clean worksheet preview into bounded JSON verified against a local oracle.

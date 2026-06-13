@@ -1,0 +1,22 @@
+Ecris uniquement le contenu Markdown complet de `docs/TASK_CATALOG_FR.md`.
+
+Contraintes:
+- francais ASCII uniquement
+- aucun JSON
+- aucun tableau
+- aucun bloc de code fence
+- max 850 mots
+- utiliser exactement ces titres, dans cet ordre:
+  - `# Catalogue FR des taches delegables a Mistral`
+  - `## Quand deleguer a Mistral`
+  - `## Routage par modele`
+  - `## Capacites deja validees dans ce repo`
+  - `## Ce que Codex doit garder`
+  - `## Workflow recommande`
+  - `## Commandes utiles`
+- dans la section capacites, distinguer explicitement:
+  - `Valide`
+  - `Partiellement valide`
+- ne pas inventer de commandes, de modeles, de rapports, ou de pourcentages globaux
+- rappeler clairement que Codex garde les secrets, l'edition locale, le shell, les tests, Git, et la verification finale
+- garder exacts les model ids, les commandes et les chemins vus dans le contexte

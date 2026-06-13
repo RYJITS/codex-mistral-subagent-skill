@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1555,
+    "total_tokens": 2377,
+    "completion_tokens": 822,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "20282",
+    "x-ratelimit-tokens-query-cost": "2377"
+  },
+  "text": "# Catalogue FR des taches delegables a Mistral\n\nCe document liste les taches textuelles et verifiables delegables a Mistral dans le cadre du repo `codex-mistral-subagent-skill`, base sur les validations concretes du lab.\n\n## Quand deleguer a Mistral\n\nDeleguer a Mistral pour les taches bornees, textuelles, et dont la sortie est verifiable :\n- generation ou revision de contenu structure (JSON, Markdown)\n- analyse ou triage de donnees textuelles (commentaires, diffs, briefs)\n- planification ou ideation dans un cadre strict (storyboard, tests, RAG)\n- extraction d'informations (OCR, transcription, traduction)\n\nEviter les taches necessitant execution de code, acces aux secrets, ou decisions non verifiables.\n\n## Routage par modele\n\n- `mistral-small-latest` : taches simples (filtrage, triage, extraction basique)\n- `mistral-medium-latest` : taches moderees (revue de diff, idees de tests, OCR)\n- `mistral-large-latest` : taches complexes (storyboard, planification RAG, traduction structuree)\n- `devstral-latest` : taches de dev textuel (amelioration de templates, audit documentaire)\n- `codestral-latest` : taches proches du code (revue de diff, extraction JSON technique)\n- `mistral-ocr-latest` : OCR et extraction structuree de documents\n- `mistral-embed` : planification d'embeddings\n- `mistral-moderation-latest` : filtrage pre-vol de contenu\n- `voxtral-mini-latest` : transcription audio FR\n\n## Capacites deja validees dans ce repo\n\n**Valide** :\n- storyboard/prompt planning video scroll-driven\n- extraction JSON stricte d'un brief de maintenance repo\n- critique et reecriture UI/UX copy pour experience scroll-driven\n- idees de tests unitaires bornees pour le helper\n- revue de diff simple avec findings JSON\n- triage strict de commentaires de review\n- quota reporting de delegation\n- filtrage pre-vol avant delegation\n- planification RAG/embeddings multi-projets\n- OCR/extraction structuree de document\n- traduction structuree de note publique\n- transcription audio FR bornee\n\n**Partiellement valide** :\n- audit borne de repo public et petite amelioration documentaire\n- generation/amelioration bornee de templates GitHub d'issue\n\n## Ce que Codex doit garder\n\nCodex conserve la main sur :\n- la gestion des secrets et credentials\n- l'edition locale des fichiers\n- l'execution de commandes shell\n- l'execution des tests et validations\n- les operations Git (commit, push)\n- la verification finale des sorties\n\n## Workflow recommande\n\n1. Identifier la tache et son niveau de complexite.\n2. Choisir le modele adapte via `models` ou `recommend`.\n3. Preparer le contexte (fichiers, brief) et lancer avec `run` ou `project-action`.\n4. Verifier la sortie et ajuster si necessaire.\n5. Integrer manuellement les resultats valides.\n\n## Commandes utiles\n\n- `npm run validate`\n- `npm run check:helper`\n- `node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"...\"`\n- `node mistral-subagent/scripts/mistral-subagent.mjs run --task \"...\" --context-file <path> --model mistral-small-latest`\n- `node mistral-subagent/scripts/mistral-subagent.mjs project-scan --path <path> --output <path>`\n- `node mistral-subagent/scripts/mistral-subagent.mjs project-action --path <path> --goal \"...\" --output <path>`"
+}

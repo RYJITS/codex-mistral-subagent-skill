@@ -1,0 +1,26 @@
+Tu rediges une documentation publique destinee a l'utilisateur final du repo `codex-mistral-subagent-skill`.
+
+Retourne uniquement un JSON valide avec exactement cette forme:
+
+{
+  "task_category": "public_documentation_generation_fr",
+  "doc_path": "docs/TASK_CATALOG_FR.md",
+  "title": "titre du document",
+  "summary_fr": "une phrase sur l'utilite du document",
+  "doc_markdown": "contenu Markdown complet du fichier",
+  "why_relevant": ["point", "point"],
+  "validation_checks": ["commande ou verification", "commande ou verification"],
+  "risks": ["risque ou limite"]
+}
+
+Contraintes strictes:
+- francais ASCII uniquement
+- `doc_path` doit etre exactement `docs/TASK_CATALOG_FR.md`
+- ne pas inventer de commande, de script, de workflow, de capability, ni de rapport absent du contexte
+- garder exacts tous les model ids, commandes, chemins, noms de fichiers, et statuts `Valide` / `Partiellement valide`
+- ne pas mentionner de pourcentage global de couverture
+- `doc_markdown` doit etre directement publiable comme fichier Markdown
+- la section "Capacites deja validees dans ce repo" doit distinguer `Valide` et `Partiellement valide`
+- rappeler clairement que Codex garde les secrets, l'edition locale, le shell, les tests, Git, et la verification finale
+- `validation_checks` doit contenir seulement des controles faisables par Codex localement
+- pas de Markdown fences dans le JSON
