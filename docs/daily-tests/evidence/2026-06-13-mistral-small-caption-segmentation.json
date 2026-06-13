@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 530,
+    "total_tokens": 715,
+    "completion_tokens": 185,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "45692",
+    "x-ratelimit-tokens-query-cost": "715"
+  },
+  "text": "{\"task_category\": \"caption_segmentation_remotion\", \"language\": \"fr\", \"captions\": [{\"index\": 1, \"text\": \"Je transforme les problmes en systmes.\"}, {\"index\": 2, \"text\": \"Ce site montre une mthode simple,\"}, {\"index\": 3, \"text\": \"voir avant d'agir,\"}, {\"index\": 4, \"text\": \"excuter sans friction,\"}, {\"index\": 5, \"text\": \"transformer les donnes en dcisions.\"}, {\"index\": 6, \"text\": \"Ct digital, l'intelligence artificielle devient un moteur concret pour automatiser,\"}, {\"index\": 7, \"text\": \"connecter et acclrer. Ct supply chain, les flux deviennent lisibles, stables et pilotables. Ici, chaque ide avance vers un rsultat utile.\"}]}"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1046,
+    "total_tokens": 1708,
+    "completion_tokens": 662,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "20822",
+    "x-ratelimit-tokens-query-cost": "1708"
+  },
+  "text": "{\n  \"status\": \"Non\",\n  \"rapport_quotidien\": {\n    \"date\": \"2026-06-13\",\n    \"capacite\": \"caption_segmentation_remotion\",\n    \"statut_final\": \"chec de dlgation\",\n    \"resume\": {\n      \"verdict_global\": \"Non valide\",\n      \"problemes_identifies\": [\n        \"Aucun run ne valide l'intgralit des critres de segmentation.\",\n        \"Seuls les modles mistral-medium-3.5 et mistral-large-latest alignent partiellement les frontires de sous-titres (1/6 attendues).\",\n        \"La dernire caption gnre dpasse systmatiquement la longueur lisible autorise.\",\n        \"Le modle mistral-small-latest choue sur la correspondance de squence de transcript et n'aligne aucune frontire.\"\n      ],\n      \"performances_par_modele\": {\n        \"mistral-small-latest\": {\n          \"verdict\": \"Non valide\",\n          \"transcript_sequence_match\": false,\n          \"exact_caption_matches\": 0,\n          \"matching_boundaries\": 0,\n          \"readable_length_pass_count\": 5,\n          \"tokens\": {\"total\": 715, \"completion\": 185}\n        },\n        \"mistral-medium-3.5\": {\n          \"verdict\": \"Non valide (meilleur run)\",\n          \"transcript_sequence_match\": true,\n          \"exact_caption_matches\": 1,\n          \"matching_boundaries\": 1,\n          \"readable_length_pass_count\": 6,\n          \"tokens\": {\"total\": 718, \"completion\": 188},\n          \"remarque\": \"Deux tentatives identiques, aucune amlioration.\"\n        },\n        \"mistral-large-latest\": {\n          \"verdict\": \"Non valide\",\n          \"transcript_sequence_match\": true,\n          \"exact_caption_matches\": 1,\n          \"matching_boundaries\": 1,\n          \"readable_length_pass_count\": 6,\n          \"tokens\": {\"total\": 762, \"completion\": 232},\n          \"remarque\": \"Deux tentatives identiques, aucune amlioration.\"\n        }\n      }\n    },\n    \"conclusion\": \"Les meilleurs runs (mistral-medium-3.5 et mistral-large-latest) conservent l'intgralit du transcript mais n'alignent qu'une seule frontire de caption sur les six attendues, et laissent une dernire caption trop longue. Aucune dlgation valide n'a pu tre tablie pour cette capacit.\",\n    \"recommandations\": [\n      \"Analyser les critres de segmentation pour identifier pourquoi seules 1/6 frontires sont alignes.\",\n      \"Vrifier la logique de dcoupage des captions (longueur maximale, rgles de ponctuation).\",\n      \"Tester des prompts ou paramtres de gnration alternatifs pour amliorer l'alignement.\",\n      \"valuer si le dataset de validation contient des cas limites non couverts par l'entranement.\"\n    ],\n    \"tokens_conserves\": 0\n  }\n}"
+}

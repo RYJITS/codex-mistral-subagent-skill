@@ -1,0 +1,118 @@
+{
+  "verdict": "Non valide",
+  "model": "mistral-small-latest",
+  "task_category": "caption_segmentation_remotion",
+  "expected_caption_count": 7,
+  "actual_caption_count": 7,
+  "count_match": true,
+  "transcript_sequence_match": false,
+  "exact_caption_matches": 0,
+  "matching_boundaries": 0,
+  "expected_boundaries": [
+    6,
+    16,
+    24,
+    29,
+    38,
+    48
+  ],
+  "actual_boundaries": [
+    8,
+    15,
+    19,
+    23,
+    30,
+    42
+  ],
+  "readable_caption_lengths": [
+    {
+      "index": 1,
+      "length": 40,
+      "within_readable_range": true
+    },
+    {
+      "index": 2,
+      "length": 34,
+      "within_readable_range": true
+    },
+    {
+      "index": 3,
+      "length": 18,
+      "within_readable_range": false
+    },
+    {
+      "index": 4,
+      "length": 23,
+      "within_readable_range": true
+    },
+    {
+      "index": 5,
+      "length": 37,
+      "within_readable_range": true
+    },
+    {
+      "index": 6,
+      "length": 85,
+      "within_readable_range": true
+    },
+    {
+      "index": 7,
+      "length": 143,
+      "within_readable_range": false
+    }
+  ],
+  "readable_length_pass_count": 5,
+  "per_caption": [
+    {
+      "index": 1,
+      "expected": "Je transforme les problemes en systemes.",
+      "actual": "Je transforme les problmes en systmes.",
+      "exact_match": false
+    },
+    {
+      "index": 2,
+      "expected": "Ce site montre une methode simple, voir avant d agir.",
+      "actual": "Ce site montre une mthode simple,",
+      "exact_match": false
+    },
+    {
+      "index": 3,
+      "expected": "Executer sans friction, transformer les donnees en decisions.",
+      "actual": "voir avant d'agir,",
+      "exact_match": false
+    },
+    {
+      "index": 4,
+      "expected": "Cote digital, l intelligence artificielle.",
+      "actual": "excuter sans friction,",
+      "exact_match": false
+    },
+    {
+      "index": 5,
+      "expected": "Devient un moteur concret pour automatiser, connecter et accelerer.",
+      "actual": "transformer les donnes en dcisions.",
+      "exact_match": false
+    },
+    {
+      "index": 6,
+      "expected": "Cote supply chain, les flux deviennent lisibles, stables et pilotables.",
+      "actual": "Ct digital, l'intelligence artificielle devient un moteur concret pour automatiser,",
+      "exact_match": false
+    },
+    {
+      "index": 7,
+      "expected": "Ici, chaque idee avance vers un resultat utile.",
+      "actual": "connecter et acclrer. Ct supply chain, les flux deviennent lisibles, stables et pilotables. Ici, chaque ide avance vers un rsultat utile.",
+      "exact_match": false
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 530,
+    "total_tokens": 715,
+    "completion_tokens": 185,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "quality_notes_fr": []
+}

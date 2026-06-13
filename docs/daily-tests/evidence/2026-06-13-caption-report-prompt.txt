@@ -1,0 +1,15 @@
+Tu aides Codex a rediger un rapport quotidien FR pour un echec borne de delegation Mistral.
+
+Retourne uniquement un objet JSON strict avec ce schema:
+{
+  "status": "Non valide",
+  "resultat_fr": ["point court"],
+  "limitations_fr": ["point court"],
+  "next_action_fr": "phrase courte"
+}
+
+Contraintes:
+- francais sobre
+- pas de markdown
+- pas d invention
+- uniquement a partir du contexte fourni

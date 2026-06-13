@@ -1,0 +1,31 @@
+Tu recois un transcript FR deja valide d'une voix off courte de projet Remotion.
+
+Retourne uniquement un objet JSON strict avec ce schema:
+{
+  "task_category": "caption_segmentation_remotion",
+  "language": "fr",
+  "captions": [
+    {
+      "index": 1,
+      "text": "caption courte"
+    }
+  ],
+  "quality_notes_fr": [
+    "note courte"
+  ]
+}
+
+Regles obligatoires:
+- produire exactement 7 objets dans `captions`
+- chaque `index` doit aller de 1 a 7
+- conserver exactement l'ordre des mots du transcript
+- ne pas ajouter de mots
+- ne pas supprimer de mots
+- ne pas reformuler
+- chaque `text` doit etre une sous-sequence contigue du transcript
+- chaque caption doit viser entre 25 et 80 caracteres
+- eviter les captions trop courtes isolees comme un simple bout de proposition
+- eviter une derniere caption trop longue; repartir les mots plus tot si necessaire
+- si une phrase est longue, la couper sur une unite semantique lisible, pas au hasard
+- utiliser l'ASCII simple
+- ne rien retourner hors JSON

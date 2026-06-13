@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 530,
+    "total_tokens": 762,
+    "completion_tokens": 232,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "2",
+    "x-ratelimit-remaining-tokens-minute": "248425",
+    "x-ratelimit-tokens-query-cost": "762"
+  },
+  "text": "{\n  \"task_category\": \"caption_segmentation_remotion\",\n  \"language\": \"fr\",\n  \"captions\": [\n    {\n      \"index\": 1,\n      \"text\": \"Je transforme les problemes en systemes.\"\n    },\n    {\n      \"index\": 2,\n      \"text\": \"Ce site montre une methode simple,\"\n    },\n    {\n      \"index\": 3,\n      \"text\": \"voir avant d'agir, executer sans friction,\"\n    },\n    {\n      \"index\": 4,\n      \"text\": \"transformer les donnees en decisions.\"\n    },\n    {\n      \"index\": 5,\n      \"text\": \"Cote digital, l'intelligence artificielle devient un moteur concret\"\n    },\n    {\n      \"index\": 6,\n      \"text\": \"pour automatiser, connecter et accelerer.\"\n    },\n    {\n      \"index\": 7,\n      \"text\": \"Cote supply chain, les flux deviennent lisibles, stables et pilotables. Ici, chaque idee avance vers un resultat utile.\"\n    }\n  ]\n}"
+}

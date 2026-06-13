@@ -1,0 +1,87 @@
+{
+  "capability": "caption_segmentation_remotion",
+  "final_status": "Non valide",
+  "best_runs": [
+    {
+      "file": "2026-06-13-mistral-medium-3.5-caption-segmentation-validation.json",
+      "model": "mistral-medium-3.5",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 718,
+      "completion_tokens": 188
+    },
+    {
+      "file": "2026-06-13-mistral-medium-3.5-caption-segmentation-retry-validation.json",
+      "model": "mistral-medium-3.5",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 718,
+      "completion_tokens": 188
+    }
+  ],
+  "runs": [
+    {
+      "file": "2026-06-13-mistral-small-caption-segmentation-validation.json",
+      "model": "mistral-small-latest",
+      "verdict": "Non valide",
+      "transcript_sequence_match": false,
+      "exact_caption_matches": 0,
+      "matching_boundaries": 0,
+      "readable_length_pass_count": 5,
+      "total_tokens": 715,
+      "completion_tokens": 185
+    },
+    {
+      "file": "2026-06-13-mistral-medium-3.5-caption-segmentation-validation.json",
+      "model": "mistral-medium-3.5",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 718,
+      "completion_tokens": 188
+    },
+    {
+      "file": "2026-06-13-mistral-large-caption-segmentation-validation.json",
+      "model": "mistral-large-latest",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 762,
+      "completion_tokens": 232
+    },
+    {
+      "file": "2026-06-13-mistral-medium-3.5-caption-segmentation-retry-validation.json",
+      "model": "mistral-medium-3.5",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 718,
+      "completion_tokens": 188
+    },
+    {
+      "file": "2026-06-13-mistral-large-caption-segmentation-retry-validation.json",
+      "model": "mistral-large-latest",
+      "verdict": "Non valide",
+      "transcript_sequence_match": true,
+      "exact_caption_matches": 1,
+      "matching_boundaries": 1,
+      "readable_length_pass_count": 6,
+      "total_tokens": 762,
+      "completion_tokens": 232
+    }
+  ],
+  "useful_mistral_tokens_retained_for_capability": 0,
+  "conclusion_fr": "Les meilleurs runs conservent tout le transcript mais n alignent qu une seule frontiere de caption sur les six attendues et laissent une derniere caption trop longue."
+}
