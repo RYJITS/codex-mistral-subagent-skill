@@ -1,0 +1,97 @@
+{
+  "task": "bounded project doc synthesis from real project docs",
+  "verdict_basis": {
+    "strict_schema_required_for_json_contract": true,
+    "factual_doc_draft_required_for_capability_validation": true
+  },
+  "results": [
+    {
+      "file": "2026-06-13-mistral-small-project-doc-synthesis.json",
+      "model": "mistral-small-latest",
+      "total_tokens": 1077,
+      "completion_tokens": 261,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": true,
+      "literals_present_count": 9,
+      "literals_missing": [],
+      "useful_for_doc_draft": true,
+      "notes": "Facts retained, but schema drifted."
+    },
+    {
+      "file": "2026-06-13-mistral-medium35-project-doc-synthesis.json",
+      "model": "mistral-medium-3.5",
+      "total_tokens": 1010,
+      "completion_tokens": 194,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": true,
+      "literals_present_count": 9,
+      "literals_missing": [],
+      "useful_for_doc_draft": true,
+      "notes": "Facts retained, but schema drifted."
+    },
+    {
+      "file": "2026-06-13-mistral-large-project-doc-synthesis.json",
+      "model": "mistral-large-latest",
+      "total_tokens": 1154,
+      "completion_tokens": 338,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": false,
+      "literals_present_count": 9,
+      "literals_missing": [],
+      "useful_for_doc_draft": false,
+      "notes": "Rejected for missing required facts."
+    },
+    {
+      "file": "2026-06-13-devstral-project-doc-synthesis.json",
+      "model": "devstral-latest",
+      "total_tokens": 1041,
+      "completion_tokens": 225,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": true,
+      "literals_present_count": 9,
+      "literals_missing": [],
+      "useful_for_doc_draft": true,
+      "notes": "Facts retained, but schema drifted."
+    },
+    {
+      "file": "2026-06-13-mistral-medium35-project-doc-synthesis-retry.json",
+      "model": "mistral-medium-3.5",
+      "total_tokens": 933,
+      "completion_tokens": 165,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": false,
+      "literals_present_count": 8,
+      "literals_missing": [
+        "docs/QUICK_DECISION_GUIDE.md"
+      ],
+      "useful_for_doc_draft": false,
+      "notes": "Rejected for missing required facts."
+    },
+    {
+      "file": "2026-06-13-mistral-large-project-doc-synthesis-retry.json",
+      "model": "mistral-large-latest",
+      "total_tokens": 1146,
+      "completion_tokens": 378,
+      "inner_json_parseable": true,
+      "schema_pass": false,
+      "factual_pass": false,
+      "literals_present_count": 8,
+      "literals_missing": [
+        "docs/QUICK_DECISION_GUIDE.md"
+      ],
+      "useful_for_doc_draft": false,
+      "notes": "Rejected for missing required facts."
+    }
+  ],
+  "best_schema_model": null,
+  "useful_models_for_doc_draft": [
+    "mistral-small-latest",
+    "mistral-medium-3.5",
+    "devstral-latest"
+  ]
+}

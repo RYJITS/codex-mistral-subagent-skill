@@ -1,0 +1,33 @@
+Write a French ASCII daily GitHub report in Markdown only. No fences. No intro text.
+
+Use this exact title:
+
+# Test quotidien 2026-06-13 - synthese documentaire bornee de projet reel
+
+Use these exact top-level section headings:
+
+## Statut
+## Categorie de tache
+## Pourquoi c'est important pour les projets reels
+## Projet et capacite testes
+## Modeles testes
+## Resume des prompts et du contexte
+## Usage et tokens
+## Resultat
+## Commandes de validation
+## Limitations
+## Prochaine action
+## Contribution vers l'objectif 70 pourcent
+## Fichiers de preuve
+
+Requirements:
+
+- The status must be `**Partiellement valide**`.
+- Explain clearly that direct Markdown drafting worked better than schema-first JSON.
+- Mention the retained applied output file:
+  - `mistral-subagent/references/project-doc-synthesis-fr.md`
+- Mention that `mistral-medium-3.5` is the best default retained here.
+- Mention the useful retained token total `4413`.
+- Mention the cumulative coverage estimate `76 pourcent`.
+- Keep commands, model ids, and paths exact.
+- Keep the report concise but complete enough to publish after Codex verification.

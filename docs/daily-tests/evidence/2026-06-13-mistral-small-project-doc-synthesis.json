@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 816,
+    "total_tokens": 1077,
+    "completion_tokens": 261,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "44473",
+    "x-ratelimit-tokens-query-cost": "1077"
+  },
+  "text": "{\"task_category_fr\": \"maintenance_documentaire\", \"status\": \"ready\", \"reading_order\": [\"README.md\", \"docs/PROJECT_MAP.md\", \"docs/QUICK_DECISION_GUIDE.md\", \"docs/LOCAL_VALIDATION.md\"], \"note_fr\": \"Ce projet suit une strategie en 5 etapes : storyboard -> keyframes propres -> microclips (debut/fin) -> generation locale avec Wan2.2 ou LTX -> QA visuelle -> integration WebGL. Les docs d'entree recommandees sont README.md, docs/PROJECT_MAP.md et docs/LOCAL_VALIDATION.md. Pour les decisions rapides : utiliser Wan pour les videos longues ou stylisees, LTX pour les clips courts et iterations rapides, WebGL pour previsualisation ou integration web interactive. La QA peut inclure un contact sheet genere via `python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`. Les pre-PR checks obligatoires : `git status --short`, verification des fichiers requis, validation JSON, liens Markdown, et exclusion des secrets, fichiers locaux ou caches generes.\", \"invented_items\": []}"
+}

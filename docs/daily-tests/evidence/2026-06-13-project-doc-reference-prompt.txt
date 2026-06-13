@@ -1,0 +1,34 @@
+Write a short French ASCII Markdown reference for future Codex runs.
+
+Return Markdown only. No fences. No intro text.
+
+Use this exact title:
+
+# Synthese documentaire bornee depuis des docs projet
+
+Use these exact section headings:
+
+## Principe
+## Modeles recommandes
+## Workflow recommande
+## Resultat retenu
+## Commandes utiles
+## Limites
+
+Requirements:
+
+- Explain that this workflow is for drafting a short maintainer note from bounded public project docs.
+- Mention the exact source files:
+  - `README.md`
+  - `docs/PROJECT_MAP.md`
+  - `docs/QUICK_DECISION_GUIDE.md`
+  - `docs/LOCAL_VALIDATION.md`
+- Mention the exact command:
+  - `python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`
+- Mention the exact validation command:
+  - `git status --short`
+- Mention `Wan`, `LTX`, and `WebGL`.
+- Say that `mistral-medium-3.5` is the best default retained here.
+- Say that `mistral-small-latest` stayed useful for low-cost fact compression.
+- Say that strict JSON drifted on this task, so direct Markdown drafting was retained instead.
+- Keep the note concise, operational, and publication-ready.

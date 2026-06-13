@@ -1,0 +1,54 @@
+Return one JSON object only. ASCII only. No markdown fences. No explanation. Do not rename keys. Do not add keys.
+
+Use exactly this schema:
+{
+  "task_category_fr": "synthese documentaire bornee de projet",
+  "status": "ready",
+  "reading_order": [
+    "README.md",
+    "docs/PROJECT_MAP.md",
+    "docs/QUICK_DECISION_GUIDE.md",
+    "docs/LOCAL_VALIDATION.md"
+  ],
+  "technology_routing": {
+    "Wan": "longer or more style-heavy generation",
+    "LTX": "short clips and fast iteration",
+    "WebGL": "preview or interactive web integration"
+  },
+  "pre_pr_checks": [
+    "git status --short",
+    "required files",
+    "JSON validation",
+    "Markdown links",
+    "no secrets"
+  ],
+  "kept_literals": [
+    "README.md",
+    "docs/PROJECT_MAP.md",
+    "docs/QUICK_DECISION_GUIDE.md",
+    "docs/LOCAL_VALIDATION.md",
+    "git status --short",
+    "python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3",
+    "Wan",
+    "LTX",
+    "WebGL"
+  ],
+  "invented_items": [],
+  "draft_markdown_fr": "..."
+}
+
+Rules:
+
+- Keep the exact literal strings above in `reading_order`, `pre_pr_checks`, and `kept_literals`.
+- `technology_routing` values must stay semantically equivalent to the schema example above, but in French ASCII.
+- `invented_items` must be `[]`.
+- `draft_markdown_fr` must be 180 to 280 words.
+- `draft_markdown_fr` must use this exact title and section headings:
+  - `# Orientation rapide pour maintenir AI_VIDEO_WEBGL_COMPETENCES`
+  - `## Quand l'utiliser`
+  - `## Lecture minimale`
+  - `## Choix technologique`
+  - `## Verification locale`
+  - `## Limites`
+- `draft_markdown_fr` must mention each literal from `kept_literals`.
+- Stay fully inside the provided context. No extra files, scripts, URLs, tests, package managers, or CI claims.

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 1146,
+    "completion_tokens": 378,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "1",
+    "x-ratelimit-remaining-tokens-minute": "244550",
+    "x-ratelimit-tokens-query-cost": "1146"
+  },
+  "text": "{\n  \"task_category_fr\": \"synthese\",\n  \"maintainer_note\": {\n    \"orientation_rapide\": {\n      \"strategie_globale\": \"storyboard  nettoyage des keyframes  definition des microclips (debut/fin)  generation locale avec Wan2.2 ou LTX  QA visuelle  integration WebGL.\",\n      \"docs_entree\": [\n        \"`README.md`\",\n        \"`docs/PROJECT_MAP.md`\",\n        \"`docs/LOCAL_VALIDATION.md`\"\n      ],\n      \"ordre_lecture_recommande\": [\n        \"`README.md`\",\n        \"`INSTALLATION.md`\",\n        \"`CONCLUSIONS.md`\",\n        \"`codex-skills/video-start-end/SKILL.md`\",\n        \"`codex-skills/webgl-right-video/SKILL.md`\",\n        \"`examples/README.md`\",\n        \"`docs/LOCAL_VALIDATION.md`\"\n      ],\n      \"choix_outils\": {\n        \"Wan\": \"videos longues ou stylisees\",\n        \"LTX\": \"clips courts et iterations rapides\",\n        \"WebGL\": \"previsualisation ou integration web interactive\"\n      },\n      \"commande_exemple_qa\": \"`python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`\",\n      \"checks_pre_pr\": [\n        \"`git status --short`\",\n        \"verifier l'existence des fichiers requis\",\n        \"valider les fichiers JSON\",\n        \"verifier les liens Markdown\",\n        \"exclure : secrets, fichiers env locaux, caches generes, commandes non supportees\"\n      ]\n    }\n  },\n  \"invented_items\": []\n}"
+}

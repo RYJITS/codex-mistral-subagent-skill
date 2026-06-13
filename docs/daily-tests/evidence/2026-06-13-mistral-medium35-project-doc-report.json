@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1150,
+    "total_tokens": 2107,
+    "completion_tokens": 957,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "22247",
+    "x-ratelimit-tokens-query-cost": "2107"
+  },
+  "text": "# Test quotidien 2026-06-13 - synthese documentaire bornee de projet reel\n\n## Statut\n**Partiellement valide**\n\n## Categorie de tache\nSynthese documentaire bornee a partir de documents publics de projet reel.\n\n## Pourquoi c'est important pour les projets reels\nLe projet `D:\\00_Cerveau_IA\\Projet\\AI_VIDEO_WEBGL_COMPETENCES` fait partie du flux de travail reel de l'utilisateur pour la video, WebGL, QA et documentation. Une note de maintenance deleguee est utile lorsque Codex doit s'orienter rapidement dans un projet reel avant des modifications ou validations.\n\n## Projet et capacite testes\n- Projet : `AI_VIDEO_WEBGL_COMPETENCES`\n- Capacite : Synthese documentaire bornee a partir de documents publics.\n\n## Modeles testes\n- `mistral-small-latest`\n- `mistral-medium-3.5`\n- `mistral-large-latest`\n- `devstral-latest`\n- Retry sur `mistral-medium-3.5`\n- Retry sur `mistral-large-latest`\n- Reference draft sur `mistral-medium-3.5`\n- Reference draft sur `mistral-large-latest`\n\n## Resume des prompts et du contexte\nGenerer une note de maintenance en francais pour `AI_VIDEO_WEBGL_COMPETENCES` a partir de documents publics du projet, en preservant les noms de fichiers, commandes et verifications de validation exacts.\n\n## Usage et tokens\n- `mistral-small-latest` : 1077 tokens\n- `mistral-medium-3.5` (initial) : 1010 tokens\n- `devstral-latest` : 1041 tokens\n- `mistral-medium-3.5` (reference) : 1285 tokens\n- **Total utile retenu : 4413 tokens**\n\n## Resultat\n- **Reussite** : Redaction directe en Markdown plus efficace que le contrat JSON strict.\n- **Fichier retenu** : `mistral-subagent/references/project-doc-synthesis-fr.md` (normalise par Codex).\n- **Modele par defaut retenu** : `mistral-medium-3.5`.\n- **Echecs** :\n  - Contrat JSON strict : echec sur tous les modeles testes.\n  - `mistral-large-latest` (draft initial) : faits non retenus comme meilleure sortie appliquee.\n  - Retries `mistral-medium-3.5` et `mistral-large-latest` : ont manque `docs/QUICK_DECISION_GUIDE.md`.\n  - Heuristique `recommend` : `suitable: false` (informatif mais non comptabilise comme sortie validee).\n\n## Commandes de validation\n- `node mistral-subagent/scripts/mistral-subagent.mjs check`\n- `node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"Generate a bounded French maintainer note for AI_VIDEO_WEBGL_COMPETENCES from public project docs while preserving exact file names, commands, and validation checks.\"`\n- `node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"Generate a bounded French maintainer note for AI_VIDEO_WEBGL_COMPETENCES from public project docs while preserving exact file names, commands, and validation checks.\"`\n- `Get-Content docs/daily-tests/evidence/2026-06-13-project-doc-synthesis-validation-summary.json -Raw | ConvertFrom-Json`\n- `npm run validate`\n- `npm run check:helper`\n\n## Limitations\n- Le contrat JSON strict n'a pas ete assez fiable pour un workflow structure stable.\n- Les retries ont manque des fichiers critiques (`QUICK_DECISION_GUIDE.md`).\n\n## Prochaine action\nTester une capacite recurrente differente avec un oracle clair, idealement de la classification ou de la planification ne necessitant pas une longue structure Markdown.\n\n## Contribution vers l'objectif 70 pourcent\nOui, mais partielle. **Estimation cumulative : 76 pourcent** apres cette execution.\n\n## Fichiers de preuve\n- `mistral-subagent/references/project-doc-synthesis-fr.md`\n- `docs/daily-tests/evidence/2026-06-13-project-doc-synthesis-validation-summary.json`"
+}

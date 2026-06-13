@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 816,
+    "total_tokens": 1041,
+    "completion_tokens": 225,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "998335",
+    "x-ratelimit-tokens-query-cost": "1041"
+  },
+  "text": "{\n  \"task_category_fr\": \"Note de maintenance - Orientation rapide\",\n  \"status\": \"ready\",\n  \"reading_order\": [\n    \"Consultez `README.md` pour la strategie principale: storyboard -> keyframes -> microclips -> Wan2.2/LTX -> QA visuelle -> integration WebGL.\",\n    \"Suivez l'ordre de lecture recommande dans `docs/PROJECT_MAP.md` pour une comprehension complete.\",\n    \"Utilisez `docs/QUICK_DECISION_GUIDE.md` pour choisir entre Wan (longs clips), LTX (iteration rapide), ou WebGL (preview/interactif).\",\n    \"Generez une feuille de contact pour la QA avec: `python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`.\",\n    \"Avant toute PR, verifiez avec `git status --short` et suivez les checks dans `docs/LOCAL_VALIDATION.md`.\"\n  ],\n  \"invented_items\": []\n}"
+}

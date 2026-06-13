@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 933,
+    "completion_tokens": 165,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "20023",
+    "x-ratelimit-tokens-query-cost": "933"
+  },
+  "text": "{\"task_category_fr\": \"synthese\", \"note\": \"Strategie: storyboard -> keyframes -> microclips start/end -> Wan2.2 ou LTX local -> QA visuelle (contact sheet: python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3) -> integration WebGL. Docs prioritaires: README.md, docs/PROJECT_MAP.md, docs/LOCAL_VALIDATION.md. Choix rapide: Wan pour videos longues/stylisees, LTX pour clips courts/iteration rapide, WebGL pour preview/integration web. Pre-PR: git status --short, verification fichiers/JSON/liens, pas de secrets/caches.\", \"invented_items\": []}"
+}

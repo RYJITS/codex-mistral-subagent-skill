@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 840,
+    "total_tokens": 1355,
+    "completion_tokens": 515,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "248645",
+    "x-ratelimit-tokens-query-cost": "1355"
+  },
+  "text": "# Synthese documentaire bornee depuis des docs projet\n\n## Principe\nRediger une note de synthese concise pour mainteneurs a partir de documents publics bornes du projet. La cible est un Markdown ASCII en francais, operationnel et pret a publier. Sources strictes : `README.md`, `docs/PROJECT_MAP.md`, `docs/QUICK_DECISION_GUIDE.md`, et `docs/LOCAL_VALIDATION.md`.\n\n## Modeles recommandes\n- **Par defaut** : `mistral-medium-3.5` (meilleur equilibre synthese factuelle et formulation francaise concise).\n- **Compression bas cout** : `mistral-small-latest` (utile pour extraction rapide de faits, mais moins fiable pour la structure).\n- Eviter les modeles a cout eleve (`mistral-large-latest`) sauf besoin specifique de prose etendue.\n\n## Workflow recommande\n1. Lire les sources dans cet ordre :\n   - `README.md`\n   - `docs/PROJECT_MAP.md`\n   - `docs/QUICK_DECISION_GUIDE.md`\n   - `docs/LOCAL_VALIDATION.md`\n2. Retenir les elements cles :\n   - Strategie : storyboard  nettoyage des keyframes  microclips (debut/fin)  generation locale (`Wan` ou `LTX`)  QA visuelle  integration `WebGL`.\n   - Routage : `Wan` pour les clips longs/style, `LTX` pour les iterations rapides, `WebGL` pour previsualisation web.\n3. Rediger directement en Markdown (le JSON strict a derive sur cette tache).\n\n## Resultat retenu\n- Note en francais, ASCII, sans secrets.\n- Structure claire : principe, workflow, commandes, limites.\n- Validation locale obligatoire avant publication.\n\n## Commandes utiles\n- Generation de contact sheet pour QA visuelle :\n  `python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`\n- Verification locale :\n  `git status --short` (fichiers requis, liens Markdown, absence de secrets).\n\n## Limites\n- Perimetre borne aux 4 fichiers sources cites.\n- Pas de traitement de donnees sensibles ou non publiques.\n- Le JSON strict a echoue a capturer la nuance operationnelle ; le Markdown direct est prefere."
+}

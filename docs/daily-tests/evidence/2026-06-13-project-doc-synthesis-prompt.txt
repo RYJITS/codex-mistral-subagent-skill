@@ -1,0 +1,65 @@
+Return one JSON object only. ASCII only. No markdown fences. No text before or after JSON.
+
+Task:
+Generate a bounded French maintainer note for a real project from the provided public context. This is a docs synthesis task for `AI_VIDEO_WEBGL_COMPETENCES`.
+
+Required JSON shape:
+{
+  "task_category_fr": "string",
+  "status": "ready" | "needs_human_review",
+  "reading_order": ["array of exact file literals in order"],
+  "technology_routing": {
+    "Wan": "short sentence",
+    "LTX": "short sentence",
+    "WebGL": "short sentence"
+  },
+  "pre_pr_checks": ["array of short items"],
+  "kept_literals": ["array of exact literals copied from context"],
+  "invented_items": ["array, empty if none"],
+  "draft_markdown_fr": "full Markdown note in French ASCII"
+}
+
+Rules:
+
+- `task_category_fr` must be `synthese documentaire bornee de projet`.
+- `status` is `ready` only if you can stay fully inside the provided context without guessing.
+- `reading_order` must be exactly:
+  1. `README.md`
+  2. `docs/PROJECT_MAP.md`
+  3. `docs/QUICK_DECISION_GUIDE.md`
+  4. `docs/LOCAL_VALIDATION.md`
+- `technology_routing` must preserve these meanings:
+  - `Wan`: longer or more style-heavy generation
+  - `LTX`: short clips and fast iteration
+  - `WebGL`: preview or interactive web integration
+- `pre_pr_checks` must include at least:
+  - `git status --short`
+  - `required files`
+  - `JSON validation`
+  - `Markdown links`
+  - `no secrets`
+- `kept_literals` must include exactly these literals:
+  - `README.md`
+  - `docs/PROJECT_MAP.md`
+  - `docs/QUICK_DECISION_GUIDE.md`
+  - `docs/LOCAL_VALIDATION.md`
+  - `git status --short`
+  - `python scripts/generate_contact_sheet.py --input frames/ --output contact_sheet.png --rows 4 --cols 3`
+  - `Wan`
+  - `LTX`
+  - `WebGL`
+- `invented_items` must be empty if you stayed within context.
+- `draft_markdown_fr` must:
+  - be between 220 and 340 words;
+  - use this exact title: `# Orientation rapide pour maintenir AI_VIDEO_WEBGL_COMPETENCES`
+  - contain these exact section headings:
+    - `## Quand l'utiliser`
+    - `## Lecture minimale`
+    - `## Choix technologique`
+    - `## Verification locale`
+    - `## Limites`
+  - mention all four required source files exactly;
+  - mention `Wan`, `LTX`, and `WebGL`;
+  - mention `git status --short`;
+  - mention the contact-sheet command exactly once;
+  - stay conservative and avoid any claim not present in the context.
