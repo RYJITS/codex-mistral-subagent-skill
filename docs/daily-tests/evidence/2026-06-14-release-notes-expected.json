@@ -1,0 +1,25 @@
+{
+  "period_start": "2026-06-12",
+  "period_end": "2026-06-13",
+  "capability_counts": {
+    "valide": 4,
+    "partiellement_valide": 1,
+    "non_valide": 1
+  },
+  "commits": [
+    "45efee2",
+    "02310cb",
+    "4b29d3d",
+    "4d97b5e",
+    "f33ea9d",
+    "e2c490b"
+  ],
+  "evidence_files": [
+    "docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md",
+    "docs/daily-tests/2026-06-12-structured-doc-translation.md",
+    "docs/daily-tests/2026-06-12-audio-transcription-remotion.md",
+    "docs/daily-tests/2026-06-13-caption-segmentation-remotion.md",
+    "docs/daily-tests/2026-06-13-public-doc-generation-fr.md",
+    "docs/daily-tests/2026-06-13-project-doc-synthesis.md"
+  ]
+}

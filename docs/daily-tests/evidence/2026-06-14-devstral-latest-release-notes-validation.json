@@ -1,0 +1,19 @@
+{
+  "valid": true,
+  "checks": {
+    "missing_keys": [],
+    "extra_keys": [],
+    "period_match": true,
+    "counts_match": true,
+    "commits_match": true,
+    "evidence_files_match": true,
+    "summary_length_ok": true,
+    "highlights_count_ok": true,
+    "watchouts_count_ok": true,
+    "caption_failure_mentioned": true,
+    "partial_synthesis_mentioned": true,
+    "highlights_hashes_ok": true
+  },
+  "title_fr": "Notes de version publiques FR - 2026-06-12 a 2026-06-13",
+  "summary_length": 156
+}

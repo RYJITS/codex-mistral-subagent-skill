@@ -1,0 +1,37 @@
+{
+  "title_fr": "Notes de version publiques FR - 2026-06-12 a 2026-06-13",
+  "period_start": "2026-06-12",
+  "period_end": "2026-06-13",
+  "capability_counts": {
+    "valide": 4,
+    "partiellement_valide": 1,
+    "non_valide": 1
+  },
+  "summary_fr": "Cette version couvre 6 commits et rapports quotidiens, validant 4 capacites, avec un point partiellement valide et un echec sur la segmentation de captions.",
+  "highlights_fr": [
+    "Traduction structuree FR-EN validee (45efee2).",
+    "Traduction structuree EN-FR avec preservation des commandes (02310cb).",
+    "Transcription audio FR validee pour Remotion (4b29d3d).",
+    "Generation de documentation publique FR validee (f33ea9d)."
+  ],
+  "watchouts_fr": [
+    "Echec de segmentation des captions (4d97b5e).",
+    "Synthese documentaire partiellement validee (e2c490b)."
+  ],
+  "commits": [
+    "45efee2",
+    "02310cb",
+    "4b29d3d",
+    "4d97b5e",
+    "f33ea9d",
+    "e2c490b"
+  ],
+  "evidence_files": [
+    "docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md",
+    "docs/daily-tests/2026-06-12-structured-doc-translation.md",
+    "docs/daily-tests/2026-06-12-audio-transcription-remotion.md",
+    "docs/daily-tests/2026-06-13-caption-segmentation-remotion.md",
+    "docs/daily-tests/2026-06-13-public-doc-generation-fr.md",
+    "docs/daily-tests/2026-06-13-project-doc-synthesis.md"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 557,
+    "total_tokens": 868,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "23699",
+    "x-ratelimit-tokens-query-cost": "868"
+  },
+  "text": "# Notes de version bornees depuis Git et rapports\n\n## Quand l'utiliser\nPour rediger des notes de version courtes en francais, basees sur des commits Git (`git log`) et des rapports journaliers (`docs/daily-tests/`), avec validation stricte des donnees.\n\n## Modele conseille\n- **Defaut**: `mistral-medium-3.5` (2400 tokens, JSON valide)\n- **Alternative economique**: `mistral-small-latest` (2398 tokens, JSON valide)\n- **Alternative consciente du depot**: `devstral-latest` (2436 tokens, JSON valide)\n- **Exclu pour la sortie appliquee**: `mistral-large-latest` (resume trop long: 266 caracteres au lieu de 140-220)\n\n## Prompt minimal\n\"Redige une note de version en francais, basee sur ces commits Git et rapports. Garde le contexte borne aux commits exacts, fichiers exacts et comptes de statut explicites.\"\n\n## Validation locale\n- Verifier la sortie contre les hashs, chemins et comptes de statut ordonnes.\n- Conserver les echecs et resultats partiels visibles dans la note finale.\n\n## Limites\n- `mistral-large-latest` non retenu ici a cause d'un resume depassant la limite de longueur (266 > 220).\n- La validation locale est requise avant toute publication."
+}

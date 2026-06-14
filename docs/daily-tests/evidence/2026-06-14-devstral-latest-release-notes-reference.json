@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 545,
+    "total_tokens": 887,
+    "completion_tokens": 342,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "997873",
+    "x-ratelimit-tokens-query-cost": "887"
+  },
+  "text": "```markdown\n# Notes de version bornees depuis Git et rapports\n\n## Quand l'utiliser\nPour generer des notes de version courtes en francais a partir d'un ensemble borne de commits Git et de rapports quotidiens. La sortie est validee par Codex contre des hash, chemins et comptes de status exacts.\n\n## Modele conseille\n- Defaut: `mistral-medium-3.5` (2400 tokens, JSON valide)\n- Alternative economique: `mistral-small-latest` (2398 tokens, JSON valide)\n- Alternative consciente du depot: `devstral-latest` (2436 tokens, JSON valide)\n- `mistral-large-latest` n'est pas retenu ici car le resume depasse la limite (266 caracteres au lieu de 140-220).\n\n## Prompt minimal\nFournir un contexte borne:\n- Plage de commits (via `git log`)\n- Chemins exacts des rapports (ex: `docs/daily-tests/`)\n- Comptes de status explicites\n- Format JSON strict en sortie.\n\n## Validation locale\n1. Verifier la validite JSON de la sortie\n2. Contrer les hash, chemins et comptes avec les donnees sources\n3. Conserver les echecs et resultats partiels visibles dans la note finale\n\n## Limites\n- Necessite un contexte precis (commits, rapports, status)\n- Sortie brute en JSON a convertir localement en Markdown\n- `mistral-large-latest` inutilisable pour ce cas d'usage a cause de la longueur du resume\n```"
+}

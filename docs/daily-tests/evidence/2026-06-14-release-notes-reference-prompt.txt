@@ -1,0 +1,19 @@
+Redige une courte note Markdown en francais, ASCII seulement, pour `mistral-subagent/references/`.
+
+Retour attendu:
+- format Markdown direct, sans code fence
+- ton operatoire, concis
+- sections exactes:
+  - `# Notes de version bornees depuis Git et rapports`
+  - `## Quand l'utiliser`
+  - `## Modele conseille`
+  - `## Prompt minimal`
+  - `## Validation locale`
+  - `## Limites`
+
+Contraintes:
+- citer `mistral-medium-3.5`, `mistral-small-latest`, `devstral-latest`, `mistral-large-latest`
+- citer `docs/daily-tests/`
+- citer `git log`
+- expliquer que `mistral-large-latest` n'est pas retenu ici pour la sortie appliquee a cause d'un resume trop long
+- ne pas inventer de scripts, commandes, ou fichiers hors contexte

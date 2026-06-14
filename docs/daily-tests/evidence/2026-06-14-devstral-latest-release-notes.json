@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1918,
+    "total_tokens": 2436,
+    "completion_tokens": 518,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "997564",
+    "x-ratelimit-tokens-query-cost": "2436"
+  },
+  "text": "{\n  \"title_fr\": \"Notes de version publiques FR - 2026-06-12 a 2026-06-13\",\n  \"period_start\": \"2026-06-12\",\n  \"period_end\": \"2026-06-13\",\n  \"capability_counts\": {\n    \"valide\": 4,\n    \"partiellement_valide\": 1,\n    \"non_valide\": 1\n  },\n  \"summary_fr\": \"Cette version couvre 6 commits et rapports quotidiens, validant 4 capacites, avec un point partiellement valide et un echec sur la segmentation de captions.\",\n  \"highlights_fr\": [\n    \"Traduction structuree FR-EN validee (45efee2).\",\n    \"Traduction structuree EN-FR avec preservation des commandes (02310cb).\",\n    \"Transcription audio FR validee pour Remotion (4b29d3d).\",\n    \"Generation de documentation publique FR validee (f33ea9d).\"\n  ],\n  \"watchouts_fr\": [\n    \"Echec de segmentation des captions (4d97b5e).\",\n    \"Synthese documentaire partiellement validee (e2c490b).\"\n  ],\n  \"commits\": [\n    \"45efee2\",\n    \"02310cb\",\n    \"4b29d3d\",\n    \"4d97b5e\",\n    \"f33ea9d\",\n    \"e2c490b\"\n  ],\n  \"evidence_files\": [\n    \"docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md\",\n    \"docs/daily-tests/2026-06-12-structured-doc-translation.md\",\n    \"docs/daily-tests/2026-06-12-audio-transcription-remotion.md\",\n    \"docs/daily-tests/2026-06-13-caption-segmentation-remotion.md\",\n    \"docs/daily-tests/2026-06-13-public-doc-generation-fr.md\",\n    \"docs/daily-tests/2026-06-13-project-doc-synthesis.md\"\n  ]\n}"
+}

@@ -1,0 +1,37 @@
+{
+  "title_fr": "Version publique - Traduction, transcription et documentation FR (2026-06-12  2026-06-13)",
+  "period_start": "2026-06-12",
+  "period_end": "2026-06-13",
+  "capability_counts": {
+    "valide": 4,
+    "partiellement_valide": 1,
+    "non_valide": 1
+  },
+  "summary_fr": "Cette version couvre la validation de capacites cles en traduction structurelle FR-EN, transcription audio Remotion, et generation de documentation publique FR, avec un echec sur la segmentation de captions et une synthese documentaire partielle pour un projet reel.",
+  "highlights_fr": [
+    "Traduction validee d'une note repo publique FR-EN avec glossaire verrouille (45efee2).",
+    "Traduction structurelle d'une documentation quickstart EN-FR preservant commandes et IDs de modeles (02310cb).",
+    "Transcription audio FR d'une voix off Remotion verifiee contre un oracle local (4b29d3d).",
+    "Generation validee de documentation publique FR bornee a partir d'un contexte repo filtre (f33ea9d)."
+  ],
+  "watchouts_fr": [
+    "Echec de segmentation des captions FR a partir d'un transcript valide (4d97b5e).",
+    "Synthese documentaire partielle d'un projet reel necessitant un fallback Markdown (e2c490b)."
+  ],
+  "commits": [
+    "45efee2",
+    "02310cb",
+    "4b29d3d",
+    "4d97b5e",
+    "f33ea9d",
+    "e2c490b"
+  ],
+  "evidence_files": [
+    "docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md",
+    "docs/daily-tests/2026-06-12-structured-doc-translation.md",
+    "docs/daily-tests/2026-06-12-audio-transcription-remotion.md",
+    "docs/daily-tests/2026-06-13-caption-segmentation-remotion.md",
+    "docs/daily-tests/2026-06-13-public-doc-generation-fr.md",
+    "docs/daily-tests/2026-06-13-project-doc-synthesis.md"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1918,
+    "total_tokens": 2506,
+    "completion_tokens": 588,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "246381",
+    "x-ratelimit-tokens-query-cost": "2506"
+  },
+  "text": "{\n  \"title_fr\": \"Version publique - Traduction, transcription et documentation FR (2026-06-12  2026-06-13)\",\n  \"period_start\": \"2026-06-12\",\n  \"period_end\": \"2026-06-13\",\n  \"capability_counts\": {\n    \"valide\": 4,\n    \"partiellement_valide\": 1,\n    \"non_valide\": 1\n  },\n  \"summary_fr\": \"Cette version couvre la validation de capacites cles en traduction structurelle FR-EN, transcription audio Remotion, et generation de documentation publique FR, avec un echec sur la segmentation de captions et une synthese documentaire partielle pour un projet reel.\",\n  \"highlights_fr\": [\n    \"Traduction validee d'une note repo publique FR-EN avec glossaire verrouille (45efee2).\",\n    \"Traduction structurelle d'une documentation quickstart EN-FR preservant commandes et IDs de modeles (02310cb).\",\n    \"Transcription audio FR d'une voix off Remotion verifiee contre un oracle local (4b29d3d).\",\n    \"Generation validee de documentation publique FR bornee a partir d'un contexte repo filtre (f33ea9d).\"\n  ],\n  \"watchouts_fr\": [\n    \"Echec de segmentation des captions FR a partir d'un transcript valide (4d97b5e).\",\n    \"Synthese documentaire partielle d'un projet reel necessitant un fallback Markdown (e2c490b).\"\n  ],\n  \"commits\": [\n    \"45efee2\",\n    \"02310cb\",\n    \"4b29d3d\",\n    \"4d97b5e\",\n    \"f33ea9d\",\n    \"e2c490b\"\n  ],\n  \"evidence_files\": [\n    \"docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md\",\n    \"docs/daily-tests/2026-06-12-structured-doc-translation.md\",\n    \"docs/daily-tests/2026-06-12-audio-transcription-remotion.md\",\n    \"docs/daily-tests/2026-06-13-caption-segmentation-remotion.md\",\n    \"docs/daily-tests/2026-06-13-public-doc-generation-fr.md\",\n    \"docs/daily-tests/2026-06-13-project-doc-synthesis.md\"\n  ]\n}"
+}

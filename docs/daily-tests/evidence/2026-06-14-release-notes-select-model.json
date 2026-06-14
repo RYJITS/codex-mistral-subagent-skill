@@ -1,0 +1,4 @@
+{
+  "model": "mistral-small-latest",
+  "reason": "Cheap/default first pass for summaries, docs, extraction, JSON, rewrites, and bounded drafting."
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1918,
+    "total_tokens": 2398,
+    "completion_tokens": 480,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "46287",
+    "x-ratelimit-tokens-query-cost": "2398"
+  },
+  "text": "{\"title_fr\": \"Note de version publique - 12 et 13 juin 2026\", \"period_start\": \"2026-06-12\", \"period_end\": \"2026-06-13\", \"capability_counts\": {\"valide\": 4, \"partiellement_valide\": 1, \"non_valide\": 1}, \"summary_fr\": \"Cette note couvre les capacites validees, partiellement validees et non validees pour la periode du 12 au 13 juin 2026, incluant traductions, transcriptions et syntheses documentaires.\", \"highlights_fr\": [\"Traduction structuree FR-EN d'une note repo publique validee (45efee2)\", \"Transcription audio FR Remotion verifiee contre oracle local (4b29d3d)\", \"Generation de documentation publique FR bornee validee (f33ea9d)\", \"Synthese documentaire de projet reel partiellement validee (e2c490b)\"], \"watchouts_fr\": [\"Echec de la segmentation de captions Remotion (4d97b5e)\", \"Synthese partielle de la documentation projet (e2c490b)\"], \"commits\": [\"45efee2\", \"02310cb\", \"4b29d3d\", \"4d97b5e\", \"f33ea9d\", \"e2c490b\"], \"evidence_files\": [\"docs/daily-tests/2026-06-12-translation-repo-note-fr-en.md\", \"docs/daily-tests/2026-06-12-structured-doc-translation.md\", \"docs/daily-tests/2026-06-12-audio-transcription-remotion.md\", \"docs/daily-tests/2026-06-13-caption-segmentation-remotion.md\", \"docs/daily-tests/2026-06-13-public-doc-generation-fr.md\", \"docs/daily-tests/2026-06-13-project-doc-synthesis.md\"]}"
+}

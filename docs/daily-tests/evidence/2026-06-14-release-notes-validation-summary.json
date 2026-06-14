@@ -1,0 +1,38 @@
+[
+    {
+        "model":  "mistral-small-latest",
+        "prompt_tokens":  1918,
+        "completion_tokens":  480,
+        "total_tokens":  2398,
+        "valid":  true,
+        "summary_length":  184,
+        "title_fr":  "Note de version publique - 12 et 13 juin 2026"
+    },
+    {
+        "model":  "mistral-medium-3.5",
+        "prompt_tokens":  1918,
+        "completion_tokens":  482,
+        "total_tokens":  2400,
+        "valid":  true,
+        "summary_length":  188,
+        "title_fr":  "Note de version publique FR - 2026-06-12 a 2026-06-13"
+    },
+    {
+        "model":  "mistral-large-latest",
+        "prompt_tokens":  1918,
+        "completion_tokens":  588,
+        "total_tokens":  2506,
+        "valid":  false,
+        "summary_length":  266,
+        "title_fr":  "Version publique - Traduction, transcription et documentation FR (2026-06-12  2026-06-13)"
+    },
+    {
+        "model":  "devstral-latest",
+        "prompt_tokens":  1918,
+        "completion_tokens":  518,
+        "total_tokens":  2436,
+        "valid":  true,
+        "summary_length":  156,
+        "title_fr":  "Notes de version publiques FR - 2026-06-12 a 2026-06-13"
+    }
+]
