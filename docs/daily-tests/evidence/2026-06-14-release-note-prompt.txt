@@ -1,0 +1,24 @@
+Tu rediges une note de release FR bornee a partir du commit public de contexte.
+
+Retourne uniquement un JSON valide, sans texte avant ou apres, avec cette forme exacte:
+
+{
+  "title_fr": "string",
+  "summary_fr": "string",
+  "highlights_fr": ["string", "string", "string"],
+  "key_files": ["string", "string", "string"],
+  "validation_commands": ["npm run validate", "npm run check:helper"],
+  "invented_items": []
+}
+
+Regles:
+
+- `title_fr`: une ligne courte, factuelle, ton public
+- `summary_fr`: une phrase compacte, sans chiffres inventes
+- `highlights_fr`: exactement `3` points, chacun verifiable depuis le contexte
+- `key_files`: exactement `3` chemins, choisis uniquement parmi les fichiers modifies listes dans le contexte
+- `validation_commands`: doit etre exactement `["npm run validate","npm run check:helper"]`
+- `invented_items`: tableau vide si rien n'est invente
+- ne pas mentionner de PR, issue, CI, dependance, ou script non present dans le contexte
+- ne pas inventer de pourcentage de couverture, de nombre de tokens, ou de statut supplementaire
+- rester en ASCII uniquement

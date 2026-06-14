@@ -1,0 +1,98 @@
+{
+  "capability": "release_note_from_public_diff",
+  "status": "Valide",
+  "base_coverage_percent": 76,
+  "updated_coverage_percent": 78,
+  "recommend_result": {
+    "suitable": false,
+    "suggested_model": "mistral-large-latest",
+    "risk_signals": [
+      "commit"
+    ],
+    "note": "False negative acceptable because Codex pre-filtered a public bounded context."
+  },
+  "selected_model": {
+    "model": "mistral-large-latest",
+    "reason": "High-quality synthesis, public-facing prose, complex strategy, or important second opinion."
+  },
+  "models_tested": [
+    {
+      "model": "mistral-small-latest",
+      "status": "usable_with_normalization",
+      "total_tokens": 1575,
+      "notes": [
+        "JSON shape valid",
+        "commands preserved",
+        "more verbose",
+        "non-ASCII output required normalization"
+      ]
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "status": "useful_cross_check",
+      "total_tokens": 1570,
+      "notes": [
+        "JSON shape valid",
+        "commands preserved",
+        "close to winning output"
+      ]
+    },
+    {
+      "model": "devstral-latest",
+      "status": "useful_cross_check",
+      "total_tokens": 1569,
+      "notes": [
+        "JSON shape valid",
+        "repo-aware phrasing",
+        "good compact summary"
+      ]
+    },
+    {
+      "model": "mistral-large-latest",
+      "status": "retained_best_output",
+      "total_tokens": 1645,
+      "notes": [
+        "best public-facing note",
+        "JSON shape valid",
+        "commands preserved",
+        "no invented files in key_files"
+      ]
+    }
+  ],
+  "useful_outputs": [
+    {
+      "artifact": "2026-06-14-mistral-large-release-note.json",
+      "reason": "Best retained release-note draft"
+    },
+    {
+      "artifact": "2026-06-14-devstral-release-note.json",
+      "reason": "Cross-check for repo-aware highlights"
+    },
+    {
+      "artifact": "2026-06-14-mistral-medium35-release-note.json",
+      "reason": "Cross-check close to winning output"
+    },
+    {
+      "artifact": "2026-06-14-mistral-large-release-note-reference.json",
+      "reason": "Draft source for reusable delegation reference"
+    }
+  ],
+  "useful_mistral_tokens": 5702,
+  "rejected_outputs": [
+    {
+      "artifact": "2026-06-14-release-note-recommend.json",
+      "reason": "Heuristic false negative; advisory only"
+    },
+    {
+      "artifact": "2026-06-14-mistral-medium35-release-note-report.json",
+      "reason": "Added fenced markdown and invented a 50 percent contribution figure"
+    }
+  ],
+  "validation_checks": [
+    "All retained runs returned parseable outer JSON",
+    "Inner release-note JSON was valid for the four core model runs",
+    "key_files stayed inside the allowed changed-file list",
+    "validation_commands matched exact literals",
+    "No retained output invented extra scripts or files"
+  ]
+}
