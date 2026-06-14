@@ -42,6 +42,7 @@ Exemples recurents: extraire un JSON de maintenance, critiquer une copy UI/UX, p
 - traduction structuree de note publique
 - transcription audio FR bornee
 - generation de documentation publique FR bornee a partir d'un contexte repo filtre
+- planification structuree de prompts image sous `promptLock` existant
 
 **Partiellement valide**
 

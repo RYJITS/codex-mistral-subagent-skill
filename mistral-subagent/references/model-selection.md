@@ -22,6 +22,7 @@ Use this guide to choose the appropriate Mistral model for different tasks based
 ### By Task Type
 
 - **Text Generation/Summarization/Classification**: `mistral-small-latest` (cheap), `mistral-medium-latest` (balanced), `mistral-large-latest` (high quality).
+- **Prompt Planning Under Existing `promptLock`**: prefer `mistral-medium-3.5`; keep `mistral-small-latest` as a cheap fallback when a local validator checks exact fields such as FACS, palette, depth, and banned terms.
 - **Code Review/Generation**: `codestral-latest`, `devstral-latest`, or `mistral-medium-latest`.
 - **Structured JSON Outputs**: `mistral-medium-latest` or `mistral-large-latest` with explicit JSON instructions.
 - **OCR/Document Processing**: `mistral-ocr-latest`.

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1422,
+    "total_tokens": 1917,
+    "completion_tokens": 495,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "23083",
+    "x-ratelimit-tokens-query-cost": "1917"
+  },
+  "text": "{\"task\": \"c2r_prompt_pack\", \"variants\": [{\"id\": \"lagoon_reflection\", \"prompt_variable\": \"heroine in mineral lagoon at dawn, copper turquoise ivory palette, water reflections foreground, mineral arches mid-ground, misty horizon background, frontal view, impasto oil paint thick texture, AU6+AU12\", \"facs_code\": \"AU6+AU12\", \"palette\": [\"copper\", \"turquoise\", \"ivory\"], \"depth_cues\": [\"water reflections\", \"mineral arches\", \"misty horizon\"], \"negative_additions\": [\"city\", \"object in hand\"], \"risk_flags\": [], \"fit_note_fr\": \"Scene compatible avec promptLock. Vrifier absence de ville et d'objet tenu.\"}, {\"id\": \"storm_garden\", \"prompt_variable\": \"heroine in stormy garden after rain, jade petrole argent palette, wet leaves foreground, sculpted alley mid-ground, open glasshouse background, three-quarter view, impasto oil paint thick texture, AU1+AU2+AU5\", \"facs_code\": \"AU1+AU2+AU5\", \"palette\": [\"jade\", \"petrole\", \"argent\"], \"depth_cues\": [\"wet leaves\", \"sculpted alley\", \"open glasshouse\"], \"negative_additions\": [\"umbrella\", \"textile coat\"], \"risk_flags\": [], \"fit_note_fr\": \"Scene compatible avec promptLock. Vrifier absence de parapluie et de manteau textile.\"}, {\"id\": \"sun_architecture\", \"prompt_variable\": \"heroine in open solar architecture, amber chalk pale blue palette, luminous dust foreground, walkways mid-ground, pierced sky background, frontal or three-quarter view, impasto oil paint thick texture, AU4+AU7+AU23\", \"facs_code\": \"AU4+AU7+AU23\", \"palette\": [\"amber\", \"chalk\", \"pale blue\"], \"depth_cues\": [\"luminous dust\", \"walkways\", \"pierced sky\"], \"negative_additions\": [\"closed interior\", \"flat pose\"], \"risk_flags\": [], \"fit_note_fr\": \"Scene compatible avec promptLock. Vrifier absence d'intrieur ferm et de pose plaque.\"}]}"
+}

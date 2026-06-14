@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1422,
+    "total_tokens": 2007,
+    "completion_tokens": 585,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "247993",
+    "x-ratelimit-tokens-query-cost": "2007"
+  },
+  "text": "{\n  \"task\": \"c2r_prompt_pack\",\n  \"variants\": [\n    {\n      \"id\": \"lagoon_reflection\",\n      \"prompt_variable\": \"solitary woman in a mineral lagoon at dawn, thick impasto oil paint, copper turquoise ivory palette, water reflections foreground, mineral arches mid-ground, misty horizon background, frontal angle, hyperrealistic face\",\n      \"facs_code\": \"AU6+AU12\",\n      \"palette\": [\"copper\", \"turquoise\", \"ivory\"],\n      \"depth_cues\": [\"water reflections foreground\", \"mineral arches mid-ground\", \"misty horizon background\"],\n      \"negative_additions\": [\"city\", \"object in hand\"],\n      \"risk_flags\": [],\n      \"fit_note_fr\": \"Scne compatible avec le promptLock : motion FACS intgre, palette respecte, profondeur et angle frontal conformes. Aucun risque de collision avec les contraintes existantes.\"\n    },\n    {\n      \"id\": \"storm_garden\",\n      \"prompt_variable\": \"solitary woman in a stormy garden after rain, thick impasto oil paint, jade petroleum silver palette, wet leaves foreground, sculpted alley mid-ground, open glasshouse background, three-quarter angle, hyperrealistic face\",\n      \"facs_code\": \"AU1+AU2+AU5\",\n      \"palette\": [\"jade\", \"petroleum\", \"silver\"],\n      \"depth_cues\": [\"wet leaves foreground\", \"sculpted alley mid-ground\", \"open glasshouse background\"],\n      \"negative_additions\": [\"umbrella\", \"textile coat\"],\n      \"risk_flags\": [],\n      \"fit_note_fr\": \"Scne compatible avec le promptLock : motion FACS intgre, palette respecte, profondeur et angle three-quarter conformes. Aucun risque de collision.\"\n    },\n    {\n      \"id\": \"sun_architecture\",\n      \"prompt_variable\": \"solitary woman in open solar architecture, thick impasto oil paint, amber chalk pale blue palette, sunlit dust foreground, walkways mid-ground, pierced sky background, frontal or three-quarter angle, hyperrealistic face\",\n      \"facs_code\": \"AU4+AU7+AU23\",\n      \"palette\": [\"amber\", \"chalk\", \"pale blue\"],\n      \"depth_cues\": [\"sunlit dust foreground\", \"walkways mid-ground\", \"pierced sky background\"],\n      \"negative_additions\": [\"enclosed interior\", \"pose pressed against decor\"],\n      \"risk_flags\": [],\n      \"fit_note_fr\": \"Scne compatible avec le promptLock : motion FACS intgre, palette respecte, profondeur et angles conformes. Aucun risque de collision avec les contraintes.\"\n    }\n  ]\n}"
+}

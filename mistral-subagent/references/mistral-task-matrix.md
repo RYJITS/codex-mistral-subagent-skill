@@ -13,6 +13,7 @@ This matrix is based on official Mistral docs checked on 2026-06-03. Verify offi
 | Repository audit and docs generation | Chat Completions, Devstral/Medium/Large | Filtered project snapshot | Patch safety and local fit |
 | Code review second opinion | Chat Completions, Devstral/Codestral | Diff or focused files | Actual bug validity |
 | Prompt/video/storyboard drafting | Chat Completions | Requirements and constraints | Visual/technical feasibility |
+| Image prompt planning under existing `promptLock` | Chat Completions, Small/Medium | Bounded creative brief, public prompt constraints, strict JSON schema | Prompt compatibility, banned-term checks, local fit |
 | Classification/moderation | Classifiers/moderation APIs | Text or chat content | Thresholds and policy fit |
 | Semantic search/RAG prep | Embeddings and code embeddings | Chunks of text/code | Retrieval quality and privacy |
 | OCR/document extraction | Document AI OCR | Public URL, uploaded doc, or base64 doc | Extraction accuracy, tables |

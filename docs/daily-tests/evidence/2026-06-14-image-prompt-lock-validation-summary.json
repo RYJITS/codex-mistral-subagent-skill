@@ -1,0 +1,36 @@
+[
+  {
+    "file": "2026-06-14-mistral-small-latest-image-prompt-lock.json",
+    "model": "mistral-small-latest",
+    "finish_reason": "stop",
+    "prompt_tokens": 1422,
+    "completion_tokens": 569,
+    "total_tokens": 1991,
+    "status": "valide",
+    "issues": []
+  },
+  {
+    "file": "2026-06-14-mistral-medium-3.5-image-prompt-lock.json",
+    "model": "mistral-medium-3.5",
+    "finish_reason": "stop",
+    "prompt_tokens": 1422,
+    "completion_tokens": 495,
+    "total_tokens": 1917,
+    "status": "valide",
+    "issues": []
+  },
+  {
+    "file": "2026-06-14-mistral-large-latest-image-prompt-lock.json",
+    "model": "mistral-large-latest",
+    "finish_reason": "stop",
+    "prompt_tokens": 1422,
+    "completion_tokens": 585,
+    "total_tokens": 2007,
+    "status": "non_valide",
+    "issues": [
+      "missing_facs_in_prompt:lagoon_reflection",
+      "missing_facs_in_prompt:storm_garden",
+      "missing_facs_in_prompt:sun_architecture"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+Redige une note de reference concise en francais pour un skill Codex.
+
+Retourne uniquement un JSON valide avec cette forme:
+
+{
+  "title": "string",
+  "markdown_fr": "string"
+}
+
+Contraintes:
+
+- `markdown_fr` doit etre un Markdown concis, public, ASCII uniquement.
+- Pas de sections hors sujet.
+- Inclure explicitement `mistral-medium-3.5`, `mistral-small-latest`, `mistral-large-latest`, `promptLock`, `prompt_variable`.
+- Ne pas inventer de commande.
+- Ne pas mentionner de secret concret.

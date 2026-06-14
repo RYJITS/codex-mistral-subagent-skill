@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1422,
+    "total_tokens": 1991,
+    "completion_tokens": 569,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "48009",
+    "x-ratelimit-tokens-query-cost": "1991"
+  },
+  "text": "{\"task\": \"c2r_prompt_pack\", \"variants\": [{\"id\": \"lagoon_reflection\", \"prompt_variable\": \"lagoon mineral dawn light heroine alone, copper turquoise ivory impasto oil paint thick, water reflection foreground, mineral arches mid-ground, misty horizon far background, frontal angle, AU6+AU12 emotion visible\", \"facs_code\": \"AU6+AU12\", \"palette\": [\"copper\", \"turquoise\", \"ivory\"], \"depth_cues\": [\"water reflection foreground\", \"mineral arches mid-ground\", \"misty horizon far background\"], \"negative_additions\": [\"handheld object\", \"urban structure\"], \"risk_flags\": [], \"fit_note_fr\": \"Scne raliste avec reflets minraux et eau, palette cuivre-turquoise-ivoire. Risque de collision avec la contrainte 'pas de ville' si les arches minrales sont interprtes comme urbaines.\"}, {\"id\": \"storm_garden\", \"prompt_variable\": \"stormy garden after rain heroine alone, jade petroleum silver impasto oil paint thick, wet leaves foreground, carved path mid-ground, open glasshouse far background, three-quarter angle, AU1+AU2+AU5 emotion visible\", \"facs_code\": \"AU1+AU2+AU5\", \"palette\": [\"jade\", \"petroleum\", \"silver\"], \"depth_cues\": [\"wet leaves foreground\", \"carved path mid-ground\", \"open glasshouse far background\"], \"negative_additions\": [\"umbrella\", \"textile coat\"], \"risk_flags\": [], \"fit_note_fr\": \"Ambiance orageuse avec feuilles humides et verrire ouverte. Compatible avec les contraintes de profondeur et de palette. Aucun risque identifi.\"}, {\"id\": \"sun_architecture\", \"prompt_variable\": \"solar open architecture heroine alone, amber chalk pale blue impasto oil paint thick, luminous dust foreground, walkways mid-ground, sky gaps far background, frontal or three-quarter angle, AU4+AU7+AU23 emotion visible\", \"facs_code\": \"AU4+AU7+AU23\", \"palette\": [\"amber\", \"chalk\", \"pale blue\"], \"depth_cues\": [\"luminous dust foreground\", \"walkways mid-ground\", \"sky gaps far background\"], \"negative_additions\": [\"closed interior\", \"flat pose against decor\"], \"risk_flags\": [], \"fit_note_fr\": \"Architecture solaire avec poussire lumineuse et passerelles. Respecte la contrainte 'pas d'intrieur ferm' et 'pas de pose colle au dcor'. Aucun risque.\"}]}"
+}

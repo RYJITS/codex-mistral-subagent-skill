@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 635,
+    "total_tokens": 1009,
+    "completion_tokens": 374,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "21160",
+    "x-ratelimit-tokens-query-cost": "1009"
+  },
+  "text": "{\n  \"title\": \"Reference - Planification de prompts image pour Generateur C2R\",\n  \"markdown_fr\": \"# Planification de prompts image (C2R)\\n\\n## Quand l'utiliser\\nPour generer des briefs image bornes, compatibles avec le `promptLock` existant (`versions/v6-exact-100/preset.json`).\\n\\n## Modele recommande\\n- **Defaut**: `mistral-medium-3.5` (meilleur equilibre qualite/cout)\\n- **Option economique**: `mistral-small-latest` (valide, mais moins precise)\\n- **A eviter**: `mistral-large-latest` (invalide tant que le code FACS exact est omis dans `prompt_variable`)\\n\\n## Protocole\\n1. Extraire le `promptLock` depuis `preset.json` (sans le modifier).\\n2. Definir un `prompt_variable` concatene au `promptLock`, incluant:\\n   - Code FACS exact\\n   - Palette, profondeur, angle\\n   - Contraintes publiques (ex: longueur raisonnable)\\n3. Generer un JSON borne pour 3 briefs image.\\n4. Valider localement avant envoi.\\n\\n## Checks locaux\\n- Verifier: `task`, nombre de variantes, FACS exact dans `prompt_variable`, palette, profondeur, angle, longueur raisonnable, absence de termes bannis.\\n- Ne jamais inclure de secret ou de chemin sensible.\\n\\n## Limites\\n- `mistral-large-latest` non recommande pour ce cas (FACS manquant).\\n- `prompt_variable` doit etre une extension, pas une reecriture du preset.\"\n}"
+}
