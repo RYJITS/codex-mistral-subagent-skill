@@ -1,0 +1,85 @@
+Tu dois remplir uniquement les champs texte d'un squelette deja valide par Codex.
+
+Ne change pas:
+- `task_category`
+- `project_name`
+- les `action_key`
+- les `priority_rank`
+- les `scope`
+- les tableaux `audit_ids`
+- les tableaux `files`
+- `audit_id`
+- `disposition`
+- `selector`
+- `invented_items`
+
+Retourne uniquement un JSON valide.
+
+Template a completer:
+{
+  "task_category": "triage_lighthouse_multisupport",
+  "project_name": "01_SITE_MA_METHODE",
+  "global_assessment_fr": "",
+  "primary_actions": [
+    {
+      "action_key": "video_payload",
+      "priority_rank": 1,
+      "scope": "both",
+      "audit_ids": ["total-byte-weight"],
+      "files": ["storyboard-kling-12-clips-1080p-scroll-web.mp4", "storyboard-kling-12-clips-720p-mobile-crop.mp4"],
+      "why_it_matters_fr": "",
+      "local_check_fr": ""
+    },
+    {
+      "action_key": "defer_below_fold_media",
+      "priority_rank": 2,
+      "scope": "both",
+      "audit_ids": ["total-byte-weight"],
+      "files": ["contact-transition-20260614-1080p.mp4", "contact-transition-20260614-720p.mp4", "project-grid-map-20260614.png"],
+      "why_it_matters_fr": "",
+      "local_check_fr": ""
+    },
+    {
+      "action_key": "heavy_images_and_textures",
+      "priority_rank": 3,
+      "scope": "both",
+      "audit_ids": ["total-byte-weight"],
+      "files": ["contact-cube-face.png", "project-grid-map-20260614.png"],
+      "why_it_matters_fr": "",
+      "local_check_fr": ""
+    },
+    {
+      "action_key": "critical_render_path",
+      "priority_rank": 4,
+      "scope": "both",
+      "audit_ids": ["render-blocking-insight"],
+      "files": ["fonts.googleapis.com", "src/styles.css"],
+      "why_it_matters_fr": "",
+      "local_check_fr": ""
+    },
+    {
+      "action_key": "css_js_cleanup",
+      "priority_rank": 5,
+      "scope": "mobile",
+      "audit_ids": ["unminified-css", "unminified-javascript", "unused-css-rules", "unused-javascript", "mainthread-work-breakdown"],
+      "files": ["src/styles.css", "src/main.js", "src/contact-scene.js"],
+      "why_it_matters_fr": "",
+      "local_check_fr": ""
+    }
+  ],
+  "secondary_findings": [
+    {
+      "audit_id": "video-caption",
+      "disposition": "track_accessibility",
+      "selector": "body > video#story-video",
+      "why_it_matters_fr": ""
+    }
+  ],
+  "invented_items": []
+}
+
+Exigences de style:
+- `global_assessment_fr`: 2 phrases maximum.
+- Chaque `why_it_matters_fr`: 1 a 2 phrases, concret, en francais.
+- Chaque `local_check_fr`: 1 phrase imperatif ou infinitif, orientee verification locale.
+- N'ajoute aucun autre champ.

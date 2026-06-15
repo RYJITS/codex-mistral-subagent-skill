@@ -1,0 +1,61 @@
+Le premier essai a ete rejete car il n'a pas respecte le schema JSON strict.
+
+Tu dois corriger cela.
+
+Retourne UNIQUEMENT un objet JSON valide, sans markdown, sans explication hors JSON.
+
+Utilise EXACTEMENT cette structure top-level:
+{
+  "task_category": "triage_lighthouse_multisupport",
+  "project_name": "01_SITE_MA_METHODE",
+  "global_assessment_fr": "string",
+  "primary_actions": [
+    {
+      "action_key": "video_payload",
+      "priority_rank": 1,
+      "scope": "both",
+      "audit_ids": ["total-byte-weight"],
+      "files": ["storyboard-kling-12-clips-1080p-scroll-web.mp4"],
+      "why_it_matters_fr": "string",
+      "local_check_fr": "string"
+    }
+  ],
+  "secondary_findings": [
+    {
+      "audit_id": "video-caption",
+      "disposition": "track_accessibility",
+      "selector": "body > video#story-video",
+      "why_it_matters_fr": "string"
+    }
+  ],
+  "invented_items": []
+}
+
+Regles obligatoires:
+- `primary_actions` doit contenir exactement 5 objets.
+- Tu dois utiliser exactement ces 5 `action_key`, une seule fois chacun:
+  - `video_payload`
+  - `defer_below_fold_media`
+  - `heavy_images_and_textures`
+  - `critical_render_path`
+  - `css_js_cleanup`
+- `priority_rank` doit etre unique de 1 a 5.
+- `scope` doit etre `desktop`, `mobile`, ou `both`.
+- N'utilise PAS de champs comme `details`, `priority`, `description_fr`, `impact`, `verification`, `target`, `asset`.
+- `secondary_findings` doit etre vide ou contenir exactement un objet avec:
+  - `audit_id`: `video-caption`
+  - `disposition`: `track_accessibility`
+  - `selector`: `body > video#story-video`
+- `invented_items` doit etre un tableau vide.
+
+Association attendue entre `action_key` et preuves:
+- `video_payload`: cite `total-byte-weight` et au moins un des fichiers `storyboard-kling-12-clips-1080p-scroll-web.mp4` ou `storyboard-kling-12-clips-720p-mobile-crop.mp4`.
+- `defer_below_fold_media`: cite `total-byte-weight` et au moins un des fichiers `contact-transition-20260614-1080p.mp4`, `contact-transition-20260614-720p.mp4`, `project-grid-map-20260614.png`.
+- `heavy_images_and_textures`: cite `total-byte-weight` et au moins un des fichiers `contact-cube-face.png`, `project-grid-map-20260614.png`.
+- `critical_render_path`: cite `render-blocking-insight` et au moins un des fragments `fonts.googleapis.com` ou `src/styles.css`.
+- `css_js_cleanup`: cite un ou plusieurs de `unminified-css`, `unminified-javascript`, `unused-css-rules`, `unused-javascript`, `mainthread-work-breakdown`, et au moins un des fragments `src/styles.css`, `src/main.js`, `src/contact-scene.js`.
+
+Rappels:
+- Utilise seulement des audits et fichiers presents dans le contexte.
+- Ecris le texte libre en francais.
+- Pas d'invention de commandes ni de scripts.

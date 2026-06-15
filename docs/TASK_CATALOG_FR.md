@@ -49,6 +49,7 @@ Exemples recurents: extraire un JSON de maintenance, critiquer une copy UI/UX, p
 
 - audit borne de repo public et petite amelioration documentaire
 - generation/amelioration bornee de templates GitHub d'issue
+- triage Lighthouse frontend si Codex pre-borne les buckets d'action avant la redaction FR
 
 ## Ce que Codex doit garder
 

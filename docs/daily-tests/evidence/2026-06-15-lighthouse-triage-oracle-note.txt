@@ -1,0 +1,133 @@
+# Audit optimisations - 2026-06-14
+
+Objectif: optimiser le site sans casser la qualite visuelle, le design cinematic, ni la narration scroll/video.
+
+## Mesures relevees
+
+- Lighthouse mobile: performance 70, accessibilite 100, best practices 100, SEO 90.
+- Lighthouse desktop: performance 85, accessibilite 100, best practices 100, SEO 90.
+- Mobile: FCP 2.6 s, LCP 16.2 s, TBT 110 ms, CLS 0.
+- Desktop: FCP 0.6 s, LCP 2.8 s, TBT 0 ms, CLS 0.006.
+- `public` pese environ 97.26 Mo, dont 77.93 Mo de MP4.
+- Les backups `.zip` a la racine pesent environ 457 Mo au total.
+- `output` pese environ 11.69 Mo et ne doit pas etre publie.
+
+## Leviers prioritaires
+
+1. Optimiser la video principale sans changer le rendu
+   - Fichier desktop actuel: `storyboard-kling-12-clips-1080p-scroll-web.mp4`, 60.54 s, 1920x1080, 61.97 Mo, 8.59 Mbps.
+   - Fichier mobile actuel: `storyboard-kling-12-clips-720p-mobile-crop.mp4`, 60.54 s, 820x720, 13.11 Mo, 1.82 Mbps.
+   - Action conseillee: reencoder en H.264 `faststart` avec bitrate plus bas et CRF propre, puis comparer visuellement.
+   - Cible prudente: 1080p autour de 25-35 Mo, mobile autour de 7-10 Mo, sans perte visible forte.
+   - Garder des keyframes assez proches pour le scroll-scrubbing, sinon le seek devient moins fluide.
+
+2. Ne plus charger les medias de fin de page au premier ecran
+   - `index.html` charge actuellement `project-grid-map-20260614.png` tout de suite alors qu'il apparait vers la fin.
+   - `contact-transition-video` est en `preload="auto"` et part au chargement alors qu'il sert seulement a la transition contact.
+   - Action conseillee: passer la video contact en `preload="none"` ou `metadata`, stocker les sources en `data-src`, puis appeler `load()` seulement quand le scroll approche de la zone contact.
+   - Meme logique pour l'image projet finale: charger a partir d'un seuil de scroll, par exemple vers 70-75%.
+
+3. Optimiser la texture WebGL contact
+   - `contact-cube-face.png` pese 2.15 Mo en 1254x1254.
+   - Le code la reduit ensuite en texture 512 dans `src/contact-scene.js`, donc la source est trop lourde pour son usage final.
+   - Action conseillee: generer une version 512 ou 768 optimisee, idealement WebP ou PNG optimise, puis pointer `data-texture-src` dessus.
+
+4. Optimiser l'image map projets
+   - `project-grid-map-20260614.png` pese 1.78 Mo en 1536x1024.
+   - Action conseillee: produire une version WebP/AVIF haute qualite et garder le PNG comme source de travail hors bundle production.
+
+5. Activer compression et cache en production
+   - Le serveur local met `Cache-Control: no-store` sur CSS, JS, images et videos.
+   - C'est acceptable en developpement, mais pas en production.
+   - Gains texte estimes:
+     - `src/styles.css`: 109.3 KB brut, 18.1 KB gzip, 14.7 KB brotli.
+     - `src/main.js`: 94.7 KB brut, 22.8 KB gzip, 19.7 KB brotli.
+     - `src/contact-scene.js`: 34.8 KB brut, 8.6 KB gzip, 7.6 KB brotli.
+   - Action conseillee: cache long immutable pour assets versionnes, gzip/brotli pour HTML/CSS/JS/SVG/JSON.
+
+## Optimisations secondaires
+
+- Minifier CSS et JS: Lighthouse estime environ 20 KB de gain CSS et 20 KB de gain JS.
+- Enlever ou separer le CSS inutilise: Lighthouse estime environ 90 KB de CSS inutilise, mais il faut le faire prudemment car beaucoup de styles concernent des overlays caches.
+- Lazy-loader le module WebGL contact ou au minimum stopper son rendu quand `document.hidden`.
+- Dans `src/contact-scene.js`, eviter `preserveDrawingBuffer: true` si aucune capture canvas n'est necessaire en production.
+- Reduire le DPR WebGL sur mobile ou batteries faibles, par exemple cap a 1.5 au lieu de 2.
+- Remplacer le `@import` Google Fonts dans CSS par des `<link rel="preconnect">` + `<link rel="stylesheet">` dans le head.
+- Garder seulement les graisses de police vraiment utilisees, ou self-host les fonts si le site doit etre tres stable.
+- Ajouter `*.zip` dans `.gitignore` et exclure explicitement `output`, `.playwright-*`, sources brutes et backups du deploiement.
+
+## Assets non references directement
+
+Ces fichiers ne semblent pas references par `index.html` ou `src` et peuvent rester comme sources de travail, mais ne devraient pas etre publies:
+
+- `public/generated/images/textures/method-card-tech/method-card-tech-source.png` - 2.34 Mo.
+- `public/generated/images/contact/contact-final-gateway-20260614.png` - 2.25 Mo.
+- `public/generated/images/contact/contact-final-gateway-raw-20260614.png` - 1.83 Mo.
+- `public/generated/videos/contact-transition/contact-transition-start-frame-20260614.png` - 0.97 Mo.
+- `public/generated/images/textures/ambientcg-metal029/Metal029_1K-JPG_Color.jpg` - 0.85 Mo.
+- `public/generated/images/textures/ambientcg-metal029/Metal029_1K-JPG_Roughness.jpg` - 0.73 Mo.
+- Total estime: 9.02 Mo.
+
+## A ne pas casser
+
+- Garder le fond video cinematic, les masques, le contraste noir/bleu/orange et la logique de narration.
+- Ne pas supprimer les effets WebGL/contact; les optimiser par chargement, texture et pause intelligente.
+- Ne pas compresser les videos a l'aveugle: verifier desktop, mobile, zones sombres, glow, textes et transitions.
+- Apres chaque optimisation, refaire au minimum:
+  - capture desktop 1440px;
+  - capture mobile 390px;
+  - test scroll complet;
+  - ouverture grille projets;
+  - ouverture contact;
+  - Lighthouse mobile + desktop.
+
+## Plan d'action recommande
+
+1. Creer des versions medias optimisees, sans remplacer les originaux.
+2. Brancher les nouveaux fichiers derriere les chemins actuels ou avec query versionnee.
+3. Deferer le chargement de `project-final-image` et `contact-transition-video`.
+4. Remplacer la texture WebGL par une version 512/768 optimisee.
+5. Ajouter compression/cache production ou verifier la config Hostinger.
+6. Nettoyer le bundle de deploiement.
+7. Minifier CSS/JS seulement apres validation visuelle.
+
+## Passe realisee - 2026-06-14
+
+- Video principale desktop branchee sur `storyboard-kling-12-clips-1080p-scroll-web-optimized-20260614.mp4`: 61.97 Mo -> 24.63 Mo.
+- Video principale mobile branchee sur `storyboard-kling-12-clips-720p-mobile-crop-optimized-20260614.mp4`: 13.11 Mo -> 11.14 Mo.
+- Video contact desktop branchee sur `contact-transition-20260614-1080p-optimized.mp4`: 2.14 Mo -> 1.37 Mo.
+- Texture WebGL contact remplacee par `contact-cube-face-512-20260614.webp`: 2.15 Mo -> 50.8 KB.
+- Map projets finale remplacee par `project-grid-map-20260614.webp`: 1.78 Mo -> 169.5 KB.
+- Poster contact remplace par `contact-final-gateway-poster-20260614.webp`: 449 KB -> 207.1 KB.
+- `project-final-image`, `contact-final-image` et `contact-transition-video` sont maintenant charges progressivement selon le scroll.
+- Google Fonts passe de `@import` CSS a des liens `preconnect` + stylesheet dans le `<head>`.
+- Serveur local: cache long immutable active seulement avec `NODE_ENV=production`, `no-store` garde en dev.
+- `.gitignore` exclut maintenant `.playwright-mcp/` et `*.zip`.
+- WebGL contact: `preserveDrawingBuffer` desactive et rendu saute quand l'onglet est cache.
+- Les originaux non references ont ete deplaces hors de `public`, dans `source-assets/optimization-originals-20260614`, pour reduire le poids publiable sans supprimer les sources.
+
+## Resultats apres passe
+
+- Lighthouse mobile: performance 70 -> 84, accessibilite 100, best practices 100, SEO 90.
+- Mobile LCP: 16.2 s -> 4.1 s.
+- Mobile interactive: 16.2 s -> 5.4 s.
+- Mobile total byte weight: 9,067 KiB -> 3,710 KiB.
+- Lighthouse desktop: performance 85 -> 99, accessibilite 100, best practices 100, SEO 90.
+- Desktop LCP: 2.8 s -> 0.8 s.
+- Desktop interactive: 2.8 s -> 0.8 s.
+- Desktop total byte weight: 20,577 KiB -> 5,887 KiB.
+- Poids de `public`: environ 97.26 Mo avant passe -> 44.20 Mo apres passe et archivage des originaux hors `public`.
+- Originaux conserves hors publication: 90.62 Mo dans `source-assets/optimization-originals-20260614`.
+
+## Verification realisee
+
+- Syntaxe JS valide: `src/main.js`, `src/contact-scene.js`, `scripts/serve.mjs`.
+- Reseau initial verifie: la map projets, l'image finale contact et la video contact ne chargent plus au premier ecran.
+- Lazy-load verifie: map projets charge vers 74% du scroll; medias contact chargent vers 92%.
+- Captures Playwright:
+  - `output/playwright/optimized-desktop-top-20260614.png`
+  - `output/playwright/optimized-desktop-contact-20260614.png`
+  - `output/playwright/optimized-mobile-top-20260614.png`
+  - `output/playwright/optimized-mobile-contact-20260614.png`
+- Interactions verifiees: grille projets ouverte, contact ouvert, aucune erreur console.
+

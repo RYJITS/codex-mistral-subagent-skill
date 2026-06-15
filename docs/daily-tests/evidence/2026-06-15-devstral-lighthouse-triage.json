@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1750,
+    "total_tokens": 2289,
+    "completion_tokens": 539,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "996669",
+    "x-ratelimit-tokens-query-cost": "2289"
+  },
+  "text": "{\n  \"task_category\": \"triage_lighthouse_multisupport\",\n  \"project_name\": \"01_SITE_MA_METHODE\",\n  \"global_assessment_fr\": \"Le projet ncessite une optimisation cible des mdias lourds et du chemin critique pour amliorer les performances, notamment sur mobile o le LCP est critique. L'accessibilit est dj optimale, mais des ajustements sur les vidos et le CSS/JS peuvent rduire significativement le payload sans altrer l'exprience cinmatique.\",\n  \"primary_actions\": [\n    {\n      \"action_key\": \"video_payload\",\n      \"details\": \"Optimiser les vidos principales (storyboard et contact) via une compression adaptative (ex: WebP pour les textures, rduction de la rsolution mobile  720p max) et un chargement diffr (lazy-load) pour les mdias hors viewport initial.\"\n    },\n    {\n      \"action_key\": \"critical_path_css\",\n      \"details\": \"Minifier et inliner le CSS critique (styles.css) pour liminer le render-blocking, en diffrant le reste. Utiliser `preload` pour les polices Google Fonts avec un fallback systme temporaire.\"\n    },\n    {\n      \"action_key\": \"texture_optimization\",\n      \"details\": \"Compresser les textures statiques (contact-cube-face.png, project-grid-map-20260614.png) en WebP avec qualit adaptative (ex: 80% pour desktop, 70% pour mobile) et rduire leurs dimensions si possible.\"\n    },\n    {\n      \"action_key\": \"unused_code_removal\",\n      \"details\": \"Purger le CSS/JS inutilis (91.6 KiB CSS / 39.3 KiB JS) via des outils comme PurgeCSS et Terser, en validant que les effets WebGL et la narration restent intacts.\"\n    },\n    {\n      \"action_key\": \"mainthread_optimization\",\n      \"details\": \"Rduire le travail du main thread sur mobile en diffrant les scripts non critiques (ex: contact-scene.js) et en optimisant les vnements scroll-driven pour limiter les recalculs de layout.\"\n    }\n  ],\n  \"secondary_findings\": [\n    {\n      \"action_key\": \"video_caption\",\n      \"details\": \"Ajouter des sous-titres ou une transcription textuelle pour la vido principale (#story-video) pour respecter les standards d'accessibilit, sans impacter les performances.\"\n    }\n  ]\n}"
+}

@@ -107,6 +107,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
    - for bounded repo-note translation with locked literals and an oracle JSON, `mistral-small-latest` is enough for the first pass; use `mistral-medium-3.5` or `mistral-large-latest` for public-facing verification, and do not rely on `recommend` alone when `repo` wording makes the heuristic overly conservative.
    - for bounded release notes from exact commits and daily reports, prefer strict JSON first; `mistral-medium-3.5` is the best default, `mistral-small-latest` is a cheap fallback, `devstral-latest` is a good repo-aware alternative, and `mistral-large-latest` should be used only after local checks because it may drift on length even when facts stay correct.
+   - for bounded Lighthouse triage on a frontend project, do not ask Mistral to invent the action taxonomy from raw audits alone; pre-build the `action_key` skeleton in Codex, then let `mistral-medium-3.5` fill French rationale and local checks.
    - for bounded C2R image rejection feedback triage, prefer `mistral-medium-3.5` first, keep a strict JSON schema plus a local oracle, and be ready to issue a second more literal prompt when the first pass is semantically right but not mechanical enough.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
@@ -161,6 +162,7 @@ Read these only when needed:
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
 - `references/image-feedback-triage-fr.md`: French workflow for classifying bounded C2R image rejection feedback into prompt corrections verified by a local oracle.
 - `references/json-extraction-maintenance-fr.md`: French workflow for turning a maintenance brief into strict JSON Codex can validate directly.
+- `references/lighthouse-triage-fr.md`: French workflow for hybrid Lighthouse triage where Codex fixes the action skeleton and Mistral drafts the bounded frontend rationale.
 - `references/release-notes-from-git-fr.md`: French workflow for drafting bounded public release notes from exact commits and exact daily-test evidence.
 - `references/review-comment-triage-fr.md`: French workflow for classifying bounded review comments into `apply_now`, `needs_human`, and `reject`.
 - `references/structured-doc-translation-fr.md`: French workflow for translating a bounded public repo note while preserving exact operational strings.

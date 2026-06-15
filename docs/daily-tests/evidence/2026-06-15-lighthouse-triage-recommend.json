@@ -1,0 +1,12 @@
+{
+  "suitable": false,
+  "confidence": 0.43,
+  "suggested_model": "mistral-small-latest",
+  "suggested_model_reason": "Cheap/default first pass for summaries, docs, extraction, JSON, rewrites, and bounded drafting.",
+  "matched_signals": [
+    "json",
+    "action"
+  ],
+  "risk_signals": [],
+  "proposal_fr": "Mistral n'est pas ideal pour cette tache sans cadrage ou redaction supplementaire. Codex devrait garder la main."
+}

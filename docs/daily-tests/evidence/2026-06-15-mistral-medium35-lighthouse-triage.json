@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1750,
+    "total_tokens": 2591,
+    "completion_tokens": 841,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "21256",
+    "x-ratelimit-tokens-query-cost": "2591"
+  },
+  "text": "{\n  \"task_category\": \"triage_lighthouse_multisupport\",\n  \"project_name\": \"01_SITE_MA_METHODE\",\n  \"global_assessment_fr\": \"Le projet souffre d'un payload video excessif (11.44 MiB desktop, 3.13 MiB mobile) et d'un chemin critique bloquant (CSS/fonts) qui impacte fortement le LCP mobile (16.2s). Les assets statiques (textures, map projet) sont aussi surdimensionns. Les gains rapides sont sur la compression video, le lazy-loading des medias hors viewport, et l'optimisation du chemin critique.\",\n  \"primary_actions\": [\n    {\n      \"action_key\": \"video_payload\",\n      \"priority\": 1,\n      \"description_fr\": \"Compresser les videos principales (storyboard et transition) avec un codec moderne (AV1/VP9) et adapter la resolution au support (1080p desktop, 720p mobile). Cibler une reduction de 50% du poids sans perte de qualite perceptible.\",\n      \"impact\": \"LCP, payload\",\n      \"verification\": \"Vrifier le poids des assets video aprs compression et le LCP via Lighthouse.\"\n    },\n    {\n      \"action_key\": \"lazy_loading_media\",\n      \"priority\": 2,\n      \"description_fr\": \"Implmenter le lazy-loading pour les videos et images hors viewport initial (ex: contact-transition, project-grid-map). Utiliser `loading=\\\"lazy\\\"` pour les images et un systme de preload conditionnel pour les videos.\",\n      \"impact\": \"LCP, payload, mainthread_work\",\n      \"verification\": \"Confirmer que les assets hors viewport ne sont pas chargs au premier rendu.\"\n    },\n    {\n      \"action_key\": \"critical_css_inline\",\n      \"priority\": 3,\n      \"description_fr\": \"Extraire et inliner le CSS critique pour le rendu initial (above-the-fold). Dplacer le chargement des polices (Inter/Sora) en asynchrone avec `font-display: swap`.\",\n      \"impact\": \"render_blocking, LCP\",\n      \"verification\": \"Vrifier la rduction du temps de blocage CSS/fonts via Lighthouse.\"\n    },\n    {\n      \"action_key\": \"texture_optimization\",\n      \"priority\": 4,\n      \"description_fr\": \"Optimiser les textures statiques (contact-cube-face.png, project-grid-map-20260614.png) avec un format moderne (WebP/AVIF) et une compression adaptative. Rduire la rsolution si possible sans perte de qualit visuelle.\",\n      \"impact\": \"payload\",\n      \"verification\": \"Vrifier le poids des assets images aprs optimisation.\"\n    },\n    {\n      \"action_key\": \"unused_code_removal\",\n      \"priority\": 5,\n      \"description_fr\": \"Nettoyer le CSS et JS inutiliss (91.6 KiB CSS, 39.3 KiB JS) via des outils comme PurgeCSS ou Rollup. Minifier les fichiers restants.\",\n      \"impact\": \"payload, mainthread_work\",\n      \"verification\": \"Vrifier la rduction du poids des assets CSS/JS et l'absence de rgressions visuelles.\"\n    }\n  ],\n  \"secondary_findings\": [\n    {\n      \"action_key\": \"video_caption\",\n      \"priority\": 6,\n      \"description_fr\": \"Ajouter des sous-titres (captions)  la video principale (`body > video#story-video`) pour respecter les critres d'accessibilit. Utiliser le format WebVTT.\",\n      \"impact\": \"accessibility\",\n      \"verification\": \"Vrifier la prsence des sous-titres via Lighthouse ou un test manuel.\"\n    }\n  ]\n}"
+}

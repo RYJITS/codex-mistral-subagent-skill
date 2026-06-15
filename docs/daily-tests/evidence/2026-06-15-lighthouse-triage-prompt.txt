@@ -1,0 +1,40 @@
+Tu aides Codex a trier un lot Lighthouse desktop/mobile pour un projet reel frontend.
+
+Retourne du JSON strict uniquement, sans markdown.
+
+Schema exact:
+{
+  "task_category": "triage_lighthouse_multisupport",
+  "project_name": "01_SITE_MA_METHODE",
+  "global_assessment_fr": "string",
+  "primary_actions": [
+    {
+      "action_key": "video_payload | defer_below_fold_media | heavy_images_and_textures | critical_render_path | css_js_cleanup",
+      "priority_rank": 1,
+      "scope": "desktop | mobile | both",
+      "audit_ids": ["string"],
+      "files": ["string"],
+      "why_it_matters_fr": "string",
+      "local_check_fr": "string"
+    }
+  ],
+  "secondary_findings": [
+    {
+      "audit_id": "video-caption",
+      "disposition": "track_accessibility",
+      "selector": "body > video#story-video",
+      "why_it_matters_fr": "string"
+    }
+  ],
+  "invented_items": []
+}
+
+Contraintes:
+- `primary_actions` doit contenir exactement 5 objets, un par `action_key`, sans doublon.
+- `priority_rank` doit etre unique de 1 a 5.
+- Utilise seulement des `audit_ids` presents dans le contexte.
+- Utilise seulement des fichiers, URLs ou fragments litteraux presents dans le contexte.
+- `secondary_findings` peut etre vide, ou contenir exactement l'item `video-caption`.
+- `invented_items` doit etre vide si tu n'inventes rien.
+- N'invente ni commande, ni script, ni fichier absent du contexte.
+- Ecris tout le texte public en francais.

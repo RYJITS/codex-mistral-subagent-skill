@@ -1,0 +1,85 @@
+{
+  "task_category": "triage_lighthouse_multisupport",
+  "project_name": "01_SITE_MA_METHODE",
+  "allowed_action_keys": [
+    "video_payload",
+    "defer_below_fold_media",
+    "heavy_images_and_textures",
+    "critical_render_path",
+    "css_js_cleanup"
+  ],
+  "actions": {
+    "video_payload": {
+      "required_audit_ids": [
+        "total-byte-weight"
+      ],
+      "required_file_fragments": [
+        "storyboard-kling-12-clips-1080p-scroll-web.mp4",
+        "storyboard-kling-12-clips-720p-mobile-crop.mp4"
+      ],
+      "accepted_scopes": [
+        "both"
+      ]
+    },
+    "defer_below_fold_media": {
+      "required_audit_ids": [
+        "total-byte-weight"
+      ],
+      "required_file_fragments": [
+        "contact-transition-20260614-1080p.mp4",
+        "contact-transition-20260614-720p.mp4",
+        "project-grid-map-20260614.png"
+      ],
+      "accepted_scopes": [
+        "both"
+      ]
+    },
+    "heavy_images_and_textures": {
+      "required_audit_ids": [
+        "total-byte-weight"
+      ],
+      "required_file_fragments": [
+        "contact-cube-face.png",
+        "project-grid-map-20260614.png"
+      ],
+      "accepted_scopes": [
+        "both"
+      ]
+    },
+    "critical_render_path": {
+      "required_audit_ids": [
+        "render-blocking-insight"
+      ],
+      "required_file_fragments": [
+        "fonts.googleapis.com",
+        "src/styles.css"
+      ],
+      "accepted_scopes": [
+        "both"
+      ]
+    },
+    "css_js_cleanup": {
+      "required_audit_ids": [
+        "unminified-css",
+        "unminified-javascript",
+        "unused-css-rules",
+        "unused-javascript",
+        "mainthread-work-breakdown"
+      ],
+      "required_file_fragments": [
+        "src/styles.css",
+        "src/main.js",
+        "src/contact-scene.js"
+      ],
+      "accepted_scopes": [
+        "both",
+        "mobile"
+      ]
+    }
+  },
+  "secondary_finding": {
+    "audit_id": "video-caption",
+    "selector": "body > video#story-video",
+    "accepted_disposition": "track_accessibility"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "task_category": "triage_lighthouse_multisupport",
+  "project_name": "01_SITE_MA_METHODE",
+  "status": "partial",
+  "raw_schema_first": {
+    "models_tested": [
+      "mistral-small-latest",
+      "mistral-medium-3.5",
+      "devstral-latest",
+      "mistral-large-latest"
+    ],
+    "all_invalid": true,
+    "main_failure": "action taxonomy drift despite correct high-level prioritization",
+    "notes": [
+      "models understood the main priorities from Lighthouse",
+      "models did not keep the exact action_key taxonomy required by the local validator",
+      "mistral-large-latest also hit finish_reason=length on the skeleton pass"
+    ]
+  },
+  "hybrid_skeleton": {
+    "model_selected_for_use": "mistral-medium-3.5",
+    "status": "usable_after_codex_normalization",
+    "useful_total_tokens": 3405,
+    "applied_fields": [
+      "global_assessment_fr",
+      "primary_actions[*].why_it_matters_fr",
+      "primary_actions[*].local_check_fr"
+    ],
+    "remaining_issue": "secondary_findings[0].selector drifted to body and was normalized by Codex"
+  }
+}

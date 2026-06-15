@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1750,
+    "total_tokens": 2798,
+    "completion_tokens": 1048,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "46649",
+    "x-ratelimit-tokens-query-cost": "2798"
+  },
+  "text": "{\"task_category\": \"triage_lighthouse_multisupport\", \"project_name\": \"01_SITE_MA_METHODE\", \"global_assessment_fr\": \"Le projet prsente des opportunits d'optimisation majeures sur le poids des mdias (vidos et images) et le chemin critique (CSS/fonts/JS), avec un impact critique sur l'accessibilit des vidos. Les mtriques actuelles (LCP lev, payload lourd) et les findings Lighthouse confirment un dsquilibre entre exprience cinmatique et performance, surtout sur mobile. Les actions doivent cibler la rduction du poids des assets sans altrer la narration visuelle, tout en optimisant le chargement critique.\", \"primary_actions\": [{\"action_key\": \"video_payload\", \"details\": {\"target\": \"storyboard-video-desktop\", \"asset\": \"http://127.0.0.1:4177/public/generated/videos/storyboard-7-scenes-v4-compress-block/kling-assembled/storyboard-kling-12-clips-1080p-scroll-web.mp4?v=kling-no-watermark-20260606\", \"current_size_mib\": 11.44, \"priority\": \"high\", \"strategy\": \"Rencoder en H.265/HEVC 1080p avec bitrate adapt (max 5 Mbps) et compression des scnes statiques. Appliquer lazy-loading et prchargement conditionnel aprs interaction utilisateur.\"}}, {\"action_key\": \"video_payload\", \"details\": {\"target\": \"contact-transition-video\", \"asset\": \"http://127.0.0.1:4177/public/generated/videos/contact-transition/contact-transition-20260614-1080p.mp4?v=contact-final-20260614\", \"current_size_mib\": 2.14, \"priority\": \"high\", \"strategy\": \"Rencoder en H.264 720p avec bitrate rduit (max 3 Mbps) et optimiser les transitions pour rduire les artefacts. Utiliser des sprites vido si possible pour les squences rptitives.\"}}, {\"action_key\": \"image_optimization\", \"details\": {\"target\": \"contact-cube-face-image\", \"asset\": \"http://127.0.0.1:4177/public/generated/images/contact/contact-cube-face.png\", \"current_size_mib\": 2.15, \"priority\": \"high\", \"strategy\": \"Convertir en WebP avec compression lossy (qualit 80-85%) et fallback PNG. Appliquer lazy-loading et rduire la rsolution  1024x1024 si l'affichage le permet.\"}}, {\"action_key\": \"critical_path_optimization\", \"details\": {\"target\": \"css_render_blocking\", \"asset\": \"http://127.0.0.1:4177/src/styles.css?v=method-card-tech-texture-20260614\", \"current_blocking_ms\": {\"mobile\": 1202, \"desktop\": 201}, \"priority\": \"high\", \"strategy\": \"Minifier le CSS (dj identifi 20 KiB d'conomies possibles), inliner les styles critiques pour le above-the-fold, et diffrer le chargement du reste via `media=print` ou JavaScript.\"}}, {\"action_key\": \"critical_path_optimization\", \"details\": {\"target\": \"font_render_blocking\", \"asset\": \"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap\", \"current_blocking_ms\": {\"mobile\": 802, \"desktop\": 249}, \"priority\": \"medium\", \"strategy\": \"Prcharger les polices critiques avec `preload` et utiliser `font-display: swap` pour viter le blocage de rendu. Remplacer les polices systme si possible pour les fallback.\"}}], \"secondary_findings\": {\"action_key\": \"video_caption\", \"details\": {\"target\": \"story-video-element\", \"selector\": \"body > video#story-video\", \"impact\": \"critical\", \"priority\": \"high\", \"strategy\": \"Ajouter des sous-titres (WebVTT) et des descriptions audio (ARIA) pour respecter les normes WCAG. Utiliser des outils comme `ffmpeg` pour extraire les sous-titres automatiquement et les intgrer au player.\"}}}"
+}

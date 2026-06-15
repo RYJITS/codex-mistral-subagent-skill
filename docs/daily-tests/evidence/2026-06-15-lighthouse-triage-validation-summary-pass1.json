@@ -1,0 +1,70 @@
+{
+  "ok": false,
+  "files": [
+    {
+      "file": "2026-06-15-mistral-small-lighthouse-triage.json",
+      "ok": false,
+      "matched_action_keys": [
+        "video_payload"
+      ],
+      "errors": [
+        "primary_actions must contain 5 unique action_key values",
+        "video_payload: missing required audit id",
+        "video_payload: missing required file fragment",
+        "video_payload: invalid scope ",
+        "video_payload: why_it_matters_fr missing",
+        "video_payload: local_check_fr missing",
+        "missing action_key defer_below_fold_media",
+        "missing action_key heavy_images_and_textures",
+        "missing action_key critical_render_path",
+        "missing action_key css_js_cleanup"
+      ],
+      "total_tokens": 2798
+    },
+    {
+      "file": "2026-06-15-mistral-medium35-lighthouse-triage.json",
+      "ok": false,
+      "matched_action_keys": [
+        "video_payload"
+      ],
+      "errors": [
+        "video_payload: missing required audit id",
+        "video_payload: missing required file fragment",
+        "video_payload: invalid scope ",
+        "video_payload: why_it_matters_fr missing",
+        "video_payload: local_check_fr missing",
+        "missing action_key defer_below_fold_media",
+        "missing action_key heavy_images_and_textures",
+        "missing action_key critical_render_path",
+        "missing action_key css_js_cleanup",
+        "secondary finding audit_id mismatch",
+        "secondary finding disposition mismatch",
+        "secondary finding selector mismatch"
+      ],
+      "total_tokens": 2591
+    },
+    {
+      "file": "2026-06-15-devstral-lighthouse-triage.json",
+      "ok": false,
+      "matched_action_keys": [
+        "video_payload"
+      ],
+      "errors": [
+        "video_payload: missing required audit id",
+        "video_payload: missing required file fragment",
+        "video_payload: invalid scope ",
+        "video_payload: why_it_matters_fr missing",
+        "video_payload: local_check_fr missing",
+        "missing action_key defer_below_fold_media",
+        "missing action_key heavy_images_and_textures",
+        "missing action_key critical_render_path",
+        "missing action_key css_js_cleanup",
+        "secondary finding audit_id mismatch",
+        "secondary finding disposition mismatch",
+        "secondary finding selector mismatch"
+      ],
+      "total_tokens": 2289
+    }
+  ],
+  "useful_token_total": 0
+}
