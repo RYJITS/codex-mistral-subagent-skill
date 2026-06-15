@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1686,
+    "total_tokens": 2171,
+    "completion_tokens": 485,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "247829",
+    "x-ratelimit-tokens-query-cost": "2171"
+  },
+  "text": "{\n  \"task\": \"c2r_feedback_triage\",\n  \"cases\": [\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"diagnosis\": \"depth_pose_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU6+AU12, three-quarter angle, foreground: water reflections on thick wet impasto oil paint, mid-ground: mineral arches, far background: misty horizon, open space, centered figure not touching decor\",\n      \"negative_additions\": [\"pressed against dark decor\", \"flat depth illusion\"],\n      \"fit_note_fr\": \"Renforce la profondeur spatiale et l'ouverture du decor tout en maintenant l'expression FACS exacte. Evite la pose collee au fond sombre.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"diagnosis\": \"textile_prop_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU1+AU2+AU5, three-quarter angle, foreground: wet leaves on thick wet impasto oil paint, mid-ground: sculpted alley, far background: open glasshouse, no fabric seams, no accessories\",\n      \"negative_additions\": [\"umbrella\", \"stitched clothing\"],\n      \"fit_note_fr\": \"Corrige la derive textile et supprime l'accessoire parasite. Conserve l'impasto epais et l'univers ouvert.\"\n    },\n    {\n      \"id\": \"sun_blank_enclosure\",\n      \"diagnosis\": \"expression_enclosure_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU4+AU7+AU23, frontal or three-quarter angle, foreground: sunlit dust on thick wet impasto oil paint, mid-ground: walkways, far background: pierced sky, wide open space, fully open eyes\",\n      \"negative_additions\": [\"nearly closed eyes\", \"enclosed interior feel\"],\n      \"fit_note_fr\": \"Corrige l'expression neutre et les yeux mi-clos. Ouvre le decor pour accentuer la profondeur et la lumiere du ciel perce.\"\n    }\n  ]\n}"
+}

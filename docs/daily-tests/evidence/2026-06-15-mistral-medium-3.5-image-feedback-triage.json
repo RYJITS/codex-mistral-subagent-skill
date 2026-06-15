@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1686,
+    "total_tokens": 2123,
+    "completion_tokens": 437,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "22877",
+    "x-ratelimit-tokens-query-cost": "2123"
+  },
+  "text": "{\n  \"task\": \"c2r_feedback_triage\",\n  \"cases\": [\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"diagnosis\": \"depth_pose_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU6+AU12, frontal view, thick wet impasto oil paint, foreground water reflections, mid-ground mineral arches, far background misty horizon\",\n      \"negative_additions\": [\"flat pose\", \"dark decor\"],\n      \"fit_note_fr\": \"Renforce la profondeur et l'espace ouvert avec les reflets du lagon et l'horizon brumeux, tout en clarifiant l'expression FACS.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"diagnosis\": \"textile_prop_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU1+AU2+AU5, three-quarter view, thick wet impasto oil paint, foreground wet leaves, mid-ground sculpted alley, far background open glasshouse\",\n      \"negative_additions\": [\"sewn fabric\", \"umbrella\"],\n      \"fit_note_fr\": \"Corrige la derive textile et l'accessoire non souhaite, tout en maintenant l'univers ouvert et l'impasto epais.\"\n    },\n    {\n      \"id\": \"sun_blank_enclosure\",\n      \"diagnosis\": \"expression_enclosure_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU4+AU7+AU23, frontal or three-quarter view, thick wet impasto oil paint, foreground luminous dust, mid-ground walkways, far background open sky\",\n      \"negative_additions\": [\"neutral expression\", \"closed eyes\"],\n      \"fit_note_fr\": \"Corrige l'expression et l'ouverture du decor pour refleter le ciel perce et la profondeur attendue.\"\n    }\n  ]\n}"
+}

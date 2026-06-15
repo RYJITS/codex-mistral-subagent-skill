@@ -106,7 +106,8 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - for bounded retrieval prep, prefer `mistral-embed` first, verify top-k locally, and treat `codestral-embed` as code-specific only after local validation on the target corpus.
    - for custom preflight `allow`/`redact`/`block` screening, prefer `mistral-small-latest` or `mistral-medium-3.5`, then treat `mistral-moderation-2603` on `POST /v1/moderations` as an extra PII/moderation signal rather than the final policy decision.
    - for bounded repo-note translation with locked literals and an oracle JSON, `mistral-small-latest` is enough for the first pass; use `mistral-medium-3.5` or `mistral-large-latest` for public-facing verification, and do not rely on `recommend` alone when `repo` wording makes the heuristic overly conservative.
-   - for bounded public documentation generation, prefer a direct Markdown output with exact headings instead of a large JSON wrapper; on the validated lab run, `devstral-latest` and `mistral-medium-3.5` were the most reliable pair.
+   - for bounded release notes from exact commits and daily reports, prefer strict JSON first; `mistral-medium-3.5` is the best default, `mistral-small-latest` is a cheap fallback, `devstral-latest` is a good repo-aware alternative, and `mistral-large-latest` should be used only after local checks because it may drift on length even when facts stay correct.
+   - for bounded C2R image rejection feedback triage, prefer `mistral-medium-3.5` first, keep a strict JSON schema plus a local oracle, and be ready to issue a second more literal prompt when the first pass is semantically right but not mechanical enough.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
 7. Mention rate-limit issues clearly if the API returns `429`.
@@ -158,8 +159,9 @@ Read these only when needed:
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
+- `references/image-feedback-triage-fr.md`: French workflow for classifying bounded C2R image rejection feedback into prompt corrections verified by a local oracle.
 - `references/json-extraction-maintenance-fr.md`: French workflow for turning a maintenance brief into strict JSON Codex can validate directly.
-- `references/project-doc-synthesis-fr.md`: French workflow for drafting a bounded maintainer note from real project docs when direct Markdown works better than strict JSON.
+- `references/release-notes-from-git-fr.md`: French workflow for drafting bounded public release notes from exact commits and exact daily-test evidence.
 - `references/review-comment-triage-fr.md`: French workflow for classifying bounded review comments into `apply_now`, `needs_human`, and `reject`.
 - `references/structured-doc-translation-fr.md`: French workflow for translating a bounded public repo note while preserving exact operational strings.
 - `references/task-delegation-triage-fr.md`: French note for classifying real project tasks into `oui`, `partiel`, and `non` before choosing a Mistral model.

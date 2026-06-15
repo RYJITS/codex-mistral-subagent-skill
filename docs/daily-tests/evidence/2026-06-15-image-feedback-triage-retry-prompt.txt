@@ -1,0 +1,58 @@
+Tu refais exactement la meme tache, mais cette fois tu dois respecter mot pour mot les signaux suivants dans `prompt_fix_en`.
+
+Retourne uniquement un JSON valide avec le meme schema.
+
+Contraintes globales:
+
+- `task` = `c2r_feedback_triage`
+- `cases` = `3` objets dans le meme ordre
+- `severity` = `high`
+- `keep_prompt_lock` = `true`
+- aucun texte hors JSON
+- `prompt_fix_en` doit rester en anglais compact
+- `fit_note_fr` doit rester en francais
+
+Contraintes litterales par cas:
+
+1. `lagoon_flat_depth`
+- `diagnosis` = `depth_pose_drift`
+- `prompt_fix_en` doit contenir exactement les fragments suivants:
+  - `AU6+AU12`
+  - `frontal`
+  - `open space`
+  - `lagoon reflections foreground`
+  - `mineral arches mid-ground`
+  - `mist horizon far background`
+  - `thick wet impasto oil paint garment`
+
+2. `storm_textile_prop`
+- `diagnosis` = `textile_prop_drift`
+- `prompt_fix_en` doit contenir exactement les fragments suivants:
+  - `AU1+AU2+AU5`
+  - `three-quarter`
+  - `wet leaves foreground`
+  - `sculpted path mid-ground`
+  - `open glasshouse far background`
+  - `thick wet impasto oil paint garment`
+  - `no fabric logic`
+- `negative_additions` doit inclure `umbrella`
+- `negative_additions` doit aussi inclure soit `stitched seams` soit `textile coat`
+
+3. `sun_blank_enclosure`
+- `diagnosis` = `expression_enclosure_drift`
+- `prompt_fix_en` doit contenir exactement les fragments suivants:
+  - `AU4+AU7+AU23`
+  - `open eyes`
+  - `frontal or three-quarter`
+  - `luminous dust foreground`
+  - `walkways mid-ground`
+  - `pierced sky far background`
+  - `open solar architecture`
+  - `thick wet impasto oil paint garment`
+- `negative_additions` doit inclure soit `enclosed interior` soit `enclosed ceiling`
+
+Interdictions:
+
+- pas de Markdown
+- pas de champs supplementaires
+- pas de termes bannis dans `prompt_fix_en`: `text`, `watermark`, `child`, `male`, `weapon`, `paintbrush`, `CGI`, `cartoon`

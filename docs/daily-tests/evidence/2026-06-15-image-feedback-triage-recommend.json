@@ -1,0 +1,15 @@
+{
+  "suitable": true,
+  "confidence": 0.7,
+  "suggested_model": "mistral-small-latest",
+  "suggested_model_reason": "Cheap/default first pass for summaries, docs, extraction, JSON, rewrites, and bounded drafting.",
+  "matched_signals": [
+    "class",
+    "json",
+    "reecri",
+    "prompt",
+    "action"
+  ],
+  "risk_signals": [],
+  "proposal_fr": "Mistral peut aider comme sous-agent pour une premiere passe. Codex devrait envoyer seulement le contexte necessaire, puis verifier et integrer la reponse."
+}

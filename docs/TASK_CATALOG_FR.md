@@ -43,6 +43,7 @@ Exemples recurents: extraire un JSON de maintenance, critiquer une copy UI/UX, p
 - transcription audio FR bornee
 - generation de documentation publique FR bornee a partir d'un contexte repo filtre
 - planification structuree de prompts image sous `promptLock` existant
+- triage borne de feedback image vers corrections de prompt sous oracle local
 
 **Partiellement valide**
 

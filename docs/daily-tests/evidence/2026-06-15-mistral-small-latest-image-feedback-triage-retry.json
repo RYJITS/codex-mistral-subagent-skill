@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1957,
+    "total_tokens": 2378,
+    "completion_tokens": 421,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "46786",
+    "x-ratelimit-tokens-query-cost": "2378"
+  },
+  "text": "{\"task\": \"c2r_feedback_triage\", \"cases\": [{\"id\": \"lagoon_flat_depth\", \"diagnosis\": \"depth_pose_drift\", \"severity\": \"high\", \"keep_prompt_lock\": true, \"prompt_fix_en\": \"AU6+AU12 frontal open space lagoon reflections foreground mineral arches mid-ground mist horizon far background thick wet impasto oil paint garment\", \"negative_additions\": [], \"fit_note_fr\": \"Renforcer la profondeur avec un espace ouvert et des reflets du lagon visibles. L'angle frontal doit mettre en valeur les AU6+AU12 sans deformation de pose.\"}, {\"id\": \"storm_textile_prop\", \"diagnosis\": \"textile_prop_drift\", \"severity\": \"high\", \"keep_prompt_lock\": true, \"prompt_fix_en\": \"AU1+AU2+AU5 three-quarter wet leaves foreground sculpted path mid-ground open glasshouse far background thick wet impasto oil paint garment no fabric logic\", \"negative_additions\": [\"umbrella\", \"stitched seams\"], \"fit_note_fr\": \"Corriger la derive textile en supprimant toute logique de tissu et en renforcant les feuilles humides au premier plan. L'angle three-quarter doit eviter les accessoires parasites.\"}, {\"id\": \"sun_blank_enclosure\", \"diagnosis\": \"expression_enclosure_drift\", \"severity\": \"high\", \"keep_prompt_lock\": true, \"prompt_fix_en\": \"AU4+AU7+AU23 open eyes frontal or three-quarter luminous dust foreground walkways mid-ground pierced sky far background open solar architecture thick wet impasto oil paint garment\", \"negative_additions\": [\"enclosed interior\"], \"fit_note_fr\": \"Corriger l'expression avec les AU4+AU7+AU23 et des yeux bien ouverts. Ouvrir le decor pour eviter toute sensation d'interieur ferme et renforcer la profondeur avec le ciel perce.\"}]}"
+}

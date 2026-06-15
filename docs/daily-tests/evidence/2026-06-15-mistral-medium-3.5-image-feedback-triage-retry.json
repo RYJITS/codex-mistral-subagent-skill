@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1957,
+    "total_tokens": 2392,
+    "completion_tokens": 435,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "21433",
+    "x-ratelimit-tokens-query-cost": "2392"
+  },
+  "text": "{\n  \"task\": \"c2r_feedback_triage\",\n  \"cases\": [\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"diagnosis\": \"depth_pose_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU6+AU12, frontal, open space, lagoon reflections foreground, mineral arches mid-ground, mist horizon far background, thick wet impasto oil paint garment\",\n      \"negative_additions\": [],\n      \"fit_note_fr\": \"Renforce la profondeur et l'espace ouvert avec les elements du brief cible, conserve le FACS exact et l'impasto epais.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"diagnosis\": \"textile_prop_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU1+AU2+AU5, three-quarter, wet leaves foreground, sculpted path mid-ground, open glasshouse far background, thick wet impasto oil paint garment, no fabric logic\",\n      \"negative_additions\": [\"umbrella\", \"stitched seams\"],\n      \"fit_note_fr\": \"Corrige la derive textile et l'accessoire indesirable, reaffirme l'univers ouvert et l'impasto epais.\"\n    },\n    {\n      \"id\": \"sun_blank_enclosure\",\n      \"diagnosis\": \"expression_enclosure_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU4+AU7+AU23, open eyes, frontal or three-quarter, luminous dust foreground, walkways mid-ground, pierced sky far background, open solar architecture, thick wet impasto oil paint garment\",\n      \"negative_additions\": [\"enclosed ceiling\"],\n      \"fit_note_fr\": \"Corrige l'expression et l'ouverture du decor, reaffirme les yeux ouverts et la profondeur.\"\n    }\n  ]\n}"
+}

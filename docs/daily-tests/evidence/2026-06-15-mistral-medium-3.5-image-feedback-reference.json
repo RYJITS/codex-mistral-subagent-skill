@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 586,
+    "total_tokens": 914,
+    "completion_tokens": 328,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "21967",
+    "x-ratelimit-tokens-query-cost": "914"
+  },
+  "text": "# Triage feedback image C2R  corrections de prompt\n\n## Quand l'utiliser\nPour classer les rejets bornes de generation d'images C2R en diagnostics stricts et proposer des corrections de prompt compactes et reutilisables. A activer des qu'un feedback visuel necessite une adaptation precise du prompt sans reecrire la *negative list* globale ni le *promptLock*.\n\n## Modele conseille\n**Par defaut** : `mistral-medium-3.5` (equilibre precision/verbosite, structure previsible).\nAlternatives validees : `mistral-small-latest`, `mistral-large-latest`, `devstral-latest` (si le premier essai est trop libre).\n\n## Prompt recommande\nPrivilegier un **retry litteral** avec fragments exacts du feedback si la premiere passe est trop generique. Inclure systematiquement :\n`task=c2r_feedback_triage`, `severity=high`, `keep_prompt_lock=true`, preservation des *FACS codes*, *depth cues* et *angle*.\n\n## Checks locaux minimum\nVerifier :\n- Correspondance exacte avec l'oracle strict.\n- Labels de diagnostic conformes aux cas C2R.\n- `prompt_fix_en` compact et directement integrable.\n- `negative_additions` limite aux derives specifiques au cas.\n\n## Limites\nSensible a la liberte du prompt initial : un retry avec des extraits litteraux du feedback est souvent necessaire. Les modeles alternatifs peuvent necessiter des ajustements mineurs de tokens."
+}

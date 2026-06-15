@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1686,
+    "total_tokens": 2106,
+    "completion_tokens": 420,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "997894",
+    "x-ratelimit-tokens-query-cost": "2106"
+  },
+  "text": "{\n  \"task\": \"c2r_feedback_triage\",\n  \"cases\": [\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"diagnosis\": \"depth_pose_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU6+AU12, frontal angle, foreground water reflections, mid-ground mineral arches, far background misty horizon, thick wet impasto oil paint\",\n      \"negative_additions\": [\"flat pose\", \"dark decor\"],\n      \"fit_note_fr\": \"Renforce la profondeur et l'espace ouvert tout en conservant l'expression FACS exacte.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"diagnosis\": \"textile_prop_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU1+AU2+AU5, three-quarter angle, foreground wet leaves, mid-ground sculpted alley, far background open greenhouse, thick wet impasto oil paint\",\n      \"negative_additions\": [\"textile coat\", \"umbrella\"],\n      \"fit_note_fr\": \"Corrige la derive textile et l'accessoire non desire, tout en gardant l'univers ouvert et la texture impasto.\"\n    },\n    {\n      \"id\": \"sun_blank_enclosure\",\n      \"diagnosis\": \"expression_enclosure_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU4+AU7+AU23, frontal or three-quarter angle, foreground luminous dust, mid-ground walkways, far background open sky, thick wet impasto oil paint\",\n      \"negative_additions\": [\"neutral expression\", \"closed eyes\"],\n      \"fit_note_fr\": \"Corrige l'expression et l'ouverture du decor pour renforcer la profondeur et le ciel perce.\"\n    }\n  ]\n}"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1957,
+    "total_tokens": 2473,
+    "completion_tokens": 516,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "246647",
+    "x-ratelimit-tokens-query-cost": "2473"
+  },
+  "text": "{\n  \"task\": \"c2r_feedback_triage\",\n  \"cases\": [\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"diagnosis\": \"depth_pose_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU6+AU12, frontal, open space, lagoon reflections foreground, mineral arches mid-ground, mist horizon far background, thick wet impasto oil paint garment\",\n      \"negative_additions\": [],\n      \"fit_note_fr\": \"Renforce la profondeur et l'espace ouvert avec les reflets du lagon au premier plan, les arches minerales au milieu et l'horizon brumeux. Corrige la pose pour eviter l'effet plaque et accentue l'expression FACS AU6+AU12.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"diagnosis\": \"textile_prop_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU1+AU2+AU5, three-quarter, wet leaves foreground, sculpted path mid-ground, open glasshouse far background, thick wet impasto oil paint garment, no fabric logic\",\n      \"negative_additions\": [\"umbrella\", \"stitched seams\"],\n      \"fit_note_fr\": \"Elimine la derive textile et l'accessoire indesirable (parapluie). Met en avant les feuilles humides au premier plan et l'impasto epais sans logique de tissu. Conserve l'univers ouvert et l'angle three-quarter.\"\n    },\n    {\n      \"id\": \"sun_blank_enclosure\",\n      \"diagnosis\": \"expression_enclosure_drift\",\n      \"severity\": \"high\",\n      \"keep_prompt_lock\": true,\n      \"prompt_fix_en\": \"AU4+AU7+AU23, open eyes, frontal or three-quarter, luminous dust foreground, walkways mid-ground, pierced sky far background, open solar architecture, thick wet impasto oil paint garment\",\n      \"negative_additions\": [\"enclosed interior\"],\n      \"fit_note_fr\": \"Corrige l'expression et les yeux ouverts. Renforce la sensation d'espace ouvert avec la poussiere lumineuse au premier plan, les passerelles au milieu et le ciel perce au loin. Evite toute impression d'interieur ferme.\"\n    }\n  ]\n}"
+}

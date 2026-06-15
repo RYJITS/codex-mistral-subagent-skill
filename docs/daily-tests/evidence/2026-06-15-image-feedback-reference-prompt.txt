@@ -1,0 +1,16 @@
+Redige une reference Markdown courte en francais pour le skill Mistral.
+
+But:
+
+- expliquer quand utiliser le triage de feedback image C2R vers corrections de prompt
+- recommander un modele par defaut et des alternatives
+- insister sur le besoin d un retry plus literal si le premier prompt est trop libre
+- rappeler les checks locaux indispensables
+
+Contraintes:
+
+- Markdown uniquement
+- pas de code block
+- pas de JSON
+- pas d invention
+- style compact et actionnable
