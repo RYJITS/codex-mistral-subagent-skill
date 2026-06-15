@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1174,
+    "total_tokens": 1624,
+    "completion_tokens": 450,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "46289",
+    "x-ratelimit-tokens-query-cost": "1624"
+  },
+  "text": "{\"task_category\": \"github_pr_comment_from_public_diff\", \"comment_title_fr\": \"Validation de la note de release FR gnre  partir du diff public\", \"comment_body_fr\": \"Ce commit valide la capacit  gnrer une note de release en franais  partir d'un diff public born, en suivant un processus strict et reproductible.\\n\\nLes artefacts principaux ajouts documentent la mthodologie et les rsultats des tests mens avec diffrents modles. Le rapport quotidien associ est marqu comme valide, confirmant que les exigences fonctionnelles sont remplies.\\n\\nLes fichiers cls introduits couvrent :\\n- La note de release finale en franais (`mistral-subagent/references/release-note-from-diff-fr.md`)\\n- Le contexte et les preuves des tests (`docs/daily-tests/evidence/`)\\n- Le rapport de validation structur (`docs/daily-tests/2026-06-14-release-note-from-diff.md` et `docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json`)\\n\\nLes commandes de validation exactes  excuter pour reproduire ce processus sont prserves dans le projet.\", \"highlights_fr\": [\"Gnration automatique d'une note de release FR  partir d'un diff public born\", \"Validation des modles tests avec des artefacts complets et structurs\", \"Processus reproductible avec commandes de validation exactes\"], \"key_files\": [\"docs/daily-tests/2026-06-14-release-note-from-diff.md\", \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\", \"mistral-subagent/references/release-note-from-diff-fr.md\"], \"models_tested\": [\"mistral-small-latest\", \"mistral-medium-3.5\", \"devstral-latest\", \"mistral-large-latest\"], \"retained_model\": \"mistral-large-latest\", \"validation_commands\": [\"npm run validate\", \"npm run check:helper\"]}"
+}

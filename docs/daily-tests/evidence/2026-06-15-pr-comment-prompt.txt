@@ -1,0 +1,26 @@
+Tu rediges un commentaire GitHub de PR en francais a partir d un diff public borne et d un rapport quotidien deja verifie.
+
+Retourne uniquement un JSON strict avec cette forme exacte:
+{
+  "task_category": "github_pr_comment_from_public_diff",
+  "comment_title_fr": "string",
+  "comment_body_fr": "string",
+  "highlights_fr": ["string", "string", "string"],
+  "key_files": ["string", "string", "string"],
+  "models_tested": ["string", "string", "string", "string"],
+  "retained_model": "string",
+  "validation_commands": ["npm run validate", "npm run check:helper"],
+  "invented_items": []
+}
+
+Regles:
+- `task_category` doit etre exactement `github_pr_comment_from_public_diff`.
+- `comment_body_fr` doit tenir entre 260 et 520 caracteres.
+- `highlights_fr` contient exactement 3 points compacts et verifiables.
+- `key_files` contient exactement 3 chemins provenant de la liste autorisee.
+- `models_tested` doit reprendre exactement les 4 modeles du contexte, dans le meme ordre.
+- `retained_model` doit etre le meilleur modele public retenu dans le contexte.
+- `validation_commands` doit conserver les 2 litteraux exacts.
+- `invented_items` doit rester vide si tu n inventes rien.
+- Interdiction totale d inventer une PR, un ticket, un pipeline CI, des checks supplementaires, ou des fichiers hors liste.
+- Pas de balises Markdown, pas de blocs de code, pas d explication hors JSON.

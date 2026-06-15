@@ -1,0 +1,21 @@
+{
+  "file": "2026-06-15-mistral-medium35-pr-comment.json",
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "total_tokens": 1603,
+  "valid": false,
+  "checks": [
+    "task_category exact",
+    "comment_title_fr present",
+    "highlights_fr count exact",
+    "key_files subset valid",
+    "models_tested exact and ordered",
+    "retained_model exact",
+    "validation_commands exact"
+  ],
+  "warnings": [],
+  "errors": [
+    "comment_body_fr length out of range: 677",
+    "invented_items must be an array"
+  ]
+}

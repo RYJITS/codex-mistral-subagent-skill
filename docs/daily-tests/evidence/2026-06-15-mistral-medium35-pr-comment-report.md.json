@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1066,
+    "total_tokens": 1626,
+    "completion_tokens": 560,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "21562",
+    "x-ratelimit-tokens-query-cost": "1626"
+  },
+  "text": "```markdown\n# Test quotidien 2026-06-15 - commentaire GitHub de PR a partir d un diff public borne\n\n## Statut\n**Partiellement valide**\n\n## Categorie de tache\nCommentaire ou resume de PR GitHub en francais a partir d un diff public borne.\n\n## Pourquoi c est important pour les projets reels\nLes projets sous `D:\\00_Cerveau_IA` necessitent des commentaires GitHub et resumes de PR pour expliquer rapidement les apports d'un commit/diff. Si Mistral produit ces commentaires sans inventer de PR, CI ou fichiers, Codex peut deleguer cette communication recurrente.\n\n## Projet et capacite testes\n- Repo: `D:\\00_Cerveau_IA\\Projet\\03_codex-mistral-subagent-skill`\n- Capacite: commentaire GitHub de PR a partir d'un diff public borne.\n\n## Modeles testes\n- `mistral-small-latest`\n- `mistral-medium-3.5`\n- `devstral-latest`\n- `mistral-large-latest`\n\n## Resume des prompts et du contexte\n- **Prompt v1**: Tous les modeles rejetes (tokens: 1504-1730). Motifs: corps trop long, omission de `invented_items`, absence de `Valide`.\n- **Prompt v2**: Tous les modeles rejetes (tokens: 1617-1711). Motifs: JSON tronque ou non conforme, mais scope et commandes exactes respectes.\n\n## Usage et tokens\n- **Prompt v1**: 1504-1730 tokens.\n- **Prompt v2**: 1617-1711 tokens.\n\n## Resultat\nAucun modele ne produit un JSON totalement conforme et publiable. Les sorties restent dans le bon scope et preservent les commandes exactes (`npm run validate`, `npm run check:helper`).\n\n## Commandes de validation\n- `npm run validate`\n- `npm run check:helper`\n\n## Limitations\n- Schema trop complexe ou sortie non reformatee.\n- Ne pas inventer de PR, issue, CI, ticket, `README.md`, ou `mistral-subagent/SKILL.md`.\n\n## Prochaine action\nReduire fortement le schema ou laisser Codex reformater la sortie finale.\n\n## Contribution vers l objectif 70 pourcent\nNon. Cette capacite ne compte pas encore comme validee vers l'objectif des `70 %`.\n\n## Fichiers de preuve\nAucun fichier a mentionner hors contexte.\n```"
+}

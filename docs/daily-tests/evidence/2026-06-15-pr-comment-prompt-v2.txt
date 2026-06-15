@@ -1,0 +1,34 @@
+Tu rediges un commentaire GitHub de PR en francais a partir d un diff public borne et d un rapport quotidien deja verifie.
+
+Retourne uniquement un JSON strict avec cette forme exacte:
+{
+  "task_category": "github_pr_comment_from_public_diff",
+  "comment_title_fr": "string",
+  "comment_body_fr": "string",
+  "highlights_fr": ["string", "string", "string"],
+  "key_files": [
+    "docs/daily-tests/2026-06-14-release-note-from-diff.md",
+    "docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json",
+    "mistral-subagent/references/release-note-from-diff-fr.md"
+  ],
+  "models_tested": [
+    "mistral-small-latest",
+    "mistral-medium-3.5",
+    "devstral-latest",
+    "mistral-large-latest"
+  ],
+  "retained_model": "mistral-large-latest",
+  "validation_commands": ["npm run validate", "npm run check:helper"],
+  "invented_items": []
+}
+
+Contraintes obligatoires:
+- `task_category` doit etre exact.
+- `comment_title_fr` doit tenir entre 35 et 80 caracteres.
+- `comment_body_fr` doit etre un seul paragraphe entre 280 et 360 caracteres.
+- `comment_body_fr` doit contenir litteralement `Statut: Valide.`, `diff public`, et `note de release`.
+- `comment_body_fr` ne doit contenir ni retour a la ligne, ni puces, ni Markdown, ni backticks, ni references a une PR numerotee, ni CI.
+- `highlights_fr` doit contenir exactement 3 points compacts, chacun entre 35 et 120 caracteres.
+- `key_files`, `models_tested`, `retained_model`, `validation_commands`, et `invented_items` doivent etre exactement ceux demandes ci-dessus.
+- Interdiction totale d inventer `README.md`, `mistral-subagent/SKILL.md`, issue, ticket, pipeline, ou fichier hors liste.
+- Si une contrainte t empeche de produire une sortie conforme, reduis la prose; n ajoute aucune explication hors JSON.

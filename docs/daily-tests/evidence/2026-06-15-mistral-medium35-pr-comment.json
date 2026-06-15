@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1174,
+    "total_tokens": 1603,
+    "completion_tokens": 429,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "21274",
+    "x-ratelimit-tokens-query-cost": "1603"
+  },
+  "text": "{\n  \"task_category\": \"github_pr_comment_from_public_diff\",\n  \"comment_title_fr\": \"Validation de la note de release FR  partir d'un diff public (Jour 14)\",\n  \"comment_body_fr\": \"Ce commit valide la capacit  rdiger une **note de release en franais**  partir d'un diff public born, en respectant les contraintes suivantes :\\n\\n- Gnration d'un JSON strict et conforme aux attentes.\\n- Prservation des commandes de validation exactes (`npm run validate`, `npm run check:helper`).\\n- Rfrencement exclusif des fichiers rels du commit (16 fichiers ajouts, +481 lignes).\\n\\nLe rapport quotidien associ est marqu **Valide**, et le modle retenu pour le brouillon public est `mistral-large-latest`. Les artefacts principaux incluent la note de release, son contexte, et un rsum de validation.\\n\\nMerci de vrifier la cohrence des fichiers gnrs et des commandes de validation.\",\n  \"highlights_fr\": [\n    \"Note de release FR gnre  partir d'un diff public born\",\n    \"JSON strict et conforme aux exigences\",\n    \"Commandes de validation (`npm run validate`, `npm run check:helper`) prserves\"\n  ],\n  \"key_files\": [\n    \"docs/daily-tests/2026-06-14-release-note-from-diff.md\",\n    \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\",\n    \"mistral-subagent/references/release-note-from-diff-fr.md\"\n  ],\n  \"models_tested\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"devstral-latest\",\n    \"mistral-large-latest\"\n  ],\n  \"retained_model\": \"mistral-large-latest\",\n  \"validation_commands\": [\"npm run validate\", \"npm run check:helper\"]\n}"
+}

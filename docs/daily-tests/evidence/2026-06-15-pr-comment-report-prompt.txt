@@ -1,0 +1,24 @@
+Redige en francais un rapport quotidien Markdown pour un test de delegation Mistral.
+
+Contraintes:
+- Utilise exactement ces sections dans cet ordre:
+  - `# Test quotidien 2026-06-15 - commentaire GitHub de PR a partir d un diff public borne`
+  - `## Statut`
+  - `## Categorie de tache`
+  - `## Pourquoi c est important pour les projets reels`
+  - `## Projet et capacite testes`
+  - `## Modeles testes`
+  - `## Resume des prompts et du contexte`
+  - `## Usage et tokens`
+  - `## Resultat`
+  - `## Commandes de validation`
+  - `## Limitations`
+  - `## Prochaine action`
+  - `## Contribution vers l objectif 70 pourcent`
+  - `## Fichiers de preuve`
+- Le statut doit etre `**Partiellement valide**`.
+- La section finale doit dire explicitement que cette capacite ne compte pas encore comme validee vers l objectif des `70 %`.
+- Mentionne les deux passes `prompt v1` et `prompt v2`.
+- N invente aucun fichier, commit, PR, issue, CI, modele, ou commande hors contexte.
+- Cite les commandes exactes `npm run validate` et `npm run check:helper`.
+- Utilise un style compact, public, et ASCII.

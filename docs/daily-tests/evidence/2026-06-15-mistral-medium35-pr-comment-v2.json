@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 1261,
+    "total_tokens": 1711,
+    "completion_tokens": 450,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "21300",
+    "x-ratelimit-tokens-query-cost": "1711"
+  },
+  "text": "{\n  \"task_category\": \"github_pr_comment_from_public_diff\",\n  \"comment_title_fr\": \"Validation de la note de release FR  partir d'un diff public (Jour 14)\",\n  \"comment_body_fr\": \"Ce commit valide la capacit  rdiger une **note de release en franais**  partir d'un diff public born, en respectant les contraintes suivantes :\\n\\n- Gnration d'un JSON strict et conforme aux artefacts du commit.\\n- Prservation des commandes de validation exactes (`npm run validate`, `npm run check:helper`).\\n- Rfrencement exclusif des fichiers rels ajouts/modifis dans ce commit.\\n\\nLe rapport quotidien associ est marqu **Valide**, et le modle retenu pour le brouillon public est `mistral-large-latest`.\\n\\nLes artefacts principaux ajouts sont :\\n- La note de release (`docs/daily-tests/2026-06-14-release-note-from-diff.md`)\\n- Le contexte et la validation (`docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json`)\\n- La rfrence pour les sous-agents (`mistral-subagent/references/release-note-from-diff-fr.md`).\",\n  \"highlights_fr\": [\n    \"Validation russie de la gnration de note de release FR  partir d'un diff public.\",\n    \"Respect strict des contraintes : JSON valide, commandes de validation prserves, fichiers rels cits.\",\n    \"Modle `mistral-large-latest` retenu comme meilleur brouillon public.\"\n  ],\n  \"key_files\": [\n    \"docs/daily-tests/2026-06-14-release-note-from-diff.md\",\n    \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\",\n    \"mistral-subagent/references/release-note-from-diff-fr.md\"\n  ],\n  \"models_tested\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5"
+}

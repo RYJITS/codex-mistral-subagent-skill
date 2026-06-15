@@ -1,0 +1,14 @@
+{
+  "file": "2026-06-15-mistral-large-pr-comment-v2.json",
+  "model": "mistral-large-latest",
+  "finish_reason": "length",
+  "total_tokens": 1711,
+  "valid": false,
+  "checks": [],
+  "warnings": [],
+  "errors": [
+    "inner text JSON truncated before closing object",
+    "comment_body_fr cut before the remaining fields",
+    "artifact not parseable by local oracle"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 1261,
+    "total_tokens": 1711,
+    "completion_tokens": 450,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "246909",
+    "x-ratelimit-tokens-query-cost": "1711"
+  },
+  "text": "{\n  \"task_category\": \"github_pr_comment_from_public_diff\",\n  \"comment_title_fr\": \"Validation de la gnration de notes de release  partir d'un diff public (Jour 14)\",\n  \"comment_body_fr\": \"Ce commit valide la capacit  gnrer une **note de release en franais**  partir d'un diff public born, conformment au rapport quotidien vrifi [`2026-06-14-release-note-validation-summary.json`](docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json).\\n\\n### Points cls :\\n- **16 fichiers ajouts** (481 lignes), incluant la note de release finale [`2026-06-14-release-note-from-diff.md`](docs/daily-tests/2026-06-14-release-note-from-diff.md) et les artefacts de validation.\\n- **Modles tests** : `mistral-small-latest`, `mistral-medium-3.5`, `devstral-latest`, `mistral-large-latest`. Le brouillon retenu est celui de **`mistral-large-latest`** (meilleure qualit selon le rapport).\\n- **Contexte prserv** : Le prompt et les rfrences utilises sont disponibles dans [`release-note-context.md`](docs/daily-tests/evidence/2026-06-14-release-note-context.md) et [`release-note-prompt.txt`](docs/daily-tests/evidence/2026-06-14-release-note-prompt.txt).\\n- **Validation** : Les commandes `npm run validate` et `npm run check:helper` ont t excutes avec succs.\\n\\nLes fichiers de rfrence et les rapports dtaills sont accessibles dans [`docs/daily-tests/evidence/`](docs/daily-tests/evidence/).\\n\\n revoir :\\n- Cohrence des messages de release avec les changements du diff.\\n- Respect des contraintes JSON strictes dans les artefacts gnrs.\",\n "
+}

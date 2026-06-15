@@ -1,0 +1,14 @@
+{
+  "file": "2026-06-15-mistral-medium35-pr-comment-v2.json",
+  "model": "mistral-medium-3.5",
+  "finish_reason": "length",
+  "total_tokens": 1711,
+  "valid": false,
+  "checks": [],
+  "warnings": [],
+  "errors": [
+    "inner text JSON truncated before closing object",
+    "models_tested array cut mid-string",
+    "artifact not parseable by local oracle"
+  ]
+}

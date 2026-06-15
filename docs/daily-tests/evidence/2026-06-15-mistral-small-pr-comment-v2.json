@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1261,
+    "total_tokens": 1649,
+    "completion_tokens": 388,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "46204",
+    "x-ratelimit-tokens-query-cost": "1649"
+  },
+  "text": "{\"task_category\": \"github_pr_comment_from_public_diff\", \"comment_title_fr\": \"Validation de la note de release FR gnre  partir du diff public\", \"comment_body_fr\": \"Ce commit valide la capacit  gnrer une note de release en franais  partir d'un diff public born, en respectant les contraintes de format strict et de prservation des commandes de validation.\\n\\nLes artefacts gnrs et valids sont conformes aux exigences du rapport quotidien, avec une qualit optimale obtenue via le modle **mistral-large-latest**.\\n\\nLes commandes de validation  excuter pour confirmer l'intgrit des artefacts sont :\\n- `npm run validate`\\n- `npm run check:helper`\", \"highlights_fr\": [\"Gnration automatique d'une note de release FR  partir d'un diff public born\", \"Validation des artefacts produits par 4 modles (mistral-small-latest, mistral-medium-3.5, devstral-latest, mistral-large-latest)\", \"Conservation des commandes de validation exactes (`npm run validate`, `npm run check:helper`)\", \"Format strict des fichiers gnrs (JSON, Markdown) conforme aux attentes\"], \"key_files\": [\"docs/daily-tests/2026-06-14-release-note-from-diff.md\", \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\", \"mistral-subagent/references/release-note-from-diff-fr.md\"], \"models_tested\": [\"mistral-small-latest\", \"mistral-medium-3.5\", \"devstral-latest\", \"mistral-large-latest\"], \"retained_model\": \"mistral-large-latest\", \"validation_commands\": [\"npm run validate\", \"npm run check:helper\"]}"
+}

@@ -1,0 +1,116 @@
+{
+  "capability": "github_pr_comment_from_public_diff",
+  "status": "Partiellement valide",
+  "base_coverage_percent": 78,
+  "updated_coverage_percent": 78,
+  "recommend_result": {
+    "suitable": false,
+    "suggested_model": "devstral-latest",
+    "note": "False negative acceptable because the real task was public and tightly bounded by Codex."
+  },
+  "selected_model": {
+    "model": "devstral-latest",
+    "reason": "Repo-aware routing for a bounded GitHub-facing artifact."
+  },
+  "rounds": [
+    {
+      "name": "prompt_v1",
+      "models_tested": [
+        {
+          "model": "mistral-small-latest",
+          "total_tokens": 1624,
+          "status": "rejected",
+          "reasons": [
+            "comment body too long",
+            "missing literal Valide",
+            "invented_items omitted"
+          ]
+        },
+        {
+          "model": "mistral-medium-3.5",
+          "total_tokens": 1603,
+          "status": "rejected",
+          "reasons": [
+            "comment body too long",
+            "invented_items omitted"
+          ]
+        },
+        {
+          "model": "devstral-latest",
+          "total_tokens": 1504,
+          "status": "rejected",
+          "reasons": [
+            "missing literal Valide",
+            "invented_items omitted"
+          ]
+        },
+        {
+          "model": "mistral-large-latest",
+          "total_tokens": 1730,
+          "status": "rejected",
+          "reasons": [
+            "comment body too long",
+            "missing literal Valide",
+            "invented_items omitted"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "prompt_v2",
+      "models_tested": [
+        {
+          "model": "mistral-small-latest",
+          "total_tokens": 1649,
+          "status": "rejected",
+          "reasons": [
+            "comment body still over editorial contract",
+            "4 highlights instead of 3",
+            "invented_items omitted"
+          ]
+        },
+        {
+          "model": "mistral-medium-3.5",
+          "total_tokens": 1711,
+          "status": "rejected",
+          "reasons": [
+            "truncated JSON",
+            "finish_reason length"
+          ]
+        },
+        {
+          "model": "devstral-latest",
+          "total_tokens": 1617,
+          "status": "rejected",
+          "reasons": [
+            "missing literal Valide",
+            "invented_items omitted"
+          ]
+        },
+        {
+          "model": "mistral-large-latest",
+          "total_tokens": 1711,
+          "status": "rejected",
+          "reasons": [
+            "truncated JSON",
+            "finish_reason length"
+          ]
+        }
+      ]
+    }
+  ],
+  "strengths_observed": [
+    "All eight runs stayed on the correct task and kept the allowed files.",
+    "All parseable runs preserved the exact validation commands.",
+    "The semantic PR-comment draft quality was usable as a human hint."
+  ],
+  "blocking_issues": [
+    "No model produced a fully conformant JSON artifact across all required fields.",
+    "invented_items was omitted in every parseable run despite explicit prompting.",
+    "The public-facing editorial contract stayed brittle on body length and exact literals.",
+    "Two v2 runs were truncated before a complete JSON object."
+  ],
+  "useful_mistral_tokens": 0,
+  "counts_toward_70_percent": false,
+  "next_action": "Retry only with a much smaller schema or let Codex own the final PR comment formatting after Mistral returns a tighter fact pack."
+}

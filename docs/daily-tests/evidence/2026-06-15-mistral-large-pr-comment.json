@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1174,
+    "total_tokens": 1730,
+    "completion_tokens": 556,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "246099",
+    "x-ratelimit-tokens-query-cost": "1730"
+  },
+  "text": "{\n  \"task_category\": \"github_pr_comment_from_public_diff\",\n  \"comment_title_fr\": \"Validation de la gnration de notes de release  partir d'un diff public (Jour 14)\",\n  \"comment_body_fr\": \"Ce PR valide la capacit  gnrer une **note de release en franais**  partir d'un diff public born, conformment au rapport quotidien vrifi [`2026-06-14`](docs/daily-tests/2026-06-14-release-note-from-diff.md).\\n\\nLes artefacts produits incluent :\\n- Une rfrence consolide [`release-note-from-diff-fr.md`](mistral-subagent/references/release-note-from-diff-fr.md) (modle retenu : `mistral-large-latest`).\\n- Des preuves de validation pour 4 modles tests, avec un rsum des performances [`validation-summary.json`](docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json).\\n\\n**Points cls** :\\n- Respect strict du format JSON pour les artefacts.\\n- Citations exclusives des fichiers modifis dans ce commit (16 fichiers, +481 lignes).\\n- Commandes de validation prserves : `npm run validate` et `npm run check:helper`.\\n\\n revoir :\\n- Cohrence des rfrences FR avec le diff public.\\n- Absence de dpendances ou fichiers externes au primtre.\",\n  \"highlights_fr\": [\n    \"Gnration automatique de notes de release FR  partir d'un diff born\",\n    \"Validation multi-modles (4 variantes testes, `mistral-large-latest` retenu)\",\n    \"Preuves traables dans `docs/daily-tests/evidence/` avec JSON strict\"\n  ],\n  \"key_files\": [\n    \"mistral-subagent/references/release-note-from-diff-fr.md\",\n    \"docs/daily-tests/2026-06-14-release-note-from-diff.md\",\n    \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\"\n  ],\n  \"models_tested\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"devstral-latest\",\n    \"mistral-large-latest\"\n  ],\n  \"retained_model\": \"mistral-large-latest\",\n  \"validation_commands\": [\n    \"npm run validate\",\n    \"npm run check:helper\"\n  ]\n}"
+}

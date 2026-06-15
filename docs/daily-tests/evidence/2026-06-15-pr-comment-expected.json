@@ -1,0 +1,34 @@
+{
+  "task_category": "github_pr_comment_from_public_diff",
+  "allowed_key_files": [
+    "docs/daily-tests/2026-06-14-release-note-from-diff.md",
+    "docs/daily-tests/evidence/2026-06-14-release-note-context.md",
+    "docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json",
+    "mistral-subagent/references/release-note-from-diff-fr.md"
+  ],
+  "required_models_tested": [
+    "mistral-small-latest",
+    "mistral-medium-3.5",
+    "devstral-latest",
+    "mistral-large-latest"
+  ],
+  "retained_model": "mistral-large-latest",
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "required_comment_keywords": [
+    "diff public",
+    "note de release",
+    "Valide"
+  ],
+  "forbidden_terms": [
+    "README.md",
+    "mistral-subagent/SKILL.md",
+    "PR #",
+    "CI",
+    "GitHub Actions",
+    "issue #",
+    "ticket"
+  ]
+}

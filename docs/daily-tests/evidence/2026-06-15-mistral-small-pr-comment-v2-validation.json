@@ -1,0 +1,22 @@
+{
+  "file": "2026-06-15-mistral-small-pr-comment-v2.json",
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "total_tokens": 1649,
+  "valid": false,
+  "checks": [
+    "task_category exact",
+    "comment_title_fr present",
+    "comment_body_fr length ok: 473",
+    "key_files subset valid",
+    "models_tested exact and ordered",
+    "retained_model exact",
+    "validation_commands exact"
+  ],
+  "warnings": [],
+  "errors": [
+    "comment_body_fr missing keyword: Valide",
+    "highlights_fr must contain exactly 3 items",
+    "invented_items must be an array"
+  ]
+}

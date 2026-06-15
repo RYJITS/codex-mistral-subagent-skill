@@ -1,0 +1,20 @@
+{
+  "model": "devstral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1261,
+    "total_tokens": 1617,
+    "completion_tokens": 356,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "1000000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "998383",
+    "x-ratelimit-tokens-query-cost": "1617"
+  },
+  "text": "{\n  \"task_category\": \"github_pr_comment_from_public_diff\",\n  \"comment_title_fr\": \"Validation de la note de release  partir d'un diff public\",\n  \"comment_body_fr\": \"Ce commit valide la capacit  rdiger une note de release en franais  partir d'un diff public born. Le rapport quotidien associ est marqu comme valide, confirmant la conformit des artefacts gnrs. Les modles tests incluent mistral-small-latest, mistral-medium-3.5, devstral-latest et mistral-large-latest, avec ce dernier retenu comme meilleur brouillon. Les commandes de validation `npm run validate` et `npm run check:helper` ont t prserves.\",\n  \"highlights_fr\": [\n    \"16 fichiers ajouts, 481 lignes modifies.\",\n    \"Note de release valide en franais.\",\n    \"Modles tests et meilleur brouillon retenu : mistral-large-latest.\"\n  ],\n  \"key_files\": [\n    \"docs/daily-tests/2026-06-14-release-note-from-diff.md\",\n    \"docs/daily-tests/evidence/2026-06-14-release-note-validation-summary.json\",\n    \"mistral-subagent/references/release-note-from-diff-fr.md\"\n  ],\n  \"models_tested\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"devstral-latest\",\n    \"mistral-large-latest\"\n  ],\n  \"retained_model\": \"mistral-large-latest\",\n  \"validation_commands\": [\n    \"npm run validate\",\n    \"npm run check:helper\"\n  ]\n}"
+}
