@@ -113,7 +113,7 @@ Retester cette famille seulement avec un schema beaucoup plus petit, ou bien dem
 
 Non.
 
-Cette capacite ne compte pas encore comme validee vers l objectif des `70 %`. L estimation cumulative reste donc a **78 pourcent** de couverture des taches recurrentes delegables deja validees.
+Cette capacite ne compte pas encore comme validee vers l objectif des `70 %`. Apres reconciliation de l historique deja valide jusqu au 2026-06-14, l estimation cumulative reste donc a **82 pourcent** de couverture des taches recurrentes delegables deja validees.
 
 ## Fichiers de preuve
 

@@ -1,8 +1,8 @@
 {
   "capability": "github_pr_comment_from_public_diff",
   "status": "Partiellement valide",
-  "base_coverage_percent": 78,
-  "updated_coverage_percent": 78,
+  "base_coverage_percent": 82,
+  "updated_coverage_percent": 82,
   "recommend_result": {
     "suitable": false,
     "suggested_model": "devstral-latest",
