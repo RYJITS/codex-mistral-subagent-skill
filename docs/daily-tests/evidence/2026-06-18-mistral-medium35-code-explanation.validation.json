@@ -1,0 +1,18 @@
+{
+  "valid": false,
+  "failures": [
+    "summary_fr hors bornes: 40 mots"
+  ],
+  "summary_word_count": 40,
+  "boot_sequence": [
+    "initBootLoader",
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "scheduleProgressiveWarmup"
+  ],
+  "lazy_modules": [
+    "contact-scene.js",
+    "project-registry.js"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "task_category": "code_explanation_architecture",
+  "project": "01_SITE_MA_METHODE",
+  "entrypoints": {
+    "html": "index.html",
+    "stylesheet": "src/styles.css",
+    "module_script": "src/main.js"
+  },
+  "allowed_boot_sequence": [
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "prepareVideoForScroll",
+    "registerSiteWorker",
+    "initBootLoader",
+    "scheduleProgressiveWarmup"
+  ],
+  "required_lazy_modules": [
+    "contact-scene.js",
+    "project-registry.js"
+  ],
+  "required_contact_scene_api": [
+    "setScrollProgress",
+    "setPhase",
+    "setHover",
+    "explodeToForm",
+    "showReceivedMessage"
+  ],
+  "required_summary_keywords": [
+    "boot",
+    "dynam",
+    "grille",
+    "projet"
+  ]
+}

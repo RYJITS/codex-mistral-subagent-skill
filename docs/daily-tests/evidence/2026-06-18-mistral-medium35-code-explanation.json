@@ -1,0 +1,21 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1452,
+    "total_tokens": 1808,
+    "completion_tokens": 356,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "20272",
+    "x-ratelimit-tokens-query-cost": "1808"
+  },
+  "text": "{\n  \"task_category\": \"code_explanation_architecture\",\n  \"project\": \"01_SITE_MA_METHODE\",\n  \"entrypoints\": {\n    \"html\": \"index.html\",\n    \"stylesheet\": \"src/styles.css\",\n    \"module_script\": \"src/main.js\"\n  },\n  \"boot_sequence\": [\n    \"initBootLoader\",\n    \"buildStory\",\n    \"bindContactForm\",\n    \"bindProjectGrid\",\n    \"scheduleProgressiveWarmup\"\n  ],\n  \"lazy_modules\": [\n    {\n      \"module\": \"contact-scene.js\",\n      \"loaded_by\": \"ensureContactScene\",\n      \"trigger\": \"idle, scroll, contact\",\n      \"role\": \"WebGL\"\n    },\n    {\n      \"module\": \"project-registry.js\",\n      \"loaded_by\": \"bindProjectGrid\",\n      \"trigger\": \"grille projets\",\n      \"role\": \"cartes projets et metadonnees projet\"\n    }\n  ],\n  \"contact_scene_api\": [\n    \"setScrollProgress\",\n    \"setPhase\",\n    \"setHover\",\n    \"explodeToForm\",\n    \"showReceivedMessage\"\n  ],\n  \"registry_role\": \"Fichier genere par l'orchestrateur, exporte orchestratorProjectCards\",\n  \"summary_fr\": \"Le site demarre via main.js qui initialise le bootloader, construit l'histoire, lie les formulaires et la grille projets. Les modules contact-scene.js (WebGL) et project-registry.js (metadonnees projets) sont charges dynamiquement. Le registre projets, genere par l'orchestrateur, alimente la grille avec orchestratorProjectCards.\"\n}"
+}
+

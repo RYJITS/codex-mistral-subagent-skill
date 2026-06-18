@@ -1,0 +1,20 @@
+{
+  "model": "codestral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1452,
+    "total_tokens": 1869,
+    "completion_tokens": 417,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "125",
+    "x-ratelimit-limit-tokens-minute": "625000",
+    "x-ratelimit-remaining-req-minute": "124",
+    "x-ratelimit-remaining-tokens-minute": "623131",
+    "x-ratelimit-tokens-query-cost": "1869"
+  },
+  "text": "{\n  \"task_category\": \"code_explanation_architecture\",\n  \"project\": \"01_SITE_MA_METHODE\",\n  \"entrypoints\": {\n    \"html\": \"index.html\",\n    \"stylesheet\": \"src/styles.css\",\n    \"module_script\": \"src/main.js\"\n  },\n  \"boot_sequence\": [\n    \"buildStory\",\n    \"bindContactForm\",\n    \"bindProjectGrid\",\n    \"prepareVideoForScroll\",\n    \"registerSiteWorker\"\n  ],\n  \"lazy_modules\": [\n    {\n      \"module\": \"contact-scene.js\",\n      \"loaded_by\": \"ensureContactScene\",\n      \"trigger\": \"idle, scroll, contact\",\n      \"role\": \"WebGL\"\n    },\n    {\n      \"module\": \"project-registry.js\",\n      \"loaded_by\": \"bindProjectGrid\",\n      \"trigger\": \"grille projets\",\n      \"role\": \"cartes projets, metadonnees projet\"\n    }\n  ],\n  \"contact_scene_api\": [\n    \"setScrollProgress\",\n    \"setPhase\",\n    \"setHover\",\n    \"explodeToForm\",\n    \"showReceivedMessage\"\n  ],\n  \"registry_role\": \"fichier genere par l'orchestrateur, exporte orchestratorProjectCards\",\n  \"summary_fr\": \"Le projet 01_SITE_MA_METHODE demarre par index.html qui charge les ressources CSS et JS. Le script main.js initialise plusieurs composants au demarrage, dont buildStory, bindContactForm, et bindProjectGrid. Les modules contact-scene.js et project-registry.js sont charges dynamiquement. Le premier gere une scene WebGL pour le formulaire de contact, chargee par ensureContactScene declenchee par idle, scroll ou contact. Le second, genere par l'orchestrateur, fournit les metadonnees des projets pour la grille, chargee par bindProjectGrid. La scene WebGL expose une API pour controler les animations et les interactions.\"\n}"
+}

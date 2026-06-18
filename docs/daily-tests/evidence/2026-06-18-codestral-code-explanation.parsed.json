@@ -1,0 +1,39 @@
+{
+  "task_category": "code_explanation_architecture",
+  "project": "01_SITE_MA_METHODE",
+  "entrypoints": {
+    "html": "index.html",
+    "stylesheet": "src/styles.css",
+    "module_script": "src/main.js"
+  },
+  "boot_sequence": [
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "prepareVideoForScroll",
+    "registerSiteWorker"
+  ],
+  "lazy_modules": [
+    {
+      "module": "contact-scene.js",
+      "loaded_by": "ensureContactScene",
+      "trigger": "idle, scroll, contact",
+      "role": "WebGL"
+    },
+    {
+      "module": "project-registry.js",
+      "loaded_by": "bindProjectGrid",
+      "trigger": "grille projets",
+      "role": "cartes projets, metadonnees projet"
+    }
+  ],
+  "contact_scene_api": [
+    "setScrollProgress",
+    "setPhase",
+    "setHover",
+    "explodeToForm",
+    "showReceivedMessage"
+  ],
+  "registry_role": "fichier genere par l'orchestrateur, exporte orchestratorProjectCards",
+  "summary_fr": "Le projet 01_SITE_MA_METHODE demarre par index.html qui charge les ressources CSS et JS. Le script main.js initialise plusieurs composants au demarrage, dont buildStory, bindContactForm, et bindProjectGrid. Les modules contact-scene.js et project-registry.js sont charges dynamiquement. Le premier gere une scene WebGL pour le formulaire de contact, chargee par ensureContactScene declenchee par idle, scroll ou contact. Le second, genere par l'orchestrateur, fournit les metadonnees des projets pour la grille, chargee par bindProjectGrid. La scene WebGL expose une API pour controler les animations et les interactions."
+}

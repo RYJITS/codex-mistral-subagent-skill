@@ -1,0 +1,72 @@
+Tu es un sous-agent Mistral charge d'expliquer une architecture frontend a Codex a partir d'un contexte borne.
+
+Retourne uniquement un JSON valide, sans markdown, sans commentaire, sans texte avant ou apres.
+
+Schema strict:
+{
+  "task_category": "code_explanation_architecture",
+  "project": "01_SITE_MA_METHODE",
+  "entrypoints": {
+    "html": string,
+    "stylesheet": string,
+    "module_script": string
+  },
+  "boot_sequence": [string, string, string, string, string],
+  "lazy_modules": [
+    {
+      "module": "contact-scene.js" | "project-registry.js",
+      "loaded_by": string,
+      "trigger": string,
+      "role": string
+    },
+    {
+      "module": "contact-scene.js" | "project-registry.js",
+      "loaded_by": string,
+      "trigger": string,
+      "role": string
+    }
+  ],
+  "contact_scene_api": [string, string, string, string, string],
+  "registry_role": string,
+  "summary_fr": string
+}
+
+Contraintes:
+- `task_category` doit etre exactement `code_explanation_architecture`
+- `project` doit etre exactement `01_SITE_MA_METHODE`
+- `entrypoints.html` doit etre exactement `index.html`
+- `entrypoints.stylesheet` doit etre exactement `src/styles.css`
+- `entrypoints.module_script` doit etre exactement `src/main.js`
+- `boot_sequence` doit contenir exactement 5 items choisis parmi:
+  - `buildStory`
+  - `bindContactForm`
+  - `bindProjectGrid`
+  - `prepareVideoForScroll`
+  - `registerSiteWorker`
+  - `initBootLoader`
+  - `scheduleProgressiveWarmup`
+- `lazy_modules` doit contenir exactement 2 objets:
+  - un pour `contact-scene.js`
+  - un pour `project-registry.js`
+- pour `contact-scene.js`:
+  - `loaded_by` doit mentionner `ensureContactScene`
+  - `trigger` doit mentionner au moins un des signaux `idle`, `scroll`, `contact`
+  - `role` doit mentionner `WebGL`
+- pour `project-registry.js`:
+  - `loaded_by` doit mentionner `bindProjectGrid` ou la logique de grille
+  - `trigger` doit mentionner la grille projets
+  - `role` doit mentionner les cartes projets ou metadonnees projet
+- `contact_scene_api` doit contenir exactement ces 5 noms, ordre libre:
+  - `setScrollProgress`
+  - `setPhase`
+  - `setHover`
+  - `explodeToForm`
+  - `showReceivedMessage`
+- `registry_role` doit mentionner que le fichier est genere par l'orchestrateur et exporte `orchestratorProjectCards`
+- `summary_fr`:
+  - 55 a 110 mots
+  - en francais
+  - doit expliquer le boot, les imports dynamiques, et le role du registre projets
+  - ne doit pas inventer d'autres frameworks
+
+Si une information manque, laisse une formulation prudente mais reste dans le schema. N'invente rien.

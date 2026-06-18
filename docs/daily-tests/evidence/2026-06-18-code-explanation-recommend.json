@@ -1,0 +1,15 @@
+{
+  "suitable": true,
+  "confidence": 0.7,
+  "suggested_model": "devstral-latest",
+  "suggested_model_reason": "Agentic repository work: codebase audit, task decomposition, file plans, and patch planning.",
+  "matched_signals": [
+    "resume",
+    "resum",
+    "json",
+    "explique",
+    "code"
+  ],
+  "risk_signals": [],
+  "proposal_fr": "Mistral peut aider comme sous-agent pour une premiere passe. Codex devrait envoyer seulement le contexte necessaire, puis verifier et integrer la reponse."
+}

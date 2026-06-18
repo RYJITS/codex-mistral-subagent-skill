@@ -1,0 +1,40 @@
+{
+  "task_category": "code_explanation_architecture",
+  "project": "01_SITE_MA_METHODE",
+  "entrypoints": {
+    "html": "index.html",
+    "stylesheet": "src/styles.css",
+    "module_script": "src/main.js"
+  },
+  "boot_sequence": [
+    "initBootLoader",
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "scheduleProgressiveWarmup"
+  ],
+  "lazy_modules": [
+    {
+      "module": "contact-scene.js",
+      "loaded_by": "ensureContactScene",
+      "trigger": "idle, scroll, contact",
+      "role": "WebGL"
+    },
+    {
+      "module": "project-registry.js",
+      "loaded_by": "bindProjectGrid",
+      "trigger": "grille projets",
+      "role": "cartes projets et metadonnees projet"
+    }
+  ],
+  "contact_scene_api": [
+    "setScrollProgress",
+    "setPhase",
+    "setHover",
+    "explodeToForm",
+    "showReceivedMessage"
+  ],
+  "registry_role": "Fichier genere par l'orchestrateur, exporte orchestratorProjectCards",
+  "summary_fr": "Le site demarre via main.js qui initialise le bootloader, construit l'histoire, lie les formulaires et la grille projets. Les modules contact-scene.js (WebGL) et project-registry.js (metadonnees projets) sont charges dynamiquement. Le registre projets, genere par l'orchestrateur, alimente la grille avec orchestratorProjectCards."
+}
+

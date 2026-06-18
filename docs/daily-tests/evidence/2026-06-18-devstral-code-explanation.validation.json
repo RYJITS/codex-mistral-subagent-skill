@@ -1,0 +1,19 @@
+{
+  "valid": false,
+  "failures": [
+    "project-registry.js: trigger doit mentionner la grille projets",
+    "registry_role doit mentionner l'orchestrateur"
+  ],
+  "summary_word_count": 68,
+  "boot_sequence": [
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "prepareVideoForScroll",
+    "initBootLoader"
+  ],
+  "lazy_modules": [
+    "contact-scene.js",
+    "project-registry.js"
+  ]
+}

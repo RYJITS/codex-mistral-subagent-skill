@@ -1,0 +1,18 @@
+{
+  "valid": false,
+  "failures": [
+    "summary_fr doit mentionner une forme de: boot"
+  ],
+  "summary_word_count": 83,
+  "boot_sequence": [
+    "buildStory",
+    "bindContactForm",
+    "bindProjectGrid",
+    "prepareVideoForScroll",
+    "registerSiteWorker"
+  ],
+  "lazy_modules": [
+    "contact-scene.js",
+    "project-registry.js"
+  ]
+}
