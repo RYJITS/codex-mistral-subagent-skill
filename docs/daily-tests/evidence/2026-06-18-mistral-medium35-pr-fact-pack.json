@@ -1,0 +1,22 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4788,
+    "total_tokens": 5688,
+    "completion_tokens": 900,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "46",
+    "x-ratelimit-remaining-tokens-minute": "11684",
+    "x-ratelimit-tokens-query-cost": "5688"
+  },
+  "text": "{\n  \"task_type\": \"pr_fact_pack_from_public_diff\",\n  \"commit_hash\": \"0afb9c84a947ff81145bdfa25189711321ab6ea1\",\n  \"status_label\": \"Valide\",\n  \"summary_fr\": \"Validation du triage de feedback image C2R avec classification bornAe, corrections de prompt actionnables en JSON strict, et oracle local. Workflow capitalisA dans une nouvelle rAfArence.\",\n  \"files_changed\": [\n    \"docs/daily-tests/2026-06-15-image-feedback-triage.md\",\n    \"mistral-subagent/references/image-feedback-triage-fr.md\",\n    \"mistral-subagent/SKILL.md\"\n  ],\n  \"shortstat\": {\n    \"files\": 22,\n    \"insertions\": 906,\n    \"deletions\": 3\n  },\n  \"models_tested\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"mistral-large-latest\",\n    \"devstral-latest\"\n  ],\n  \"models_validated\": [\n    \"mistral-small-latest\",\n    \"mistral-medium-3.5\",\n    \"mistral-large-latest\"\n  ],\n  \"tokens_retained\": {\n    \"mistral-small-latest\": 2378,\n    \"mistral-medium-3.5\": 2392,\n    \"mistral-large-latest\": 2473,\n    \"mistral-medium-3.5_reference\": 914,\n    \"total\": 8157\n  },\n  \"validation_commands\": [\n    \"node mistral-subagent/scripts/mistral-subagent.mjs check\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\",\n    \"$prompt = Get-Content \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-retry-prompt.txt\\\" -Raw\",\n    \"node C:\\\\Users\\\\ysche\\\\.codex\\\\skills\\\\mistral-subagent\\\\scripts\\\\mistral-subagent.mjs run --task $prompt --context-file \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-context.md\\\" --model mistral-medium-3.5 --max-tokens 1200 --temperature 0.1 --json\",\n    \"node \\\"docs/daily-tests/evidence/2026-06-15-validate-image-feedback-triage.mjs\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-small-latest-image-feedback-triage-retry.json\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-medium-3.5-image-feedback-triage-retry.json\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-large-latest-image-feedback-triage-retry.json\\\"\",\n    \"npm run validate\",\n    \"npm run check:helper\"\n  ],\n  \"new_files_added\": [\n    \"docs/daily-tests/2026-06-15-image-feedback-triage.md\",\n    \"mistral-subagent/references/image-feedback-triage-fr.md\"\n  ],\n  \"modified_files\": [\n    \"mistral-subagent/SKILL.md\"\n  ],\n  \"invented_items\": [],\n  \"contribution_to_70_percent_goal\": true,\n  \"cumulative_coverage_estimate\": \"82 pourcent\",\n  \"workflow_capitalized\": true,\n  \"reference_file\": \"mistral-subagent/references/image-feedback-t"
+}
+
+

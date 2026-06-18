@@ -1,0 +1,98 @@
+{
+  "valid_count": 0,
+  "invalid_count": 4,
+  "results": [
+    {
+      "model": "mistral-small-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-small-pr-microcopy.json",
+      "usage": {
+        "prompt_tokens": 407,
+        "total_tokens": 417,
+        "completion_tokens": 10,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "microcopy": {
+        "scope_label_fr": 4
+      },
+      "valid": false,
+      "errors": [
+        "unexpected keys",
+        "scope_label_fr too short",
+        "summary_fr invalid length",
+        "summary_fr missing required terms"
+      ]
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-medium35-pr-microcopy.json",
+      "usage": {
+        "prompt_tokens": 407,
+        "total_tokens": 430,
+        "completion_tokens": 23,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "microcopy": {
+        "scope_label_fr": "tri de feedback image C2R",
+        "missing_information": null
+      },
+      "valid": false,
+      "errors": [
+        "unexpected keys",
+        "summary_fr invalid length",
+        "summary_fr missing required terms"
+      ]
+    },
+    {
+      "model": "devstral-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-devstral-pr-microcopy.json",
+      "usage": {
+        "prompt_tokens": 407,
+        "total_tokens": 420,
+        "completion_tokens": 13,
+        "prompt_tokens_details": {
+          "cached_tokens": 4
+        }
+      },
+      "finish_reason": "stop",
+      "microcopy": {
+        "scope_label_fr": 4
+      },
+      "valid": false,
+      "errors": [
+        "unexpected keys",
+        "scope_label_fr too short",
+        "summary_fr invalid length",
+        "summary_fr missing required terms"
+      ]
+    },
+    {
+      "model": "mistral-large-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-large-pr-microcopy.json",
+      "usage": {
+        "prompt_tokens": 407,
+        "total_tokens": 445,
+        "completion_tokens": 38,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "microcopy": {
+        "scope_label_fr": "Triage de feedback image C2R (validation du workflow et ajout de rAfArence en franAais)",
+        "scope_score": 4
+      },
+      "valid": false,
+      "errors": [
+        "unexpected keys",
+        "summary_fr invalid length",
+        "summary_fr missing required terms"
+      ]
+    }
+  ]
+}

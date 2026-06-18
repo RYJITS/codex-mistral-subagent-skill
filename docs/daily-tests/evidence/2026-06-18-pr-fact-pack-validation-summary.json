@@ -1,0 +1,208 @@
+{
+  "expected": {
+    "task_type": "pr_fact_pack_from_public_diff",
+    "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+    "status_label": "Valide",
+    "user_project": "05_Generateur image C2R",
+    "fact_codes": [
+      "workflow_validated",
+      "reference_added",
+      "skill_updated"
+    ],
+    "key_files": [
+      "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+      "mistral-subagent/references/image-feedback-triage-fr.md",
+      "mistral-subagent/SKILL.md"
+    ],
+    "validation_commands": [
+      "npm run validate",
+      "npm run check:helper"
+    ],
+    "retained_model": "mistral-medium-3.5"
+  },
+  "valid_count": 0,
+  "invalid_count": 4,
+  "results": [
+    {
+      "model": "mistral-small-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-small-pr-fact-pack-retry.json",
+      "usage": {
+        "prompt_tokens": 498,
+        "total_tokens": 716,
+        "completion_tokens": 218,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "valid": false,
+      "errors": [
+        "user_project mismatch",
+        "retained_model mismatch",
+        "invented_items must be an empty array",
+        "extra keys: daily_report_status,real_project,capability,default_model",
+        "scope_label_fr too short",
+        "summary_fr missing required terms"
+      ],
+      "fact_pack": {
+        "task_type": "pr_fact_pack_from_public_diff",
+        "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+        "status_label": "Valide",
+        "user_project": "05_Generateur",
+        "daily_report_status": "Valide",
+        "real_project": "05_Generateur image C2R",
+        "capability": "triage de feedback image C2R vers corrections de prompt",
+        "default_model": "mistral-medium-3.5",
+        "key_files": [
+          "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+          "mistral-subagent/references/image-feedback-triage-fr.md",
+          "mistral-subagent/SKILL.md"
+        ],
+        "validation_commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "fact_codes": [
+          "workflow_validated",
+          "reference_added",
+          "skill_updated"
+        ]
+      }
+    },
+    {
+      "model": "mistral-medium-3.5",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-medium35-pr-fact-pack-retry.json",
+      "usage": {
+        "prompt_tokens": 498,
+        "total_tokens": 691,
+        "completion_tokens": 193,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "valid": false,
+      "errors": [
+        "user_project mismatch",
+        "retained_model mismatch",
+        "invented_items must be an empty array",
+        "extra keys: capability,default_model",
+        "scope_label_fr too short",
+        "summary_fr missing required terms"
+      ],
+      "fact_pack": {
+        "task_type": "pr_fact_pack_from_public_diff",
+        "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+        "status_label": "Valide",
+        "user_project": "05_Generateur",
+        "capability": "triage de feedback image C2R vers corrections de prompt",
+        "default_model": "mistral-medium-3.5",
+        "key_files": [
+          "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+          "mistral-subagent/references/image-feedback-triage-fr.md",
+          "mistral-subagent/SKILL.md"
+        ],
+        "validation_commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "fact_codes": [
+          "workflow_validated",
+          "reference_added",
+          "skill_updated"
+        ]
+      }
+    },
+    {
+      "model": "devstral-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-devstral-pr-fact-pack-retry.json",
+      "usage": {
+        "prompt_tokens": 498,
+        "total_tokens": 747,
+        "completion_tokens": 249,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "valid": false,
+      "errors": [
+        "user_project mismatch",
+        "retained_model mismatch",
+        "invented_items must be an empty array",
+        "extra keys: daily_report_status,real_project,capability,retained_default_model",
+        "scope_label_fr too short",
+        "summary_fr missing required terms"
+      ],
+      "fact_pack": {
+        "task_type": "pr_fact_pack_from_public_diff",
+        "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+        "status_label": "Valide",
+        "user_project": "05_Generateur",
+        "daily_report_status": "Valide",
+        "real_project": "05_Generateur image C2R",
+        "capability": "triage de feedback image C2R vers corrections de prompt",
+        "retained_default_model": "mistral-medium-3.5",
+        "key_files": [
+          "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+          "mistral-subagent/references/image-feedback-triage-fr.md",
+          "mistral-subagent/SKILL.md"
+        ],
+        "validation_commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "fact_codes": [
+          "workflow_validated",
+          "reference_added",
+          "skill_updated"
+        ]
+      }
+    },
+    {
+      "model": "mistral-large-latest",
+      "file_path": "docs/daily-tests/evidence/2026-06-18-mistral-large-pr-fact-pack-retry.json",
+      "usage": {
+        "prompt_tokens": 498,
+        "total_tokens": 746,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "valid": false,
+      "errors": [
+        "user_project mismatch",
+        "invented_items must be an empty array",
+        "extra keys: daily_report_status,real_project,capability",
+        "scope_label_fr too short",
+        "summary_fr missing required terms"
+      ],
+      "fact_pack": {
+        "task_type": "pr_fact_pack_from_public_diff",
+        "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+        "status_label": "Valide",
+        "user_project": "05_Generateur",
+        "daily_report_status": "Valide",
+        "real_project": "05_Generateur image C2R",
+        "capability": "triage de feedback image C2R vers corrections de prompt",
+        "retained_model": "mistral-medium-3.5",
+        "key_files": [
+          "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+          "mistral-subagent/references/image-feedback-triage-fr.md",
+          "mistral-subagent/SKILL.md"
+        ],
+        "validation_commands": [
+          "npm run validate",
+          "npm run check:helper"
+        ],
+        "fact_codes": [
+          "workflow_validated",
+          "reference_added",
+          "skill_updated"
+        ]
+      }
+    }
+  ]
+}

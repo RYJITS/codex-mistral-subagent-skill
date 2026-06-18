@@ -51,7 +51,7 @@ function validateJsonFiles() {
 function validateSkillFrontmatter() {
   const skillPath = 'mistral-subagent/SKILL.md';
   const content = fs.readFileSync(skillPath, 'utf8');
-  const match = content.match(/^---\n([\s\S]*?)\n---\n/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
   if (!match) {
     console.error('SKILL.md is missing YAML frontmatter.');
     process.exit(1);

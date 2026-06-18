@@ -1,0 +1,22 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4788,
+    "total_tokens": 5688,
+    "completion_tokens": 900,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "44",
+    "x-ratelimit-remaining-tokens-minute": "37846",
+    "x-ratelimit-tokens-query-cost": "5688"
+  },
+  "text": "{\"task_type\": \"pr_fact_pack_from_public_diff\", \"commit_hash\": \"0afb9c84a947ff81145bdfa25189711321ab6ea1\", \"status_label\": \"Valide\", \"summary_fr\": \"Validation d'un workflow de triage de feedback image C2R vers corrections de prompt actionnables, avec passage A  l'oracle local strict aprAs un retry plus literal. Trois modAles (mistral-small-latest, mistral-medium-3.5, mistral-large-latest) ont AtA validAs. IntAgration dans mistral-subagent/SKILL.md et crAation d'une rAfArence dAdiAe (image-feedback-triage-fr.md).\", \"invented_items\": [], \"validation_commands\": [\"node mistral-subagent/scripts/mistral-subagent.mjs check\", \"node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\", \"node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\", \"$prompt = Get-Content \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-retry-prompt.txt\\\" -Raw\", \"node C:\\\\Users\\\\ysche\\\\.codex\\\\skills\\\\mistral-subagent\\\\scripts\\\\mistral-subagent.mjs run --task $prompt --context-file \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-context.md\\\" --model mistral-medium-3.5 --max-tokens 1200 --temperature 0.1 --json\", \"node \\\"docs/daily-tests/evidence/2026-06-15-validate-image-feedback-triage.mjs\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-small-latest-image-feedback-triage-retry.json\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-medium-3.5-image-feedback-triage-retry.json\\\" \\\"docs/daily-tests/evidence/2026-06-15-mistral-large-latest-image-feedback-triage-retry.json\\\"\", \"npm run validate\", \"npm run check:helper\"], \"files_changed\": [\"docs/daily-tests/2026-06-15-image-feedback-triage.md\", \"mistral-subagent/SKILL.md\", \"mistral-subagent/references/image-feedback-triage-fr.md\"], \"models_tested\": [\"mistral-small-latest\", \"mistral-medium-3.5\", \"mistral-large-latest\", \"devstral-latest\"], \"reference_model\": \"mistral-medium-3.5\", \"total_useful_tokens\": 8157, \"useful_tokens_breakdown\": {\"mistral-small-latest\": 2378, \"mistral-medium-3.5\": 2392, \"mistral-large-latest\": 2473, \"mistral-medium-3.5_reference\": 914}, \"cases_tested\": 3, \"diagnosis_labels\": [\"profondeur/pose plate\", \"derive textile+prop\", \"expression+dAcor ferme\"], \"json_schema_requirements\": [\"task\", \"cases\", \"diagnosis\", \"severity\", \"keep_prompt_lock\", \"prompt_fix_en\", \"negative_additions\", \"fit_note_fr\"], \"keep_prompt_lock\": true, \"severity\": \"high\", \"negative_additions_restriction\": \"uniquement pour des derives spAcifiques au cas\", \"prompt_fix_en_requirements\": [\"fragments littAraux obligatoires par cas\", \"termes exacts imposAs pour les negative_additions critiques\"], \"oracle_checks\": [\"task == c2r_feedback_triage\", \""
+}
+
+

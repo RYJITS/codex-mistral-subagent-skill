@@ -1,0 +1,36 @@
+Tu agis comme sous-agent Mistral pour Codex.
+
+Transforme uniquement le contexte public borne en un fact pack JSON ferme. N ajoute aucune cle supplementaire. N ecris aucune phrase hors JSON.
+
+Retourne exactement cet objet, avec exactement ces 10 cles et aucune autre:
+{
+  "task_type": "pr_fact_pack_from_public_diff",
+  "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+  "status_label": "Valide",
+  "user_project": "05_Generateur image C2R",
+  "scope_label_fr": "chaine courte de 4 a 12 mots",
+  "summary_fr": "une phrase courte qui mentionne C2R et prompt",
+  "fact_codes": [
+    "workflow_validated",
+    "reference_added",
+    "skill_updated"
+  ],
+  "key_files": [
+    "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+    "mistral-subagent/references/image-feedback-triage-fr.md",
+    "mistral-subagent/SKILL.md"
+  ],
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "retained_model": "mistral-medium-3.5",
+  "invented_items": []
+}
+
+Contraintes strictes:
+- `status_label`, `user_project`, `fact_codes`, `key_files`, `validation_commands`, et `retained_model` doivent reprendre exactement les litteraux ci-dessus.
+- `scope_label_fr` doit etre utile pour un commentaire GitHub de PR.
+- `summary_fr` doit rester sous `160` caracteres.
+- `invented_items` doit etre `[]`.
+- Aucun autre champ n est autorise.

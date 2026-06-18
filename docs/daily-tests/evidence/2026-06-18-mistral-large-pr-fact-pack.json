@@ -1,0 +1,22 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4788,
+    "total_tokens": 5688,
+    "completion_tokens": 900,
+    "prompt_tokens_details": {
+      "cached_tokens": 36
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "1",
+    "x-ratelimit-remaining-tokens-minute": "238614",
+    "x-ratelimit-tokens-query-cost": "5652"
+  },
+  "text": "{\n  \"task_type\": \"pr_fact_pack_from_public_diff\",\n  \"commit_hash\": \"0afb9c84a947ff81145bdfa25189711321ab6ea1\",\n  \"status_label\": \"Valide\",\n  \"summary_fr\": \"Validation d'un workflow de triage de feedbacks image C2R vers des corrections de prompt actionnables, sous JSON strict et oracle local. Le test a confirmA que les modAles `mistral-small-latest`, `mistral-medium-3.5` et `mistral-large-latest` peuvent produire des corrections conformes aprAs un retry plus littAral, avec `mistral-medium-3.5` comme meilleur compromis coAt/qualitA. Le workflow est capitalisA dans `mistral-subagent/references/image-feedback-triage-fr.md` et contribue A  l'objectif des 70% de tAches rAcurrentes dAlAguables.\",\n  \"key_findings\": {\n    \"models_tested\": [\n      \"mistral-small-latest\",\n      \"mistral-medium-3.5\",\n      \"mistral-large-latest\",\n      \"devstral-latest\"\n    ],\n    \"models_validated\": [\n      \"mistral-small-latest\",\n      \"mistral-medium-3.5\",\n      \"mistral-large-latest\"\n    ],\n    \"best_model_default\": \"mistral-medium-3.5\",\n    \"tokens_consumed_useful\": 8157,\n    \"validation_method\": \"oracle local strict sur FACS, angle, profondeur et contraintes de sortie\",\n    \"workflow_capitalized\": true,\n    \"contribution_to_70_percent_goal\": {\n      \"contributes\": true,\n      \"cumulative_estimate\": \"82 pourcent\"\n    }\n  },\n  \"files_modified_or_added\": [\n    {\n      \"path\": \"docs/daily-tests/2026-06-15-image-feedback-triage.md\",\n      \"type\": \"new\",\n      \"purpose\": \"Documentation du test quotidien validant le triage de feedbacks image C2R.\"\n    },\n    {\n      \"path\": \"mistral-subagent/references/image-feedback-triage-fr.md\",\n      \"type\": \"new\",\n      \"purpose\": \"Workflow capitalisA pour le triage de feedbacks image C2R en corrections de prompt.\"\n    },\n    {\n      \"path\": \"mistral-subagent/SKILL.md\",\n      \"type\": \"modified\",\n      \"purpose\": \"Mise A  jour des recommandations pour le triage de feedbacks image C2R et ajustement des conseils pour les release notes.\"\n    }\n  ],\n  \"invented_items\": [],\n  \"validation_commands\": [\n    \"node mistral-subagent/scripts/mistral-subagent.mjs check\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\",\n    \"node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \\\"Classifier trois feedbacks de generation image C2R en diagnostics bornes et corrections de prompt actionnables, en JSON strict, sans reecrire le promptLock ni la negative list globale.\\\"\",\n    \"$prompt = Get-Content \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-retry-prompt.txt\\\" -Raw\",\n    \"node C:\\\\Users\\\\ysche\\\\.codex\\\\skills\\\\mistral-subagent\\\\scripts\\\\mistral-subagent.mjs run --task $prompt --context-file \\\"docs/daily-tests/evidence/2026-06-15-image-feedback-triage-context.md\\\" --model mistral-medium-3.5 --max-tokens 1200 --temperature 0.1 --json\",\n    \"node \\\"docs/daily-tests/evidence/2026-06-15-validate-image-feedback-triage.mjs\\\" \\\"docs/daily-tests/evidence/2026-06-15-mist"
+}
+
+

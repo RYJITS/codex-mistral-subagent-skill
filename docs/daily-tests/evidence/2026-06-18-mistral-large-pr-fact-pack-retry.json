@@ -1,0 +1,20 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 498,
+    "total_tokens": 746,
+    "completion_tokens": 248,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "249254",
+    "x-ratelimit-tokens-query-cost": "746"
+  },
+  "text": "{\n  \"task_type\": \"pr_fact_pack_from_public_diff\",\n  \"commit_hash\": \"0afb9c84a947ff81145bdfa25189711321ab6ea1\",\n  \"status_label\": \"Valide\",\n  \"user_project\": \"05_Generateur\",\n  \"daily_report_status\": \"Valide\",\n  \"real_project\": \"05_Generateur image C2R\",\n  \"capability\": \"triage de feedback image C2R vers corrections de prompt\",\n  \"retained_model\": \"mistral-medium-3.5\",\n  \"key_files\": [\n    \"docs/daily-tests/2026-06-15-image-feedback-triage.md\",\n    \"mistral-subagent/references/image-feedback-triage-fr.md\",\n    \"mistral-subagent/SKILL.md\"\n  ],\n  \"validation_commands\": [\n    \"npm run validate\",\n    \"npm run check:helper\"\n  ],\n  \"fact_codes\": [\n    \"workflow_validated\",\n    \"reference_added\",\n    \"skill_updated\"\n  ]\n}"
+}

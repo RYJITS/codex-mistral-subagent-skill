@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 498,
+    "total_tokens": 691,
+    "completion_tokens": 193,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "24309",
+    "x-ratelimit-tokens-query-cost": "691"
+  },
+  "text": "{\"task_type\": \"pr_fact_pack_from_public_diff\", \"commit_hash\": \"0afb9c84a947ff81145bdfa25189711321ab6ea1\", \"status_label\": \"Valide\", \"user_project\": \"05_Generateur\", \"capability\": \"triage de feedback image C2R vers corrections de prompt\", \"default_model\": \"mistral-medium-3.5\", \"key_files\": [\"docs/daily-tests/2026-06-15-image-feedback-triage.md\", \"mistral-subagent/references/image-feedback-triage-fr.md\", \"mistral-subagent/SKILL.md\"], \"validation_commands\": [\"npm run validate\", \"npm run check:helper\"], \"fact_codes\": [\"workflow_validated\", \"reference_added\", \"skill_updated\"]}"
+}

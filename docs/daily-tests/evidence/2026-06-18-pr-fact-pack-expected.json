@@ -1,0 +1,21 @@
+{
+  "task_type": "pr_fact_pack_from_public_diff",
+  "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+  "status_label": "Valide",
+  "user_project": "05_Generateur image C2R",
+  "fact_codes": [
+    "workflow_validated",
+    "reference_added",
+    "skill_updated"
+  ],
+  "key_files": [
+    "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+    "mistral-subagent/references/image-feedback-triage-fr.md",
+    "mistral-subagent/SKILL.md"
+  ],
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "retained_model": "mistral-medium-3.5"
+}

@@ -1,0 +1,21 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 407,
+    "total_tokens": 445,
+    "completion_tokens": 38,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "3",
+    "x-ratelimit-remaining-tokens-minute": "249555",
+    "x-ratelimit-tokens-query-cost": "445"
+  },
+  "text": "{\n  \"scope_label_fr\": \"Triage de feedback image C2R (validation du workflow et ajout de rAfArence en franAais)\",\n  \"scope_score\": 4\n}"
+}
+

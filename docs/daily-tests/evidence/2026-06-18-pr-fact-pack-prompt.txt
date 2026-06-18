@@ -1,0 +1,43 @@
+Tu agis comme sous-agent Mistral pour Codex.
+
+Lis uniquement le diff public fourni par Codex et rends un fact pack JSON ferme pour preparer un commentaire GitHub de PR. Ne propose aucun commentaire final en Markdown. Ne deduis rien hors du diff.
+
+Contraintes:
+- Retourne uniquement un objet JSON valide.
+- N'invente aucun fichier, aucune commande, aucun modele, aucun statut.
+- Si le diff ne prouve pas une information, utilise une chaine vide seulement pour `summary_fr`; pour tous les autres champs obligatoires, appuie-toi exclusivement sur le diff.
+- `invented_items` doit etre un tableau vide si tout est prouve.
+- `validation_commands` doit reprendre exactement les commandes visibles dans le diff, sans ajout.
+
+Schema exact:
+{
+  "task_type": "pr_fact_pack_from_public_diff",
+  "commit_hash": "0afb9c84a947ff81145bdfa25189711321ab6ea1",
+  "status_label": "Valide|Partiellement valide|Non valide",
+  "user_project": "chaine courte",
+  "scope_label_fr": "chaine courte de 4 a 12 mots",
+  "summary_fr": "une phrase francaise courte",
+  "fact_codes": [
+    "workflow_validated",
+    "reference_added",
+    "skill_updated"
+  ],
+  "key_files": [
+    "docs/daily-tests/2026-06-15-image-feedback-triage.md",
+    "mistral-subagent/references/image-feedback-triage-fr.md",
+    "mistral-subagent/SKILL.md"
+  ],
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "retained_model": "model id exact",
+  "invented_items": []
+}
+
+Regles supplementaires:
+- `task_type`, `commit_hash`, `fact_codes`, `key_files`, et `validation_commands` doivent respecter exactement les litteraux attendus.
+- `fact_codes` doit garder exactement cet ordre.
+- `summary_fr` doit mentionner `C2R` et `prompt`.
+- `user_project` doit reprendre le projet reel indique dans le diff.
+- `retained_model` doit reprendre le modele explicitement retenu dans le diff.
