@@ -1,0 +1,88 @@
+{
+    "date":  "2026-06-18",
+    "task":  "daily-validation-report-from-evidence",
+    "first_pass":  [
+                       {
+                           "model":  "mistral-small-latest",
+                           "valid":  false,
+                           "word_count":  407,
+                           "total_tokens":  2513,
+                           "prompt_tokens":  1548,
+                           "completion_tokens":  965,
+                           "missing_snippets":  [
+                                                    "recommend a donne un faux negatif",
+                                                    "select-model a route vers `devstral-latest`",
+                                                    "Codex garde la verification, les tests, l\u0027edition locale, Git, et la memoire"
+                                                ],
+                           "ascii_only":  false,
+                           "commands_ok":  false,
+                           "usage_placeholder_ok":  false
+                       },
+                       {
+                           "model":  "mistral-medium-3.5",
+                           "valid":  false,
+                           "word_count":  428,
+                           "total_tokens":  2562,
+                           "prompt_tokens":  1548,
+                           "completion_tokens":  1014,
+                           "missing_snippets":  [
+                                                    "recommend a donne un faux negatif",
+                                                    "select-model a route vers `devstral-latest`",
+                                                    "Codex garde la verification, les tests, l\u0027edition locale, Git, et la memoire"
+                                                ],
+                           "ascii_only":  true,
+                           "commands_ok":  true,
+                           "usage_placeholder_ok":  true
+                       },
+                       {
+                           "model":  "mistral-large-latest",
+                           "valid":  false,
+                           "word_count":  618,
+                           "total_tokens":  2845,
+                           "prompt_tokens":  1536,
+                           "completion_tokens":  1309,
+                           "missing_snippets":  [
+                                                    "recommend a donne un faux negatif",
+                                                    "select-model a route vers `devstral-latest`",
+                                                    "Codex garde la verification, les tests, l\u0027edition locale, Git, et la memoire"
+                                                ],
+                           "ascii_only":  false,
+                           "commands_ok":  true,
+                           "usage_placeholder_ok":  true
+                       },
+                       {
+                           "model":  "devstral-latest",
+                           "valid":  false,
+                           "word_count":  460,
+                           "total_tokens":  2628,
+                           "prompt_tokens":  1536,
+                           "completion_tokens":  1092,
+                           "missing_snippets":  [
+                                                    "recommend a donne un faux negatif",
+                                                    "select-model a route vers `devstral-latest`",
+                                                    "Codex garde la verification, les tests, l\u0027edition locale, Git, et la memoire"
+                                                ],
+                           "ascii_only":  true,
+                           "commands_ok":  true,
+                           "usage_placeholder_ok":  true
+                       }
+                   ],
+    "retry_pass":  [
+                       {
+                           "model":  "mistral-medium-3.5",
+                           "valid":  true,
+                           "word_count":  492,
+                           "total_tokens":  2913,
+                           "prompt_tokens":  1655,
+                           "completion_tokens":  1258
+                       },
+                       {
+                           "model":  "devstral-latest",
+                           "valid":  false,
+                           "word_count":  488,
+                           "total_tokens":  2871,
+                           "prompt_tokens":  1643,
+                           "completion_tokens":  1228
+                       }
+                   ]
+}

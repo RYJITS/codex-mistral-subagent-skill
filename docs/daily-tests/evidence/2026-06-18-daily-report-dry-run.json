@@ -1,0 +1,19 @@
+{
+  "dry_run": true,
+  "endpoint": "https://api.mistral.ai/v1/chat/completions",
+  "payload": {
+    "model": "mistral-small-latest",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are Mistral acting as a subordinate helper for Codex. Return useful advisory work only. Do not claim to have used tools or changed files. If context is insufficient, state the missing information plainly. Avoid exposing or requesting secrets."
+      },
+      {
+        "role": "user",
+        "content": "Task:\nRediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention."
+      }
+    ],
+    "temperature": 0.2,
+    "max_tokens": 2048
+  }
+}

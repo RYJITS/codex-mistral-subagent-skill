@@ -1,0 +1,28 @@
+{
+  "valid": true,
+  "checks": {
+    "title_ok": true,
+    "status_ok": true,
+    "coverage_ok": true,
+    "retry_line_ok": true,
+    "headings_ok": true,
+    "models_ok": true,
+    "commands_ok": true,
+    "token_lines_ok": true,
+    "files_ok": true,
+    "snippets_ok": true,
+    "forbidden_ok": true,
+    "ascii_only": true,
+    "word_count_ok": true,
+    "finish_reason_ok": true,
+    "usage_present": true
+  },
+  "word_count": 492,
+  "missing_headings": [],
+  "missing_models": [],
+  "missing_commands": [],
+  "missing_token_lines": [],
+  "missing_files": [],
+  "missing_snippets": [],
+  "forbidden_hits": []
+}

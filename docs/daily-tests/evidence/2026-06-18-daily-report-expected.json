@@ -1,0 +1,57 @@
+{
+  "title": "# Test quotidien 2026-06-18 - redaction d'un rapport quotidien FR depuis evidences bornees",
+  "status": "**Valide**",
+  "coverage_percent": "85 pourcent",
+  "usage_placeholder": "Tokens a completer par Codex apres comparaison inter-modeles.",
+  "required_headings": [
+    "## Statut",
+    "## Categorie de tache",
+    "## Pourquoi c'est important pour les projets reels",
+    "## Projet et capacite testes",
+    "## Modeles testes",
+    "## Resume des prompts et du contexte",
+    "## Usage et tokens",
+    "## Resultat",
+    "## Commandes de validation",
+    "## Limitations",
+    "## Prochaine action",
+    "## Contribution vers l'objectif des 70 pourcent",
+    "## Fichiers de preuve"
+  ],
+  "required_models": [
+    "mistral-small-latest",
+    "mistral-medium-3.5",
+    "mistral-large-latest",
+    "devstral-latest"
+  ],
+  "required_commands": [
+    "node mistral-subagent/scripts/mistral-subagent.mjs check",
+    "node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"Rediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention.\"",
+    "node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"Rediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention.\"",
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "required_files": [
+    "docs/daily-tests/evidence/2026-06-18-daily-report-context.md",
+    "docs/daily-tests/evidence/2026-06-18-daily-report-prompt.txt",
+    "docs/daily-tests/evidence/2026-06-18-daily-report-expected.json",
+    "docs/daily-tests/evidence/2026-06-18-validate-daily-report.mjs",
+    "docs/daily-tests/evidence/2026-06-18-mistral-small-latest-daily-report.json",
+    "docs/daily-tests/evidence/2026-06-18-mistral-medium-3.5-daily-report.json",
+    "docs/daily-tests/evidence/2026-06-18-mistral-large-latest-daily-report.json",
+    "docs/daily-tests/evidence/2026-06-18-devstral-latest-daily-report.json",
+    "docs/daily-tests/evidence/2026-06-18-daily-report-validation-summary.json",
+    "docs/daily-tests/2026-06-18-daily-validation-report-from-evidence.md",
+    "mistral-subagent/references/daily-validation-report-fr.md"
+  ],
+  "required_snippets": [
+    "recommend a donne un faux negatif",
+    "select-model a route vers `devstral-latest`",
+    "Codex garde la verification, les tests, l'edition locale, Git, et la memoire"
+  ],
+  "forbidden_snippets": [
+    "mistral-medium-latest",
+    "codestral-latest",
+    "voxtral-mini-latest"
+  ]
+}

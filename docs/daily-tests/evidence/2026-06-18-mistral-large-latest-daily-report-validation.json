@@ -1,0 +1,84 @@
+{
+    "valid":  false,
+    "checks":  {
+                   "title_ok":  true,
+                   "status_ok":  true,
+                   "usage_placeholder_ok":  true,
+                   "coverage_ok":  true,
+                   "headings_ok":  true,
+                   "models_ok":  true,
+                   "commands_ok":  true,
+                   "files_ok":  true,
+                   "snippets_ok":  false,
+                   "forbidden_ok":  true,
+                   "ascii_only":  false,
+                   "word_count_ok":  true,
+                   "finish_reason_ok":  true,
+                   "usage_present":  true
+               },
+    "word_count":  618,
+    "present_headings":  [
+                             "## Statut",
+                             "## Categorie de tache",
+                             "## Pourquoi c\u0027est important pour les projets reels",
+                             "## Projet et capacite testes",
+                             "## Modeles testes",
+                             "## Resume des prompts et du contexte",
+                             "## Usage et tokens",
+                             "## Resultat",
+                             "## Commandes de validation",
+                             "## Limitations",
+                             "## Prochaine action",
+                             "## Contribution vers l\u0027objectif des 70 pourcent",
+                             "## Fichiers de preuve"
+                         ],
+    "missing_headings":  [
+
+                         ],
+    "present_models":  [
+                           "mistral-small-latest",
+                           "mistral-medium-3.5",
+                           "mistral-large-latest",
+                           "devstral-latest"
+                       ],
+    "missing_models":  [
+
+                       ],
+    "present_commands":  [
+                             "node mistral-subagent/scripts/mistral-subagent.mjs check",
+                             "node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"Rediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention.\"",
+                             "node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"Rediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention.\"",
+                             "npm run validate",
+                             "npm run check:helper"
+                         ],
+    "missing_commands":  [
+
+                         ],
+    "present_files":  [
+                          "docs/daily-tests/evidence/2026-06-18-daily-report-context.md",
+                          "docs/daily-tests/evidence/2026-06-18-daily-report-prompt.txt",
+                          "docs/daily-tests/evidence/2026-06-18-daily-report-expected.json",
+                          "docs/daily-tests/evidence/2026-06-18-validate-daily-report.mjs",
+                          "docs/daily-tests/evidence/2026-06-18-mistral-small-latest-daily-report.json",
+                          "docs/daily-tests/evidence/2026-06-18-mistral-medium-3.5-daily-report.json",
+                          "docs/daily-tests/evidence/2026-06-18-mistral-large-latest-daily-report.json",
+                          "docs/daily-tests/evidence/2026-06-18-devstral-latest-daily-report.json",
+                          "docs/daily-tests/evidence/2026-06-18-daily-report-validation-summary.json",
+                          "docs/daily-tests/2026-06-18-daily-validation-report-from-evidence.md",
+                          "mistral-subagent/references/daily-validation-report-fr.md"
+                      ],
+    "missing_files":  [
+
+                      ],
+    "present_snippets":  [
+
+                         ],
+    "missing_snippets":  [
+                             "recommend a donne un faux negatif",
+                             "select-model a route vers `devstral-latest`",
+                             "Codex garde la verification, les tests, l\u0027edition locale, Git, et la memoire"
+                         ],
+    "forbidden_hits":  [
+
+                       ]
+}

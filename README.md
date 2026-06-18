@@ -143,6 +143,7 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 ## References
 
 - [French Task Catalog](docs/TASK_CATALOG_FR.md): Public French routing guide based on the validated lab workflows.
+- [Daily Validation Report From Evidence (FR)](mistral-subagent/references/daily-validation-report-fr.md): Validated workflow for drafting a French daily GitHub report from bounded evidence files with a literal retry and local oracle.
 - [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
 - [Image Feedback Triage (FR)](mistral-subagent/references/image-feedback-triage-fr.md): Validated workflow for turning bounded C2R image rejection feedback into strict prompt corrections without rewriting the promptLock.
 - [Code Explanation Architecture (FR)](mistral-subagent/references/code-explanation-architecture-fr.md): Partially validated workflow for explaining a small frontend architecture subset with strict JSON facts plus a bounded French summary.

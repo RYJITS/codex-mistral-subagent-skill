@@ -1,0 +1,13 @@
+Redige un seul document Markdown complet en francais, ASCII seulement, sans bloc ```markdown.
+
+Respecte strictement ces regles:
+- utilise exactement le titre donne par le contexte;
+- garde exactement l'ordre des sections imposees;
+- mets `**Valide**` sous `## Statut`;
+- ne mentionne aucun fichier, modele, commande, pourcentage, ou test absent du contexte;
+- sous `## Usage et tokens`, ecris exactement la phrase imposee par le contexte, puis une courte note expliquant que Codex injectera les chiffres apres comparaison inter-modeles;
+- sous `## Resultat`, explique que le format est assez borne pour etre delegue a Mistral mais que Codex garde la verification, les tests, l'edition locale, Git, et la memoire;
+- sous `## Contribution vers l'objectif des 70 pourcent`, reponds `Oui.` puis une phrase concise mentionnant `85 pourcent`;
+- reste compact: environ 550 a 850 mots.
+
+Le document doit etre publiable tel quel apres verification locale de Codex.

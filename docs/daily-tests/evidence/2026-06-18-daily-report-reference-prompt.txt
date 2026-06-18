@@ -1,0 +1,14 @@
+Redige un seul document Markdown complet en francais, ASCII seulement, sans bloc ```markdown.
+
+Contraintes absolues:
+- utilise exactement le titre et les sections du contexte;
+- mets `**Valide**` sous `## Statut`;
+- sous `## Usage et tokens`, donne une liste a plat avec les 4 lignes du premier passage, en gardant exactement les nombres `2513`, `2562`, `2845`, `2628` et le verdict `Non valide` pour chacune;
+- ajoute ensuite la phrase exacte `Retry applique: un prompt plus litteral a force les trois fragments manquants.`;
+- reproduis textuellement les trois litteraux obligatoires;
+- sous `## Resultat`, explique que le premier passage etait non valide mais que le retry retenu valide la capacite globale;
+- sous `## Contribution vers l'objectif des 70 pourcent`, ecris `Oui.` puis une phrase concise avec `85 pourcent`;
+- ne mentionne aucun modele absent, aucune commande absente, aucun fichier absent, aucune PR/issue/CI inventee;
+- reste compact: environ 650 a 950 mots.
+
+Le document doit etre publiable tel quel apres verification locale de Codex.

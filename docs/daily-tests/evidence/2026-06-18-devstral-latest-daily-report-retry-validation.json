@@ -1,0 +1,30 @@
+{
+  "valid": false,
+  "checks": {
+    "title_ok": true,
+    "status_ok": true,
+    "coverage_ok": true,
+    "retry_line_ok": true,
+    "headings_ok": true,
+    "models_ok": true,
+    "commands_ok": true,
+    "token_lines_ok": true,
+    "files_ok": false,
+    "snippets_ok": true,
+    "forbidden_ok": true,
+    "ascii_only": true,
+    "word_count_ok": true,
+    "finish_reason_ok": true,
+    "usage_present": true
+  },
+  "word_count": 488,
+  "missing_headings": [],
+  "missing_models": [],
+  "missing_commands": [],
+  "missing_token_lines": [],
+  "missing_files": [
+    "docs/daily-tests/2026-06-18-daily-validation-report-from-evidence.md"
+  ],
+  "missing_snippets": [],
+  "forbidden_hits": []
+}

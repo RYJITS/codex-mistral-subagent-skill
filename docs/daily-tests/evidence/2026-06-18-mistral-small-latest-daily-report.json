@@ -1,0 +1,21 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1548,
+    "total_tokens": 2513,
+    "completion_tokens": 965,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "46771",
+    "x-ratelimit-tokens-query-cost": "2513"
+  },
+  "text": "# Test quotidien 2026-06-18 - redaction d'un rapport quotidien FR depuis evidences bornees\n\n## Statut\n**Valide**\n\n## Categorie de tache\nRedaction automatique d'un rapport quotidien en franAais A  partir d'evidences JSON/Markdown bornAes, avec titres exacts et commandes locales prAcises.\n\n## Pourquoi c'est important pour les projets reels\nCette capacitA permet de transformer des preuves locales en rapports publics courts et vArifiables, essentiels pour la documentation aprAs audit, validation ou synchronisation mAmoire. Elle facilite la dAlAgation partielle des comptes rendus rAcurrents avant vArification finale.\n\n## Projet et capacite testes\nLe test porte sur la capacitA A  gAnArer un rapport quotidien structurA pour :\n- `D:\\00_Cerveau_IA`\n- `D:\\00_Cerveau_IA\\Projet\\03_codex-mistral-subagent-skill`\n\nLa date de rAfArence est fixAe au 18 juin 2026.\n\n## Modeles testes\nQuatre modAles ont AtA AvaluAs pour cette tAche :\n- mistral-small-latest\n- mistral-medium-3.5\n- mistral-large-latest\n- devstral-latest\n\n## Resume des prompts et du contexte\nLe prompt utilisA pour les commandes `recommend` et `select-model` Atait :\n*\"Rediger un rapport quotidien GitHub en francais a partir d evidences JSON bornees, avec titres exacts, commandes locales exactes et sans invention.\"*\n\nLes commandes exAcutAes en sAquence Ataient :\n1. `node mistral-subagent/scripts/mistral-subagent.mjs check`\n2. `node mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"...\"`\n3. `node mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"...\"`\n4. `npm run validate`\n5. `npm run check:helper`\n\nLe prA-vol a rAvAlA un faux nAgatif de `recommend` (confiance A  0.34) alors que `select-model` a correctement routA vers `devstral-latest`.\n\n## Usage et tokens\nTokens A  complAter par Codex aprAs comparaison inter-modeles.\n\n*Note : Codex injectera les chiffres aprAs comparaison inter-modeles.*\n\n## Resultat\nLe format du rapport est suffisamment bornA pour Atre dAlAguA A  Mistral, mais Codex conserve la vArification finale, les tests, l'Adition locale, la gestion Git et la mAmoire du processus.\n\n## Commandes de validation\nLes commandes de validation exAcutAes sont :\n- `npm run validate`\n- `npm run check:helper`\n\n## Limitations\n- Le rapport doit rester en ASCII pur\n- Aucune invention de PR, issue, CI ou fichier absent n'est autorisAe\n- Seuls les modAles listAs ont AtA testAs\n- Les chemins et titres doivent Atre reproduits A  l'identique\n\n## Prochaine action\nAnalyser les tokens gAnArAs par chaque modAle et valider la cohArence globale avant intAgration dans le pipeline de documentation.\n\n## Contribution vers l'objectif des 70 pourcent\nOui. Cette capacitA valide une estimation cumulative de 85 pourcent vers l'objectif global.\n\n## Fichiers de preuve\n- docs/daily-tests/evidence/2026-06-18-daily-report-context.md\n- docs/daily-tests/evidence/2026-06-18-daily-report-prompt.txt\n- docs/daily-tests/evidence/2026-06-18-daily-report-expected.json\n- docs/daily-tests/evidence/2026-06-18-validate-daily-report.mjs\n- docs/daily-tests/evidence/2026-06-18-mistral-small-latest-daily-report.json\n- docs/daily-tests/evidence/2026-06-18-mistral-medium-3.5-daily-report.json\n- docs/daily-tests/evidence/2026-06-18-mistral-large-latest-daily-report.json\n- docs/daily-tests/evidence/2026-06-18-devstral-latest-daily-report.json\n- docs/daily-tests/evidence/2026-06-18-daily-report-validation-summary.json\n- docs/daily-tests/2026-06-18-daily-validation-report-from-evidence.md\n- mistral-subagent/references/daily-validation-report-fr.md"
+}
+

@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1557,
+    "total_tokens": 1972,
+    "completion_tokens": 415,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "49",
+    "x-ratelimit-remaining-tokens-minute": "23028",
+    "x-ratelimit-tokens-query-cost": "1972"
+  },
+  "text": "```markdown\n# Redaction de rapport quotidien FR depuis evidences bornees\n\n## Quand c'est utile\nUtile pour generer des rapports quotidiens en francais, strictement conformes aux evidences fournie (titres exacts, commandes locales exactes), sans invention. Repond au besoin d'audit et de synchronisation memoire impose par `AGENTS.md`.\n\n## Route validee dans le lab\nTeste sur `mistral-small-latest`, `mistral-medium-3.5`, `mistral-large-latest`, `devstral-latest`. Le premier passage a echoue pour les 4 modeles (litteraux obligatoires manquants). Un retry avec prompt plus litteral a valide la capacite.\n\n## Recommandation pratique\nChoisir `mistral-medium-3.5` comme modele par defaut pour ce workflow. Verifier systematiquement les litteraux obligatoires et les commandes exactes.\n\n## Prompt type\nPrompt initial decrivant tache, contraintes de format/langue/exactitude. Retry applique: insistance sur reproduction litterale des 3 fragments:\n- `recommend a donne un faux negatif`\n- `select-model a route vers devstral-latest`\n- `Codex garde la verification, les tests, l'edition locale, Git, et la memoire`\n\n## Validation Codex\nValidation locale via commandes:\n```\nnode mistral-subagent/scripts/mistral-subagent.mjs check\nnode mistral-subagent/scripts/mistral-subagent.mjs recommend --task \"...\"\nnode mistral-subagent/scripts/mistral-subagent.mjs select-model --task \"...\"\nnpm run validate\nnpm run check:helper\n```\n\n## Limites observees\n- Sensibilite aux formulations du prompt pour les litteraux obligatoires.\n- `recommend` a produit un faux negatif (`suitable=false`, `confidence=0.34`).\n- `select-model` a route vers `devstral-latest`.\n```"
+}
