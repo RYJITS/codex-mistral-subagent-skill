@@ -1,0 +1,14 @@
+{
+  "env_path": "D:\\00_Cerveau_IA\\API\\env.Local",
+  "env_file_exists": true,
+  "api_key_configured": true,
+  "accepted_key_names": [
+    "MISTRAL_API_KEY",
+    "MISTRAL_AI_API_KEY",
+    "MISTRALAI_API_KEY",
+    "MISTRAL.API_KEY"
+  ],
+  "configured_key_names": [
+    "MISTRAL.API_KEY"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "task": "c2r_multi_image_regen_triage",
+  "version_id": "v6-exact-100",
+  "queue": [
+    {
+      "job_id": "c2r-job-102-storm-umbrella",
+      "priority_rank": 1,
+      "priority_bucket": "regen_now",
+      "reason_key": "textile_prop_drift",
+      "preserve_candidate": false,
+      "required_prompt_signals": [
+        "no fabric logic",
+        "open glasshouse"
+      ]
+    },
+    {
+      "job_id": "c2r-job-101-lagoon-flat",
+      "priority_rank": 2,
+      "priority_bucket": "regen_now",
+      "reason_key": "depth_wall_drift",
+      "preserve_candidate": false,
+      "required_prompt_signals": [
+        "open space",
+        "lagoon reflections foreground"
+      ]
+    },
+    {
+      "job_id": "c2r-job-103-solar-soft",
+      "priority_rank": 3,
+      "priority_bucket": "regen_next_batch",
+      "reason_key": "mood_expression_soft",
+      "preserve_candidate": false,
+      "required_prompt_signals": [
+        "open eyes",
+        "pierced sky"
+      ]
+    },
+    {
+      "job_id": "c2r-job-104-valid-open",
+      "priority_rank": 4,
+      "priority_bucket": "keep_candidate",
+      "reason_key": "already_valid",
+      "preserve_candidate": true,
+      "required_prompt_signals": [
+        "keep current prompt"
+      ]
+    }
+  ]
+}

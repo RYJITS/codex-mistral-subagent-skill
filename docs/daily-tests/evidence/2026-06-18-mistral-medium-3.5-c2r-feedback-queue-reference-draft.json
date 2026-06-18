@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 750,
+    "total_tokens": 999,
+    "completion_tokens": 249,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "23571",
+    "x-ratelimit-tokens-query-cost": "999"
+  },
+  "text": "# Priorisation de feedbacks C2R\n\n## Quand l'utiliser\nPour classer des lots de feedbacks texte en priorites de regeneration d'images C2R, avec sortie JSON structuree.\n\n## Modele conseille\nDefaut: `mistral-medium-3.5` (equilibre cout/performance).\nOption economique: `mistral-small-latest` (valide mais moins robuste).\n\n## Prompt recommande\nInclure:\n- Contexte: projet C2R, preset `v6-exact-100`, flux `POST /api/feedback`.\n- Sortie attendue: JSON strict avec champs obligatoires (`priority_rank`, `priority_bucket`, etc.).\n- Contraintes: respecter l'oracle local (ordre des `job_id`, valeurs exactes).\n\n## Checks locaux minimum\nValider:\n- JSON conforme au schema.\n- `priority_bucket` et `reason_key` exacts vs oracle.\n- Presence des signaux dans `prompt_focus_en`.\n\n## Limites\n`recommend` a sous-estime cette tache (`suitable=false`, `confidence=0.43`) : ne pas s'y fier comme seule base de decision."
+}

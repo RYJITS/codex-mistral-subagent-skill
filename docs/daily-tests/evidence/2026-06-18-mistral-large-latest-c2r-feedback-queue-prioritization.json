@@ -1,0 +1,21 @@
+{
+  "model": "mistral-large-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1662,
+    "total_tokens": 2087,
+    "completion_tokens": 425,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "4",
+    "x-ratelimit-limit-tokens-minute": "250000",
+    "x-ratelimit-remaining-req-minute": "1",
+    "x-ratelimit-remaining-tokens-minute": "247167",
+    "x-ratelimit-tokens-query-cost": "2087"
+  },
+  "text": "{\n  \"task\": \"c2r_multi_image_regen_triage\",\n  \"version_id\": \"v6-exact-100\",\n  \"queue\": [\n    {\n      \"job_id\": \"c2r-job-102-storm-umbrella\",\n      \"priority_rank\": 1,\n      \"priority_bucket\": \"regen_now\",\n      \"reason_key\": \"textile_prop_drift\",\n      \"preserve_candidate\": false,\n      \"prompt_focus_en\": \"no fabric logic, open glasshouse\",\n      \"fit_note_fr\": \"Violation dure : objet textile et tenu en main.\"\n    },\n    {\n      \"job_id\": \"c2r-job-101-lagoon-flat\",\n      \"priority_rank\": 2,\n      \"priority_bucket\": \"regen_now\",\n      \"reason_key\": \"depth_wall_drift\",\n      \"preserve_candidate\": false,\n      \"prompt_focus_en\": \"open space, lagoon reflections foreground\",\n      \"fit_note_fr\": \"Violation dure : pose plate et mur mineral.\"\n    },\n    {\n      \"job_id\": \"c2r-job-103-solar-soft\",\n      \"priority_rank\": 3,\n      \"priority_bucket\": \"regen_next_batch\",\n      \"reason_key\": \"mood_expression_soft\",\n      \"preserve_candidate\": false,\n      \"prompt_focus_en\": \"open eyes, pierced sky\",\n      \"fit_note_fr\": \"Expression molle et lumiAre grise, mais dAcor ouvert.\"\n    },\n    {\n      \"job_id\": \"c2r-job-104-valid-open\",\n      \"priority_rank\": 4,\n      \"priority_bucket\": \"keep_candidate\",\n      \"reason_key\": \"already_valid\",\n      \"preserve_candidate\": true,\n      \"prompt_focus_en\": \"keep current prompt\",\n      \"fit_note_fr\": \"Respecte le preset, A  garder comme candidate.\"\n    }\n  ]\n}"
+}
+

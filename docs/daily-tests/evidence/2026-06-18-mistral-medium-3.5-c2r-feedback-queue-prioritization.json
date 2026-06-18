@@ -1,0 +1,20 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1662,
+    "total_tokens": 2050,
+    "completion_tokens": 388,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "22259",
+    "x-ratelimit-tokens-query-cost": "2050"
+  },
+  "text": "{\"task\": \"c2r_multi_image_regen_triage\", \"version_id\": \"v6-exact-100\", \"queue\": [{\"job_id\": \"c2r-job-102-storm-umbrella\", \"priority_rank\": 1, \"priority_bucket\": \"regen_now\", \"reason_key\": \"textile_prop_drift\", \"preserve_candidate\": false, \"prompt_focus_en\": \"no fabric logic, open glasshouse\", \"fit_note_fr\": \"Belle matiere impasto mais parapluie textile et objet tenu en main\"}, {\"job_id\": \"c2r-job-101-lagoon-flat\", \"priority_rank\": 2, \"priority_bucket\": \"regen_now\", \"reason_key\": \"depth_wall_drift\", \"preserve_candidate\": false, \"prompt_focus_en\": \"open space, lagoon reflections foreground\", \"fit_note_fr\": \"Femme collee a un mur mineral, profondeur manquante\"}, {\"job_id\": \"c2r-job-103-solar-soft\", \"priority_rank\": 3, \"priority_bucket\": \"regen_next_batch\", \"reason_key\": \"mood_expression_soft\", \"preserve_candidate\": false, \"prompt_focus_en\": \"open eyes, pierced sky\", \"fit_note_fr\": \"Lumiere trop grise et expression molle\"}, {\"job_id\": \"c2r-job-104-valid-open\", \"priority_rank\": 4, \"priority_bucket\": \"keep_candidate\", \"reason_key\": \"already_valid\", \"preserve_candidate\": true, \"prompt_focus_en\": \"keep current prompt\", \"fit_note_fr\": \"Bonne profondeur, yeux ouverts, tenue impasto credible et decor ouvert\"}]}"
+}

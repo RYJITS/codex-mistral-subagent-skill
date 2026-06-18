@@ -42,6 +42,7 @@ Exemples recurents: extraire un JSON de maintenance, critiquer une copy UI/UX, p
 - traduction structuree de note publique
 - transcription audio FR bornee
 - generation de documentation publique FR bornee a partir d'un contexte repo filtre
+- redaction d'un rapport quotidien FR a partir d'evidences bornees
 - planification structuree de prompts image sous `promptLock` existant
 - triage borne de feedback image vers corrections de prompt sous oracle local
 - triage multi-images en priorites de regeneration pour C2R sous oracle local
@@ -75,6 +76,8 @@ Mistral reste un sous-agent de redaction, d'analyse, ou de preparation. Il ne de
 5. Verifier localement avant toute integration.
 
 Pour une documentation publique compacte, le lab a montre qu'un Markdown direct avec titres imposes tient mieux qu'un JSON tres verbeux. `devstral-latest` et `mistral-medium-3.5` ont produit les brouillons les plus utiles sur ce cas.
+
+Pour un rapport quotidien FR a partir d'evidences bornees, un premier passage peut manquer des litteraux critiques meme si la structure est bonne. Le workflow valide consiste a comparer plusieurs modeles sur un oracle local, puis a faire un retry plus litteral. `mistral-medium-3.5` est le meilleur defaut pratique sur ce cas; `recommend` peut sous-estimer la delegabilite.
 
 Pour une priorisation C2R multi-images, un JSON court avec ordre impose, taxonomie de buckets deja bornee, et signaux litteraux dans `prompt_focus_en` tient mieux qu'une consigne plus libre. Sur ce cas, `recommend` a sous-estime la delegabilite, mais `mistral-medium-3.5`, `mistral-small-latest`, `mistral-large-latest`, et `devstral-latest` ont tous passe l'oracle local.
 

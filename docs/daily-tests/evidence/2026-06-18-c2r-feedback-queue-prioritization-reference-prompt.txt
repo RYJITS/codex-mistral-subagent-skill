@@ -1,0 +1,20 @@
+Redige une note de reference Markdown compacte en francais pour le skill Mistral.
+
+Respecte exactement ces sections:
+
+- `#` titre court
+- `## Quand l'utiliser`
+- `## Modele conseille`
+- `## Prompt recommande`
+- `## Checks locaux minimum`
+- `## Limites`
+
+Contraintes:
+
+- pas de JSON
+- pas de Markdown supplementaire hors ces sections
+- style direct et operationnel
+- ASCII seulement
+- mentionner `mistral-medium-3.5` comme defaut
+- mentionner `mistral-small-latest` comme option economique
+- mentionner que `recommend` a sous-estime cette tache et ne doit pas etre la seule base de decision

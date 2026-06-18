@@ -111,6 +111,7 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - for bounded C2R image rejection feedback triage, prefer `mistral-medium-3.5` first, keep a strict JSON schema plus a local oracle, and be ready to issue a second more literal prompt when the first pass is semantically right but not mechanical enough.
    - for bounded C2R multi-image regeneration priority triage, prefer `mistral-small-latest` first with an exact ranking contract, fixed buckets, and a local oracle on `rank`, `priority_bucket`, `next_action`, and `prompt_action_en`; use `mistral-medium-3.5` when the French rationale needs to be a little more readable.
    - for bounded C2R multi-image feedback queue prioritization, prefer `mistral-medium-3.5` first, keep the bucket taxonomy and rank policy explicit, and do not rely on `recommend` alone when the task is clearly bounded and locally verifiable.
+   - for bounded French daily validation reports from local evidence files, compare at least two models on a strict Markdown oracle first, then use a more literal retry if the first pass misses mandatory phrases; `mistral-medium-3.5` is the best default and `recommend` may under-call the task even when it is safely delegable.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
 7. Mention rate-limit issues clearly if the API returns `429`.
@@ -157,6 +158,7 @@ Read these only when needed:
 - `references/model-selection.md`: current model families and model-to-task mapping.
 - `references/delegation-playbook.md`: token-saving loops, safe batching, validation, and failure recovery.
 - `references/public-doc-generation-fr.md`: French workflow for generating a compact public doc from bounded repo context without overloading JSON output.
+- `references/daily-validation-report-fr.md`: French workflow for drafting a bounded daily GitHub report from exact local evidence with a literal retry and local Markdown oracle.
 - `references/quota-reporting-fr.md`: French workflow for interpreting `quota-report` output and deciding whether a delegation counts toward the 70 percent objective.
 - `references/repo-audit-public-fr.md`: workflow en francais pour audit borne d'un repo public avec petite amelioration doc/validation.
 - `references/public-repo-checklist.md`: publishing this skill or a derivative as a public GitHub repo.
