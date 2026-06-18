@@ -1,0 +1,83 @@
+Retourne uniquement un JSON valide avec le schema impose.
+
+Objectif: classer les `4` cas par priorite de regeneration pour un batch C2R reel.
+
+Contraintes globales:
+
+- `task` = `c2r_regeneration_priority_triage`
+- `batch_id` = `c2r-batch-regen-2026-06-18`
+- `cases` = exactement `4` objets tries par `rank` croissant
+- `rank` = entier unique de `1` a `4`
+- pas de texte hors JSON
+- `reason_fr` en francais
+- `prompt_action_en` en anglais compact
+
+Ordre attendu des ids par `rank`:
+
+1. `cliff_anatomy_crop`
+2. `lagoon_flat_depth`
+3. `storm_textile_prop`
+4. `sun_control_candidate`
+
+Contraintes litterales par cas:
+
+1. `cliff_anatomy_crop`
+- `priority_bucket` = `p0_immediate_regen`
+- `next_action` = `regenerate_now`
+- `keep_for_reference` = `false`
+- `prompt_action_en` doit contenir:
+  - `AU2+AU5+AU25`
+  - `frontal or three-quarter`
+  - `visible open eyes`
+  - `separated fingers`
+  - `readable feet and toes`
+  - `sea spray foreground`
+  - `sculpted cliffs mid-ground`
+  - `open sky far background`
+  - `thick wet impasto oil paint garment`
+
+2. `lagoon_flat_depth`
+- `priority_bucket` = `p0_immediate_regen`
+- `next_action` = `regenerate_now`
+- `keep_for_reference` = `false`
+- `prompt_action_en` doit contenir:
+  - `AU6+AU12`
+  - `frontal`
+  - `open space`
+  - `lagoon reflections foreground`
+  - `mineral arches mid-ground`
+  - `mist horizon far background`
+  - `thick wet impasto oil paint garment`
+
+3. `storm_textile_prop`
+- `priority_bucket` = `p1_prompt_fix_then_regen`
+- `next_action` = `edit_prompt_then_regenerate`
+- `keep_for_reference` = `false`
+- `prompt_action_en` doit contenir:
+  - `AU1+AU2+AU5`
+  - `three-quarter`
+  - `wet leaves foreground`
+  - `sculpted path mid-ground`
+  - `open glasshouse far background`
+  - `thick wet impasto oil paint garment`
+  - `no fabric logic`
+  - `no umbrella`
+
+4. `sun_control_candidate`
+- `priority_bucket` = `p2_hold_control`
+- `next_action` = `keep_as_control`
+- `keep_for_reference` = `true`
+- `prompt_action_en` = `keep current prompt as control reference`
+
+Contraintes minimales sur `reason_fr`:
+
+- `cliff_anatomy_crop`: mentionner `anatomie` et `cadrage`
+- `lagoon_flat_depth`: mentionner `profondeur` et `emotion`
+- `storm_textile_prop`: mentionner `textile` et `accessoire`
+- `sun_control_candidate`: mentionner `controle` et `palette`
+
+Interdictions:
+
+- pas de Markdown
+- pas de champs supplementaires
+- pas d'inversion d'ordre

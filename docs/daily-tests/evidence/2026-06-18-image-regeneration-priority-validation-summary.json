@@ -1,0 +1,42 @@
+[
+  {
+    "file": "2026-06-18-mistral-small-latest-image-regeneration-priority.json",
+    "model": "mistral-small-latest",
+    "finish_reason": "stop",
+    "prompt_tokens": 2299,
+    "completion_tokens": 545,
+    "total_tokens": 2844,
+    "status": "valide",
+    "issues": []
+  },
+  {
+    "file": "2026-06-18-mistral-medium-3.5-image-regeneration-priority.json",
+    "model": "mistral-medium-3.5",
+    "finish_reason": "stop",
+    "prompt_tokens": 2299,
+    "completion_tokens": 601,
+    "total_tokens": 2900,
+    "status": "valide",
+    "issues": []
+  },
+  {
+    "file": "2026-06-18-mistral-large-latest-image-regeneration-priority.json",
+    "model": "mistral-large-latest",
+    "finish_reason": "stop",
+    "prompt_tokens": 2299,
+    "completion_tokens": 569,
+    "total_tokens": 2868,
+    "status": "valide",
+    "issues": []
+  },
+  {
+    "file": "2026-06-18-devstral-latest-image-regeneration-priority.json",
+    "model": "devstral-latest",
+    "finish_reason": "stop",
+    "prompt_tokens": 2299,
+    "completion_tokens": 549,
+    "total_tokens": 2848,
+    "status": "valide",
+    "issues": []
+  }
+]

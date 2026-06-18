@@ -1,0 +1,21 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2299,
+    "total_tokens": 2844,
+    "completion_tokens": 545,
+    "prompt_tokens_details": {
+      "cached_tokens": 2280
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "44762",
+    "x-ratelimit-tokens-query-cost": "564"
+  },
+  "text": "{\"task\": \"c2r_regeneration_priority_triage\", \"batch_id\": \"c2r-batch-regen-2026-06-18\", \"cases\": [{\"id\": \"cliff_anatomy_crop\", \"rank\": 1, \"priority_bucket\": \"p0_immediate_regen\", \"next_action\": \"regenerate_now\", \"keep_for_reference\": false, \"prompt_action_en\": \"AU2+AU5+AU25 frontal or three-quarter visible open eyes separated fingers readable feet and toes sea spray foreground sculpted cliffs mid-ground open sky far background thick wet impasto oil paint garment\", \"reason_fr\": \"Anatomie non conforme : pieds quasi absents, visage trop profile et yeux peu lisibles. Cadrage a corriger pour respecter les contraintes minimales (doigts separes, pieds visibles).\"}, {\"id\": \"lagoon_flat_depth\", \"rank\": 2, \"priority_bucket\": \"p0_immediate_regen\", \"next_action\": \"regenerate_now\", \"keep_for_reference\": false, \"prompt_action_en\": \"AU6+AU12 frontal open space lagoon reflections foreground mineral arches mid-ground mist horizon far background thick wet impasto oil paint garment\", \"reason_fr\": \"Profondeur et emotion non transmises : pose plaquee au decor, reflets du lagon et horizon absents. Necessite une regeneration immediate pour restaurer la lisibilite des AU6+AU12.\"}, {\"id\": \"storm_textile_prop\", \"rank\": 3, \"priority_bucket\": \"p1_prompt_fix_then_regen\", \"next_action\": \"edit_prompt_then_regenerate\", \"keep_for_reference\": false, \"prompt_action_en\": \"AU1+AU2+AU5 three-quarter wet leaves foreground sculpted path mid-ground open glasshouse far background thick wet impasto oil paint garment no fabric logic no umbrella\", \"reason_fr\": \"Erreur textile : haut interprete comme manteau avec coutures et parapluie visible. Le prompt doit exclure toute logique textile pour eviter ces artefacts.\"}, {\"id\": \"sun_control_candidate\", \"rank\": 4, \"priority_bucket\": \"p2_hold_control\", \"next_action\": \"keep_as_control\", \"keep_for_reference\": true, \"prompt_action_en\": \"keep current prompt as control reference\", \"reason_fr\": \"Controle visuel utile : palette et profondeur exploitables malgre des yeux mous. A conserver comme reference pour ajuster les futurs prompts.\"}]}"
+}
+

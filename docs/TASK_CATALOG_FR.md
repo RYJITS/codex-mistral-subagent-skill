@@ -44,12 +44,15 @@ Exemples recurents: extraire un JSON de maintenance, critiquer une copy UI/UX, p
 - generation de documentation publique FR bornee a partir d'un contexte repo filtre
 - planification structuree de prompts image sous `promptLock` existant
 - triage borne de feedback image vers corrections de prompt sous oracle local
+- triage multi-images en priorites de regeneration pour C2R sous oracle local
+- priorisation bornee d'un lot de feedbacks image C2R vers file de regeneration
 
 **Partiellement valide**
 
 - audit borne de repo public et petite amelioration documentaire
 - generation/amelioration bornee de templates GitHub d'issue
 - triage Lighthouse frontend si Codex pre-borne les buckets d'action avant la redaction FR
+- explication d architecture/onboarding sur `3` a `4` fichiers si Codex impose un schema JSON strict et prefere `mistral-small-latest`
 
 ## Ce que Codex doit garder
 
@@ -72,6 +75,8 @@ Mistral reste un sous-agent de redaction, d'analyse, ou de preparation. Il ne de
 5. Verifier localement avant toute integration.
 
 Pour une documentation publique compacte, le lab a montre qu'un Markdown direct avec titres imposes tient mieux qu'un JSON tres verbeux. `devstral-latest` et `mistral-medium-3.5` ont produit les brouillons les plus utiles sur ce cas.
+
+Pour une priorisation C2R multi-images, un JSON court avec ordre impose, taxonomie de buckets deja bornee, et signaux litteraux dans `prompt_focus_en` tient mieux qu'une consigne plus libre. Sur ce cas, `recommend` a sous-estime la delegabilite, mais `mistral-medium-3.5`, `mistral-small-latest`, `mistral-large-latest`, et `devstral-latest` ont tous passe l'oracle local.
 
 ## Commandes utiles
 

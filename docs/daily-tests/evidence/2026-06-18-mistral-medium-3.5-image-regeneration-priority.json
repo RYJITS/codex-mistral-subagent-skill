@@ -1,0 +1,21 @@
+{
+  "model": "mistral-medium-3.5",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2299,
+    "total_tokens": 2900,
+    "completion_tokens": 601,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "25000",
+    "x-ratelimit-remaining-req-minute": "47",
+    "x-ratelimit-remaining-tokens-minute": "17372",
+    "x-ratelimit-tokens-query-cost": "2900"
+  },
+  "text": "{\n  \"task\": \"c2r_regeneration_priority_triage\",\n  \"batch_id\": \"c2r-batch-regen-2026-06-18\",\n  \"cases\": [\n    {\n      \"id\": \"cliff_anatomy_crop\",\n      \"rank\": 1,\n      \"priority_bucket\": \"p0_immediate_regen\",\n      \"next_action\": \"regenerate_now\",\n      \"keep_for_reference\": false,\n      \"prompt_action_en\": \"AU2+AU5+AU25, frontal or three-quarter, visible open eyes, separated fingers, readable feet and toes, sea spray foreground, sculpted cliffs mid-ground, open sky far background, thick wet impasto oil paint garment\",\n      \"reason_fr\": \"Problemes critiques d'anatomie et de cadrage : pieds manquants, visage trop profile, yeux illisibles. Necessite une regeneration immediate pour respecter les contraintes minimales.\"\n    },\n    {\n      \"id\": \"lagoon_flat_depth\",\n      \"rank\": 2,\n      \"priority_bucket\": \"p0_immediate_regen\",\n      \"next_action\": \"regenerate_now\",\n      \"keep_for_reference\": false,\n      \"prompt_action_en\": \"AU6+AU12, frontal, open space, lagoon reflections foreground, mineral arches mid-ground, mist horizon far background, thick wet impasto oil paint garment\",\n      \"reason_fr\": \"Perte de profondeur et d'emotion : pose plate, reflets du lagon et horizon absents. L'expression AU6+AU12 ne se lit pas assez.\"\n    },\n    {\n      \"id\": \"storm_textile_prop\",\n      \"rank\": 3,\n      \"priority_bucket\": \"p1_prompt_fix_then_regen\",\n      \"next_action\": \"edit_prompt_then_regenerate\",\n      \"keep_for_reference\": false,\n      \"prompt_action_en\": \"AU1+AU2+AU5, three-quarter, wet leaves foreground, sculpted path mid-ground, open glasshouse far background, thick wet impasto oil paint garment, no fabric logic, no umbrella\",\n      \"reason_fr\": \"Problemes de textile et d'accessoire : apparition d'un manteau et d'un parapluie. Les feuilles humides du premier plan sont illisibles.\"\n    },\n    {\n      \"id\": \"sun_control_candidate\",\n      \"rank\": 4,\n      \"priority_bucket\": \"p2_hold_control\",\n      \"next_action\": \"keep_as_control\",\n      \"keep_for_reference\": true,\n      \"prompt_action_en\": \"keep current prompt as control reference\",\n      \"reason_fr\": \"Image exploitable pour la palette et la profondeur generale. Peut servir de controle malgre des details mineurs (yeux, expression).\"\n    }\n  ]\n}"
+}
+

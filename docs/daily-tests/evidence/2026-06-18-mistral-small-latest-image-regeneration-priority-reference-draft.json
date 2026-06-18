@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 643,
+    "total_tokens": 957,
+    "completion_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "48",
+    "x-ratelimit-remaining-tokens-minute": "48626",
+    "x-ratelimit-tokens-query-cost": "957"
+  },
+  "text": "```markdown\n# Triage prioritaire pour rgnration d'images (C2R)\n\n## Quand l'utiliser\nPour classer les images d'un batch rejet en 4 feedbacks selon leur priorit de rgnration :\n- **P0** : Rgnration immdiate\n- **P1** : Correction du prompt puis rgnration\n- **P2** : Conservation comme contrle\n\n## Modle conseill\n- **conomique** : `mistral-small-latest`\n- **Confortable** : `mistral-medium-3.5`\n\n## Prompt recommand\n```text\nAnalyse les 4 feedbacks de rejet pour le batch [batch_id] et classe chaque image selon :\n- priority_bucket : p0_immediate_regen | p1_prompt_fix_then_regen | p2_hold_control\n- next_action : regenerate_now | edit_prompt_then_regenerate | keep_as_control\n- prompt_action_en : instructions concises pour correction (si applicable)\nConserve l'ordre exact des IDs et inclut les signaux obligatoires.\n```\n\n## Checks locaux minimum\n- Ordre des IDs strictement respect\n- `priority_bucket` et `next_action` exacts\n- `keep_for_reference` correctement positionn\n- `prompt_action_en` contient les signaux imposs\n\n## Limites\n- Ne vrifie pas la qualit esthtique finale\n- Ignore les choix stylistiques hors signaux imposs\n```"
+}

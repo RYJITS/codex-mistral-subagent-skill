@@ -109,6 +109,8 @@ node C:\Users\ysche\.codex\skills\mistral-subagent\scripts\mistral-subagent.mjs 
    - for bounded release notes from exact commits and daily reports, prefer strict JSON first; `mistral-medium-3.5` is the best default, `mistral-small-latest` is a cheap fallback, `devstral-latest` is a good repo-aware alternative, and `mistral-large-latest` should be used only after local checks because it may drift on length even when facts stay correct.
    - for bounded Lighthouse triage on a frontend project, do not ask Mistral to invent the action taxonomy from raw audits alone; pre-build the `action_key` skeleton in Codex, then let `mistral-medium-3.5` fill French rationale and local checks.
    - for bounded C2R image rejection feedback triage, prefer `mistral-medium-3.5` first, keep a strict JSON schema plus a local oracle, and be ready to issue a second more literal prompt when the first pass is semantically right but not mechanical enough.
+   - for bounded C2R multi-image regeneration priority triage, prefer `mistral-small-latest` first with an exact ranking contract, fixed buckets, and a local oracle on `rank`, `priority_bucket`, `next_action`, and `prompt_action_en`; use `mistral-medium-3.5` when the French rationale needs to be a little more readable.
+   - for bounded C2R multi-image feedback queue prioritization, prefer `mistral-medium-3.5` first, keep the bucket taxonomy and rank policy explicit, and do not rely on `recommend` alone when the task is clearly bounded and locally verifiable.
 5. Run the script. Prefer low temperature for extraction, classification, code review, and JSON.
 6. Treat Mistral output as advisory. Codex verifies facts, code, citations, and local fit before editing files or answering.
 7. Mention rate-limit issues clearly if the API returns `429`.
@@ -161,6 +163,7 @@ Read these only when needed:
 - `references/mistral-api.md`: official endpoints, rate limits, model capabilities, limitations, and source links.
 - `references/mistral-task-matrix.md`: compact task matrix for deciding what to delegate.
 - `references/image-feedback-triage-fr.md`: French workflow for classifying bounded C2R image rejection feedback into prompt corrections verified by a local oracle.
+- `references/image-regeneration-priority-triage-fr.md`: French workflow for ranking bounded C2R batch rejections into regeneration priorities and prompt-side next actions.
 - `references/json-extraction-maintenance-fr.md`: French workflow for turning a maintenance brief into strict JSON Codex can validate directly.
 - `references/lighthouse-triage-fr.md`: French workflow for hybrid Lighthouse triage where Codex fixes the action skeleton and Mistral drafts the bounded frontend rationale.
 - `references/release-notes-from-git-fr.md`: French workflow for drafting bounded public release notes from exact commits and exact daily-test evidence.
@@ -177,3 +180,4 @@ Read these only when needed:
 - `references/audio-transcription-remotion-fr.md`: French workflow for validating a bounded FR voiceover transcription on a real Remotion MP3 before reusing it for captions or QA.
 - `references/ocr-contact-sheet-extraction-fr.md`: French workflow for extracting structured scene/frame metadata from a real project contact sheet, with `json_schema` on `POST /v1/ocr`.
 - `references/ocr-worksheet-extraction-fr.md`: French workflow for extracting a bounded worksheet or pedagogical sheet into verified JSON from OCR output.
+- `references/c2r-feedback-queue-prioritization-fr.md`: French workflow for classifying a bounded C2R feedback batch into a regeneration queue verified by a local oracle.
