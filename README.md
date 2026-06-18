@@ -89,6 +89,18 @@ node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs models
 node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --output path/to/output.json
 ```
 
+You can also scan a project without including file contents by using the `--no-content` flag:
+
+```powershell
+node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --no-content --max-files 20 --output snapshot.json
+```
+
+To select a model for a specific task, use the `select-model` command:
+
+```powershell
+node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs select-model --task "Audit this TypeScript project and propose patches"
+```
+
 ### Project Action
 
 ```powershell
@@ -133,6 +145,7 @@ This protocol ensures Mistral is used efficiently while maintaining Codex's cont
 - [French Task Catalog](docs/TASK_CATALOG_FR.md): Public French routing guide based on the validated lab workflows.
 - [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
 - [Image Feedback Triage (FR)](mistral-subagent/references/image-feedback-triage-fr.md): Validated workflow for turning bounded C2R image rejection feedback into strict prompt corrections without rewriting the promptLock.
+- [Code Explanation Architecture (FR)](mistral-subagent/references/code-explanation-architecture-fr.md): Partially validated workflow for explaining a small frontend architecture subset with strict JSON facts plus a bounded French summary.
 - [Public Doc Generation (FR)](mistral-subagent/references/public-doc-generation-fr.md): Validated workflow for generating a compact French public doc from bounded repo context.
 - [Release Notes From Git (FR)](mistral-subagent/references/release-notes-from-git-fr.md): Validated workflow for drafting bounded French release notes from exact commits and daily reports before local Markdown publication.
 - [Quota Reporting (FR)](mistral-subagent/references/quota-reporting-fr.md): Validated workflow for turning `quota-report` output into a French delegation summary.

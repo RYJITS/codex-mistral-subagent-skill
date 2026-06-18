@@ -1,0 +1,20 @@
+{
+  "model": "mistral-small-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1065,
+    "total_tokens": 1201,
+    "completion_tokens": 136,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "50",
+    "x-ratelimit-limit-tokens-minute": "50000",
+    "x-ratelimit-remaining-req-minute": "45",
+    "x-ratelimit-remaining-tokens-minute": "43561",
+    "x-ratelimit-tokens-query-cost": "1201"
+  },
+  "text": "Use `--no-content` to perform a metadata-only scan before delegating work, ensuring quick validation of project structure without processing file contents.\n\nUse `select-model` to preview the recommended Mistral model for a given task before running actions like `project-scan` or `project-action`.\n\n```powershell\nnode ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --no-content --max-files 20 --output snapshot.json\n```\n\n```powershell\nnode ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs select-model --task Audit\n```"
+}

@@ -1,0 +1,104 @@
+{
+  "capability": "bounded_small_readme_patch_from_public_code_doc_gap",
+  "status": "Partiellement valide",
+  "task_category": "small_public_repo_patch",
+  "applied_model": "devstral-latest",
+  "applied_output_file": "docs/daily-tests/evidence/2026-06-18-devstral-readme-patch.json",
+  "applied_target_file": "README.md",
+  "counts_toward_70": "Oui, partiellement",
+  "coverage_estimate_percent": 84,
+  "model_runs": [
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-mistral-small-readme-patch.json",
+      "model": "mistral-small-latest",
+      "prompt_tokens": 919,
+      "completion_tokens": 118,
+      "total_tokens": 1037,
+      "status": "Non valide",
+      "notes": [
+        "returned patch content under unexpected key patch",
+        "missing required metadata fields"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-mistral-medium35-readme-patch.json",
+      "model": "mistral-medium-3.5",
+      "prompt_tokens": 919,
+      "completion_tokens": 20,
+      "total_tokens": 939,
+      "status": "Non valide",
+      "notes": [
+        "returned nearly empty JSON",
+        "no patch body"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-devstral-readme-patch.json",
+      "model": "devstral-latest",
+      "prompt_tokens": 919,
+      "completion_tokens": 162,
+      "total_tokens": 1081,
+      "status": "Partiellement valide",
+      "notes": [
+        "identified correct file and insertion anchor",
+        "patch body was accurate and applied",
+        "schema drifted to patch instead of patch_markdown"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-codestral-readme-patch.json",
+      "model": "codestral-latest",
+      "prompt_tokens": 919,
+      "completion_tokens": 134,
+      "total_tokens": 1053,
+      "status": "Non valide",
+      "notes": [
+        "added extra headings outside requested compact block",
+        "did not describe metadata-only scan in requested form"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-mistral-small-readme-patch-retry.json",
+      "model": "mistral-small-latest",
+      "prompt_tokens": 1065,
+      "completion_tokens": 136,
+      "total_tokens": 1201,
+      "status": "Non valide",
+      "notes": [
+        "truncated select-model command"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-devstral-readme-patch-retry.json",
+      "model": "devstral-latest",
+      "prompt_tokens": 1053,
+      "completion_tokens": 186,
+      "total_tokens": 1239,
+      "status": "Non valide",
+      "notes": [
+        "wrapped answer in markdown fence",
+        "added an unsupported claim about token usage"
+      ]
+    },
+    {
+      "file": "docs/daily-tests/evidence/2026-06-18-codestral-readme-patch-retry.json",
+      "model": "codestral-latest",
+      "prompt_tokens": 1053,
+      "completion_tokens": 184,
+      "total_tokens": 1237,
+      "status": "Non valide",
+      "notes": [
+        "truncated select-model command"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "npm run validate",
+    "npm run check:helper"
+  ],
+  "local_validation_observation": [
+    "npm run check:helper passed",
+    "npm run validate remained blocked by pre-existing unrelated 2026-06-18 evidence files outside this sub-test"
+  ],
+  "next_action": "Retest with a one-key schema or line-based mini-diff oracle."
+}

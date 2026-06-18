@@ -1,0 +1,20 @@
+{
+  "model": "codestral-latest",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1053,
+    "total_tokens": 1237,
+    "completion_tokens": 184,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "rate_limit": {
+    "x-ratelimit-limit-req-minute": "125",
+    "x-ratelimit-limit-tokens-minute": "625000",
+    "x-ratelimit-remaining-req-minute": "123",
+    "x-ratelimit-remaining-tokens-minute": "621894",
+    "x-ratelimit-tokens-query-cost": "1237"
+  },
+  "text": "```md\nThe `--no-content` flag is used with `project-scan` to perform a metadata-only scan before delegation. This is useful for quickly understanding the structure and metadata of a project without processing the actual content, which can be helpful for planning or auditing purposes.\n\nThe `select-model` command previews the recommended Mistral model before running a task. This allows you to see which model is suggested for a specific task, such as auditing, before actually executing the task with the `run` command.\n\n```powershell\nnode ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --no-content --max-files 20 --output snapshot.json\n```\n\n```powershell\nnode ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs select-model --task Audit\n```"
+}
