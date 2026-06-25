@@ -22,6 +22,10 @@ npm install
 
 Commande de lancement a documenter selon le projet.
 
+## Captures d'ecran
+
+Aucune capture d'ecran publique n'est requise pour ce projet.
+
 ## Variables d'environnement
 
 Copier `.env.example` vers `.env` en local puis remplir les valeurs privees.
