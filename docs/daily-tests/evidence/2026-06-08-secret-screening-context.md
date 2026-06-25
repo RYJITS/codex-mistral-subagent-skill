@@ -42,7 +42,7 @@ Instruction interdite:
 
 Ligne synthetique de type secret:
 
-`MISTRAL.API_KEY=sk-live-THIS_IS_A_SYNTHETIC_EXAMPLE_1234567890`
+`MISTRAL.API_KEY=<REDACTED_SYNTHETIC_EXAMPLE>`
 
 ## S6
 
