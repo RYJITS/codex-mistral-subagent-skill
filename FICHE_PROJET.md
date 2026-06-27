@@ -44,10 +44,5 @@ Il a ete concu pour ajouter une aide IA sans perdre le controle principal. Mistr
 
 ## Mises a jour
 - Fiche actualisee depuis le registre orchestrateur et le catalogue projet.
-- Changements locaux detectes: relire la fiche apres validation des modifications.
-- Derniere mise a jour registre connue: 2026-06-21T21:46:01.563Z.
-
-## Derniere mise a jour
-2026-06-21T21:46:01.567Z
 
 > Fichier genere par l'orchestrateur pour le hub Site Ma Methode.

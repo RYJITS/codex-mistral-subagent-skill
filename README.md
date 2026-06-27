@@ -1,169 +1,121 @@
-# mistral-subagent
+# Skill Codex Mistral Subagent
 
-A Codex skill that delegates bounded, text-centric tasks to Mistral AI as a subordinate model for text generation, summarization, classification, extraction, translation, brainstorming, code review, code explanation, small code generation, structured JSON output, prompt drafting, project folder audits, and documentation improvements.
+## Rapport complet
 
-## Purpose
+Ce depot public presente le concept, les fonctions, les choix de conception, les outils utilises, les commandes locales et les captures d'ecran de l'application. Il est genere par l'orchestrateur uniquement apres validation de publication publique.
 
-The `mistral-subagent` skill allows Codex to propose and use Mistral AI as a subordinate helper for tasks that are:
+## Concept
 
-- **Bounded**: Well-defined and scoped to avoid overreach.
-- **Text-centric**: Focused on text, code, or structured data generation/analysis.
-- **Safe to outsource**: No secrets, private data, or direct filesystem/shell access.
+Skill Codex qui encadre l'utilisation de Mistral comme sous-agent pour resumer, classer, extraire, relire ou produire des brouillons sous controle.
 
-Mistral acts as an advisory tool, while Codex retains full control over context filtering, verification, and integration of results.
+Ajouter un assistant secondaire utile sans lui laisser prendre des decisions risquee ou destructives.
 
-## Safety Model
+Public vise: Usage interne: automatisation, documentation, revue et ideation assistee.
 
-- **No Direct Authority**: Mistral has no filesystem, shell, browser, GitHub, or deployment access. All interactions are mediated by Codex.
-- **Context Filtering**: Codex scans and filters project folders, excluding secrets, binary files, oversized files, `.git`, `node_modules`, and other sensitive content.
-- **Verification**: Codex validates Mistral's output before applying changes or presenting results to the user.
-- **Rate Limits**: Mistral's API rate limits are respected, and users are informed of `429` errors.
 
-## Installation
+## Fonctionnement de l'application
 
-1. Copy the `mistral-subagent` folder into your Codex skills directory:
-   ```bash
-   cp -r mistral-subagent ~/.codex/skills/
-   ```
-2. Ensure Node.js is installed on your system.
+Le skill decrit les cas d'usage autorises, les limites de delegation, les formats attendus et le protocole de securite. Le helper Node peut appeler Mistral pour une tache precise, puis renvoyer une sortie structuree que Codex doit relire avant toute decision ou modification.
 
-## API Key Configuration
+## Fonctions de l'application
 
-Set your Mistral API key in one of the following ways:
+- Decrit quand utiliser Mistral comme sous-agent.
+- Encadre les taches non destructives.
+- Produit des sorties structurees et controlables.
+- Deleguer un resume a Mistral
+- Demander une classification
+- Extraire des informations importantes
+- Produire un brouillon de documentation
+- Obtenir un second avis
+- Retourner des donnees structurees
+- Limiter les taches aux actions non destructives
 
-- **Environment Variable**:
-  ```bash
-  export MISTRAL_API_KEY="your_api_key_here"
-  ```
-- **Local File**: By default the helper reads `D:\00_Cerveau_IA\API\env.Local`. To use another file, point `MISTRAL_ENV_FILE` to your own path:
-  ```
-  MISTRAL_API_KEY=your_api_key_here
-  ```
+## Actualisations et evolution
 
-The helper script also accepts `MISTRAL_AI_API_KEY`, `MISTRALAI_API_KEY`, and `MISTRAL.API_KEY`.
+- Statut courant: PUBLIC_READY.
+- Securite: OK_PUBLIC.
+- Fonctionnement: FONCTIONNEL.
 
-## Commands
+## Options et conception
 
-### Assess Task Suitability
+Il a ete concu pour ajouter une aide IA sans perdre le controle principal. Mistral peut accelerer l'analyse ou la redaction, mais il ne publie pas, ne supprime pas, ne pousse pas de code et ne remplace pas les validations de Codex.
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs recommend --task "Your task description"
-```
+### Outils, IA et moteurs utilises
 
-### Quota Report
+- Mistral AI
+- Helper local de delegation
+- Catalogue de taches autorisees
+- Protocole de delegation sure
+- Validation du skill
+- Controle de modeles
+- Sorties JSON ou Markdown relues par Codex
+- Format SKILL.md Codex
+- Scripts Node.js
+- Consignes Markdown
+- Catalogue de taches
+- Validation npm
+- Controle des modeles disponibles
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs quota-report --codex-baseline 1540 --codex-current 154198 --mistral-useful 168189
-```
+### Options techniques detectees
 
-Use this to report the final delegation ratio from the token-saving protocol:
-`Codex delta / (Codex delta + useful Mistral tokens)`.
+- Type de projet: node
+- Gestionnaire: npm
+- Nom package: codex-mistral-subagent-skill
+- Version: 1.0.0
+- Statut securite: OK_PUBLIC
 
-### Dry Run (Inspect Payload)
+### Stack et dependances principales
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs run --task "Your task" --dry-run
-```
+- Node.js
+- Format SKILL.md Codex
+- Scripts Node.js
+- Consignes Markdown
+- Catalogue de taches
+- Protocole de delegation sure
+- Validation npm
+- Controle des modeles disponibles
 
-### Check Local Configuration
+### Scripts disponibles
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs check
-```
+- check:helper: node --check mistral-subagent/scripts/mistral-subagent.mjs
+- check:models: node mistral-subagent/scripts/mistral-subagent.mjs select-model --task "Audit a GitHub codebase and propose patches"
+- validate: node scripts/validate-repo.mjs
 
-### Call Mistral API
+### Dependances applicatives
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs run --task "Your task" --context-file path/to/context.txt --model mistral-small-latest
-```
+- Aucune dependance applicative detectee.
 
-### List Available Models
+### Dependances de developpement
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs models
-```
+- Aucune dependance de developpement detectee.
 
-### Project Scan
+## Automatisations et comportements internes
 
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --output path/to/output.json
-```
+- Validation du skill par npm run validate
+- Verification syntaxique du helper
+- Controle de selection des modeles
+- Generation de sorties structurees
+- Utilisation en dry-run depuis l'orchestrateur
+- Separation entre proposition du sous-agent et action reelle
 
-You can also scan a project without including file contents by using the `--no-content` flag:
-
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-scan --path path/to/project --no-content --max-files 20 --output snapshot.json
-```
-
-To select a model for a specific task, use the `select-model` command:
-
-```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs select-model --task "Audit this TypeScript project and propose patches"
-```
-
-### Project Action
+## Installation locale
 
 ```powershell
-node ~/.codex/skills/mistral-subagent/scripts/mistral-subagent.mjs project-action --path path/to/project --goal "Your goal" --output path/to/output.json
+npm install
 ```
 
-## Model Routing
+## Lancement
 
-Choose the appropriate Mistral model based on the task:
+Commande de lancement a documenter selon le projet.
 
-- **`mistral-small-latest`**: Default for cheap, routine tasks (summarization, extraction, first passes).
-- **`mistral-medium-latest`**: Stronger reasoning and synthesis (project audits, documentation, multimodal analysis).
-- **`mistral-large-latest`**: High-quality, public-facing outputs or complex synthesis.
-- **`devstral-latest`**: Agentic software engineering (repository audits, patch planning, task decomposition).
-- **`codestral-latest`**: Code generation, review, and fill-in-middle tasks.
-- **`magistral-medium-latest`**: Careful reasoning or step-by-step evaluations.
-- **Specialized Models**: Use `mistral-ocr-latest`, `mistral-embed`, `codestral-embed`, `mistral-moderation-latest`, or `voxtral-mini-latest` for OCR, embeddings, moderation, and audio tasks.
-- **OCR to Strict JSON**: Prefer `mistral-ocr-latest` on the cleanest PNG preview first, then use `mistral-medium-3.5` to normalize the OCR JSON into a bounded schema when exact fields matter.
-- **Bounded RAG Prep**: Prefer `mistral-embed` for bounded document or mixed retrieval, then verify top-k locally before any chat step. Treat `codestral-embed` as code-specific and validate it locally before making it a default dependency.
-- **Preflight Secret Screening**: For custom `allow`/`redact`/`block` decisions, prefer `mistral-small-latest` or `mistral-medium-3.5`, then use `mistral-moderation-2603` on `/v1/moderations` only as an extra moderation/PII signal.
+## Captures d'ecran
 
-## Proven Quota Experiment
+Aucune capture d'ecran publique n'est encore disponible. La publication GitHub publique doit etre completee avec une capture du projet.
 
-The `mistral-subagent` skill includes a **Token-Saving Delegation Protocol** to optimize Mistral's usage:
+## Variables d'environnement
 
-1. **Baseline Measurement**: Establish Codex's token usage baseline before delegation.
-2. **Narrow Tasks**: Send focused, minimal tasks to Mistral to conserve tokens.
-3. **Output Discipline**: Write responses to files to avoid large stdout and save tokens.
-4. **Validation**: Count only applied, useful tokens. Exclude invalid or irrelevant outputs.
-5. **Transparent Reporting**: Report the final token ratio: `Codex delta / (Codex delta + useful Mistral tokens)`.
+Copier `.env.example` vers `.env` en local puis remplir les valeurs privees.
 
-This protocol ensures Mistral is used efficiently while maintaining Codex's control over verification and integration.
+## Securite
 
-## Output Discipline
-
-- **Structured JSON**: Request and validate JSON outputs for programmatic use.
-- **Code/Patches**: Ask for complete files or unified diffs, not direct writes. Codex applies changes locally after inspection.
-- **Research**: Gather authoritative sources first; Mistral summarizes or compares them.
-
-## References
-
-- [French Task Catalog](docs/TASK_CATALOG_FR.md): Public French routing guide based on the validated lab workflows.
-- [Daily Validation Report From Evidence (FR)](mistral-subagent/references/daily-validation-report-fr.md): Validated workflow for drafting a French daily GitHub report from bounded evidence files with a literal retry and local oracle.
-- [Delegation Playbook](mistral-subagent/references/delegation-playbook.md): Token-saving loops, safe batching, and validation.
-- [Image Feedback Triage (FR)](mistral-subagent/references/image-feedback-triage-fr.md): Validated workflow for turning bounded C2R image rejection feedback into strict prompt corrections without rewriting the promptLock.
-- [Code Explanation Architecture (FR)](mistral-subagent/references/code-explanation-architecture-fr.md): Partially validated workflow for explaining a small frontend architecture subset with strict JSON facts plus a bounded French summary.
-- [Public Doc Generation (FR)](mistral-subagent/references/public-doc-generation-fr.md): Validated workflow for generating a compact French public doc from bounded repo context.
-- [Release Notes From Git (FR)](mistral-subagent/references/release-notes-from-git-fr.md): Validated workflow for drafting bounded French release notes from exact commits and daily reports before local Markdown publication.
-- [Quota Reporting (FR)](mistral-subagent/references/quota-reporting-fr.md): Validated workflow for turning `quota-report` output into a French delegation summary.
-- [JSON Extraction for Repo Maintenance (FR)](mistral-subagent/references/json-extraction-maintenance-fr.md): Strict schema pattern for turning maintenance briefs into verified JSON plans.
-- [Review Comments Triage (FR)](mistral-subagent/references/review-comments-triage-fr.md): Validated workflow for classifying bounded review comments into `apply`, `reply`, `reject`, or `clarify`.
-- [Preflight Secret Screening (FR)](mistral-subagent/references/preflight-secret-screening-fr.md): Validated workflow for screening bounded context into `allow`, `redact`, or `block` before delegation.
-- [Task Delegation Triage (FR)](mistral-subagent/references/task-delegation-triage-fr.md): Partially validated workflow for classifying which real project tasks can be delegated and how much Codex must still retain.
-- [RAG/Embeddings Planning (FR)](mistral-subagent/references/rag-embeddings-planning-fr.md): Validated workflow for bounded multi-project RAG planning before Codex implements local indexing.
-- [Structured Repo Note Translation FR->EN (FR)](mistral-subagent/references/translation-repo-note-fr-en-fr.md): Validated workflow for translating a bounded French repo note into exact English JSON with locked glossary terms.
-- [Diff Review Findings (FR)](mistral-subagent/references/diff-review-findings-fr.md): Validated workflow for bounded diff review with actionable French findings.
-- [Unit-Test Ideas for Helper (FR)](mistral-subagent/references/unit-test-ideas-helper-fr.md): Bounded workflow for generating unit-test ideas on a local helper.
-- [Structured Doc Translation (FR)](mistral-subagent/references/structured-doc-translation-fr.md): Validated workflow for translating bounded public repo notes into French while preserving commands and model ids.
-- [UI/UX Copy Scroll-Driven (FR)](mistral-subagent/references/ui-ux-copy-scroll-driven-fr.md): Validated delegation workflow for French UI copy critique and rewrites.
-- [OCR Contact Sheet Extraction (FR)](mistral-subagent/references/ocr-contact-sheet-extraction-fr.md): Validated workflow for extracting scene/frame metadata from a real video contact sheet with Mistral OCR or vision fallback.
-- [OCR Worksheet Extraction (FR)](mistral-subagent/references/ocr-worksheet-extraction-fr.md): Validated workflow for turning a clean worksheet preview into bounded JSON verified against a local oracle.
-- [Mistral API Notes](mistral-subagent/references/mistral-api.md): Endpoints, rate limits, and model capabilities.
-- [Model Selection](mistral-subagent/references/model-selection.md): Task-to-model mapping.
-- [Task Matrix](mistral-subagent/references/mistral-task-matrix.md): Compact task suitability guide.
-
-For more details on why and how to use this skill, see [docs/WHY_MISTRAL_SUBAGENT.md](docs/WHY_MISTRAL_SUBAGENT.md).
+Ne jamais publier `.env`, tokens, sessions, logs sensibles, cles privees ou donnees personnelles.
