@@ -2,7 +2,7 @@
 
 ## Liens vers l'application
 - Lien public: non detecte
-- GitHub: https://github.com/RYJITS/codex-mistral-subagent-skill
+- GitHub: [https://github.com/RYJITS/codex-mistral-subagent-skill](https://github.com/RYJITS/codex-mistral-subagent-skill)
 
 ## A quoi sert le projet
 Ce projet est un skill Codex qui permet d'utiliser Mistral comme sous-agent encadre. Il sert a confier des taches bornees comme resumer un dossier, classer des informations, extraire des points importants, relire un texte ou proposer un brouillon.
