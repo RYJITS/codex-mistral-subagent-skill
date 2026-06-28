@@ -6,55 +6,61 @@ Ce depot public presente le concept, les fonctions, les choix de conception, les
 
 ## Concept
 
-Skill Codex qui encadre l'utilisation de Mistral comme sous-agent pour resumer, classer, extraire, relire ou produire des brouillons sous controle.
+Un skill Codex pour encadrer l'utilisation sécurisée de Mistral comme sous-agent dans des tâches non destructives.
 
-Ajouter un assistant secondaire utile sans lui laisser prendre des decisions risquee ou destructives.
+Permettre à l'orchestrateur Cerveau IA de déléguer des tâches analytiques ou rédactionnelles à Mistral tout en conservant un contrôle strict sur les actions finales, évitant ainsi les risques de modifications non autorisées ou de décisions critiques.
 
-Public vise: Usage interne: automatisation, documentation, revue et ideation assistee.
+Public vise: Équipe technique interne, développeurs et contributeurs du projet Cerveau IA, ainsi que toute personne souhaitant intégrer une assistance IA contrôlée dans un workflow automatisé.
 
 
 ## Fonctionnement de l'application
 
-Le skill decrit les cas d'usage autorises, les limites de delegation, les formats attendus et le protocole de securite. Le helper Node peut appeler Mistral pour une tache precise, puis renvoyer une sortie structuree que Codex doit relire avant toute decision ou modification.
+Le skill fonctionne en deux phases : 1) Délégation de la tâche à Mistral via un helper Node.js qui transmet un contexte précis (schéma, contraintes, commandes autorisées), 2) Validation et intégration par Codex des sorties produites. Mistral ne peut pas publier, supprimer ou modifier directement le code ou la documentation. Toutes les sorties sont relues et validées avant toute action.
 
 ## Fonctions de l'application
 
-- Decrit quand utiliser Mistral comme sous-agent.
-- Encadre les taches non destructives.
-- Produit des sorties structurees et controlables.
-- Deleguer un resume a Mistral
-- Demander une classification
-- Extraire des informations importantes
-- Produire un brouillon de documentation
-- Obtenir un second avis
-- Retourner des donnees structurees
-- Limiter les taches aux actions non destructives
+- Délégation sécurisée de tâches analytiques à Mistral
+- Production de sorties structurées (JSON/Markdown) relues par Codex
+- Encadrement des tâches non destructives (résumé, classification, extraction, brouillon)
+- Validation des modèles et des commandes avant toute action
+- Génération de références techniques ou documentaires contrôlées
+- Extraction structurée d'informations à partir de briefs techniques
+- Génération de brouillons de documentation ou de références
+- Classification de tâches ou de commentaires
+- Production de sorties JSON ou Markdown contrôlées
+- Routage dynamique des modèles en fonction de la complexité de la tâche
+- Validation automatique des commandes et chemins cibles
 
 ## Actualisations et evolution
 
+- Validation des capacités d'extraction JSON stricte pour les briefs de maintenance (2026-06-05)
+- Ajout de références techniques pour le routage des modèles (mistral-small, mistral-medium, devstral)
+- Mise à jour des scripts de validation et de contrôle (validate, check:helper)
+- Audit de nettoyage et d'optimisation confirmant l'absence de modifications nécessaires
+- Documentation des limites et des règles de délégation pour éviter les sorties non conformes
 - Statut courant: PUBLIC_READY.
 - Securite: OK_PUBLIC.
 - Fonctionnement: FONCTIONNEL.
+- [object Object]
 
-## Options et conception
+## Comment le projet a ete reflechi et construit
 
-Il a ete concu pour ajouter une aide IA sans perdre le controle principal. Mistral peut accelerer l'analyse ou la redaction, mais il ne publie pas, ne supprime pas, ne pousse pas de code et ne remplace pas les validations de Codex.
+Le projet a été conçu pour répondre à un besoin de délégation contrôlée d'IA dans un environnement technique. Les choix clés incluent : une séparation claire entre proposition du sous-agent et action réelle, un schéma JSON strict pour éviter les hallucinations, une validation systématique des commandes et chemins, et une documentation précise des cas d'usage autorisés. L'architecture repose sur un helper Node.js modulaire et des scripts de validation pour garantir la cohérence des sorties.
+
+Cette section doit expliquer les choix qui ont guide le projet: besoin de depart, structure retenue, modules principaux, compromis techniques, interface ou logique metier, et raisons des outils utilises.
 
 ### Outils, IA et moteurs utilises
 
-- Mistral AI
-- Helper local de delegation
-- Catalogue de taches autorisees
-- Protocole de delegation sure
-- Validation du skill
-- Controle de modeles
-- Sorties JSON ou Markdown relues par Codex
-- Format SKILL.md Codex
-- Scripts Node.js
-- Consignes Markdown
-- Catalogue de taches
-- Validation npm
-- Controle des modeles disponibles
+- Node.js (runtime)
+- Mistral AI (modèles : mistral-small, mistral-medium, devstral, codestral)
+- npm (gestionnaire de paquets)
+- Git (versioning)
+- Scripts personnalisés pour la validation et le contrôle
+- Architecture modulaire avec helper Node.js
+- Sorties structurées en JSON/Markdown pour une intégration contrôlée
+- Validation systématique des commandes et chemins
+- Séparation des responsabilités : proposition du sous-agent vs action réelle
+- Documentation des cas d'usage et des limites pour éviter les dérives
 
 ### Options techniques detectees
 
@@ -67,13 +73,11 @@ Il a ete concu pour ajouter une aide IA sans perdre le controle principal. Mistr
 ### Stack et dependances principales
 
 - Node.js
-- Format SKILL.md Codex
-- Scripts Node.js
-- Consignes Markdown
-- Catalogue de taches
-- Protocole de delegation sure
-- Validation npm
-- Controle des modeles disponibles
+- Architecture modulaire avec helper Node.js
+- Sorties structurées en JSON/Markdown pour une intégration contrôlée
+- Validation systématique des commandes et chemins
+- Séparation des responsabilités : proposition du sous-agent vs action réelle
+- Documentation des cas d'usage et des limites pour éviter les dérives
 
 ### Scripts disponibles
 
@@ -91,26 +95,42 @@ Il a ete concu pour ajouter une aide IA sans perdre le controle principal. Mistr
 
 ## Automatisations et comportements internes
 
-- Validation du skill par npm run validate
-- Verification syntaxique du helper
-- Controle de selection des modeles
-- Generation de sorties structurees
-- Utilisation en dry-run depuis l'orchestrateur
-- Separation entre proposition du sous-agent et action reelle
+- Validation automatique du dépôt via `npm run validate`
+- Vérification syntaxique du helper via `npm run check:helper`
+- Sélection et validation des modèles via `npm run check:models`
+- Génération de sorties structurées pour une intégration contrôlée
+- Utilisation en mode dry-run pour tester les capacités avant intégration
 
 ## Installation locale
 
+[object Object]
+
+### Pre-requis
+- Node.js installe localement.
+- Gestionnaire detecte: npm.
+- Creer un fichier `.env` local a partir de `.env.example` si des variables sont necessaires.
+
+### Commandes
 ```powershell
 npm install
 ```
+
+### Scripts utiles
+- check:helper: node --check mistral-subagent/scripts/mistral-subagent.mjs
+- check:models: node mistral-subagent/scripts/mistral-subagent.mjs select-model --task "Audit a GitHub codebase and propose patches"
+- validate: node scripts/validate-repo.mjs
 
 ## Lancement
 
 Commande de lancement a documenter selon le projet.
 
+## Utilisation
+
+Après installation, le skill peut être utilisé via les scripts fournis : 1) `npm run validate` pour vérifier la cohérence du dépôt, 2) `npm run check:helper` pour valider le helper Node.js, 3) `npm run check:models` pour tester la sélection des modèles. Pour déléguer une tâche, utiliser le helper avec un contexte précis (ex : `node mistral-subagent/scripts/mistral-subagent.mjs run --task "<description>" --context-file <fichier> --model <nom_modele> --json`). Les sorties doivent être relues et validées avant toute intégration.
+
 ## Captures d'ecran
 
-Aucune capture d'ecran publique n'est encore disponible. La publication GitHub publique doit etre completee avec une capture du projet.
+Aucune capture d'ecran n'est encore disponible. La publication GitHub doit etre completee avec une capture du projet quand il s'agit d'une application.
 
 ## Variables d'environnement
 
