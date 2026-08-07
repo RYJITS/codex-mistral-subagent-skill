@@ -1,8 +1,46 @@
 # Skill Codex Mistral Subagent
 
-## Rapport complet
+## Presentation
 
-Ce depot public presente le concept, les fonctions, les choix de conception, les outils utilises, les commandes locales et les captures d'ecran de l'application. Il est genere par l'orchestrateur uniquement apres validation de publication publique.
+Skill Codex Mistral Subagent est presente ici avec son concept, ses fonctions, ses choix de conception et ses informations d'utilisation.
+
+## Demarrage rapide
+
+### Pre-requis
+
+- Git installe localement.
+- Node.js 20 ou plus recent.
+- Gestionnaire de paquets: npm.
+
+### Installer et lancer
+
+```powershell
+git clone https://github.com/RYJITS/codex-mistral-subagent-skill.git
+cd codex-mistral-subagent-skill
+npm install
+```
+
+## Installation locale
+
+### Pre-requis
+- Node.js installe localement.
+- Gestionnaire detecte: npm.
+- Creer un fichier `.env` local a partir de `.env.example` si des variables sont necessaires.
+
+### Commandes
+```powershell
+git clone https://github.com/RYJITS/codex-mistral-subagent-skill.git
+cd codex-mistral-subagent-skill
+npm install
+```
+
+## Lancement
+
+Aucune commande de lancement n'est fournie dans les fichiers publies.
+
+## Utilisation
+
+Après installation, le skill peut être utilisé via les scripts fournis : 1) `npm run validate` pour vérifier la cohérence du dépôt, 2) `npm run check:helper` pour valider le helper Node.js, 3) `npm run check:models` pour tester la sélection des modèles. Pour déléguer une tâche, utiliser le helper avec un contexte précis (ex : `node mistral-subagent/scripts/mistral-subagent.mjs run --task "<description>" --context-file <fichier> --model <nom_modele> --json`). Les sorties doivent être relues et validées avant toute intégration.
 
 ## Concept
 
@@ -24,12 +62,6 @@ Le skill fonctionne en deux phases : 1) Délégation de la tâche à Mistral via
 - Encadrement des tâches non destructives (résumé, classification, extraction, brouillon)
 - Validation des modèles et des commandes avant toute action
 - Génération de références techniques ou documentaires contrôlées
-- Extraction structurée d'informations à partir de briefs techniques
-- Génération de brouillons de documentation ou de références
-- Classification de tâches ou de commentaires
-- Production de sorties JSON ou Markdown contrôlées
-- Routage dynamique des modèles en fonction de la complexité de la tâche
-- Validation automatique des commandes et chemins cibles
 
 ## Actualisations et evolution
 
@@ -38,16 +70,10 @@ Le skill fonctionne en deux phases : 1) Délégation de la tâche à Mistral via
 - Mise à jour des scripts de validation et de contrôle (validate, check:helper)
 - Audit de nettoyage et d'optimisation confirmant l'absence de modifications nécessaires
 - Documentation des limites et des règles de délégation pour éviter les sorties non conformes
-- Statut courant: PUBLIC_READY.
-- Securite: OK_PUBLIC.
-- Fonctionnement: FONCTIONNEL.
-- [object Object]
 
 ## Comment le projet a ete reflechi et construit
 
 Le projet a été conçu pour répondre à un besoin de délégation contrôlée d'IA dans un environnement technique. Les choix clés incluent : une séparation claire entre proposition du sous-agent et action réelle, un schéma JSON strict pour éviter les hallucinations, une validation systématique des commandes et chemins, et une documentation précise des cas d'usage autorisés. L'architecture repose sur un helper Node.js modulaire et des scripts de validation pour garantir la cohérence des sorties.
-
-Cette section doit expliquer les choix qui ont guide le projet: besoin de depart, structure retenue, modules principaux, compromis techniques, interface ou logique metier, et raisons des outils utilises.
 
 ### Outils, IA et moteurs utilises
 
@@ -68,7 +94,6 @@ Cette section doit expliquer les choix qui ont guide le projet: besoin de depart
 - Gestionnaire: npm
 - Nom package: codex-mistral-subagent-skill
 - Version: 1.0.0
-- Statut securite: OK_PUBLIC
 
 ### Stack et dependances principales
 
@@ -101,36 +126,9 @@ Cette section doit expliquer les choix qui ont guide le projet: besoin de depart
 - Génération de sorties structurées pour une intégration contrôlée
 - Utilisation en mode dry-run pour tester les capacités avant intégration
 
-## Installation locale
-
-[object Object]
-
-### Pre-requis
-- Node.js installe localement.
-- Gestionnaire detecte: npm.
-- Creer un fichier `.env` local a partir de `.env.example` si des variables sont necessaires.
-
-### Commandes
-```powershell
-npm install
-```
-
-### Scripts utiles
-- check:helper: node --check mistral-subagent/scripts/mistral-subagent.mjs
-- check:models: node mistral-subagent/scripts/mistral-subagent.mjs select-model --task "Audit a GitHub codebase and propose patches"
-- validate: node scripts/validate-repo.mjs
-
-## Lancement
-
-Commande de lancement a documenter selon le projet.
-
-## Utilisation
-
-Après installation, le skill peut être utilisé via les scripts fournis : 1) `npm run validate` pour vérifier la cohérence du dépôt, 2) `npm run check:helper` pour valider le helper Node.js, 3) `npm run check:models` pour tester la sélection des modèles. Pour déléguer une tâche, utiliser le helper avec un contexte précis (ex : `node mistral-subagent/scripts/mistral-subagent.mjs run --task "<description>" --context-file <fichier> --model <nom_modele> --json`). Les sorties doivent être relues et validées avant toute intégration.
-
 ## Captures d'ecran
 
-Aucune capture d'ecran n'est encore disponible. La publication GitHub doit etre completee avec une capture du projet quand il s'agit d'une application.
+Aucune capture publique n'est disponible pour ce projet.
 
 ## Variables d'environnement
 
