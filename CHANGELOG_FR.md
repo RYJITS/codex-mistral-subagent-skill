@@ -2,7 +2,6 @@
 
 ## Evolutions documentees
 
-- [object Object]
 - Validation des capacités d'extraction JSON stricte pour les briefs de maintenance (2026-06-05)
 - Ajout de références techniques pour le routage des modèles (mistral-small, mistral-medium, devstral)
 - Mise à jour des scripts de validation et de contrôle (validate, check:helper)

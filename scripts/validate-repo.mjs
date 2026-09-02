@@ -17,6 +17,21 @@ const requiredFiles = [
   'mistral-subagent/references/public-repo-checklist.md',
   'mistral-subagent/agents/openai.yaml'
 ];
+const generatedOrchestratorFiles = new Set([
+  'AUDIT_ARCHITECTURE.md',
+  'AUDIT_NETTOYAGE.md',
+  'AUDIT_OPTIMISATION.md',
+  'AUDIT_ORCHESTRATEUR_INITIAL.md',
+  'AUDIT_SECURITE.md',
+  'CHANGELOG_FR.md',
+  'FICHE_CONTENU_PROJET_DRAFT.md',
+  'FICHE_PROJET.md',
+  'INSTALLATION_FR.md',
+  'PREPARATION_GITHUB.md',
+  'RAPPORT_FONCTIONNALITE.md',
+  'RAPPORT_REPARATION_FONCTIONNALITE.md',
+  'README_GITHUB_PUBLIC.md'
+]);
 
 function checkRequiredFiles() {
   const missingFiles = requiredFiles.filter(file => !fs.existsSync(file));
@@ -65,7 +80,9 @@ function validateSkillFrontmatter() {
 }
 
 function checkASCIICompliance() {
-  const filesToCheck = walk('.').filter(file => /\.(md|mjs|js|json|ya?ml|txt)$/.test(file));
+  const filesToCheck = walk('.')
+    .filter(file => /\.(mjs|js|json|ya?ml|txt)$/.test(file))
+    .filter(file => !isGeneratedOrchestratorFile(file));
   filesToCheck.forEach(file => {
     if (fs.existsSync(file)) {
       const content = fs.readFileSync(file, 'utf8');
@@ -75,6 +92,16 @@ function checkASCIICompliance() {
       }
     }
   });
+}
+
+function isGeneratedOrchestratorFile(file) {
+  const base = path.basename(file);
+  return generatedOrchestratorFiles.has(base)
+    || /^AUDIT_.*\.(?:md|json)$/i.test(base)
+    || /^RAPPORT_.*\.(?:md|json)$/i.test(base)
+    || /^PREPARATION_GITHUB.*\.(?:md|json)$/i.test(base)
+    || /^FICHE_CONTENU_PROJET.*\.(?:md|json)$/i.test(base)
+    || base === '.project-orchestrator.json';
 }
 
 function validateRepo() {

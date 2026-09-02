@@ -1,8 +1,18 @@
 # Skill Codex Mistral Subagent
 
+## Statut de diffusion
+Projet explique sur Site Ma Methode: la fiche publique peut presenter son utilite, ses fonctions, son avancement et ses liens disponibles.
+
 ## Liens vers l'application
-- Lien public: non detecte
+- Application: non detecte
 - GitHub: [https://github.com/RYJITS/codex-mistral-subagent-skill](https://github.com/RYJITS/codex-mistral-subagent-skill)
+
+## Avancement du projet
+- Etat du projet: pret cote usage public.
+- Fonctionnement: fonctionnel.
+- Securite: OK pour une presentation publique.
+- Ma Methode: fiche explicative visible.
+- Publication externe: candidat public, validation finale separee.
 
 ## A quoi sert le projet
 Ce skill permet d'intégrer Mistral comme sous-agent dans des workflows automatisés, en limitant ses actions à des tâches non destructives (analyse, synthèse, extraction). Il produit des sorties structurées (JSON ou Markdown) que Codex peut relire, valider ou modifier avant toute intégration. L'objectif est d'accélérer les tâches répétitives tout en maintenant un contrôle strict sur les décisions finales.
@@ -15,7 +25,11 @@ Le projet a été conçu pour répondre à un besoin de délégation contrôlée
 
 ## Installation et utilisation
 ### Installation
-[object Object]
+Installation locale standard pour la version partageable du projet:
+
+```powershell
+npm install
+```
 
 ### Utilisation
 Après installation, le skill peut être utilisé via les scripts fournis : 1) `npm run validate` pour vérifier la cohérence du dépôt, 2) `npm run check:helper` pour valider le helper Node.js, 3) `npm run check:models` pour tester la sélection des modèles. Pour déléguer une tâche, utiliser le helper avec un contexte précis (ex : `node mistral-subagent/scripts/mistral-subagent.mjs run --task "<description>" --context-file <fichier> --model <nom_modele> --json`). Les sorties doivent être relues et validées avant toute intégration.
@@ -46,7 +60,6 @@ Après installation, le skill peut être utilisé via les scripts fournis : 1) `
 - Aucune capture validee pour cette fiche.
 
 ## Mises a jour
-- [object Object]
 - Validation des capacités d'extraction JSON stricte pour les briefs de maintenance (2026-06-05)
 - Ajout de références techniques pour le routage des modèles (mistral-small, mistral-medium, devstral)
 - Mise à jour des scripts de validation et de contrôle (validate, check:helper)
